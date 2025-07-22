@@ -1,76 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
-interface DreamSymbol {
-  symbol: string;
-  meaning: string;
-  category: string;
-  luckyNumbers?: number[];
-}
-
-const dreamDictionary: DreamSymbol[] = [
-  {
-    symbol: "nước",
-    meaning: "Nước trong giấc mơ thường đại diện cho cảm xúc, tiềm thức và sự thanh tẩy. Nước trong có thể báo hiệu may mắn và thành công, trong khi nước đục có thể cảnh báo về khó khăn sắp tới.",
-    category: "Tự nhiên",
-    luckyNumbers: [7, 14, 21]
-  },
-  {
-    symbol: "lửa",
-    meaning: "Lửa biểu thị đam mê, năng lượng sáng tạo và sự biến đổi. Lửa cháy mạnh có thể báo hiệu thành công trong công việc, nhưng lửa cháy lung tung cần cảnh giác về cộng sự.",
-    category: "Tự nhiên",
-    luckyNumbers: [3, 9, 27]
-  },
-  {
-    symbol: "rắn",
-    meaning: "Rắn trong giấc mơ có thể đại diện cho kẻ thù ẩn nấp, sự phản bội hoặc sự tái sinh và chữa lành. Tùy vào ngữ cảnh, có thể là cảnh báo hoặc dấu hiệu tốt lành.",
-    category: "Động vật",
-    luckyNumbers: [1, 8, 15]
-  },
-  {
-    symbol: "cá",
-    meaning: "Cá thường mang ý nghĩa tốt lành, báo hiệu tài lộc và may mắn. Cá bơi trong nước trong là dấu hiệu của thịnh vượng và hạnh phúc trong gia đình.",
-    category: "Động vật",
-    luckyNumbers: [4, 13, 31]
-  },
-  {
-    symbol: "chim",
-    meaning: "Chim biểu thị tự do, ước mơ và khát vọng bay cao. Chim bay cao có thể báo hiệu thành công trong sự nghiệp, chim chết có thể cảnh báo về thất bại.",
-    category: "Động vật",
-    luckyNumbers: [2, 11, 29]
-  },
-  {
-    symbol: "tiền",
-    meaning: "Mơ thấy tiền có thể có nhiều ý nghĩa: mất tiền trong mơ thường báo hiệu được tiền trong thực tế, được cho tiền có thể là dấu hiệu của may mắn sắp tới.",
-    category: "Vật dụng",
-    luckyNumbers: [6, 16, 26]
-  },
-  {
-    symbol: "nhà",
-    meaning: "Nhà đại diện cho bản thân và gia đình. Nhà đẹp báo hiệu hạnh phúc gia đình, nhà hư hỏng có thể cảnh báo về xung đột trong gia đình.",
-    category: "Kiến trúc",
-    luckyNumbers: [5, 12, 24]
-  },
-  {
-    symbol: "xe",
-    meaning: "Xe cộ biểu thị hướng đi trong cuộc sống và khả năng kiểm soát định mệnh. Lái xe thuận lợi báo hiệu thành công, tai nạn xe có thể cảnh báo về khó khăn.",
-    category: "Phương tiện",
-    luckyNumbers: [10, 18, 35]
-  },
-  {
-    symbol: "hoa",
-    meaning: "Hoa tượng trưng cho vẻ đẹp, tình yêu và sự nở rộ. Hoa tươi báo hiệu tình yêu đẹp và may mắn, hoa tàn có thể báo hiệu kết thúc một giai đoạn.",
-    category: "Thực vật",
-    luckyNumbers: [19, 22, 33]
-  },
-  {
-    symbol: "mưa",
-    meaning: "Mưa có thể đại diện cho sự thanh tẩy, làm mới và cảm xúc. Mưa nhẹ thường mang ý nghĩa tốt, mưa bão có thể cảnh báo về khó khăn.",
-    category: "Thời tiết",
-    luckyNumbers: [17, 25, 38]
-  }
-];
+import { dreamDictionary as dreamData, searchDreams, getDreamsByCategory, getAllCategories, getRandomDream, type DreamSymbol } from '../../lib/dreamDictionary';
 
 export default function DreamPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -80,17 +11,14 @@ export default function DreamPage() {
   const handleSearch = (term: string) => {
     setSearchTerm(term);
     if (term.trim()) {
-      const filtered = dreamDictionary.filter(dream =>
-        dream.symbol.toLowerCase().includes(term.toLowerCase()) ||
-        dream.meaning.toLowerCase().includes(term.toLowerCase())
-      );
+      const filtered = searchDreams(term);
       setFilteredDreams(filtered);
     } else {
       setFilteredDreams([]);
     }
   };
 
-  const categories = [...new Set(dreamDictionary.map(dream => dream.category))];
+  const categories = getAllCategories();
 
   return (
     <div className="min-h-screen py-12 px-4">
@@ -160,7 +88,7 @@ export default function DreamPage() {
         {/* Dream Detail Modal */}
         {selectedDream && (
           <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-gradient-to-br from-purple-900/95 to-indigo-900/95 rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-golden/20">
+            <div className="bg-gradient-to-br from-purple-900/95 to-indigo-900/95 rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-golden/20">
               <div className="flex justify-between items-start mb-6">
                 <div>
                   <h2 className="text-3xl font-bold text-white capitalize mb-2">{selectedDream.symbol}</h2>
@@ -174,32 +102,98 @@ export default function DreamPage() {
                 </button>
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
+                {/* Ý nghĩa cơ bản */}
                 <div>
-                  <h3 className="text-xl font-semibold text-golden mb-3">Ý Nghĩa</h3>
+                  <h3 className="text-xl font-semibold text-golden mb-3">💫 Ý Nghĩa Cơ Bản</h3>
                   <p className="text-purple-200 leading-relaxed">{selectedDream.meaning}</p>
                 </div>
 
-                {selectedDream.luckyNumbers && (
+                {/* Ý nghĩa chi tiết */}
+                {selectedDream.detailedMeaning && (
                   <div>
-                    <h3 className="text-xl font-semibold text-golden mb-3">Số May Mắn</h3>
-                    <div className="flex space-x-3">
-                      {selectedDream.luckyNumbers.map((number, index) => (
-                        <div
-                          key={index}
-                          className="w-12 h-12 bg-gradient-to-br from-golden to-yellow-400 rounded-full flex items-center justify-center text-purple-900 font-bold"
-                        >
-                          {number}
+                    <h3 className="text-xl font-semibold text-golden mb-3">🔮 Giải Thích Chi Tiết</h3>
+                    <p className="text-purple-200 leading-relaxed">{selectedDream.detailedMeaning}</p>
+                  </div>
+                )}
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Ý nghĩa văn hóa */}
+                  {selectedDream.culturalSignificance && (
+                    <div className="bg-purple-900/30 rounded-lg p-4">
+                      <h4 className="text-lg font-semibold text-golden mb-2">🏛️ Ý Nghĩa Văn Hóa</h4>
+                      <p className="text-purple-200 text-sm leading-relaxed">{selectedDream.culturalSignificance}</p>
+                    </div>
+                  )}
+
+                  {/* Giải thích hiện đại */}
+                  {selectedDream.modernInterpretation && (
+                    <div className="bg-indigo-900/30 rounded-lg p-4">
+                      <h4 className="text-lg font-semibold text-golden mb-2">🧠 Tâm Lý Học Hiện Đại</h4>
+                      <p className="text-purple-200 text-sm leading-relaxed">{selectedDream.modernInterpretation}</p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Lời khuyên */}
+                {selectedDream.recommendations && selectedDream.recommendations.length > 0 && (
+                  <div>
+                    <h3 className="text-xl font-semibold text-golden mb-3">💡 Lời Khuyên Cụ Thể</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {selectedDream.recommendations.map((advice, index) => (
+                        <div key={index} className="flex items-start bg-green-900/20 rounded-lg p-3">
+                          <span className="text-green-400 mr-2 mt-1">✓</span>
+                          <span className="text-purple-200 text-sm">{advice}</span>
                         </div>
                       ))}
                     </div>
                   </div>
                 )}
 
-                <div className="pt-4 border-t border-purple-300/20">
-                  <p className="text-sm text-purple-300 italic">
-                    💡 Lưu ý: Ý nghĩa giấc mơ có thể thay đổi tùy thuộc vào hoàn cảnh và cảm xúc cá nhân của bạn.
-                  </p>
+                {/* Số may mắn */}
+                {selectedDream.luckyNumbers && (
+                  <div>
+                    <h3 className="text-xl font-semibold text-golden mb-3">🍀 Số May Mắn</h3>
+                    <div className="flex flex-wrap gap-3">
+                      {selectedDream.luckyNumbers.map((number, index) => (
+                        <div
+                          key={index}
+                          className="w-12 h-12 bg-gradient-to-br from-golden to-yellow-400 rounded-full flex items-center justify-center text-purple-900 font-bold shadow-lg"
+                        >
+                          {number}
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-purple-300 text-sm mt-3">
+                      💡 Bạn có thể sử dụng những con số này khi mua vé số, đặt cược hoặc làm số điện thoại.
+                    </p>
+                  </div>
+                )}
+
+                <div className="pt-6 border-t border-purple-300/20">
+                  <div className="bg-blue-900/20 rounded-lg p-4">
+                    <h4 className="font-semibold text-blue-300 mb-2">🌙 Lưu Ý Quan Trọng</h4>
+                    <p className="text-blue-200 text-sm">
+                      Ý nghĩa giấc mơ có thể thay đổi tùy thuộc vào hoàn cảnh cá nhân, cảm xúc khi mơ và 
+                      bối cảnh xung quanh ký hiệu trong giấc mơ. Hãy kết hợp với trực giác của bản thân 
+                      để có cái nhìn toàn diện nhất.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <button
+                    onClick={() => setSelectedDream(getRandomDream())}
+                    className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-indigo-600 hover:to-purple-600 text-white font-bold py-2 px-6 rounded-lg transition-all duration-300 mr-4"
+                  >
+                    🎲 Xem Giấc Mơ Khác
+                  </button>
+                  <button
+                    onClick={() => setSelectedDream(null)}
+                    className="border-2 border-golden text-golden hover:bg-golden hover:text-purple-900 font-bold py-2 px-6 rounded-lg transition-all duration-300"
+                  >
+                    Đóng
+                  </button>
                 </div>
               </div>
             </div>
@@ -216,7 +210,7 @@ export default function DreamPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((category, index) => {
-              const categoryDreams = dreamDictionary.filter(dream => dream.category === category);
+              const categoryDreams = getDreamsByCategory(category);
               const icons = {
                 'Tự nhiên': '🌊',
                 'Động vật': '🐾',
@@ -234,7 +228,7 @@ export default function DreamPage() {
                     <h3 className="text-xl font-bold text-white mb-3">{category}</h3>
                     <p className="text-purple-200 mb-4">{categoryDreams.length} ký hiệu</p>
                     <div className="space-y-2">
-                      {categoryDreams.slice(0, 3).map((dream, dreamIndex) => (
+                      {categoryDreams.slice(0, 3).map((dream: DreamSymbol, dreamIndex: number) => (
                         <button
                           key={dreamIndex}
                           onClick={() => setSelectedDream(dream)}
