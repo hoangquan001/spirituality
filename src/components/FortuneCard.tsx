@@ -14,11 +14,11 @@ export default function FortuneCard() {
 
   if (!mounted || !fortune) {
     return (
-      <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-6 border border-purple-300/20 animate-pulse">
-        <div className="h-6 bg-purple-300/20 rounded mb-4"></div>
+      <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-6 border border-gray-400/20 animate-pulse">
+        <div className="h-6 bg-gray-400/20 rounded mb-4"></div>
         <div className="space-y-3">
           {[1, 2, 3, 4, 5].map((i) => (
-            <div key={i} className="h-4 bg-purple-300/20 rounded"></div>
+            <div key={i} className="h-4 bg-gray-400/20 rounded"></div>
           ))}
         </div>
       </div>
@@ -29,12 +29,12 @@ export default function FortuneCard() {
   const overallFortune = getFortuneLevel(fortune.overall);
 
   return (
-    <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-6 border border-purple-300/20 hover:border-golden/50 transition-all duration-300">
+    <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-6 border border-gray-400/20 hover:border-golden/50 transition-all duration-300">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-xl font-bold text-white">
           ✨ Vận Số Hôm Nay
         </h3>
-        <span className="text-sm text-purple-300">
+        <span className="text-sm text-gray-400">
           {formatDate(today)}
         </span>
       </div>
@@ -48,11 +48,11 @@ export default function FortuneCard() {
         </div>
         <div className="w-full bg-gray-700 rounded-full h-2">
           <div 
-            className="bg-gradient-to-r from-purple-500 to-golden h-2 rounded-full transition-all duration-500"
+            className="bg-gradient-to-r from-gray-500 to-golden h-2 rounded-full transition-all duration-500"
             style={{ width: `${fortune.overall}%` }}
           ></div>
         </div>
-        <p className="text-sm text-purple-300 mt-2">
+        <p className="text-sm text-gray-400 mt-2">
           {overallFortune.description}
         </p>
       </div>
@@ -80,12 +80,12 @@ export default function FortuneCard() {
         />
       </div>
 
-      <div className="mt-6 p-4 bg-gradient-to-r from-golden/10 to-purple-500/10 rounded-2xl border border-golden/20">
+      <div className="mt-6 p-4 bg-gradient-to-r from-golden/10 to-gray-500/10 rounded-2xl border border-golden/20">
         <div className="flex items-center gap-2 mb-2">
           <span className="text-golden">🔮</span>
           <span className="text-white font-semibold text-sm">Lời Khuyên Hôm Nay</span>
         </div>
-        <p className="text-purple-200 text-sm leading-relaxed">
+        <p className="text-gray-300 text-sm leading-relaxed">
           {fortune.overall >= 70 
             ? "Hôm nay là ngày tuyệt vời để thực hiện những kế hoạch quan trọng. Hãy tự tin và quyết đoán!"
             : fortune.overall >= 50
@@ -110,7 +110,7 @@ function FortuneItem({ icon, label, score }: FortuneItemProps) {
   return (
     <div className="text-center">
       <div className="text-2xl mb-1">{icon}</div>
-      <div className="text-xs text-purple-300 mb-1">{label}</div>
+      <div className="text-xs text-gray-400 mb-1">{label}</div>
       <div className={`text-sm font-bold ${fortune.color}`}>
         {score}%
       </div>

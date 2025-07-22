@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f0c29;
+  --background: #050211;
   --foreground: #ffffff;
   --golden: #FFD700;
-  --mystic-purple: #4A0E4E;
-  --deep-purple: #2D1B69;
-  --cosmic-blue: #1E0A3C;
+  --mystic-purple: #2A0845;
+  --deep-purple: #1A0B2E;
+  --cosmic-blue: #0D0617;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0f0c29;
+    --background: #050211;
     --foreground: #ffffff;
   }
 }
@@ -22,7 +22,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a0b2e;
+  background: #050211;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -36,11 +36,11 @@
 
 body {
   background: linear-gradient(135deg, 
-    #0f0c29 0%, 
-    #24243e 25%, 
-    #302b63 50%, 
-    #24243e 75%, 
-    #0f0c29 100%
+    #050211 0%, 
+    #0D0617 25%, 
+    #1A0B2E 50%, 
+    #0D0617 75%, 
+    #050211 100%
   );
   background-attachment: fixed;
   min-height: 100vh;
@@ -59,9 +59,9 @@ body {
 
 .particle {
   position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(255, 215, 0, 0.6);
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 215, 0, 0.4);
   border-radius: 50%;
   animation: float 20s infinite linear;
 }
@@ -101,18 +101,18 @@ body {
 
 /* Card hover effect */
 .cosmic-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 215, 0, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 215, 0, 0.15);
   transition: all 0.3s ease;
 }
 
 .cosmic-card:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 215, 0, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 215, 0, 0.3);
   transform: translateY(-5px);
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.3),
+    0 20px 40px rgba(0, 0, 0, 0.4),
     0 0 30px rgba(255, 215, 0, 0.2);
 }
 

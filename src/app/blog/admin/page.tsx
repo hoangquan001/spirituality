@@ -42,7 +42,7 @@ export default function BlogAdminPage() {
 
   if (isCreating) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-purple-950 via-indigo-900 to-purple-900">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         <div className="container mx-auto px-4 py-8">
           {/* Header */}
           <div className="max-w-4xl mx-auto mb-8">
@@ -50,7 +50,7 @@ export default function BlogAdminPage() {
               <h1 className="text-3xl font-bold text-white">Tạo bài viết mới</h1>
               <button
                 onClick={() => setIsCreating(false)}
-                className="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
+                className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors"
               >
                 ← Quay lại
               </button>
@@ -59,7 +59,7 @@ export default function BlogAdminPage() {
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-purple-300/20 space-y-6">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-gray-700/20 space-y-6">
               
               {/* Title */}
               <div>
@@ -70,7 +70,7 @@ export default function BlogAdminPage() {
                   type="text"
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
+                  className="w-full px-4 py-3 bg-white/10 border border-gray-700/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                   placeholder="Nhập tiêu đề bài viết..."
                   required
                 />
@@ -85,7 +85,7 @@ export default function BlogAdminPage() {
                   value={formData.excerpt}
                   onChange={(e) => setFormData({ ...formData, excerpt: e.target.value })}
                   rows={3}
-                  className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 bg-white/10 border border-gray-700/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent resize-none"
                   placeholder="Nhập tóm tắt ngắn gọn về bài viết..."
                   required
                 />
@@ -100,11 +100,11 @@ export default function BlogAdminPage() {
                   value={formData.content}
                   onChange={(e) => setFormData({ ...formData, content: e.target.value })}
                   rows={15}
-                  className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 bg-white/10 border border-gray-700/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent resize-none"
                   placeholder="Nhập nội dung bài viết (hỗ trợ Markdown)..."
                   required
                 />
-                <p className="text-purple-200 text-sm mt-2">
+                <p className="text-gray-300 text-sm mt-2">
                   Hỗ trợ Markdown: **bold**, *italic*, # Heading, etc.
                 </p>
               </div>
@@ -119,7 +119,7 @@ export default function BlogAdminPage() {
                     type="text"
                     value={formData.author}
                     onChange={(e) => setFormData({ ...formData, author: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white/10 border border-gray-700/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                     placeholder="Tên tác giả..."
                     required
                   />
@@ -132,15 +132,15 @@ export default function BlogAdminPage() {
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value as BlogPost['category'] })}
-                    className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white/10 border border-gray-700/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                     required
                   >
-                    <option value="numerology" className="bg-purple-900">Thần số học</option>
-                    <option value="zodiac" className="bg-purple-900">Cung hoàng đạo</option>
-                    <option value="feng-shui" className="bg-purple-900">Phong thủy</option>
-                    <option value="dreams" className="bg-purple-900">Giải mã giấc mơ</option>
-                    <option value="spirituality" className="bg-purple-900">Tâm linh</option>
-                    <option value="tips" className="bg-purple-900">Mẹo hay</option>
+                    <option value="numerology" className="bg-gray-900">Thần số học</option>
+                    <option value="zodiac" className="bg-gray-900">Cung hoàng đạo</option>
+                    <option value="feng-shui" className="bg-gray-900">Phong thủy</option>
+                    <option value="dreams" className="bg-gray-900">Giải mã giấc mơ</option>
+                    <option value="spirituality" className="bg-gray-900">Tâm linh</option>
+                    <option value="tips" className="bg-gray-900">Mẹo hay</option>
                   </select>
                 </div>
               </div>
@@ -154,7 +154,7 @@ export default function BlogAdminPage() {
                   type="text"
                   value={formData.tags?.join(', ') || ''}
                   onChange={(e) => handleTagsChange(e.target.value)}
-                  className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
+                  className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                   placeholder="Ví dụ: thần số học, tử vi, phong thủy..."
                 />
               </div>
@@ -168,7 +168,7 @@ export default function BlogAdminPage() {
                   type="url"
                   value={formData.featuredImage || ''}
                   onChange={(e) => setFormData({ ...formData, featuredImage: e.target.value })}
-                  className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
+                  className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                   placeholder="https://example.com/image.jpg"
                 />
               </div>
@@ -180,7 +180,7 @@ export default function BlogAdminPage() {
                   id="isPublished"
                   checked={formData.isPublished}
                   onChange={(e) => setFormData({ ...formData, isPublished: e.target.checked })}
-                  className="w-5 h-5 text-golden bg-white/10 border-purple-300/30 rounded focus:ring-golden focus:ring-2"
+                  className="w-5 h-5 text-golden bg-white/10 border-gray-700/30 rounded focus:ring-golden focus:ring-2"
                 />
                 <label htmlFor="isPublished" className="text-white font-medium">
                   Xuất bản ngay
@@ -191,14 +191,14 @@ export default function BlogAdminPage() {
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
                 <button
                   type="submit"
-                  className="flex-1 px-6 py-3 bg-gradient-to-r from-golden to-yellow-300 text-purple-900 font-bold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105"
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-golden to-yellow-300 text-gray-900 font-bold rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105"
                 >
                   {formData.isPublished ? 'Xuất bản bài viết' : 'Lưu nháp'}
                 </button>
                 <button
                   type="button"
                   onClick={() => setIsCreating(false)}
-                  className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-xl transition-colors"
+                  className="px-6 py-3 bg-gray-600 hover:bg-gray-700 text-white font-medium rounded-xl transition-colors"
                 >
                   Hủy bỏ
                 </button>
@@ -211,20 +211,20 @@ export default function BlogAdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-950 via-indigo-900 to-purple-900">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       {/* Hero Section */}
-      <div className="relative py-20 bg-gradient-to-r from-purple-900/50 to-indigo-900/50">
+      <div className="relative py-20 bg-gradient-to-r from-black/50 to-gray-900/50">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Quản Lý <span className="bg-gradient-to-r from-golden to-yellow-300 bg-clip-text text-transparent">Blog</span>
           </h1>
-          <p className="text-xl text-purple-200 max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
             Tạo và quản lý nội dung blog cho website Tâm Linh
           </p>
           
           <button
             onClick={() => setIsCreating(true)}
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-golden to-yellow-300 text-purple-900 font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-golden to-yellow-300 text-gray-900 font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
           >
             <span className="mr-2">✍️</span>
             Tạo bài viết mới
@@ -258,14 +258,14 @@ export default function BlogAdminPage() {
               title="Lượt xem"
               value="1.2K"
               icon="👁️"
-              color="from-purple-500 to-purple-600"
+              color="from-gray-600 to-gray-700"
             />
           </div>
         </div>
 
         {/* Quick Actions */}
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-purple-300/20">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-gray-700/20">
             <h2 className="text-2xl font-bold text-white mb-6">Thao tác nhanh</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -341,7 +341,7 @@ function ActionCard({ title, description, icon, onClick }: {
   return (
     <button
       onClick={onClick}
-      className="group bg-white/5 hover:bg-white/10 rounded-xl p-6 border border-purple-300/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 text-left"
+      className="group bg-white/5 hover:bg-white/10 rounded-xl p-6 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 text-left"
     >
       <div className="text-3xl mb-3 group-hover:scale-110 transition-transform duration-300">
         {icon}
@@ -349,9 +349,10 @@ function ActionCard({ title, description, icon, onClick }: {
       <h3 className="text-white font-bold mb-2 group-hover:text-golden transition-colors">
         {title}
       </h3>
-      <p className="text-purple-200 text-sm">
+      <p className="text-gray-300 text-sm">
         {description}
       </p>
     </button>
   );
 }
+

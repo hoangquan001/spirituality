@@ -24,10 +24,10 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-950 via-indigo-900 to-purple-900">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       {/* Breadcrumb */}
       <div className="container mx-auto px-4 py-6">
-        <nav className="text-purple-200 text-sm">
+        <nav className="text-gray-300 text-sm">
           <Link href="/" className="hover:text-golden transition-colors">Trang chủ</Link>
           <span className="mx-2">/</span>
           <Link href="/blog" className="hover:text-golden transition-colors">Blog</Link>
@@ -53,7 +53,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             </h1>
 
             {/* Meta Info */}
-            <div className="flex flex-wrap items-center justify-center gap-6 text-purple-200 mb-8">
+            <div className="flex flex-wrap items-center justify-center gap-6 text-gray-300 mb-8">
               <div className="flex items-center space-x-2">
                 <span>👤</span>
                 <span>{post.author}</span>
@@ -76,7 +76,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.tags.map((tag, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1 bg-purple-700/50 text-purple-200 text-sm rounded-full border border-purple-500/30"
+                    className="px-3 py-1 bg-gray-700/50 text-gray-300 text-sm rounded-full border border-gray-700/30"
                   >
                     #{tag}
                   </span>
@@ -99,7 +99,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Content */}
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-purple-300/20 mb-12">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-gray-700/20 mb-12">
             <div className="prose prose-lg prose-invert max-w-none">
               {/* Hiển thị nội dung markdown - trong thực tế bạn có thể dùng thư viện như react-markdown */}
               <div className="text-white leading-relaxed whitespace-pre-wrap">
@@ -109,7 +109,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           {/* Share Section */}
-          <div className="bg-gradient-to-r from-purple-800/50 to-indigo-800/50 rounded-2xl p-6 border border-purple-500/30 mb-12">
+          <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border border-gray-700/30 mb-12">
             <h3 className="text-xl font-bold text-white mb-4 text-center">
               Chia sẻ bài viết này
             </h3>

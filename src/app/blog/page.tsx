@@ -36,14 +36,14 @@ export default function BlogPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-950 via-indigo-900 to-purple-900">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       {/* Hero Section */}
-      <div className="relative py-20 bg-gradient-to-r from-purple-900/50 to-indigo-900/50">
+      <div className="relative py-20 bg-gradient-to-r from-black/50 to-gray-900/50">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Blog <span className="bg-gradient-to-r from-golden to-yellow-300 bg-clip-text text-transparent">Tâm Linh</span>
           </h1>
-          <p className="text-xl text-purple-200 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Khám phá những bí mật của vũ trụ, thần số học và tâm linh qua những bài viết sâu sắc
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function BlogPage() {
       <div className="container mx-auto px-4 py-12">
         {/* Search và Filter */}
         <div className="max-w-4xl mx-auto mb-12">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-purple-300/20">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-gray-700/20">
             <div className="flex flex-col md:flex-row gap-4">
               {/* Search */}
               <div className="flex-1">
@@ -65,7 +65,7 @@ export default function BlogPage() {
                   placeholder="Tìm kiếm bài viết..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
+                  className="w-full px-4 py-3 bg-white/10 border border-gray-700/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                 />
               </div>
               
@@ -74,10 +74,10 @@ export default function BlogPage() {
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
+                  className="w-full px-4 py-3 bg-white/10 border border-gray-700/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                 >
                   {categories.map(category => (
-                    <option key={category} value={category} className="bg-purple-900">
+                    <option key={category} value={category} className="bg-black">
                       {categoryNames[category] || category}
                     </option>
                   ))}
@@ -93,7 +93,7 @@ export default function BlogPage() {
             <div className="text-center py-20">
               <div className="text-6xl mb-4">🔍</div>
               <h3 className="text-2xl font-bold text-white mb-2">Không tìm thấy bài viết</h3>
-              <p className="text-purple-200">Thử thay đổi từ khóa tìm kiếm hoặc danh mục khác</p>
+              <p className="text-gray-300">Thử thay đổi từ khóa tìm kiếm hoặc danh mục khác</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -110,12 +110,12 @@ export default function BlogPage() {
             <h2 className="text-3xl font-bold text-white mb-4">
               Muốn đóng góp bài viết?
             </h2>
-            <p className="text-purple-200 mb-6">
+            <p className="text-gray-300 mb-6">
               Chia sẻ kiến thức và kinh nghiệm của bạn với cộng đồng
             </p>
             <Link
               href="/blog/admin"
-              className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-golden to-yellow-300 text-purple-900 font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-golden to-yellow-300 text-gray-900 font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               Viết bài mới
               <span className="ml-2">✨</span>
@@ -126,3 +126,4 @@ export default function BlogPage() {
     </div>
   );
 }
+

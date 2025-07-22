@@ -12,7 +12,7 @@ export default function LoadingBar() {
       {/* Loading Bar */}
       <div className="fixed top-0 left-0 w-full h-1 z-[60] bg-transparent">
         {/* Background track */}
-        <div className="absolute inset-0 bg-purple-900/10"></div>
+        <div className="absolute inset-0 bg-gray-900/10"></div>
         
         {/* Progress bar */}
         <div

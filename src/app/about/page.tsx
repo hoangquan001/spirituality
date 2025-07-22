@@ -9,7 +9,7 @@ export default function AboutPage() {
               Giới Thiệu
             </span>
           </h1>
-          <p className="text-xl text-purple-200">
+          <p className="text-xl text-gray-300">
             Khám phá hành trình tâm linh và sứ mệnh của chúng tôi
           </p>
         </div>
@@ -17,10 +17,10 @@ export default function AboutPage() {
         {/* Hero Section */}
         <div className="cosmic-card rounded-2xl p-8 mb-12 text-center">
           <div className="w-24 h-24 bg-gradient-to-br from-golden to-yellow-300 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span className="text-4xl text-purple-900">✦</span>
+            <span className="text-4xl text-gray-900">✦</span>
           </div>
           <h2 className="text-3xl font-bold text-white mb-4">Tâm Linh - Thần Số Học</h2>
-          <p className="text-lg text-purple-200 leading-relaxed">
+          <p className="text-lg text-gray-300 leading-relaxed">
             Chúng tôi là cầu nối giữa khoa học cổ đại và cuộc sống hiện đại, 
             giúp bạn khám phá những bí mật ẩn giấu trong các con số và biểu tượng.
           </p>
@@ -38,7 +38,7 @@ export default function AboutPage() {
             <div className="cosmic-card rounded-xl p-6 text-center">
               <div className="text-4xl mb-4">🔮</div>
               <h3 className="text-xl font-bold text-white mb-3">Khám Phá Bản Thân</h3>
-              <p className="text-purple-200">
+              <p className="text-gray-300">
                 Giúp bạn hiểu rõ hơn về tính cách, tiềm năng và mục đích cuộc đời 
                 thông qua thần số học và các công cụ tâm linh.
               </p>
@@ -47,7 +47,7 @@ export default function AboutPage() {
             <div className="cosmic-card rounded-xl p-6 text-center">
               <div className="text-4xl mb-4">🌟</div>
               <h3 className="text-xl font-bold text-white mb-3">Dẫn Dắt Hướng Đi</h3>
-              <p className="text-purple-200">
+              <p className="text-gray-300">
                 Cung cấp những lời khuyên và định hướng dựa trên khoa học cổ đại 
                 để bạn đưa ra quyết định sáng suốt.
               </p>
@@ -56,7 +56,7 @@ export default function AboutPage() {
             <div className="cosmic-card rounded-xl p-6 text-center">
               <div className="text-4xl mb-4">💫</div>
               <h3 className="text-xl font-bold text-white mb-3">Nâng Cao Ý Thức</h3>
-              <p className="text-purple-200">
+              <p className="text-gray-300">
                 Giúp bạn phát triển trực giác, ý thức tâm linh và kết nối sâu sắc 
                 với vũ trụ xung quanh.
               </p>
@@ -67,7 +67,7 @@ export default function AboutPage() {
         {/* Story */}
         <div className="cosmic-card rounded-2xl p-8 mb-12">
           <h2 className="text-3xl font-bold text-white mb-6">Câu Chuyện Của Chúng Tôi</h2>
-          <div className="space-y-4 text-purple-200 leading-relaxed">
+          <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
               Tâm Linh - Thần Số Học được sinh ra từ niềm đam mê khám phá những bí ẩn của vũ trụ 
               và mong muốn chia sẻ kiến thức cổ xưa với cộng đồng hiện đại.
@@ -96,11 +96,11 @@ export default function AboutPage() {
             <div className="cosmic-card rounded-xl p-6">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-golden to-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-xl text-purple-900">🎯</span>
+                  <span className="text-xl text-gray-900">🎯</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Chính Xác & Đáng Tin Cậy</h3>
-                  <p className="text-purple-200">
+                  <p className="text-gray-300">
                     Chúng tôi sử dụng các phương pháp truyền thống được kiểm chứng qua hàng nghìn năm, 
                     kết hợp với nghiên cứu hiện đại để đảm bảo độ chính xác cao nhất.
                   </p>
@@ -111,11 +111,11 @@ export default function AboutPage() {
             <div className="cosmic-card rounded-xl p-6">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-golden to-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-xl text-purple-900">🔒</span>
+                  <span className="text-xl text-gray-900">🔒</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Bảo Mật Tuyệt Đối</h3>
-                  <p className="text-purple-200">
+                  <p className="text-gray-300">
                     Thông tin cá nhân của bạn được bảo vệ bằng công nghệ mã hóa tiên tiến. 
                     Chúng tôi cam kết không chia sẻ dữ liệu với bất kỳ bên thứ ba nào.
                   </p>
@@ -126,11 +126,11 @@ export default function AboutPage() {
             <div className="cosmic-card rounded-xl p-6">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-golden to-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-xl text-purple-900">❤️</span>
+                  <span className="text-xl text-gray-900">❤️</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Tận Tâm Phục Vụ</h3>
-                  <p className="text-purple-200">
+                  <p className="text-gray-300">
                     Chúng tôi luôn lắng nghe và đồng hành cùng bạn trong hành trình khám phá bản thân. 
                     Mỗi phản hồi của bạn đều quý giá với chúng tôi.
                   </p>
@@ -141,11 +141,11 @@ export default function AboutPage() {
             <div className="cosmic-card rounded-xl p-6">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-golden to-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
-                  <span className="text-xl text-purple-900">🌍</span>
+                  <span className="text-xl text-gray-900">🌍</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Miễn Phí & Dễ Tiếp Cận</h3>
-                  <p className="text-purple-200">
+                  <p className="text-gray-300">
                     Chúng tôi tin rằng ai cũng có quyền được tiếp cận với những kiến thức tâm linh. 
                     Vì vậy, tất cả dịch vụ cơ bản đều hoàn toàn miễn phí.
                   </p>
@@ -160,22 +160,22 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-white mb-6 text-center">Đội Ngũ Chuyên Gia</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="text-center">
-              <div className="w-24 h-24 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-24 h-24 bg-gradient-to-br from-gray-700 to-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl text-white">👨‍🔬</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Chuyên Gia Thần Số Học</h3>
-              <p className="text-purple-200">
+              <p className="text-gray-300">
                 Hơn 15 năm nghiên cứu và thực hành thần số học Pythagorean và Chaldean. 
                 Chuyên sâu về phân tích số mệnh và đường đời.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-24 h-24 bg-gradient-to-br from-indigo-600 to-gray-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl text-white">🌙</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Chuyên Gia Giải Mã Giấc Mơ</h3>
-              <p className="text-purple-200">
+              <p className="text-gray-300">
                 Nghiên cứu tâm lý học giấc mơ và biểu tượng học. Chuyên gia về phương pháp 
                 Jung và các truyền thống giải mã giấc mơ phương Đông.
               </p>
@@ -186,7 +186,7 @@ export default function AboutPage() {
         {/* Contact */}
         <div className="cosmic-card rounded-2xl p-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Liên Hệ Với Chúng Tôi</h2>
-          <p className="text-purple-200 mb-6">
+          <p className="text-gray-300 mb-6">
             Bạn có câu hỏi hoặc cần tư vấn thêm? Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn.
           </p>
           
@@ -194,24 +194,24 @@ export default function AboutPage() {
             <div className="text-center">
               <div className="text-3xl mb-2">📧</div>
               <h4 className="text-white font-semibold mb-1">Email</h4>
-              <p className="text-purple-200">contact@tamlinh.com</p>
+              <p className="text-gray-300">contact@tamlinh.com</p>
             </div>
             
             <div className="text-center">
               <div className="text-3xl mb-2">📱</div>
               <h4 className="text-white font-semibold mb-1">Điện Thoại</h4>
-              <p className="text-purple-200">+84 xxx xxx xxx</p>
+              <p className="text-gray-300">+84 xxx xxx xxx</p>
             </div>
             
             <div className="text-center">
               <div className="text-3xl mb-2">🕐</div>
               <h4 className="text-white font-semibold mb-1">Giờ Làm Việc</h4>
-              <p className="text-purple-200">24/7 Hỗ trợ trực tuyến</p>
+              <p className="text-gray-300">24/7 Hỗ trợ trực tuyến</p>
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-purple-300/20">
-            <p className="text-purple-300 italic">
+          <div className="mt-8 pt-6 border-t border-gray-400/20">
+            <p className="text-gray-400 italic">
               "Vũ trụ không bao giờ vội vàng, nhưng mọi thứ đều được hoàn thành đúng thời điểm." - Lao Tử
             </p>
           </div>
@@ -220,3 +220,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

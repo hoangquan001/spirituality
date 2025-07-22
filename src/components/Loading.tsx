@@ -9,7 +9,7 @@ interface LoadingProps {
 export default function Loading({ message = "Đang tải..." }: LoadingProps) {
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
-      <div className="bg-gradient-to-br from-purple-900/90 to-blue-900/90 backdrop-blur rounded-3xl p-8 border border-purple-300/30 text-center">
+      <div className="bg-gradient-to-br from-gray-900/90 to-blue-900/90 backdrop-blur rounded-3xl p-8 border border-gray-400/30 text-center">
         {/* Mystical Loading Animation */}
         <div className="relative w-20 h-20 mx-auto mb-6">
           <div className="absolute inset-0 rounded-full border-4 border-golden/30"></div>
@@ -24,7 +24,7 @@ export default function Loading({ message = "Đang tải..." }: LoadingProps) {
         <h3 className="text-xl font-bold text-white mb-2">
           {message}
         </h3>
-        <p className="text-purple-200 text-sm">
+        <p className="text-gray-300 text-sm">
           Vũ trụ đang kết nối với năng lượng của bạn...
         </p>
 
@@ -77,8 +77,8 @@ export function LoadingOverlay({ message = 'Đang tải...', show }: { message?:
   if (!shouldShow) return null;
 
   return (
-    <div className="fixed inset-0 bg-purple-900/80 backdrop-blur-sm z-[70] flex items-center justify-center">
-      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-purple-300/20 text-center max-w-sm mx-4">
+    <div className="fixed inset-0 bg-gray-900/80 backdrop-blur-sm z-[70] flex items-center justify-center">
+      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-gray-400/20 text-center max-w-sm mx-4">
         <div className="relative mb-6">
           <div className="w-16 h-16 border-2 border-golden/30 rounded-full animate-spin mx-auto">
             <div className="w-full h-full border-2 border-transparent border-t-golden rounded-full animate-ping"></div>
@@ -88,7 +88,7 @@ export function LoadingOverlay({ message = 'Đang tải...', show }: { message?:
           </div>
         </div>
         <h3 className="text-white font-medium mb-2">{message}</h3>
-        <p className="text-purple-200 text-sm">Vui lòng chờ trong giây lát...</p>
+        <p className="text-gray-300 text-sm">Vui lòng chờ trong giây lát...</p>
       </div>
     </div>
   );

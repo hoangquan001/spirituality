@@ -478,7 +478,7 @@ export const zodiacData: Record<string, ZodiacDetail> = {
     ruling_planet: "Sao Thủy",
     symbol: "Trinh nữ",
     icon: "♍",
-    color: "from-indigo-600 to-purple-600",
+    color: "from-indigo-600 to-gray-600",
     
     personality: {
       strengths: [

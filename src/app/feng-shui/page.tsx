@@ -295,7 +295,7 @@ export default function FengShuiPage() {
               Phong Thủy
             </span>
           </h1>
-          <p className="text-xl text-purple-200 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Khám phá ngũ hành của bạn và cách bố trí không gian sống hợp phong thủy để tăng vận may
           </p>
         </div>
@@ -303,13 +303,13 @@ export default function FengShuiPage() {
         {!result ? (
           <div className="max-w-4xl mx-auto">
             {/* Input Form */}
-            <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-purple-300/20 mb-8">
+            <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-gray-400/20 mb-8">
               <div className="text-center mb-8">
                 <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-3xl">🏠</span>
                 </div>
                 <h2 className="text-3xl font-bold text-white mb-4">Thông Tin Của Bạn</h2>
-                <p className="text-purple-200">Năm sinh và giới tính để xác định ngũ hành</p>
+                <p className="text-gray-300">Năm sinh và giới tính để xác định ngũ hành</p>
               </div>
 
               <div className="max-w-md mx-auto space-y-6">
@@ -322,7 +322,7 @@ export default function FengShuiPage() {
                     placeholder="Ví dụ: 1990"
                     min="1900"
                     max="2024"
-                    className="w-full px-6 py-4 bg-white/10 border border-purple-300/30 rounded-xl text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent backdrop-blur-sm text-lg"
+                    className="w-full px-6 py-4 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent backdrop-blur-sm text-lg"
                   />
                 </div>
 
@@ -334,7 +334,7 @@ export default function FengShuiPage() {
                       className={`px-6 py-4 rounded-xl text-lg font-semibold transition-all duration-300 ${
                         gender === 'Nam'
                           ? 'bg-gradient-to-r from-blue-600 to-cyan-600 text-white'
-                          : 'bg-white/10 text-purple-200 hover:bg-white/20'
+                          : 'bg-white/10 text-gray-300 hover:bg-white/20'
                       }`}
                     >
                       👨 Nam
@@ -343,8 +343,8 @@ export default function FengShuiPage() {
                       onClick={() => setGender('Nữ')}
                       className={`px-6 py-4 rounded-xl text-lg font-semibold transition-all duration-300 ${
                         gender === 'Nữ'
-                          ? 'bg-gradient-to-r from-pink-600 to-purple-600 text-white'
-                          : 'bg-white/10 text-purple-200 hover:bg-white/20'
+                          ? 'bg-gradient-to-r from-pink-600 to-gray-600 text-white'
+                          : 'bg-white/10 text-gray-300 hover:bg-white/20'
                       }`}
                     >
                       👩 Nữ
@@ -385,12 +385,12 @@ export default function FengShuiPage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-900/30 to-indigo-900/30 backdrop-blur-sm rounded-2xl p-6 border border-purple-300/20">
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-400/20">
                 <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                   <span className="text-golden">🏡</span>
                   Phong Thủy Giúp Gì?
                 </h3>
-                <div className="space-y-3 text-purple-200 text-sm">
+                <div className="space-y-3 text-gray-300 text-sm">
                   <p>• Tăng vận may và thịnh vượng</p>
                   <p>• Cải thiện sức khỏe và tinh thần</p>
                   <p>• Hài hòa các mối quan hệ</p>
@@ -411,21 +411,21 @@ export default function FengShuiPage() {
                   <span className="text-3xl font-bold text-golden">{result.element}</span>
                 </div>
               </div>
-              <p className="text-purple-200">
+              <p className="text-gray-300">
                 {ELEMENTS[result.element as keyof typeof ELEMENTS].characteristics}
               </p>
             </div>
 
             {/* Lucky Elements Grid */}
             <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <div className="bg-gradient-to-br from-purple-900/30 to-indigo-900/30 rounded-2xl p-6">
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-900/30 rounded-2xl p-6">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                   🧭 Hướng May Mắn
                 </h3>
                 <div className="space-y-2">
                   {result.luckyDirections.map((direction, index) => (
-                    <div key={index} className="bg-purple-900/20 rounded-lg p-3 text-center">
-                      <span className="text-purple-200 font-semibold">{direction}</span>
+                    <div key={index} className="bg-gray-900/20 rounded-lg p-3 text-center">
+                      <span className="text-gray-300 font-semibold">{direction}</span>
                     </div>
                   ))}
                 </div>
@@ -461,13 +461,13 @@ export default function FengShuiPage() {
             {/* Detailed Advice */}
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-sm rounded-2xl p-6 border border-purple-300/20">
+                <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-2xl p-6 border border-gray-400/20">
                   <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                     💼 Sự Nghiệp
                   </h3>
                   <ul className="space-y-2">
                     {result.careerAdvice.map((advice, index) => (
-                      <li key={index} className="flex items-start gap-3 text-purple-200 text-sm">
+                      <li key={index} className="flex items-start gap-3 text-gray-300 text-sm">
                         <span className="text-golden mt-1">•</span>
                         {advice}
                       </li>
@@ -505,7 +505,7 @@ export default function FengShuiPage() {
                   </ul>
                 </div>
 
-                <div className="bg-gradient-to-br from-pink-900/20 to-purple-900/20 backdrop-blur-sm rounded-2xl p-6 border border-pink-300/20">
+                <div className="bg-gradient-to-br from-pink-900/20 to-gray-900/20 backdrop-blur-sm rounded-2xl p-6 border border-pink-300/20">
                   <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                     💕 Tình Cảm
                   </h3>
@@ -522,7 +522,7 @@ export default function FengShuiPage() {
             </div>
 
             {/* Home Layout */}
-            <div className="bg-gradient-to-br from-indigo-900/20 to-purple-900/20 backdrop-blur-sm rounded-3xl p-8 border border-indigo-300/20 mb-8">
+            <div className="bg-gradient-to-br from-gray-900/20 to-gray-900/20 backdrop-blur-sm rounded-3xl p-8 border border-indigo-300/20 mb-8">
               <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                 <span className="text-indigo-400">🏡</span>
                 Bố Trí Nhà Cửa
@@ -578,3 +578,4 @@ export default function FengShuiPage() {
     </div>
   );
 }
+

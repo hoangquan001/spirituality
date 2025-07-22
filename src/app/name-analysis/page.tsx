@@ -36,7 +36,7 @@ export default function NameAnalysisPage() {
               Bói Tên Theo Số
             </span>
           </h1>
-          <p className="text-xl text-purple-200 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Phân tích tên của bạn theo thần số học. Khám phá ý nghĩa, tính cách và vận mệnh ẩn giấu trong tên.
           </p>
         </div>
@@ -44,13 +44,13 @@ export default function NameAnalysisPage() {
         {!result ? (
           <div className="max-w-4xl mx-auto">
             {/* Input Form */}
-            <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-purple-300/20 mb-8">
+            <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-gray-400/20 mb-8">
               <div className="text-center mb-8">
                 <div className="w-20 h-20 bg-gradient-to-br from-golden to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-3xl">📝</span>
                 </div>
                 <h2 className="text-3xl font-bold text-white mb-4">Nhập Tên Của Bạn</h2>
-                <p className="text-purple-200">Tên đầy đủ sẽ cho kết quả chính xác nhất</p>
+                <p className="text-gray-300">Tên đầy đủ sẽ cho kết quả chính xác nhất</p>
               </div>
 
               <div className="max-w-md mx-auto space-y-6">
@@ -61,7 +61,7 @@ export default function NameAnalysisPage() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Ví dụ: Nguyễn Văn An"
-                    className="w-full px-6 py-4 bg-white/10 border border-purple-300/30 rounded-xl text-white placeholder-purple-300 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent backdrop-blur-sm text-lg"
+                    className="w-full px-6 py-4 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent backdrop-blur-sm text-lg"
                   />
                 </div>
 
@@ -84,12 +84,12 @@ export default function NameAnalysisPage() {
 
             {/* Information Cards */}
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 backdrop-blur-sm rounded-2xl p-6 border border-purple-300/20">
+              <div className="bg-gradient-to-br from-gray-900/30 to-blue-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-400/20">
                 <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                   <span className="text-golden">🔤</span>
                   Thần Số Học Tên
                 </h3>
-                <div className="space-y-3 text-purple-200 text-sm">
+                <div className="space-y-3 text-gray-300 text-sm">
                   <p>• <strong className="text-white">Số biểu đạt:</strong> Cách bạn thể hiện bản thân</p>
                   <p>• <strong className="text-white">Số linh hồn:</strong> Khao khát sâu thẳm trong tâm hồn</p>
                   <p>• <strong className="text-white">Số nhân cách:</strong> Ấn tượng đầu tiên về bạn</p>
@@ -97,12 +97,12 @@ export default function NameAnalysisPage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 backdrop-blur-sm rounded-2xl p-6 border border-purple-300/20">
+              <div className="bg-gradient-to-br from-gray-900/30 to-blue-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-400/20">
                 <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
                   <span className="text-golden">✨</span>
                   Bạn Sẽ Biết Được
                 </h3>
-                <div className="space-y-3 text-purple-200 text-sm">
+                <div className="space-y-3 text-gray-300 text-sm">
                   <p>• Tính cách và đặc điểm nổi bật</p>
                   <p>• Điểm mạnh và điểm cần cải thiện</p>
                   <p>• Hướng phát triển sự nghiệp phù hợp</p>
@@ -119,15 +119,15 @@ export default function NameAnalysisPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Phân Tích Tên: <span className="text-golden">{result.name}</span>
               </h2>
-              <p className="text-purple-200">Khám phá những bí mật ẩn giấu trong tên của bạn</p>
+              <p className="text-gray-300">Khám phá những bí mật ẩn giấu trong tên của bạn</p>
             </div>
 
             {/* Main Numbers */}
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              <div className="bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl p-6 text-center">
+              <div className="bg-gradient-to-br from-gray-700 to-gray-800 rounded-2xl p-6 text-center">
                 <div className="text-4xl font-bold text-white mb-2">{result.expressionNumber}</div>
-                <h3 className="text-lg font-semibold text-purple-200 mb-3">Số Biểu Đạt</h3>
-                <p className="text-purple-100 text-sm">Cách bạn thể hiện bản thân ra thế giới</p>
+                <h3 className="text-lg font-semibold text-gray-300 mb-3">Số Biểu Đạt</h3>
+                <p className="text-gray-200 text-sm">Cách bạn thể hiện bản thân ra thế giới</p>
               </div>
 
               <div className="bg-gradient-to-br from-indigo-600 to-blue-600 rounded-2xl p-6 text-center">
@@ -151,15 +151,15 @@ export default function NameAnalysisPage() {
 
             {/* Detailed Analysis */}
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-purple-300/20">
+              <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-gray-400/20">
                 <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                   <span className="text-golden">🎭</span>
                   Tính Cách & Đặc Điểm
                 </h3>
                 <div className="space-y-4">
-                  <div className="bg-purple-900/30 rounded-lg p-4">
-                    <h4 className="font-semibold text-purple-200 mb-2">Điểm Mạnh</h4>
-                    <ul className="text-purple-100 text-sm space-y-1">
+                  <div className="bg-gray-900/30 rounded-lg p-4">
+                    <h4 className="font-semibold text-gray-300 mb-2">Điểm Mạnh</h4>
+                    <ul className="text-gray-200 text-sm space-y-1">
                       {result.strengths.map((strength, index) => (
                         <li key={index} className="flex items-start gap-2">
                           <span className="text-green-400 mt-1">✓</span>
@@ -169,7 +169,7 @@ export default function NameAnalysisPage() {
                     </ul>
                   </div>
                   
-                  <div className="bg-indigo-900/30 rounded-lg p-4">
+                  <div className="bg-gray-900/30 rounded-lg p-4">
                     <h4 className="font-semibold text-indigo-200 mb-2">Cần Cải Thiện</h4>
                     <ul className="text-indigo-100 text-sm space-y-1">
                       {result.challenges.map((challenge, index) => (
@@ -183,7 +183,7 @@ export default function NameAnalysisPage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-purple-300/20">
+              <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-gray-400/20">
                 <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                   <span className="text-golden">💼</span>
                   Sự Nghiệp & Tài Năng
@@ -226,7 +226,7 @@ export default function NameAnalysisPage() {
                   <h4 className="font-semibold text-golden mb-3">🎯 Phát Triển Bản Thân</h4>
                   <ul className="space-y-2">
                     {result.personalAdvice.map((advice, index) => (
-                      <li key={index} className="flex items-start gap-3 text-purple-200 text-sm">
+                      <li key={index} className="flex items-start gap-3 text-gray-300 text-sm">
                         <span className="text-golden mt-1">•</span>
                         {advice}
                       </li>
@@ -238,7 +238,7 @@ export default function NameAnalysisPage() {
                   <h4 className="font-semibold text-golden mb-3">💕 Mối Quan Hệ</h4>
                   <ul className="space-y-2">
                     {result.relationshipAdvice.map((advice, index) => (
-                      <li key={index} className="flex items-start gap-3 text-purple-200 text-sm">
+                      <li key={index} className="flex items-start gap-3 text-gray-300 text-sm">
                         <span className="text-golden mt-1">•</span>
                         {advice}
                       </li>
@@ -250,18 +250,18 @@ export default function NameAnalysisPage() {
 
             {/* Lucky Elements */}
             <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-gradient-to-br from-purple-900/30 to-indigo-900/30 rounded-2xl p-6 text-center">
-                <h4 className="font-semibold text-purple-200 mb-4">🎨 Màu May Mắn</h4>
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-900/30 rounded-2xl p-6 text-center">
+                <h4 className="font-semibold text-gray-300 mb-4">🎨 Màu May Mắn</h4>
                 <div className="space-y-2">
                   {result.luckyColors.map((color, index) => (
-                    <div key={index} className="bg-purple-900/20 rounded-lg p-2 text-purple-100 text-sm">
+                    <div key={index} className="bg-gray-900/20 rounded-lg p-2 text-gray-200 text-sm">
                       {color}
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-indigo-900/30 to-blue-900/30 rounded-2xl p-6 text-center">
+              <div className="bg-gradient-to-br from-gray-900/30 to-blue-900/30 rounded-2xl p-6 text-center">
                 <h4 className="font-semibold text-blue-200 mb-4">🧭 Hướng Thuận Lợi</h4>
                 <div className="space-y-2">
                   {result.luckyDirections.map((direction, index) => (
@@ -302,3 +302,4 @@ export default function NameAnalysisPage() {
     </div>
   );
 }
+

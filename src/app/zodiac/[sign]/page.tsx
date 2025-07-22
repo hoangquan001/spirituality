@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getZodiacBySlug } from '../../../lib/zodiacData';
-import Link from 'next/link';
 
 interface Props {
   params: {
@@ -20,7 +20,7 @@ export default function ZodiacDetailPage({ params }: Props) {
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <Link href="/zodiac" className="inline-flex items-center text-purple-200 hover:text-golden transition-colors mb-6">
+          <Link href="/zodiac" className="inline-flex items-center text-gray-300 hover:text-golden transition-colors mb-6">
             <span className="mr-2">←</span>
             Quay lại danh sách cung hoàng đạo
           </Link>
@@ -34,8 +34,8 @@ export default function ZodiacDetailPage({ params }: Props) {
               {zodiac.name}
             </span>
           </h1>
-          <p className="text-2xl text-purple-200 mb-4">{zodiac.dates}</p>
-          <div className="flex justify-center items-center space-x-6 text-purple-200">
+          <p className="text-2xl text-gray-300 mb-4">{zodiac.dates}</p>
+          <div className="flex justify-center items-center space-x-6 text-gray-300">
             <span>Nguyên tố: <strong className="text-golden">{zodiac.element}</strong></span>
             <span>•</span>
             <span>Hành tinh: <strong className="text-golden">{zodiac.ruling_planet}</strong></span>

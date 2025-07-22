@@ -34,14 +34,14 @@ export default function BirthdayMatchPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-950 via-indigo-900 to-purple-900">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       {/* Hero Section */}
-      <div className="relative py-20 bg-gradient-to-r from-purple-900/50 to-indigo-900/50">
+      <div className="relative py-20 bg-gradient-to-r from-black/50 to-gray-900/50">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Hợp <span className="bg-gradient-to-r from-golden to-yellow-300 bg-clip-text text-transparent">Tuổi</span>
           </h1>
-          <p className="text-xl text-purple-200 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Khám phá mức độ tương thích trong tình yêu và hôn nhân qua ngày sinh và thần số học
           </p>
         </div>
@@ -49,13 +49,13 @@ export default function BirthdayMatchPage() {
         {/* Decorative hearts */}
         <div className="absolute top-10 left-10 text-4xl text-pink-400 animate-pulse">💕</div>
         <div className="absolute bottom-10 right-10 text-3xl text-red-400 animate-bounce">❤️</div>
-        <div className="absolute top-1/2 left-1/4 text-2xl text-purple-300 animate-ping">💖</div>
+        <div className="absolute top-1/2 left-1/4 text-2xl text-gray-400 animate-ping">💖</div>
       </div>
 
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           {/* Input Form */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-purple-300/20 mb-8">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-gray-400/20 mb-8">
             <h2 className="text-2xl font-bold text-white mb-8 text-center">
               Thông tin hai người
             </h2>
@@ -76,7 +76,7 @@ export default function BirthdayMatchPage() {
                     type="text"
                     value={person1.name}
                     onChange={(e) => setPerson1({ ...person1, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                     placeholder="Nhập họ tên..."
                   />
                 </div>
@@ -87,7 +87,7 @@ export default function BirthdayMatchPage() {
                     type="date"
                     value={person1.birthDate}
                     onChange={(e) => setPerson1({ ...person1, birthDate: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                   />
                 </div>
 
@@ -96,10 +96,10 @@ export default function BirthdayMatchPage() {
                   <select
                     value={person1.gender}
                     onChange={(e) => setPerson1({ ...person1, gender: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                   >
-                    <option value="male" className="bg-purple-900">Nam</option>
-                    <option value="female" className="bg-purple-900">Nữ</option>
+                    <option value="male" className="bg-gray-900">Nam</option>
+                    <option value="female" className="bg-gray-900">Nữ</option>
                   </select>
                 </div>
               </div>
@@ -119,7 +119,7 @@ export default function BirthdayMatchPage() {
                     type="text"
                     value={person2.name}
                     onChange={(e) => setPerson2({ ...person2, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white placeholder-purple-200 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                     placeholder="Nhập họ tên..."
                   />
                 </div>
@@ -130,7 +130,7 @@ export default function BirthdayMatchPage() {
                     type="date"
                     value={person2.birthDate}
                     onChange={(e) => setPerson2({ ...person2, birthDate: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                   />
                 </div>
 
@@ -139,10 +139,10 @@ export default function BirthdayMatchPage() {
                   <select
                     value={person2.gender}
                     onChange={(e) => setPerson2({ ...person2, gender: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/10 border border-purple-300/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                   >
-                    <option value="female" className="bg-purple-900">Nữ</option>
-                    <option value="male" className="bg-purple-900">Nam</option>
+                    <option value="female" className="bg-gray-900">Nữ</option>
+                    <option value="male" className="bg-gray-900">Nam</option>
                   </select>
                 </div>
               </div>
@@ -153,11 +153,11 @@ export default function BirthdayMatchPage() {
               <button
                 onClick={handleAnalyze}
                 disabled={isAnalyzing}
-                className="px-8 py-4 bg-gradient-to-r from-golden to-yellow-300 text-purple-900 font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-8 py-4 bg-gradient-to-r from-golden to-yellow-300 text-gray-900 font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isAnalyzing ? (
                   <span className="flex items-center">
-                    <div className="w-5 h-5 border-2 border-purple-900 border-t-transparent rounded-full animate-spin mr-2"></div>
+                    <div className="w-5 h-5 border-2 border-gray-900 border-t-transparent rounded-full animate-spin mr-2"></div>
                     Đang phân tích...
                   </span>
                 ) : (
@@ -171,7 +171,7 @@ export default function BirthdayMatchPage() {
 
           {/* Results */}
           {result && (
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-purple-300/20">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-gray-400/20">
               <h2 className="text-3xl font-bold text-white mb-8 text-center">
                 Kết quả phân tích
               </h2>
@@ -179,36 +179,36 @@ export default function BirthdayMatchPage() {
               {/* Compatibility Score */}
               <div className="text-center mb-8">
                 <div className="inline-flex items-center justify-center w-32 h-32 bg-gradient-to-r from-golden to-yellow-300 rounded-full mb-4">
-                  <span className="text-4xl font-bold text-purple-900">{result.score}%</span>
+                  <span className="text-4xl font-bold text-gray-900">{result.score}%</span>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Độ tương thích</h3>
-                <p className="text-purple-200">{result.compatibility}</p>
+                <p className="text-gray-300">{result.compatibility}</p>
               </div>
 
               {/* Detailed Analysis */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-purple-800/30 rounded-xl p-6">
+                <div className="bg-gray-800/30 rounded-xl p-6">
                   <h4 className="text-xl font-bold text-golden mb-4">👫 Tình cảm</h4>
-                  <p className="text-purple-200">{result.love}</p>
+                  <p className="text-gray-300">{result.love}</p>
                 </div>
-                <div className="bg-purple-800/30 rounded-xl p-6">
+                <div className="bg-gray-800/30 rounded-xl p-6">
                   <h4 className="text-xl font-bold text-golden mb-4">💍 Hôn nhân</h4>
-                  <p className="text-purple-200">{result.marriage}</p>
+                  <p className="text-gray-300">{result.marriage}</p>
                 </div>
-                <div className="bg-purple-800/30 rounded-xl p-6">
+                <div className="bg-gray-800/30 rounded-xl p-6">
                   <h4 className="text-xl font-bold text-golden mb-4">🤝 Giao tiếp</h4>
-                  <p className="text-purple-200">{result.communication}</p>
+                  <p className="text-gray-300">{result.communication}</p>
                 </div>
-                <div className="bg-purple-800/30 rounded-xl p-6">
+                <div className="bg-gray-800/30 rounded-xl p-6">
                   <h4 className="text-xl font-bold text-golden mb-4">⚡ Thách thức</h4>
-                  <p className="text-purple-200">{result.challenges}</p>
+                  <p className="text-gray-300">{result.challenges}</p>
                 </div>
               </div>
 
               {/* Advice */}
               <div className="bg-gradient-to-r from-golden/20 to-yellow-300/20 rounded-xl p-6 border border-golden/30">
                 <h4 className="text-xl font-bold text-white mb-4">💡 Lời khuyên</h4>
-                <p className="text-purple-200">{result.advice}</p>
+                <p className="text-gray-300">{result.advice}</p>
               </div>
             </div>
           )}
@@ -217,3 +217,4 @@ export default function BirthdayMatchPage() {
     </div>
   );
 }
+

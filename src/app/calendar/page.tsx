@@ -164,17 +164,17 @@ export default function CalendarPage() {
               Lịch Vạn Niên
             </span>
           </h1>
-          <p className="text-xl text-purple-200 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Xem lịch âm dương, Can Chi, giờ tốt xấu và hướng may mắn cho từng ngày
           </p>
         </div>
 
         {/* Calendar Controls */}
-        <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-6 border border-purple-300/20 mb-8">
+        <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-6 border border-gray-400/20 mb-8">
           <div className="flex items-center justify-between mb-6">
             <button
               onClick={() => navigateMonth('prev')}
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-indigo-600 hover:to-purple-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
+              className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-indigo-600 hover:to-gray-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
             >
               ← Tháng Trước
             </button>
@@ -183,14 +183,14 @@ export default function CalendarPage() {
               <h2 className="text-3xl font-bold text-white mb-2">
                 Tháng {currentDate.getMonth() + 1} - {currentDate.getFullYear()}
               </h2>
-              <p className="text-purple-200">
+              <p className="text-gray-300">
                 Âm lịch: {getLunarDate(currentDate)} - {getCanChi(currentDate)}
               </p>
             </div>
             
             <button
               onClick={() => navigateMonth('next')}
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-indigo-600 hover:to-purple-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
+              className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-indigo-600 hover:to-gray-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2"
             >
               Tháng Sau →
             </button>
@@ -213,14 +213,14 @@ export default function CalendarPage() {
                 className={`
                   relative p-3 rounded-lg cursor-pointer transition-all duration-200 min-h-[80px]
                   ${day.isCurrentMonth 
-                    ? 'bg-white/10 hover:bg-white/20 border border-purple-300/30' 
+                    ? 'bg-white/10 hover:bg-white/20 border border-gray-400/30' 
                     : 'bg-white/5 hover:bg-white/10 text-purple-400'
                   }
                   ${day.isToday ? 'ring-2 ring-golden bg-golden/20' : ''}
                 `}
               >
                 <div className="text-lg font-bold mb-1">{day.date}</div>
-                <div className="text-xs text-purple-300">{day.lunarDate}</div>
+                <div className="text-xs text-gray-400">{day.lunarDate}</div>
                 <div className="text-xs text-purple-400">{day.canChi}</div>
               </div>
             ))}
@@ -229,12 +229,12 @@ export default function CalendarPage() {
 
         {/* Today's Information */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          <div className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 backdrop-blur-sm rounded-2xl p-6 border border-purple-300/20">
+          <div className="bg-gradient-to-br from-gray-900/30 to-blue-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-400/20">
             <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-golden">📅</span>
               Hôm Nay
             </h3>
-            <div className="space-y-2 text-purple-200">
+            <div className="space-y-2 text-gray-300">
               <p><strong>Dương lịch:</strong> {today.toLocaleDateString('vi-VN')}</p>
               <p><strong>Âm lịch:</strong> {getLunarDate(today)}</p>
               <p><strong>Can Chi:</strong> {getCanChi(today)}</p>
@@ -260,7 +260,7 @@ export default function CalendarPage() {
               <span className="text-golden">🧭</span>
               May Mắn
             </h3>
-            <div className="space-y-2 text-purple-200">
+            <div className="space-y-2 text-gray-300">
               <p><strong>Hướng:</strong> {getDailyFortune(today).direction}</p>
               <p><strong>Màu sắc:</strong> {getDailyFortune(today).color}</p>
             </div>
@@ -270,13 +270,13 @@ export default function CalendarPage() {
         {/* Day Detail Modal */}
         {selectedDay && (
           <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-gradient-to-br from-purple-900/95 to-indigo-900/95 rounded-2xl p-8 max-w-2xl w-full border border-golden/20">
+            <div className="bg-gradient-to-br from-gray-900/95 to-gray-900/95 rounded-2xl p-8 max-w-2xl w-full border border-golden/20">
               <div className="flex justify-between items-start mb-6">
                 <div>
                   <h2 className="text-3xl font-bold text-white mb-2">
                     Ngày {selectedDay.date}
                   </h2>
-                  <p className="text-purple-200">
+                  <p className="text-gray-300">
                     Âm lịch: {selectedDay.lunarDate} - {selectedDay.canChi}
                   </p>
                 </div>
@@ -318,8 +318,8 @@ export default function CalendarPage() {
                   <p className="text-white text-lg">{selectedDay.direction}</p>
                 </div>
 
-                <div className="bg-purple-900/30 rounded-lg p-4">
-                  <h4 className="font-semibold text-purple-300 mb-2">🎨 Màu May Mắn</h4>
+                <div className="bg-gray-900/30 rounded-lg p-4">
+                  <h4 className="font-semibold text-gray-400 mb-2">🎨 Màu May Mắn</h4>
                   <p className="text-white text-lg">{selectedDay.color}</p>
                 </div>
               </div>
@@ -338,24 +338,24 @@ export default function CalendarPage() {
 
         {/* Information Cards */}
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-purple-300/20">
+          <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-gray-400/20">
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
               <span className="text-golden">📚</span>
               Ý Nghĩa Can Chi
             </h3>
-            <div className="space-y-4 text-purple-200">
+            <div className="space-y-4 text-gray-300">
               <p><strong className="text-white">Can:</strong> 10 thiên can đại diện cho năng lượng trời</p>
               <p><strong className="text-white">Chi:</strong> 12 địa chi đại diện cho năng lượng đất</p>
               <p>Can Chi kết hợp tạo nên chu kỳ 60 năm, ảnh hưởng đến vận mệnh con người.</p>
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-purple-300/20">
+          <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-gray-400/20">
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
               <span className="text-golden">🌙</span>
               Âm Lịch Việt Nam
             </h3>
-            <div className="space-y-4 text-purple-200">
+            <div className="space-y-4 text-gray-300">
               <p>Âm lịch dựa trên chu kỳ của mặt trăng, mỗi tháng có 29-30 ngày.</p>
               <p><strong className="text-white">Ý nghĩa:</strong> Quyết định các ngày lễ, tết và hoạt động tâm linh.</p>
               <p>Được sử dụng rộng rãi trong văn hóa Việt Nam và các nước Á Đông.</p>
@@ -366,3 +366,4 @@ export default function CalendarPage() {
     </div>
   );
 }
+

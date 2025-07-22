@@ -77,7 +77,7 @@ const zodiacSigns: ZodiacSign[] = [
     symbol: "Trinh nữ",
     description: "Cẩn thận, tỉ mỉ và có khả năng phân tích tốt. Người Xử Nữ luôn hướng đến sự hoàn hảo trong mọi việc.",
     icon: "♍",
-    color: "from-indigo-600 to-purple-600"
+    color: "from-gray-600 to-gray-700"
   },
   {
     name: "Thiên Bình",
@@ -110,7 +110,7 @@ const zodiacSigns: ZodiacSign[] = [
     symbol: "Cung thủ",
     description: "Phiêu lưu, lạc quan và yêu thích tự do. Người Nhân Mã luôn tìm kiếm những trải nghiệm mới mẻ.",
     icon: "♐",
-    color: "from-purple-600 to-indigo-600"
+    color: "from-gray-700 to-gray-800"
   },
   {
     name: "Ma Kết",
@@ -158,7 +158,7 @@ export default function ZodiacPage() {
               Tử Vi 12 Cung
             </span>
           </h1>
-          <p className="text-xl text-purple-200 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Khám phá vận mệnh qua 12 cung hoàng đạo. Tìm hiểu về tính cách, tình yêu, 
             sự nghiệp và những dự đoán cho tương lai.
           </p>
@@ -177,7 +177,7 @@ export default function ZodiacPage() {
                 return (
                   <div
                     key={index}
-                    className="absolute w-12 h-12 bg-gradient-to-br from-golden to-yellow-400 rounded-full flex items-center justify-center text-purple-900 font-bold text-xl shadow-lg transform -translate-x-1/2 -translate-y-1/2"
+                    className="absolute w-12 h-12 bg-gradient-to-br from-golden to-yellow-400 rounded-full flex items-center justify-center text-gray-900 font-bold text-xl shadow-lg transform -translate-x-1/2 -translate-y-1/2"
                     style={{ left: x, top: y }}
                   >
                     {sign.icon}
@@ -185,7 +185,7 @@ export default function ZodiacPage() {
                 );
               })}
             </div>
-            <div className="absolute inset-8 rounded-full bg-gradient-to-br from-purple-900/50 to-indigo-900/50 backdrop-blur-sm flex items-center justify-center">
+            <div className="absolute inset-8 rounded-full bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm flex items-center justify-center">
               <div className="text-center">
                 <div className="text-4xl mb-2">🌟</div>
                 <div className="text-white font-bold">Hoàng Đạo</div>
@@ -212,17 +212,17 @@ export default function ZodiacPage() {
                   {/* Details */}
                   <div className="space-y-2 mb-4">
                     <div className="flex justify-between text-sm">
-                      <span className="text-purple-300">Nguyên tố:</span>
+                      <span className="text-gray-400">Nguyên tố:</span>
                       <span className="text-white">{sign.element}</span>
                     </div>
                     <div className="flex justify-between text-sm">
-                      <span className="text-purple-300">Hành tinh:</span>
+                      <span className="text-gray-400">Hành tinh:</span>
                       <span className="text-white">{sign.ruling_planet}</span>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-purple-200 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
                     {sign.description}
                   </p>
 
@@ -250,7 +250,7 @@ export default function ZodiacPage() {
                 <span className="text-2xl">🔥</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Hỏa</h3>
-              <p className="text-purple-200 mb-3">Năng động, đam mê, dẫn dắt</p>
+              <p className="text-gray-300 mb-3">Năng động, đam mê, dẫn dắt</p>
               <div className="text-sm text-golden">Bạch Dương, Sư Tử, Nhân Mã</div>
             </div>
 
@@ -259,7 +259,7 @@ export default function ZodiacPage() {
                 <span className="text-2xl">🌍</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Thổ</h3>
-              <p className="text-purple-200 mb-3">Ổn định, thực tế, đáng tin cậy</p>
+              <p className="text-gray-300 mb-3">Ổn định, thực tế, đáng tin cậy</p>
               <div className="text-sm text-golden">Kim Ngưu, Xử Nữ, Ma Kết</div>
             </div>
 
@@ -268,7 +268,7 @@ export default function ZodiacPage() {
                 <span className="text-2xl">💨</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Khí</h3>
-              <p className="text-purple-200 mb-3">Thông minh, giao tiếp, linh hoạt</p>
+              <p className="text-gray-300 mb-3">Thông minh, giao tiếp, linh hoạt</p>
               <div className="text-sm text-golden">Song Tử, Thiên Bình, Bảo Bình</div>
             </div>
 
@@ -277,7 +277,7 @@ export default function ZodiacPage() {
                 <span className="text-2xl">💧</span>
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Thủy</h3>
-              <p className="text-purple-200 mb-3">Cảm xúc, trực giác, nhạy cảm</p>
+              <p className="text-gray-300 mb-3">Cảm xúc, trực giác, nhạy cảm</p>
               <div className="text-sm text-golden">Cự Giải, Hổ Cáp, Song Ngư</div>
             </div>
           </div>
@@ -288,17 +288,17 @@ export default function ZodiacPage() {
           <h2 className="text-3xl font-bold text-white mb-4">
             Tìm Hiểu Cung Hoàng Đạo Của Bạn
           </h2>
-          <p className="text-xl text-purple-200 mb-6">
+          <p className="text-xl text-gray-300 mb-6">
             Khám phá chi tiết về tính cách, tình yêu và vận mệnh dựa trên ngày sinh của bạn
           </p>
           <div className="space-y-4">
-            <div className="text-purple-200">
+            <div className="text-gray-300">
               📅 Chỉ cần biết ngày sinh để khám phá cung hoàng đạo của bạn
             </div>
-            <div className="text-purple-200">
+            <div className="text-gray-300">
               🔮 Nhận được lời khuyên chi tiết về tình yêu, sự nghiệp và sức khỏe
             </div>
-            <div className="text-purple-200">
+            <div className="text-gray-300">
               ⭐ Tìm hiểu về mức độ tương hợp với các cung khác
             </div>
           </div>
@@ -307,3 +307,4 @@ export default function ZodiacPage() {
     </div>
   );
 }
+

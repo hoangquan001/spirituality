@@ -27,19 +27,19 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full bg-gradient-to-r from-purple-900/98 via-indigo-900/98 to-purple-800/98 backdrop-blur-lg border-b border-purple-500/20 z-50 shadow-xl">
+    <header className="fixed top-0 w-full bg-gradient-to-r from-gray-900/98 via-black/98 to-gray-900/98 backdrop-blur-lg border-b border-gray-500/10 z-50 shadow-2xl">
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="w-12 h-12 bg-gradient-to-br from-golden via-yellow-400 to-yellow-300 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300 ring-2 ring-golden/20 group-hover:ring-golden/40">
-              <span className="text-purple-900 font-bold text-xl">✦</span>
+              <span className="text-gray-900 font-bold text-xl">✦</span>
             </div>
             <div>
               <h1 className="font-bold text-xl bg-gradient-to-r from-golden to-yellow-300 bg-clip-text text-transparent">
                 Tâm Linh
               </h1>
-              <p className="text-purple-200 text-xs font-medium">Khám phá bản thân</p>
+              <p className="text-gray-300 text-xs font-medium">Khám phá bản thân</p>
             </div>
           </Link>
 
@@ -69,7 +69,7 @@ export default function Header() {
                 </svg>
               </button>
               {activeDropdown === 'services' && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-purple-900/95 backdrop-blur-lg rounded-xl shadow-2xl border border-purple-500/30 py-2 z-50">
+                <div className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-lg rounded-xl shadow-2xl border border-gray-800/50 py-2 z-50">
                   <Link
                     href="/numerology"
                     className="flex items-center px-4 py-3 text-white hover:text-golden hover:bg-white/10 transition-all duration-300"
@@ -78,7 +78,7 @@ export default function Header() {
                     <span className="mr-3 text-xl">🔢</span>
                     <div>
                       <div className="font-medium">Thần Số Học</div>
-                      <div className="text-xs text-purple-300">Khám phá số mệnh</div>
+                      <div className="text-xs text-gray-400">Khám phá số mệnh</div>
                     </div>
                   </Link>
                   <Link
@@ -89,7 +89,7 @@ export default function Header() {
                     <span className="mr-3 text-xl">♈</span>
                     <div>
                       <div className="font-medium">Cung Hoàng Đạo</div>
-                      <div className="text-xs text-purple-300">Tử vi 12 cung</div>
+                      <div className="text-xs text-gray-400">Tử vi 12 cung</div>
                     </div>
                   </Link>
                   <Link
@@ -100,7 +100,7 @@ export default function Header() {
                     <span className="mr-3 text-xl">💭</span>
                     <div>
                       <div className="font-medium">Giải Mã Giấc Mơ</div>
-                      <div className="text-xs text-purple-300">Ý nghĩa giấc mơ</div>
+                      <div className="text-xs text-gray-400">Ý nghĩa giấc mơ</div>
                     </div>
                   </Link>
                   <Link
@@ -111,7 +111,7 @@ export default function Header() {
                     <span className="mr-3 text-xl">✍️</span>
                     <div>
                       <div className="font-medium">Bói Tên</div>
-                      <div className="text-xs text-purple-300">Phân tích tên tuổi</div>
+                      <div className="text-xs text-gray-400">Phân tích tên tuổi</div>
                     </div>
                   </Link>
                 </div>
@@ -134,7 +134,7 @@ export default function Header() {
                 </svg>
               </button>
               {activeDropdown === 'lifestyle' && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-purple-900/95 backdrop-blur-lg rounded-xl shadow-2xl border border-purple-500/30 py-2 z-50">
+                <div className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-lg rounded-xl shadow-2xl border border-gray-800/50 py-2 z-50">
                   <Link
                     href="/feng-shui"
                     className="flex items-center px-4 py-3 text-white hover:text-golden hover:bg-white/10 transition-all duration-300"
@@ -143,7 +143,7 @@ export default function Header() {
                     <span className="mr-3 text-xl">🏠</span>
                     <div>
                       <div className="font-medium">Phong Thủy</div>
-                      <div className="text-xs text-purple-300">Hướng dẫn bố trí</div>
+                      <div className="text-xs text-gray-400">Hướng dẫn bố trí</div>
                     </div>
                   </Link>
                   <Link
@@ -154,7 +154,7 @@ export default function Header() {
                     <span className="mr-3 text-xl">📅</span>
                     <div>
                       <div className="font-medium">Lịch Vạn Niên</div>
-                      <div className="text-xs text-purple-300">Chọn ngày tốt</div>
+                      <div className="text-xs text-gray-400">Chọn ngày tốt</div>
                     </div>
                   </Link>
                 </div>
@@ -177,7 +177,7 @@ export default function Header() {
                 </svg>
               </button>
               {activeDropdown === 'tools' && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-purple-900/95 backdrop-blur-lg rounded-xl shadow-2xl border border-purple-500/30 py-2 z-50">
+                <div className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-lg rounded-xl shadow-2xl border border-gray-800/50 py-2 z-50">
                   <Link
                     href="/birthday-match"
                     className="flex items-center px-4 py-3 text-white hover:text-golden hover:bg-white/10 transition-all duration-300"
@@ -186,7 +186,7 @@ export default function Header() {
                     <span className="mr-3 text-xl">💑</span>
                     <div>
                       <div className="font-medium">So Sánh Ngày Sinh</div>
-                      <div className="text-xs text-purple-300">Hợp tuổi, tình duyên</div>
+                      <div className="text-xs text-gray-400">Hợp tuổi, tình duyên</div>
                     </div>
                   </Link>
                   <Link
@@ -197,7 +197,7 @@ export default function Header() {
                     <span className="mr-3 text-xl">🌙</span>
                     <div>
                       <div className="font-medium">Chuyển Đổi Lịch</div>
-                      <div className="text-xs text-purple-300">Dương ⇄ Âm lịch</div>
+                      <div className="text-xs text-gray-400">Dương ⇄ Âm lịch</div>
                     </div>
                   </Link>
                   <Link
@@ -208,7 +208,7 @@ export default function Header() {
                     <span className="mr-3 text-xl">📅</span>
                     <div>
                       <div className="font-medium">Ngày Lễ Tâm Linh</div>
-                      <div className="text-xs text-purple-300">Sự kiện, lễ hội</div>
+                      <div className="text-xs text-gray-400">Sự kiện, lễ hội</div>
                     </div>
                   </Link>
                 </div>
@@ -232,10 +232,10 @@ export default function Header() {
             </Link>
 
             {/* CTA Button */}
-            <div className="ml-4 pl-4 border-l border-purple-500/30">
+            <div className="ml-4 pl-4 border-l border-gray-700/50">
               <Link
                 href="/numerology"
-                className="px-6 py-2 bg-gradient-to-r from-golden to-yellow-300 text-purple-900 font-bold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm"
+                className="px-6 py-2 bg-gradient-to-r from-golden to-yellow-300 text-gray-900 font-bold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm"
               >
                 Tính ngay ✨
               </Link>
@@ -259,7 +259,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 py-4 bg-purple-800/80 backdrop-blur-lg rounded-xl border border-purple-500/30">
+          <div className="lg:hidden mt-4 py-4 bg-black/80 backdrop-blur-lg rounded-xl border border-gray-800/50">
             <div className="flex flex-col space-y-1">
               <Link 
                 href="/" 
@@ -347,7 +347,7 @@ export default function Header() {
                 </Link>
               </div>
 
-              <div className="border-t border-purple-500/30 mx-2 my-2"></div>
+              <div className="border-t border-gray-700/50 mx-2 my-2"></div>
               
               <Link
                 href="/blog"
@@ -368,7 +368,7 @@ export default function Header() {
               <div className="px-2 pt-4">
                 <Link
                   href="/numerology"
-                  className="block text-center px-6 py-3 bg-gradient-to-r from-golden to-yellow-300 text-purple-900 font-bold rounded-full hover:shadow-lg transition-all duration-300"
+                  className="block text-center px-6 py-3 bg-gradient-to-r from-golden to-yellow-300 text-gray-900 font-bold rounded-full hover:shadow-lg transition-all duration-300"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Tính thần số ngay ✨

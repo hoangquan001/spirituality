@@ -126,7 +126,7 @@ export default function NumerologyPage() {
               Thần Số Học
             </span>
           </h1>
-          <p className="text-xl text-purple-200 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Khám phá bí mật cuộc sống thông qua sức mạnh của các con số. 
             Tìm hiểu về đường đời, số mệnh và những điều kỳ diệu ẩn giấu trong ngày sinh của bạn.
           </p>
@@ -147,7 +147,7 @@ export default function NumerologyPage() {
                     <span className="mr-3">🔮</span>
                     Thần Số Học Là Gì?
                   </h3>
-                  <p className="text-purple-200 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                     Thần số học là một hệ thống cổ xưa sử dụng các con số để hiểu về tính cách, 
                     tiềm năng và vận mệnh của con người. Mỗi số từ 1 đến 9 đều mang một ý nghĩa 
                     và năng lượng riêng biệt.
@@ -159,7 +159,7 @@ export default function NumerologyPage() {
                     <span className="mr-3">📊</span>
                     Bạn Sẽ Nhận Được Gì?
                   </h3>
-                  <ul className="text-purple-200 space-y-2">
+                  <ul className="text-gray-300 space-y-2">
                     <li className="flex items-center"><span className="mr-2">✦</span> Số đường đời (Life Path Number)</li>
                     <li className="flex items-center"><span className="mr-2">✦</span> Số định mệnh (Destiny Number)</li>
                     <li className="flex items-center"><span className="mr-2">✦</span> Số linh hồn (Soul Number)</li>
@@ -172,7 +172,7 @@ export default function NumerologyPage() {
                     <span className="mr-3">💫</span>
                     Tại Sao Nên Tin Tưởng?
                   </h3>
-                  <p className="text-purple-200 leading-relaxed">
+                  <p className="text-gray-300 leading-relaxed">
                     Thần số học đã được sử dụng hàng nghìn năm bởi các nền văn minh cổ đại như 
                     Babylon, Hy Lạp và Ai Cập. Đây không chỉ là mê tín mà là một công cụ 
                     tự hiểu biết có cơ sở khoa học.
@@ -187,7 +187,7 @@ export default function NumerologyPage() {
             {isLoading && (
               <div className="text-center py-12">
                 <div className="w-16 h-16 border-4 border-golden border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-                <p className="text-xl text-purple-200">Đang tính toán số mệnh của bạn...</p>
+                <p className="text-xl text-gray-300">Đang tính toán số mệnh của bạn...</p>
               </div>
             )}
 
@@ -198,7 +198,7 @@ export default function NumerologyPage() {
                   <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                     Kết Quả Thần Số Học Của Bạn
                   </h2>
-                  <p className="text-purple-200">Khám phá những bí mật ẩn giấu trong các con số</p>
+                  <p className="text-gray-300">Khám phá những bí mật ẩn giấu trong các con số</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -207,7 +207,7 @@ export default function NumerologyPage() {
                     value={result.lifePathNumber}
                     description={result.lifePath}
                     icon="🛤️"
-                    color="from-purple-600 to-indigo-600"
+                    color="from-gray-700 to-gray-800"
                   />
                   <ResultCard
                     title="Số Định Mệnh"
@@ -221,25 +221,25 @@ export default function NumerologyPage() {
                     value={result.soulNumber}
                     description={result.soul}
                     icon="💫"
-                    color="from-purple-600 to-pink-600"
+                    color="from-gray-600 to-pink-600"
                   />
                   <ResultCard
                     title="Số Nhân Cách"
                     value={result.personalityNumber}
                     description={result.personality}
                     icon="🎭"
-                    color="from-pink-600 to-purple-600"
+                    color="from-pink-600 to-gray-600"
                   />
                 </div>
 
                 <div className="text-center">
                   <button
                     onClick={resetForm}
-                    className="bg-gradient-to-r from-golden to-yellow-400 hover:from-yellow-400 hover:to-golden text-purple-900 font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg mr-4"
+                    className="bg-gradient-to-r from-golden to-yellow-400 hover:from-yellow-400 hover:to-golden text-gray-900 font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg mr-4"
                   >
                     Tính Lại
                   </button>
-                  <button className="border-2 border-golden text-golden hover:bg-golden hover:text-purple-900 font-bold py-3 px-8 rounded-full transition-all duration-300">
+                  <button className="border-2 border-golden text-golden hover:bg-golden hover:text-black font-bold py-3 px-8 rounded-full transition-all duration-300">
                     Chia Sẻ Kết Quả
                   </button>
                 </div>
@@ -251,3 +251,4 @@ export default function NumerologyPage() {
     </div>
   );
 }
+

@@ -11,9 +11,9 @@ export default function BlogCard({ post, variant = 'default' }: BlogCardProps) {
 
   return (
     <Link href={`/blog/${post.slug}`}>
-      <article className={`group bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden border border-purple-300/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl ${isSmall ? 'h-auto' : ''}`}>
+      <article className={`group bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden border border-gray-400/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl ${isSmall ? 'h-auto' : ''}`}>
         {/* Featured Image */}
-        <div className={`relative ${isSmall ? 'h-32' : 'h-48'} bg-gradient-to-br from-purple-600 to-indigo-600 overflow-hidden`}>
+        <div className={`relative ${isSmall ? 'h-32' : 'h-48'} bg-gradient-to-br from-gray-600 to-indigo-600 overflow-hidden`}>
           {post.featuredImage ? (
             <img
               src={post.featuredImage}
@@ -30,7 +30,7 @@ export default function BlogCard({ post, variant = 'default' }: BlogCardProps) {
           
           {/* Category Badge */}
           <div className={`absolute ${isSmall ? 'top-2 left-2' : 'top-4 left-4'}`}>
-            <span className={`px-3 py-1 bg-gradient-to-r from-golden to-yellow-300 text-purple-900 ${isSmall ? 'text-xs' : 'text-sm'} font-bold rounded-full`}>
+            <span className={`px-3 py-1 bg-gradient-to-r from-golden to-yellow-300 text-gray-900 ${isSmall ? 'text-xs' : 'text-sm'} font-bold rounded-full`}>
               {getCategoryName(post.category)}
             </span>
           </div>
@@ -42,11 +42,11 @@ export default function BlogCard({ post, variant = 'default' }: BlogCardProps) {
             {post.title}
           </h3>
           
-          <p className={`text-purple-200 mb-4 line-clamp-3 ${isSmall ? 'text-sm' : ''}`}>
+          <p className={`text-gray-300 mb-4 line-clamp-3 ${isSmall ? 'text-sm' : ''}`}>
             {post.excerpt}
           </p>
 
-          <div className={`flex items-center justify-between ${isSmall ? 'text-xs' : 'text-sm'} text-purple-300`}>
+          <div className={`flex items-center justify-between ${isSmall ? 'text-xs' : 'text-sm'} text-gray-400`}>
             <div className="flex items-center space-x-2">
               <span>👤</span>
               <span>{post.author}</span>
@@ -59,7 +59,7 @@ export default function BlogCard({ post, variant = 'default' }: BlogCardProps) {
 
           {/* Read time - only for default variant */}
           {!isSmall && post.readTime && (
-            <div className="mt-2 text-sm text-purple-300">
+            <div className="mt-2 text-sm text-gray-400">
               <span>⏰ {post.readTime} phút đọc</span>
             </div>
           )}
@@ -70,7 +70,7 @@ export default function BlogCard({ post, variant = 'default' }: BlogCardProps) {
               {post.tags.slice(0, isSmall ? 2 : 3).map((tag, index) => (
                 <span
                   key={index}
-                  className={`px-2 py-1 bg-purple-700/50 text-purple-200 ${isSmall ? 'text-xs' : 'text-xs'} rounded-full`}
+                  className={`px-2 py-1 bg-gray-700/50 text-gray-300 ${isSmall ? 'text-xs' : 'text-xs'} rounded-full`}
                 >
                   #{tag}
                 </span>
