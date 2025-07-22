@@ -46,6 +46,9 @@ export default function Header() {
             <Link href="/feng-shui" className="text-white hover:text-golden transition-colors duration-300 font-medium">
               Phong Thủy
             </Link>
+            <Link href="/blog" className="text-white hover:text-golden transition-colors duration-300 font-medium">
+              Blog
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -83,6 +86,9 @@ export default function Header() {
               </Link>
               <Link href="/feng-shui" className="text-white hover:text-golden transition-colors duration-300 px-4 py-2">
                 Phong Thủy
+              </Link>
+              <Link href="/blog" className="text-white hover:text-golden transition-colors duration-300 px-4 py-2">
+                Blog
               </Link>
             </div>
           </div>

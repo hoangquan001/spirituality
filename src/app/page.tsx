@@ -1,3 +1,4 @@
+import BlogSection from '@/components/BlogSection';
 import Link from 'next/link';
 
 export default function Home() {
@@ -251,6 +252,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Blog Section */}
+      <BlogSection />
 
       {/* Call to Action */}
       <section className="py-20 px-4">
