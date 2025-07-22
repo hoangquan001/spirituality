@@ -1,0 +1,309 @@
+import Link from 'next/link';
+
+interface ZodiacSign {
+  name: string;
+  slug: string;
+  dates: string;
+  element: string;
+  ruling_planet: string;
+  symbol: string;
+  description: string;
+  icon: string;
+  color: string;
+}
+
+const zodiacSigns: ZodiacSign[] = [
+  {
+    name: "Bạch Dương",
+    slug: "bach-duong",
+    dates: "21/3 - 19/4",
+    element: "Hỏa",
+    ruling_planet: "Sao Hỏa",
+    symbol: "Cừu",
+    description: "Năng động, quyết đoán và đầy nhiệt huyết. Người Bạch Dương luôn sẵn sàng đối mặt với thử thách.",
+    icon: "♈",
+    color: "from-red-600 to-orange-600"
+  },
+  {
+    name: "Kim Ngưu",
+    slug: "kim-nguu",
+    dates: "20/4 - 20/5",
+    element: "Thổ",
+    ruling_planet: "Sao Kim",
+    symbol: "Bò",
+    description: "Ổn định, đáng tin cậy và yêu thích sự thoải mái. Người Kim Ngưu trân trọng vật chất và cảm xúc.",
+    icon: "♉",
+    color: "from-green-600 to-emerald-600"
+  },
+  {
+    name: "Song Tử",
+    slug: "song-tu",
+    dates: "21/5 - 20/6",
+    element: "Khí",
+    ruling_planet: "Sao Thủy",
+    symbol: "Đôi",
+    description: "Thông minh, linh hoạt và giao tiếp giỏi. Người Song Tử có khả năng thích nghi nhanh với mọi hoàn cảnh.",
+    icon: "♊",
+    color: "from-yellow-600 to-amber-600"
+  },
+  {
+    name: "Cự Giải",
+    slug: "cu-giai",
+    dates: "21/6 - 22/7",
+    element: "Thủy",
+    ruling_planet: "Mặt Trăng",
+    symbol: "Cua",
+    description: "Nhạy cảm, quan tâm gia đình và trực giác mạnh. Người Cử Giải có trái tim ấm áp và tình yêu sâu sắc.",
+    icon: "♋",
+    color: "from-blue-600 to-cyan-600"
+  },
+  {
+    name: "Sư Tử",
+    slug: "su-tu",
+    dates: "23/7 - 22/8",
+    element: "Hỏa",
+    ruling_planet: "Mặt Trời",
+    symbol: "Sư tử",
+    description: "Tự tin, hào phóng và có khả năng lãnh đạo. Người Sư Tử luôn tỏa sáng và truyền cảm hứng cho người khác.",
+    icon: "♌",
+    color: "from-orange-600 to-yellow-600"
+  },
+  {
+    name: "Xử Nữ",
+    slug: "xu-nu",
+    dates: "23/8 - 22/9",
+    element: "Thổ",
+    ruling_planet: "Sao Thủy",
+    symbol: "Trinh nữ",
+    description: "Cẩn thận, tỉ mỉ và có khả năng phân tích tốt. Người Xử Nữ luôn hướng đến sự hoàn hảo trong mọi việc.",
+    icon: "♍",
+    color: "from-indigo-600 to-purple-600"
+  },
+  {
+    name: "Thiên Bình",
+    slug: "thien-binh",
+    dates: "23/9 - 22/10",
+    element: "Khí",
+    ruling_planet: "Sao Kim",
+    symbol: "Cán cân",
+    description: "Hòa hợp, công bằng và yêu thích cái đẹp. Người Thiên Bình luôn tìm kiếm sự cân bằng trong cuộc sống.",
+    icon: "♎",
+    color: "from-pink-600 to-rose-600"
+  },
+  {
+    name: "Hổ Cáp",
+    slug: "ho-cap",
+    dates: "23/10 - 21/11",
+    element: "Thủy",
+    ruling_planet: "Sao Diêm Vương",
+    symbol: "Bọ cạp",
+    description: "Mạnh mẽ, bí ẩn và có ý chí kiên định. Người Hổ Cáp có khả năng chuyển hóa và tái sinh mạnh mẽ.",
+    icon: "♏",
+    color: "from-red-800 to-red-600"
+  },
+  {
+    name: "Nhân Mã",
+    slug: "nhan-ma",
+    dates: "22/11 - 21/12",
+    element: "Hỏa",
+    ruling_planet: "Sao Mộc",
+    symbol: "Cung thủ",
+    description: "Phiêu lưu, lạc quan và yêu thích tự do. Người Nhân Mã luôn tìm kiếm những trải nghiệm mới mẻ.",
+    icon: "♐",
+    color: "from-purple-600 to-indigo-600"
+  },
+  {
+    name: "Ma Kết",
+    slug: "ma-ket",
+    dates: "22/12 - 19/1",
+    element: "Thổ",
+    ruling_planet: "Sao Thổ",
+    symbol: "Dê núi",
+    description: "Kiên trì, có trách nhiệm và tham vọng. Người Ma Kết luôn nỗ lực để đạt được mục tiêu cao.",
+    icon: "♑",
+    color: "from-gray-600 to-slate-600"
+  },
+  {
+    name: "Bảo Bình",
+    slug: "bao-binh",
+    dates: "20/1 - 18/2",
+    element: "Khí",
+    ruling_planet: "Sao Thiên Vương",
+    symbol: "Người mang nước",
+    description: "Độc lập, sáng tạo và có tầm nhìn xa. Người Bảo Bình luôn đi trước thời đại và yêu thích sự mới mẻ.",
+    icon: "♒",
+    color: "from-cyan-600 to-blue-600"
+  },
+  {
+    name: "Song Ngư",
+    slug: "song-ngu",
+    dates: "19/2 - 20/3",
+    element: "Thủy",
+    ruling_planet: "Sao Hải Vương",
+    symbol: "Cá",
+    description: "Nhạy cảm, trực giác và giàu tình cảm. Người Song Ngư có khả năng thấu hiểu sâu sắc cảm xúc của người khác.",
+    icon: "♓",
+    color: "from-teal-600 to-green-600"
+  }
+];
+
+export default function ZodiacPage() {
+  return (
+    <div className="min-h-screen py-12 px-4">
+      <div className="container mx-auto max-w-7xl">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
+              Tử Vi 12 Cung
+            </span>
+          </h1>
+          <p className="text-xl text-purple-200 max-w-2xl mx-auto">
+            Khám phá vận mệnh qua 12 cung hoàng đạo. Tìm hiểu về tính cách, tình yêu, 
+            sự nghiệp và những dự đoán cho tương lai.
+          </p>
+        </div>
+
+        {/* Zodiac Wheel */}
+        <div className="mb-16">
+          <div className="relative w-80 h-80 mx-auto mb-8">
+            <div className="absolute inset-0 rounded-full border-4 border-golden/30 animate-spin" style={{ animationDuration: '60s' }}>
+              {zodiacSigns.map((sign, index) => {
+                const angle = (index * 30) - 90; // Phân bố đều 12 cung (360°/12 = 30°)
+                const radian = (angle * Math.PI) / 180;
+                const x = Math.cos(radian) * 130 + 150; // 150 = tâm của circle 300px
+                const y = Math.sin(radian) * 130 + 150;
+                
+                return (
+                  <div
+                    key={index}
+                    className="absolute w-12 h-12 bg-gradient-to-br from-golden to-yellow-400 rounded-full flex items-center justify-center text-purple-900 font-bold text-xl shadow-lg transform -translate-x-1/2 -translate-y-1/2"
+                    style={{ left: x, top: y }}
+                  >
+                    {sign.icon}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="absolute inset-8 rounded-full bg-gradient-to-br from-purple-900/50 to-indigo-900/50 backdrop-blur-sm flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-4xl mb-2">🌟</div>
+                <div className="text-white font-bold">Hoàng Đạo</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Zodiac Signs Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+          {zodiacSigns.map((sign, index) => (
+            <Link key={index} href={`/zodiac/${sign.slug}`} className="block group">
+              <div className="cosmic-card rounded-2xl p-6 h-full hover:scale-105 transition-all duration-300">
+                <div className="text-center">
+                  {/* Icon */}
+                  <div className={`w-16 h-16 bg-gradient-to-br ${sign.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <span className="text-2xl text-white">{sign.icon}</span>
+                  </div>
+
+                  {/* Name & Dates */}
+                  <h3 className="text-xl font-bold text-white mb-2">{sign.name}</h3>
+                  <p className="text-golden font-medium mb-4">{sign.dates}</p>
+
+                  {/* Details */}
+                  <div className="space-y-2 mb-4">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-purple-300">Nguyên tố:</span>
+                      <span className="text-white">{sign.element}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-purple-300">Hành tinh:</span>
+                      <span className="text-white">{sign.ruling_planet}</span>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-purple-200 text-sm leading-relaxed mb-4">
+                    {sign.description}
+                  </p>
+
+                  {/* CTA */}
+                  <div className="text-golden font-semibold group-hover:text-yellow-300 transition-colors">
+                    Xem chi tiết →
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Elements Section */}
+        <div className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-8">
+            <span className="bg-gradient-to-r from-golden to-yellow-300 bg-clip-text text-transparent">
+              4 Nguyên Tố Cơ Bản
+            </span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="cosmic-card rounded-xl p-6 text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🔥</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Hỏa</h3>
+              <p className="text-purple-200 mb-3">Năng động, đam mê, dẫn dắt</p>
+              <div className="text-sm text-golden">Bạch Dương, Sư Tử, Nhân Mã</div>
+            </div>
+
+            <div className="cosmic-card rounded-xl p-6 text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">🌍</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Thổ</h3>
+              <p className="text-purple-200 mb-3">Ổn định, thực tế, đáng tin cậy</p>
+              <div className="text-sm text-golden">Kim Ngưu, Xử Nữ, Ma Kết</div>
+            </div>
+
+            <div className="cosmic-card rounded-xl p-6 text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-cyan-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">💨</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Khí</h3>
+              <p className="text-purple-200 mb-3">Thông minh, giao tiếp, linh hoạt</p>
+              <div className="text-sm text-golden">Song Tử, Thiên Bình, Bảo Bình</div>
+            </div>
+
+            <div className="cosmic-card rounded-xl p-6 text-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl">💧</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Thủy</h3>
+              <p className="text-purple-200 mb-3">Cảm xúc, trực giác, nhạy cảm</p>
+              <div className="text-sm text-golden">Cự Giải, Hổ Cáp, Song Ngư</div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="cosmic-card rounded-2xl p-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Tìm Hiểu Cung Hoàng Đạo Của Bạn
+          </h2>
+          <p className="text-xl text-purple-200 mb-6">
+            Khám phá chi tiết về tính cách, tình yêu và vận mệnh dựa trên ngày sinh của bạn
+          </p>
+          <div className="space-y-4">
+            <div className="text-purple-200">
+              📅 Chỉ cần biết ngày sinh để khám phá cung hoàng đạo của bạn
+            </div>
+            <div className="text-purple-200">
+              🔮 Nhận được lời khuyên chi tiết về tình yêu, sự nghiệp và sức khỏe
+            </div>
+            <div className="text-purple-200">
+              ⭐ Tìm hiểu về mức độ tương hợp với các cung khác
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
