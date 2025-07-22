@@ -31,14 +31,20 @@ export default function Header() {
             <Link href="/numerology" className="text-white hover:text-golden transition-colors duration-300 font-medium">
               Thần Số Học
             </Link>
+            <Link href="/zodiac" className="text-white hover:text-golden transition-colors duration-300 font-medium">
+              Cung Hoàng Đạo
+            </Link>
             <Link href="/dream" className="text-white hover:text-golden transition-colors duration-300 font-medium">
               Giải Mã Giấc Mơ
             </Link>
-            <Link href="/zodiac" className="text-white hover:text-golden transition-colors duration-300 font-medium">
-              Tử Vi 12 Cung
+            <Link href="/calendar" className="text-white hover:text-golden transition-colors duration-300 font-medium">
+              Lịch Vạn Niên
             </Link>
-            <Link href="/about" className="text-white hover:text-golden transition-colors duration-300 font-medium">
-              Giới Thiệu
+            <Link href="/name-analysis" className="text-white hover:text-golden transition-colors duration-300 font-medium">
+              Bói Tên
+            </Link>
+            <Link href="/feng-shui" className="text-white hover:text-golden transition-colors duration-300 font-medium">
+              Phong Thủy
             </Link>
           </div>
 
@@ -63,14 +69,20 @@ export default function Header() {
               <Link href="/numerology" className="text-white hover:text-golden transition-colors duration-300 px-4 py-2">
                 Thần Số Học
               </Link>
+              <Link href="/zodiac" className="text-white hover:text-golden transition-colors duration-300 px-4 py-2">
+                Cung Hoàng Đạo
+              </Link>
               <Link href="/dream" className="text-white hover:text-golden transition-colors duration-300 px-4 py-2">
                 Giải Mã Giấc Mơ
               </Link>
-              <Link href="/zodiac" className="text-white hover:text-golden transition-colors duration-300 px-4 py-2">
-                Tử Vi 12 Cung
+              <Link href="/calendar" className="text-white hover:text-golden transition-colors duration-300 px-4 py-2">
+                Lịch Vạn Niên
               </Link>
-              <Link href="/about" className="text-white hover:text-golden transition-colors duration-300 px-4 py-2">
-                Giới Thiệu
+              <Link href="/name-analysis" className="text-white hover:text-golden transition-colors duration-300 px-4 py-2">
+                Bói Tên Theo Số
+              </Link>
+              <Link href="/feng-shui" className="text-white hover:text-golden transition-colors duration-300 px-4 py-2">
+                Phong Thủy
               </Link>
             </div>
           </div>
