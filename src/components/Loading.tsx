@@ -1,5 +1,7 @@
 'use client';
 
+import { useLoading } from '@/contexts/LoadingContext';
+
 interface LoadingProps {
   message?: string;
 }
@@ -51,4 +53,89 @@ export function SimpleLoading({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
       <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-golden animate-spin"></div>
     </div>
   );
+}
+
+// Loading Spinner with context
+export function LoadingSpinner({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' | 'xl' }) {
+  const sizeClasses = {
+    sm: 'w-4 h-4',
+    md: 'w-6 h-6',
+    lg: 'w-8 h-8',
+    xl: 'w-12 h-12'
+  };
+
+  return (
+    <div className={`${sizeClasses[size]} border-2 border-golden border-t-transparent rounded-full animate-spin`} />
+  );
+}
+
+// Loading Overlay
+export function LoadingOverlay({ message = 'Đang tải...', show }: { message?: string; show?: boolean }) {
+  const { isLoading } = useLoading();
+  const shouldShow = show !== undefined ? show : isLoading;
+
+  if (!shouldShow) return null;
+
+  return (
+    <div className="fixed inset-0 bg-purple-900/80 backdrop-blur-sm z-[70] flex items-center justify-center">
+      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-purple-300/20 text-center max-w-sm mx-4">
+        <div className="relative mb-6">
+          <div className="w-16 h-16 border-2 border-golden/30 rounded-full animate-spin mx-auto">
+            <div className="w-full h-full border-2 border-transparent border-t-golden rounded-full animate-ping"></div>
+          </div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-golden text-2xl animate-pulse">✦</span>
+          </div>
+        </div>
+        <h3 className="text-white font-medium mb-2">{message}</h3>
+        <p className="text-purple-200 text-sm">Vui lòng chờ trong giây lát...</p>
+      </div>
+    </div>
+  );
+}
+
+// Loading Dots
+export function LoadingDots({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
+  const sizeClasses = {
+    sm: 'w-1 h-1',
+    md: 'w-2 h-2',
+    lg: 'w-3 h-3'
+  };
+
+  return (
+    <div className="flex space-x-1">
+      {[...Array(3)].map((_, i) => (
+        <div
+          key={i}
+          className={`${sizeClasses[size]} bg-golden rounded-full animate-bounce`}
+          style={{
+            animationDelay: `${i * 150}ms`,
+            animationDuration: '1s'
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+// Hook for easy loading state management
+export function usePageLoading() {
+  const { isLoading, startLoading, finishLoading } = useLoading();
+
+  const withLoading = async <T,>(asyncFn: () => Promise<T>): Promise<T> => {
+    try {
+      startLoading();
+      const result = await asyncFn();
+      return result;
+    } finally {
+      finishLoading();
+    }
+  };
+
+  return {
+    isLoading,
+    startLoading,
+    finishLoading,
+    withLoading
+  };
 }
