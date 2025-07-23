@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import LegalStructuredData from '../../components/LegalStructuredData';
-import { LegalIcon, NumerologyIcon, ContactIcon, SecurityIcon, CalendarIcon } from '../../components/icons';
+import { CalendarIcon, ContactIcon, LegalIcon, NumerologyIcon, SecurityIcon } from '../../components/icons';
 
 export default function TermsPage() {
   return (
     <>
       <LegalStructuredData pageType="terms" />
-      <div className="min-h-screen py-12 px-4">
+      <div className="min-h-screen py-10 px-4">
       <div className="container mx-auto max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12">

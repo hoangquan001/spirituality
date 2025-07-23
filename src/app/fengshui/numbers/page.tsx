@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import ContentHeader from '@/components/ContentHeader';
 import Link from 'next/link';
+import { useState } from 'react';
 
 interface NumberAnalysis {
   number: string;
@@ -181,30 +182,19 @@ export default function FengshuiNumbersPage() {
   };
 
   return (
-    <div className="min-h-screen min-h-screen">
-      {/* Header */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-indigo-900/20 to-blue-900/20 py-20">
-        <div className="absolute inset-0 bg-[url('/stars.png')] opacity-20"></div>
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
-          
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-yellow-400 to-golden bg-clip-text text-transparent">
-              Sim Số Phong Thủy
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
-            <strong className="text-golden">Phân tích sim số</strong> và biển số xe theo phong thủy
-          </p>
-          
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Khám phá ý nghĩa và năng lượng của các con số trong cuộc sống bạn
-          </p>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-12">
+    <>
+      <ContentHeader
+        title="Sim Số Phong Thủy"
+        description="Phân tích sim số và biển số xe theo phong thủy. Khám phá ý nghĩa và năng lượng của các con số trong cuộc sống bạn."
+        breadcrumb={[
+          { label: 'Trang Chủ', href: '/' },
+          { label: 'Phong Thủy', href: '/feng-shui' },
+          { label: 'Sim Số', href: '/fengshui/numbers' },
+        ]}
+      />
+      <div className="min-h-screen">
+        {/* Main Content */}
+        <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Input Form */}
         <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">
@@ -482,6 +472,7 @@ export default function FengshuiNumbersPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

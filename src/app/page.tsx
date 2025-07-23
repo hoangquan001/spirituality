@@ -1,5 +1,4 @@
 import BlogSection from '@/components/BlogSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
 import StructuredData from '@/components/StructuredData';
 
 import Link from 'next/link';
@@ -79,7 +78,7 @@ export default function Home() {
                 </div>
                 <div className="space-y-2 text-sm text-gray-400">
                   <div className="flex items-center gap-2">
-                    <span className="text-golden">•</span> Phân tích ngày sinh
+                    <span className="text-golden">•</span> Tra cưu thần số học
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-golden">•</span> Ghép đôi ngày sinh
@@ -238,7 +237,7 @@ export default function Home() {
       </section>
 
       {/* Mystical Knowledge Section */}
-      <section className="py-20 px-4">
+      <section className="py-10 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">
@@ -357,7 +356,7 @@ export default function Home() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20 px-4">
+      <section className="py-10 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
@@ -556,13 +555,13 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
 
       {/* Blog Section */}
       <BlogSection />
 
       {/* Expertise & Authority Section */}
-      <section className="py-20 px-4">
+      <section className="py-10 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">
@@ -701,7 +700,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4">
+      <section className="py-10 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">
@@ -781,7 +780,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 px-4">
+      <section className="py-10 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-br from-gray-900/40 to-purple-900/40 backdrop-blur-sm rounded-3xl p-12 border border-golden/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">

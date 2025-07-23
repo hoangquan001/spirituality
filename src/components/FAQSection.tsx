@@ -15,7 +15,7 @@ export default function FAQSection({
   faqs 
 }: FAQSectionProps) {
   return (
-    <section className="py-20 px-4">
+    <section className="py-10 px-4">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-white mb-4">

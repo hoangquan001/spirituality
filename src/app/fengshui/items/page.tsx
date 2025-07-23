@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import ContentHeader from '@/components/ContentHeader';
 import Link from 'next/link';
+import { useState } from 'react';
 
 interface FengshuiItem {
   name: string;
@@ -362,25 +363,13 @@ export default function FengshuiItemsPage() {
   return (
     <div className="min-h-screen ">
       {/* Header */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-purple-900/20 to-indigo-900/20 py-20">
-        <div className="absolute inset-0 bg-[url('/stars.png')] opacity-20"></div>
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
-
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-yellow-400 to-golden bg-clip-text text-transparent">
-              Vật Phẩm Phong Thủy
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
-            <strong className="text-golden">Gợi ý vật phẩm phù hợp</strong> theo tuổi và mệnh ngũ hành
-          </p>
-          
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Khám phá các vật phẩm phong thủy mang lại may mắn, tài lộc và bình an cho gia đình
-          </p>
-        </div>
-      </div>
+      <ContentHeader title='Vật Phẩm Phong Thủy' description='Khám phá các vật phẩm phong thủy mang lại may mắn, tài lộc và bình an cho gia đình'
+      breadcrumb={[
+        { label: 'Trang chủ', href: '/' },
+        { label: 'Phong Thủy', href: '/feng-shui' },
+        { label: 'Vật Phẩm Phong Thủy', href: '/feng-shui/items' }
+      ]}
+      />
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-12">

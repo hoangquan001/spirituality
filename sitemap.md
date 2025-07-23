@@ -1,6 +1,6 @@
  Sitemap các tính năng:
 ├── 🔢 Thần số học
-│   ├── Phân tích ngày sinh
+│   ├── Số Chủ Đạo
 │   ├── Ghép đôi ngày sinh
 │   ├── Phân tích tên
 │   ├── Dự đoán cá nhân 12 tháng tới

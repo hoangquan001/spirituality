@@ -1,5 +1,6 @@
 'use client';
 
+import ContentHeader from '@/components/ContentHeader';
 import { useState } from 'react';
 
 interface FengShuiAnalysis {
@@ -286,19 +287,17 @@ export default function FengShuiPage() {
   };
 
   return (
-    <div className="min-h-screen py-12 px-4">
-      <div className="container mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
-              Phong Thủy
-            </span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Khám phá ngũ hành của bạn và cách bố trí không gian sống hợp phong thủy để tăng vận may
-          </p>
-        </div>
+    <>
+      <ContentHeader
+        title="Phong Thủy"
+        description="Khám phá ngũ hành của bạn và cách bố trí không gian sống hợp phong thủy để tăng vận may."
+        breadcrumb={[
+          { label: 'Trang Chủ', href: '/' },
+          { label: 'Phong Thủy', href: '/feng-shui' },
+        ]}
+      />
+      <div className="min-h-screen py-10 px-4">
+        <div className="container mx-auto max-w-6xl">
 
         {!result ? (
           <div className="max-w-4xl mx-auto">
@@ -575,7 +574,8 @@ export default function FengShuiPage() {
           </div>
         )}
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

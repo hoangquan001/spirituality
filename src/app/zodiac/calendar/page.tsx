@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import ContentHeader from '@/components/ContentHeader';
 import Link from 'next/link';
+import { useState } from 'react';
 
 interface ZodiacSign {
   id: string;
@@ -274,29 +275,15 @@ export default function ZodiacCalendarPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-blue-900/20 to-indigo-900/20 py-20">
-        <div className="absolute inset-0 bg-[url('/stars.png')] opacity-20"></div>
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
-          
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-yellow-400 to-golden bg-clip-text text-transparent">
-              Lịch Tử Vi Cá Nhân
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
-            <strong className="text-golden">Dự đoán từng ngày</strong> theo cung hoàng đạo của bạn
-          </p>
-          
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Lịch tử vi cá nhân với dự đoán chi tiết cho từng ngày trong tháng
-          </p>
-        </div>
-      </div>
+
+      <ContentHeader title='Lịch Tử Vi Cá Nhân' description='Dự đoán chi tiết cho từng ngày trong tháng theo cung hoàng đạo của bạn.' breadcrumb={[
+        { label: 'Trang Chủ', href: '/' },
+        { label: 'Cung Hoàng Đạo', href: '/zodiac' },
+        { label: 'Lịch Tử Vi', href: '/zodiac/calendar' },
+      ]}   />
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-6">
         {/* Input Form */}
         <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">

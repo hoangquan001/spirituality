@@ -52,9 +52,9 @@ export default function LunarConvertPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="relative py-20 bg-gradient-to-r from-black/50 to-gray-900/50">
+      <div className="relative py-10 bg-gradient-to-r from-black/50 to-gray-900/50">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Chuyển Đổi <span className="bg-gradient-to-r from-golden to-yellow-300 bg-clip-text text-transparent">Lịch</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">

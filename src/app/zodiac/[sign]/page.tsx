@@ -16,7 +16,7 @@ export default function ZodiacDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen py-12 px-4">
+    <div className="min-h-screen py-10 px-4">
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
@@ -29,7 +29,7 @@ export default function ZodiacDetailPage({ params }: Props) {
             <span className="text-4xl text-white">{zodiac.icon}</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
               {zodiac.name}
             </span>

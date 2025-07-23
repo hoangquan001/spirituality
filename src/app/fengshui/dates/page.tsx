@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import ContentHeader from '@/components/ContentHeader';
 import Link from 'next/link';
+import { useState } from 'react';
 
 interface EventType {
   id: string;
@@ -237,25 +238,15 @@ export default function FengshuiDatesPage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-pink-900/20 to-rose-900/20 py-20">
-        <div className="absolute inset-0 bg-[url('/stars.png')] opacity-20"></div>
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
-
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-yellow-400 to-golden bg-clip-text text-transparent">
-              Chọn Ngày Tốt
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
-            <strong className="text-golden">Chọn ngày tốt</strong> cho cưới hỏi, khai trương, khởi công
-          </p>
-          
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Tìm ngày hoàng đạo phù hợp cho các sự kiện quan trọng trong cuộc sống
-          </p>
-        </div>
-      </div>
+      <ContentHeader 
+        title="Chọn Ngày Tốt"
+        description="Tìm ngày hoàng đạo phù hợp cho các sự kiện quan trọng trong cuộc sống"
+        breadcrumb={[
+          { label: 'Trang chủ', href: '/' },
+          { label: 'Phong Thủy', href: '/feng-shui' },
+          { label: 'Chọn Ngày Tốt', href: '/feng-shui/dates' }
+        ]}
+      />
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-12">

@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import ContentHeader from '@/components/ContentHeader';
+import { useState } from 'react';
 
 interface CalendarDay {
   date: number;
@@ -155,19 +156,17 @@ export default function CalendarPage() {
   };
 
   return (
-    <div className="min-h-screen py-12 px-4">
-      <div className="container mx-auto max-w-7xl">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
-              Lịch Vạn Niên
-            </span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Xem lịch âm dương, Can Chi, giờ tốt xấu và hướng may mắn cho từng ngày
-          </p>
-        </div>
+    <>
+      <ContentHeader
+        title="Lịch Vạn Niên"
+        description="Xem lịch âm dương, Can Chi, giờ tốt xấu và hướng may mắn cho từng ngày."
+        breadcrumb={[
+          { label: 'Trang Chủ', href: '/' },
+          { label: 'Lịch Vạn Niên', href: '/calendar' },
+        ]}
+      />
+      <div className="min-h-screen py-10 px-4">
+        <div className="container mx-auto max-w-7xl">
 
         {/* Calendar Controls */}
         <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-6 border border-gray-400/20 mb-8">
@@ -363,7 +362,8 @@ export default function CalendarPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

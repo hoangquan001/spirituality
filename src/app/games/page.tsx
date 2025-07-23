@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import ContentHeader from '@/components/ContentHeader';
 import Link from 'next/link';
+import { useState } from 'react';
 
 interface GameResult {
   type: 'shape' | 'color' | 'number';
@@ -230,30 +231,18 @@ export default function GamesPage() {
   };
 
   return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-pink-900/20 to-purple-900/20 py-20">
-        <div className="absolute inset-0 bg-[url('/stars.png')] opacity-20"></div>
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
-
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-yellow-400 to-golden bg-clip-text text-transparent">
-              Minigame Bói
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
-            <strong className="text-golden">Khám phá bản thân</strong> qua các trò chơi bói vui nhộn
-          </p>
-          
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Chọn hình dạng, màu sắc hoặc con số theo trực giác để khám phá tính cách và nhận lời khuyên
-          </p>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-12">
+    <>
+      <ContentHeader
+        title="Minigame Bói"
+        description="Khám phá bản thân qua các trò chơi bói vui nhộn. Chọn hình dạng, màu sắc hoặc con số theo trực giác để khám phá tính cách và nhận lời khuyên."
+        breadcrumb={[
+          { label: 'Trang Chủ', href: '/' },
+          { label: 'Minigame Bói', href: '/games' },
+        ]}
+      />
+      <div className="min-h-screen">
+        {/* Main Content */}
+        <div className="max-w-6xl mx-auto px-4 py-12">
         {!result ? (
           <div className="space-y-8">
             {/* Game Selection */}
@@ -291,7 +280,7 @@ export default function GamesPage() {
               <p className="text-gray-300 text-center mb-8">{currentGame.description}</p>
               
               {isRevealing ? (
-                <div className="text-center py-20">
+                <div className="text-center py-10">
                   <div className="inline-flex items-center gap-3 bg-gray-800/50 px-8 py-4 rounded-full">
                     <div className="w-6 h-6 border-2 border-golden border-t-transparent rounded-full animate-spin"></div>
                     <span className="text-white font-medium">Đang tiết lộ kết quả...</span>
@@ -435,6 +424,7 @@ export default function GamesPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

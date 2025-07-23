@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import ContentHeader from '@/components/ContentHeader';
 import Link from 'next/link';
+import { useState } from 'react';
 
 interface ZodiacSign {
   id: string;
@@ -258,25 +259,16 @@ export default function ZodiacCompatibilityPage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-pink-900/20 to-purple-900/20 py-20">
-        <div className="absolute inset-0 bg-[url('/stars.png')] opacity-20"></div>
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
 
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-yellow-400 to-golden bg-clip-text text-transparent">
-              Ghép Đôi Cung Hoàng Đạo
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
-            <strong className="text-golden">Khám phá độ hợp tình yêu</strong> giữa các cung hoàng đạo
-          </p>
-          
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Phân tích mức độ tương thích trong tình yêu, tình bạn và công việc dựa trên 12 cung hoàng đạo
-          </p>
-        </div>
-      </div>
+      <ContentHeader
+        title='Ghép Đôi Cung Hoàng Đạo'
+        description='Khám phá độ hợp tình yêu giữa các cung hoàng đạo'
+        breadcrumb={[
+          { label: 'Trang Chủ', href: '/' },
+          { label: 'Cung Hoàng Đạo', href: '/zodiac' },
+          { label: 'Ghép Đôi', href: '/zodiac/compatibility' },
+        ]}
+      />
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-12">

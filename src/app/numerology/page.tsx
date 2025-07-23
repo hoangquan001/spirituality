@@ -1,12 +1,12 @@
 'use client';
 
+import ContentHeader from '@/components/ContentHeader';
 import { useState } from 'react';
 import NumerologyForm from '../../components/NumerologyForm';
-import ResultCard from '../../components/ResultCard';
 import NumerologyStructuredData from '../../components/NumerologyStructuredData';
 import RelatedServices from '../../components/RelatedServices';
-import { NumerologyIcon, CheckIcon, StarIcon } from '../../components/icons';
-import Link from 'next/link';
+import ResultCard from '../../components/ResultCard';
+import { CheckIcon, NumerologyIcon, StarIcon } from '../../components/icons';
 
 interface FormData {
   fullName: string;
@@ -123,32 +123,16 @@ export default function NumerologyPage() {
   return (
     <>
       <NumerologyStructuredData />
-      <div className="min-h-screen py-12 px-4">
+      <ContentHeader
+        title="Thần Số Học Pythagoras"
+        description="Tìm hiểu những điều thú vị về bản thân qua ngày sinh của bạn. Khám phá tính cách, điểm mạnh và những đặc điểm nổi bật."
+        breadcrumb={[
+          { label: 'Trang Chủ', href: '/' },
+          { label: 'Thần Số Học', href: '/numerology' },
+        ]}
+      />
+      <div className="min-h-screen py-10 px-4">
         <div className="container mx-auto">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
-                Thần Số Học Pythagoras
-              </span>
-              <br />
-              <span className="text-white text-3xl md:text-4xl">Chính Xác & Miễn Phí</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
-              <strong className="text-golden">Tìm hiểu những điều thú vị về bản thân</strong> qua ngày sinh của bạn.
-              Khám phá tính cách, điểm mạnh và những đặc điểm nổi bật.
-            </p>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
-              Cùng khám phá những điều <span className="text-golden font-semibold">thú vị về bản thân</span> qua những con số trong ngày sinh
-            </p>
-
-            {/* Breadcrumb */}
-            <div className="flex items-center justify-center gap-2 text-sm text-gray-400 mb-8">
-              <Link href="/" className="hover:text-golden transition-colors">Trang Chủ</Link>
-              <span>›</span>
-              <span className="text-golden">Thần Số Học</span>
-            </div>
-          </div>
 
         {!result ? (
           <div className="max-w-6xl mx-auto">
@@ -238,45 +222,6 @@ export default function NumerologyPage() {
                   </div>
                 </div>
 
-                {/* Social Proof */}
-                <div className="cosmic-card rounded-2xl p-6">
-                  <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span className="mr-3">💬</span>
-                    Người Dùng Nói Gì?
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="bg-gray-800/50 rounded-lg p-4">
-                      <div className="flex items-center mb-2">
-                        <div className="flex text-golden">
-                          <StarIcon size={16} filled />
-                          <StarIcon size={16} filled />
-                          <StarIcon size={16} filled />
-                          <StarIcon size={16} filled />
-                          <StarIcon size={16} filled />
-                        </div>
-                        <span className="ml-2 text-sm text-gray-400">Minh Anh, 28 tuổi</span>
-                      </div>
-                      <p className="text-gray-300 text-sm italic">
-                        "Kết quả thần số học rất chính xác, giúp tôi hiểu rõ tính cách và định hướng nghề nghiệp. Đặc biệt là phần phân tích số mệnh 7!"
-                      </p>
-                    </div>
-                    <div className="bg-gray-800/50 rounded-lg p-4">
-                      <div className="flex items-center mb-2">
-                        <div className="flex text-golden">
-                          <StarIcon size={16} filled />
-                          <StarIcon size={16} filled />
-                          <StarIcon size={16} filled />
-                          <StarIcon size={16} filled />
-                          <StarIcon size={16} filled />
-                        </div>
-                        <span className="ml-2 text-sm text-gray-400">Đức Thành, 35 tuổi</span>
-                      </div>
-                      <p className="text-gray-300 text-sm italic">
-                        "Website tính toán chính xác, giao diện đẹp và dễ sử dụng. Đã giới thiệu cho nhiều bạn bè!"
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -348,7 +293,7 @@ export default function NumerologyPage() {
         )}
 
         {/* FAQ Section */}
-        <section className="py-20 px-4">
+        <section className="py-10 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-white mb-4">

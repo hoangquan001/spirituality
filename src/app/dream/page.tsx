@@ -1,11 +1,11 @@
 'use client';
 
+import ContentHeader from '@/components/ContentHeader';
 import { useState } from 'react';
-import { dreamDictionary as dreamData, searchDreams, getDreamsByCategory, getAllCategories, getRandomDream, type DreamSymbol } from '../../lib/dreamDictionary';
 import DreamStructuredData from '../../components/DreamStructuredData';
 import RelatedServices from '../../components/RelatedServices';
-import { DreamIcon, CheckIcon, StarIcon } from '../../components/icons';
-import Link from 'next/link';
+import { CheckIcon, DreamIcon } from '../../components/icons';
+import { getAllCategories, getDreamsByCategory, getRandomDream, searchDreams, type DreamSymbol } from '../../lib/dreamDictionary';
 
 export default function DreamPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -27,32 +27,16 @@ export default function DreamPage() {
   return (
     <>
       <DreamStructuredData />
-      <div className="min-h-screen py-12 px-4">
+      <ContentHeader
+        title="Giải Mã Giấc Mơ"
+        description="Tìm hiểu những điều thú vị từ giấc mơ của bạn. Khám phá ý nghĩa và những thông điệp ẩn giấu trong từng giấc mơ."
+        breadcrumb={[
+          { label: 'Trang Chủ', href: '/' },
+          { label: 'Giải Mã Giấc Mơ', href: '/dream' },
+        ]}
+      />
+      <div className="min-h-screen py-10 px-4">
         <div className="container mx-auto max-w-6xl">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
-                Giải Mã Giấc Mơ
-              </span>
-              <br />
-              <span className="text-white text-3xl md:text-4xl">Từ Điển Giấc Mơ Đầy Đủ</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
-              <strong className="text-golden">Tìm hiểu những điều thú vị từ giấc mơ</strong> của bạn.
-              Khám phá ý nghĩa và những thông điệp ẩn giấu trong từng giấc mơ.
-            </p>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
-              Cùng khám phá <span className="text-golden font-semibold">hàng ngàn ý nghĩa</span> thú vị từ những giấc mơ đa dạng
-            </p>
-
-            {/* Breadcrumb */}
-            <div className="flex items-center justify-center gap-2 text-sm text-gray-400 mb-8">
-              <Link href="/" className="hover:text-golden transition-colors">Trang Chủ</Link>
-              <span>›</span>
-              <span className="text-golden">Giải Mã Giấc Mơ</span>
-            </div>
-          </div>
 
         {/* Search Section */}
         <div className="mb-12">
@@ -326,7 +310,7 @@ export default function DreamPage() {
         </div>
 
         {/* FAQ Section */}
-        <section className="py-20 px-4">
+        <section className="py-10 px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-white mb-4">

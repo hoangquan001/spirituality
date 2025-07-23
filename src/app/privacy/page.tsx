@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import LegalStructuredData from '../../components/LegalStructuredData';
-import { SecurityIcon, CalendarIcon, EmailIcon, ContactIcon, LegalIcon } from '../../components/icons';
+import { ContactIcon, EmailIcon, LegalIcon, SecurityIcon } from '../../components/icons';
 
 export default function PrivacyPage() {
   return (
     <>
       <LegalStructuredData pageType="privacy" />
-      <div className="min-h-screen py-12 px-4">
+      <div className="min-h-screen py-10 px-4">
       <div className="container mx-auto max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12">

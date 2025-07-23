@@ -38,9 +38,9 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <div className="relative py-20 bg-gradient-to-r from-black/50 to-gray-900/50">
+      <div className="relative py-10 bg-gradient-to-r from-black/50 to-gray-900/50">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Blog <span className="bg-gradient-to-r from-golden to-yellow-300 bg-clip-text text-transparent">Tâm Linh</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
@@ -90,7 +90,7 @@ export default function BlogPage() {
         {/* Blog Posts Grid */}
         <div className="max-w-7xl mx-auto">
           {filteredPosts.length === 0 ? (
-            <div className="text-center py-20">
+            <div className="text-center py-10">
               <div className="text-6xl mb-4">🔍</div>
               <h3 className="text-2xl font-bold text-white mb-2">Không tìm thấy bài viết</h3>
               <p className="text-gray-300">Thử thay đổi từ khóa tìm kiếm hoặc danh mục khác</p>

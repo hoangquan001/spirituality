@@ -26,9 +26,9 @@ export default function LoadingTestPage() {
     <div className="min-h-screen">
       <LoadingOverlay show={showOverlay} message="Đang xử lý dữ liệu..." />
       
-      <div className="container mx-auto px-4 py-20">
+      <div className="container mx-auto px-4 py-10">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Test <span className="bg-gradient-to-r from-golden to-yellow-300 bg-clip-text text-transparent">Loading</span>
           </h1>
           

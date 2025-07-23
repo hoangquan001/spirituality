@@ -1,10 +1,10 @@
 export default function AboutPage() {
   return (
-    <div className="min-h-screen py-12 px-4">
+    <div className="min-h-screen py-10 px-4">
       <div className="container mx-auto max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
               Giới Thiệu
             </span>

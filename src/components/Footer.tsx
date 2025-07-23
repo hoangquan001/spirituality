@@ -44,9 +44,9 @@ export default function Footer() {
 
           {/* Thần Số Học */}
           <div>
-            <h4 className="font-semibold text-lg mb-4 text-golden">🔢 Thần Số Học</h4>
+            <h4 className="font-semibold text-lg mb-4 text-golden">Thần Số Học</h4>
             <ul className="space-y-2">
-              <li><Link href="/numerology" className="text-gray-300 hover:text-golden transition-colors">Phân tích ngày sinh</Link></li>
+              <li><Link href="/numerology" className="text-gray-300 hover:text-golden transition-colors">Tra cứu thần số học</Link></li>
               <li><Link href="/numerology/compatibility" className="text-gray-300 hover:text-golden transition-colors">Ghép đôi ngày sinh</Link></li>
               <li><Link href="/name-analysis" className="text-gray-300 hover:text-golden transition-colors">Phân tích tên</Link></li>
               <li><Link href="/numerology/forecast" className="text-gray-300 hover:text-golden transition-colors">Dự đoán 12 tháng</Link></li>
@@ -55,7 +55,7 @@ export default function Footer() {
 
           {/* Tử Vi */}
           <div>
-            <h4 className="font-semibold text-lg mb-4 text-golden">♈ Tử Vi</h4>
+            <h4 className="font-semibold text-lg mb-4 text-golden">Cung Hoàng Đạo</h4>
             <ul className="space-y-2">
               <li><Link href="/zodiac/today" className="text-gray-300 hover:text-golden transition-colors">Tử vi hôm nay</Link></li>
               <li><Link href="/zodiac" className="text-gray-300 hover:text-golden transition-colors">Tử vi 12 cung</Link></li>
@@ -66,7 +66,7 @@ export default function Footer() {
 
           {/* Phong Thủy */}
           <div>
-            <h4 className="font-semibold text-lg mb-4 text-golden">🧭 Phong Thủy</h4>
+            <h4 className="font-semibold text-lg mb-4 text-golden">Phong Thủy</h4>
             <ul className="space-y-2">
               <li><Link href="/feng-shui/colors" className="text-gray-300 hover:text-golden transition-colors">Màu sắc hợp mệnh</Link></li>
               <li><Link href="/feng-shui/directions" className="text-gray-300 hover:text-golden transition-colors">Hướng hợp tuổi</Link></li>
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Giải Mã & Bói */}
           <div>
-            <h4 className="font-semibold text-lg mb-4 text-golden">💡 Giải Mã & Bói</h4>
+            <h4 className="font-semibold text-lg mb-4 text-golden">Giải Mã & Bói</h4>
             <ul className="space-y-2">
               <li><Link href="/dream" className="text-gray-300 hover:text-golden transition-colors">Giải mã giấc mơ</Link></li>
               <li><Link href="/numbers/meaning" className="text-gray-300 hover:text-golden transition-colors">Ý nghĩa con số</Link></li>
@@ -88,7 +88,7 @@ export default function Footer() {
 
           {/* Tiện Ích */}
           <div>
-            <h4 className="font-semibold text-lg mb-4 text-golden">💡 Tiện Ích</h4>
+            <h4 className="font-semibold text-lg mb-4 text-golden">Tiện Ích</h4>
             <ul className="space-y-2">
               <li><Link href="/calendar/convert" className="text-gray-300 hover:text-golden transition-colors">Chuyển đổi lịch</Link></li>
               <li><Link href="/calendar/almanac" className="text-gray-300 hover:text-golden transition-colors">Lịch vạn sự</Link></li>
@@ -99,7 +99,7 @@ export default function Footer() {
 
           {/* Blog & Liên Hệ */}
           <div>
-            <h4 className="font-semibold text-lg mb-4 text-golden">💡 Khác</h4>
+            <h4 className="font-semibold text-lg mb-4 text-golden">Khác</h4>
             <ul className="space-y-2">
               <li><Link href="/blog" className="text-gray-300 hover:text-golden transition-colors">Blog</Link></li>
               <li><Link href="/about" className="text-gray-300 hover:text-golden transition-colors">Về chúng tôi</Link></li>

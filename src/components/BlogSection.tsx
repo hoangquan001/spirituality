@@ -10,7 +10,7 @@ export default function BlogSection() {
     .slice(0, 3);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-900/50 to-gray-900/50">
+    <section className="py-10 bg-gradient-to-b from-gray-900/50 to-gray-900/50">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">

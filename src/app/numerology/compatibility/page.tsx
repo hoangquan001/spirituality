@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
+import ContentHeader from '@/components/ContentHeader';
 import { birthDateToLifePath } from '@/lib/numerology';
+import Link from 'next/link';
+import { useState } from 'react';
 
 interface CompatibilityResult {
   person1: {
@@ -160,48 +161,16 @@ export default function NumerologyCompatibilityPage() {
 
   return (
     <div className="min-h-screen ">
-      {/* Enhanced SEO Header */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-gray-900/30 to-gray-800/30 py-10">
-        <div className="absolute inset-0 bg-[url('/stars.png')] opacity-20"></div>
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
-          
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-amber-300 to-golden bg-clip-text text-transparent drop-shadow-lg">
-              Hợp Tuổi Tình Yêu Theo Thần Số Học
-            </span>
-          </h1>
-          
-          <div className="max-w-4xl mx-auto space-y-4">
-            <p className="text-xl md:text-2xl text-gray-200 leading-relaxed font-medium">
-              💖 <strong className="text-golden">Khám phá độ hợp nhau trong tình yêu</strong> dựa trên ngày sinh và số mệnh của hai người
-            </p>
-            
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              ✨ Phân tích chuyên sâu <span className="text-golden font-semibold">mức độ tương thích, điểm mạnh và thách thức</span> 
-              trong mối quan hệ qua hệ thống thần số học Pythagoras
-            </p>
-          </div>
 
-          {/* Enhanced Breadcrumb */}
-          <nav aria-label="Breadcrumb" className="flex items-center justify-center gap-2 text-sm text-gray-400 mb-8 mt-8">
-            <Link 
-              href="/" 
-              className="hover:text-golden transition-all duration-300 hover:underline"
-            >
-              Trang Chủ
-            </Link>
-            <span className="text-gray-600">›</span>
-            <Link 
-              href="/numerology" 
-              className="hover:text-golden transition-all duration-300 hover:underline"
-            >
-              Thần Số Học
-            </Link>
-            <span className="text-gray-600">›</span>
-            <span className="text-golden font-medium">Hợp Tuổi Tình Yêu</span>
-          </nav>
-        </div>
-      </div>
+      <ContentHeader
+        title='Hợp Tuổi Tình Yêu Theo Thần Số Học'
+        description='Khám phá độ hợp tình yêu giữa các cung hoàng đạo'
+        breadcrumb={[
+          { label: 'Trang Chủ', href: '/' },
+          { label: 'Cung Hoàng Đạo', href: '/zodiac' },
+          { label: 'Ghép Đôi', href: '/zodiac/compatibility' },
+        ]}
+      />
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 py-12">
@@ -376,7 +345,7 @@ export default function NumerologyCompatibilityPage() {
               href="/numerology"
               className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
             >
-              🔢 Phân Tích Ngày Sinh
+              🔢 Số Chủ Đạo
             </Link>
             <Link
               href="/numerology/forecast"

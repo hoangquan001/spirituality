@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import ContentHeader from '@/components/ContentHeader';
 import Link from 'next/link';
+import { useState } from 'react';
 
 interface PlayingCard {
   suit: string;
@@ -234,30 +235,18 @@ export default function CardsPage() {
   };
 
   return (
-    <div className="min-h-screen">
-      {/* Header */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-blue-900/20 to-cyan-900/20 py-20">
-        <div className="absolute inset-0 bg-[url('/stars.png')] opacity-20"></div>
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
-          
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-yellow-400 to-golden bg-clip-text text-transparent">
-              Bói Bài Tây
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
-            <strong className="text-golden">Khám phá vận mệnh</strong> qua 52 lá bài Tây truyền thống
-          </p>
-          
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Đặt câu hỏi và để các lá bài Tây hướng dẫn bạn tìm ra câu trả lời về tình yêu, sự nghiệp và cuộc sống
-          </p>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-12">
+    <>
+      <ContentHeader
+        title="Bói Bài Tây"
+        description="Khám phá vận mệnh qua 52 lá bài Tây truyền thống. Đặt câu hỏi và để các lá bài Tây hướng dẫn bạn tìm ra câu trả lời về tình yêu, sự nghiệp và cuộc sống."
+        breadcrumb={[
+          { label: 'Trang Chủ', href: '/' },
+          { label: 'Bói Bài Tây', href: '/cards' },
+        ]}
+      />
+      <div className="min-h-screen">
+        {/* Main Content */}
+        <div className="max-w-6xl mx-auto px-4 py-12">
         {!reading ? (
           <div className="space-y-8">
             {/* Question Input */}
@@ -464,6 +453,7 @@ export default function CardsPage() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

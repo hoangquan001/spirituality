@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import ContentHeader from '@/components/ContentHeader';
 import Link from 'next/link';
+import { useState } from 'react';
 
 interface RoomAnalysis {
   name: string;
@@ -152,27 +153,15 @@ export default function FengshuiHomePage() {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-orange-900/20 to-amber-900/20 py-20">
-        <div className="absolute inset-0 bg-[url('/stars.png')] opacity-20"></div>
-        <div className="relative max-w-4xl mx-auto px-4 text-center">
-
-          
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-yellow-400 to-golden bg-clip-text text-transparent">
-              Phong Thủy Nhà Ở
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
-            <strong className="text-golden">Tư vấn phong thủy</strong> nhà ở và nội thất toàn diện
-          </p>
-          
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Bố trí không gian sống hài hòa, thu hút tài lộc và mang lại bình an cho gia đình
-          </p>
-        </div>
-      </div>
-
+      <ContentHeader 
+        title='Phong Thủy Nhà Ở' 
+        description='Bố trí không gian sống hài hòa, thu hút tài lộc và mang lại bình an cho gia đình'
+        breadcrumb={[
+          { label: 'Trang chủ', href: '/' },
+          { label: 'Phong Thủy', href: '/feng-shui' },
+          { label: 'Phong Thủy Nhà Ở', href: '/feng-shui/home' }
+        ]}
+      />
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Direction Selection */}
