@@ -96,11 +96,11 @@ src/
   - Loading.tsx - Various loading components (overlay, spinner, dots)
 
 ### 4. Spiritual Features (Mới)
-- **Birthday Match** (`/birthday-match`): So sánh ngày sinh, hợp tuổi vợ chồng
+- **Birthday Match** (`/birthday-match`): Bói tình yêu, hợp tuổi vợ chồng
   - Library: birthdayMatch.ts - Tính toán compatibility
 - **Lunar Convert** (`/lunar-convert`): Chuyển đổi dương ⇄ âm lịch
   - Library: lunarCalendar.ts - Conversion algorithms
-- **Events** (`/events`): Các ngày lễ tâm linh
+- **Events** (`/events`): Các Ngày Lễ  Việt Nam
   - Library: spiritualEvents.ts - Event data and management
 
 ### 5. Original Features
@@ -118,3 +118,47 @@ src/
 - **TypeScript 5**: Type safety
 - **Tailwind CSS 4**: Styling với custom gradient themes
 - **Responsive Design**: Mobile-first approach
+
+
+
+
+
+├── 🔢 Thần số học
+│   ├── Phân tích ngày sinh
+│   ├── Ghép đôi ngày sinh
+│   ├── Phân tích tên
+│   ├── Dự đoán cá nhân 12 tháng tới
+│   ├── Bài học nghiệp số & thử thách
+│   ├── Gợi ý nghề nghiệp theo số
+│
+├── ♈ Tử vi – 12 Cung hoàng đạo
+│   ├── Tử vi hôm nay / tuần / tháng / năm
+│   ├── Tử vi cung [Tên cung]
+│   ├── Ghép đôi cung hoàng đạo
+│   ├── Lịch tử vi cá nhân
+│
+├── 🧭 Phong thủy
+│   ├── Màu sắc hợp mệnh
+│   ├── Hướng hợp tuổi
+│   ├── Vật phẩm phong thủy theo tuổi
+│   ├── Chọn ngày tốt (cưới, khai trương,…)
+│   ├── Phong thủy nhà ở – nội thất
+│   ├── Sim số – biển số phong thủy
+│
+│── 💡Giải mã & Bói toán
+│	├── Gia 
+│	├── Giải mã giấc mơ
+│	├── Ý nghĩa con số
+│	├── Bói bài Tarot đơn giản
+│	├── Bói bài Tây vui
+│	├── Minigame bói hình – màu – số
+│
+│── 💡Tiện ích
+│	├── Chuyển đổi âm lịch – dương lịch
+│	├── Lịch vạn sự – ngày tốt xấu
+│	├── Xem tuổi kết hôn
+│	├── Xem tuổi sinh con
+│	├── Tính tam tai – hạn năm tuổi
+│	├── Tính cung mệnh – ngũ hành
+│
+│── 💡Blog

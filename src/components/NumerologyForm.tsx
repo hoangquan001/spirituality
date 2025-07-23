@@ -34,10 +34,10 @@ export default function NumerologyForm({ onSubmit }: NumerologyFormProps) {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-400/20">
+    <div className="max-w-md mx-auto bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-400/20 h-fit">
       <div className="text-center mb-6">
-        <div className="w-16 h-16 bg-gradient-to-br from-golden to-yellow-300 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-          <span className="text-gray-900 font-bold text-2xl">✦</span>
+        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <img src="/thansohoc.png" className='rounded-full' alt="" />
         </div>
         <h2 className="text-2xl font-bold text-white mb-2">Tính Thần Số Học</h2>
         <p className="text-gray-300">Nhập thông tin để khám phá số mệnh của bạn</p>

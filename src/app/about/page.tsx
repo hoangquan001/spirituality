@@ -157,13 +157,13 @@ export default function AboutPage() {
 
         {/* Team */}
         <div className="cosmic-card rounded-2xl p-8 mb-12">
-          <h2 className="text-3xl font-bold text-white mb-6 text-center">Đội Ngũ Chuyên Gia</h2>
+          <h2 className="text-3xl font-bold text-white mb-6 text-center">Đội Ngũ Tác Giả</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="text-center">
               <div className="w-24 h-24 bg-gradient-to-br from-gray-700 to-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl text-white">👨‍🔬</span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">Chuyên Gia Thần Số Học</h3>
+              <h3 className="text-xl font-bold text-white mb-2">Tác Giả Nội Dung Thần Số Học</h3>
               <p className="text-gray-300">
                 Hơn 15 năm nghiên cứu và thực hành thần số học Pythagorean và Chaldean. 
                 Chuyên sâu về phân tích số mệnh và đường đời.

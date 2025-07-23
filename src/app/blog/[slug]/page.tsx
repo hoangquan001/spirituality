@@ -24,7 +24,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <div className="min-h-screen">
       {/* Breadcrumb */}
       <div className="container mx-auto px-4 py-6">
         <nav className="text-gray-300 text-sm">

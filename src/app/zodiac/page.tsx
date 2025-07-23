@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import ZodiacStructuredData from '../../components/ZodiacStructuredData';
+import RelatedServices from '../../components/RelatedServices';
+import { ZodiacIcon, CheckIcon, StarIcon } from '../../components/icons';
 
 interface ZodiacSign {
   name: string;
@@ -149,26 +152,40 @@ const zodiacSigns: ZodiacSign[] = [
 
 export default function ZodiacPage() {
   return (
-    <div className="min-h-screen py-12 px-4">
-      <div className="container mx-auto max-w-7xl">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
-              Tử Vi 12 Cung
-            </span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Khám phá vận mệnh qua 12 cung hoàng đạo. Tìm hiểu về tính cách, tình yêu, 
-            sự nghiệp và những dự đoán cho tương lai.
-          </p>
-        </div>
+    <>
+      <ZodiacStructuredData />
+      <div className="min-h-screen py-12 px-4">
+        <div className="container mx-auto max-w-7xl">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
+                Cung Hoàng Đạo
+              </span>
+              <br />
+              <span className="text-white text-3xl md:text-4xl">Khám Phá 12 Cung Thú Vị</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
+              <strong className="text-golden">Tìm hiểu tính cách và đặc điểm</strong> của 12 cung hoàng đạo.
+              Khám phá những điều thú vị về bản thân qua ngày sinh của bạn.
+            </p>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+              Cùng <span className="text-golden font-semibold">hàng ngàn người</span> khám phá những điều thú vị về cung hoàng đạo của mình
+            </p>
+
+            {/* Breadcrumb */}
+            <div className="flex items-center justify-center gap-2 text-sm text-gray-400 mb-8">
+              <Link href="/" className="hover:text-golden transition-colors">Trang Chủ</Link>
+              <span>›</span>
+              <span className="text-golden">Cung Hoàng Đạo</span>
+            </div>
+          </div>
 
         {/* Zodiac Wheel */}
         <div className="mb-16">
-          <div className="relative w-80 h-80 mx-auto mb-8">
-            <div className="absolute inset-0 rounded-full border-4 border-golden/30 animate-spin" style={{ animationDuration: '60s' }}>
-              {zodiacSigns.map((sign, index) => {
+          <div className="relative w-100 h-100 mx-auto mb-8">
+            <div className="absolute inset-0 rounded-full border-golden/30 animate-spin" style={{ animationDuration: '60s' }}>
+              {/* {zodiacSigns.map((sign, index) => {
                 const angle = (index * 30) - 90; // Phân bố đều 12 cung (360°/12 = 30°)
                 const radian = (angle * Math.PI) / 180;
                 const x = Math.cos(radian) * 130 + 150; // 150 = tâm của circle 300px
@@ -183,14 +200,25 @@ export default function ZodiacPage() {
                     {sign.icon}
                   </div>
                 );
-              })}
+              })} */}
+              <img src="/1.png" alt="" />
             </div>
-            <div className="absolute inset-8 rounded-full bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm flex items-center justify-center">
+            <div className="absolute inset-0 rounded-full border-golden/30 animate-spin" style={{ animationDuration: '30s' }}>
+
+              <img src="/2.png" alt="" />
+            </div>
+            <div className="absolute inset-0 rounded-full border-golden/30 animate-spin" style={{ animationDuration: '15s' }}>
+              <img src="/3.png" alt="" />
+            </div>
+            <div className="absolute inset-0 rounded-full border-golden/30 animate-spin" style={{ animationDuration: '7s' }}>
+              <img src="/4.png" alt="" />
+            </div>
+            {/* <div className="absolute inset-8 rounded-full bg-gradient-to-br from-black/50 to-gray-900/50 backdrop-blur-sm flex items-center justify-center">
               <div className="text-center">
-                <div className="text-4xl mb-2">🌟</div>
+                <div className="text-4xl mb-2"><ZodiacIcon className="text-golden" size={32} /></div>
                 <div className="text-white font-bold">Hoàng Đạo</div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -299,12 +327,89 @@ export default function ZodiacPage() {
               🔮 Nhận được lời khuyên chi tiết về tình yêu, sự nghiệp và sức khỏe
             </div>
             <div className="text-gray-300">
-              ⭐ Tìm hiểu về mức độ tương hợp với các cung khác
+              <span className="flex items-center gap-2">
+                <ZodiacIcon className="text-golden" size={16} />
+                Tìm hiểu về mức độ tương hợp với các cung khác
+              </span>
             </div>
           </div>
         </div>
+
+        {/* FAQ Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-white mb-4">
+                <span className="bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent">
+                  Câu Hỏi Thường Gặp
+                </span>
+              </h2>
+              <p className="text-gray-300 text-lg">
+                Giải đáp những thắc mắc phổ biến về cung hoàng đạo và tử vi
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {/* FAQ Item 1 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Cung hoàng đạo có đáng tin không?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Cung hoàng đạo là một môn học cổ xưa dựa trên vị trí mặt trời khi bạn sinh ra.
+                  Đây là cách thú vị để tìm hiểu về tính cách và đặc điểm của bản thân. Nhiều người thấy những mô tả về cung hoàng đạo
+                  khá phù hợp với tính cách thực tế của mình, tạo cảm giác thú vị khi khám phá.
+                </p>
+              </div>
+
+              {/* FAQ Item 2 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Làm thế nào để biết cung hoàng đạo của mình?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Cung hoàng đạo được xác định dựa trên ngày và tháng sinh. Có 12 cung hoàng đạo tương ứng với 12 khoảng thời gian trong năm:
+                  Bạch Dương (21/3-19/4), Kim Ngưu (20/4-20/5), Song Tử (21/5-20/6), Cự Giải (21/6-22/7), Sư Tử (23/7-22/8),
+                  Xử Nữ (23/8-22/9), Thiên Bình (23/9-22/10), Bọ Cạp (23/10-21/11), Nhân Mã (22/11-21/12), Ma Kết (22/12-19/1),
+                  Bảo Bình (20/1-18/2), Song Ngư (19/2-20/3).
+                </p>
+              </div>
+
+              {/* FAQ Item 3 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Cung hoàng đạo có thể dự đoán tương lai không?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Cung hoàng đạo không dự đoán tương lai một cách tuyệt đối mà chỉ ra xu hướng và khả năng dựa trên tính cách và đặc điểm của từng cung.
+                  Nó giúp bạn hiểu rõ điểm mạnh, điểm yếu và cách tiếp cận cuộc sống, từ đó đưa ra quyết định phù hợp.
+                  Tương lai vẫn phụ thuộc vào nỗ lực và lựa chọn của bản thân.
+                </p>
+              </div>
+
+              {/* FAQ Item 4 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Tại sao các cung hoàng đạo khác nhau có tính cách khác nhau?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Theo chiêm tinh học, mỗi cung hoàng đạo chịu ảnh hưởng của các yếu tố khác nhau như nguyên tố (Hỏa, Thổ, Khí, Thủy),
+                  hành tinh cai quản và vị trí trong chu kỳ năm. Những yếu tố này tạo nên những đặc điểm tính cách riêng biệt.
+                  Ví dụ, các cung Hỏa (Bạch Dương, Sư Tử, Nhân Mã) thường năng động và nhiệt huyết,
+                  trong khi các cung Thủy (Cự Giải, Bọ Cạp, Song Ngư) có xu hướng cảm xúc và trực giác.
+                </p>
+              </div>
+
+              {/* FAQ Item 5 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Website này có tính phí không?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Không, tất cả nội dung về cung hoàng đạo đều hoàn toàn miễn phí. Bạn có thể thoải mái đọc thông tin về 12 cung hoàng đạo,
+                  tìm hiểu về tính cách và những đặc điểm thú vị mà không tốn phí. Chúng mình chia sẻ những kiến thức này
+                  với mong muốn giúp mọi người hiểu thêm về bản thân.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <RelatedServices currentPage="/zodiac" />
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

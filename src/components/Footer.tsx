@@ -1,15 +1,16 @@
 import Link from 'next/link';
 
+
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-gray-900 via-gray-900 to-gray-800 text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Logo & Description */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 md:col-span-2 lg:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-golden to-yellow-300 rounded-full flex items-center justify-center">
-                <span className="text-gray-900 font-bold text-lg">✦</span>
+              <div className="w-10 h-10 ">
+                  <img src="/logo.png" className='rounded-full' alt="" />
               </div>
               <div>
                 <h3 className="font-bold text-xl bg-gradient-to-r from-golden to-yellow-300 bg-clip-text text-transparent">
@@ -41,41 +42,88 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Thần Số Học */}
           <div>
-            <h4 className="font-semibold text-lg mb-4 text-golden">Liên Kết</h4>
+            <h4 className="font-semibold text-lg mb-4 text-golden">🔢 Thần Số Học</h4>
             <ul className="space-y-2">
-              <li><Link href="/" className="text-gray-300 hover:text-golden transition-colors">Trang Chủ</Link></li>
-              <li><Link href="/numerology" className="text-gray-300 hover:text-golden transition-colors">Thần Số Học</Link></li>
-              <li><Link href="/dream" className="text-gray-300 hover:text-golden transition-colors">Giải Mã Giấc Mơ</Link></li>
-              <li><Link href="/zodiac" className="text-gray-300 hover:text-golden transition-colors">Tử Vi 12 Cung</Link></li>
+              <li><Link href="/numerology" className="text-gray-300 hover:text-golden transition-colors">Phân tích ngày sinh</Link></li>
+              <li><Link href="/numerology/compatibility" className="text-gray-300 hover:text-golden transition-colors">Ghép đôi ngày sinh</Link></li>
+              <li><Link href="/name-analysis" className="text-gray-300 hover:text-golden transition-colors">Phân tích tên</Link></li>
+              <li><Link href="/numerology/forecast" className="text-gray-300 hover:text-golden transition-colors">Dự đoán 12 tháng</Link></li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Tử Vi */}
           <div>
-            <h4 className="font-semibold text-lg mb-4 text-golden">Liên Hệ</h4>
-            <ul className="space-y-2 text-gray-300">
-              <li className="flex items-center space-x-2">
-                <span>📧</span>
-                <span>contact@tamlinh.com</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <span>📱</span>
-                <span>+84 xxx xxx xxx</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <span>📍</span>
-                <span>Việt Nam</span>
-              </li>
+            <h4 className="font-semibold text-lg mb-4 text-golden">♈ Tử Vi</h4>
+            <ul className="space-y-2">
+              <li><Link href="/zodiac/today" className="text-gray-300 hover:text-golden transition-colors">Tử vi hôm nay</Link></li>
+              <li><Link href="/zodiac" className="text-gray-300 hover:text-golden transition-colors">Tử vi 12 cung</Link></li>
+              <li><Link href="/zodiac/compatibility" className="text-gray-300 hover:text-golden transition-colors">Ghép đôi cung hoàng đạo</Link></li>
+              <li><Link href="/zodiac/calendar" className="text-gray-300 hover:text-golden transition-colors">Lịch tử vi cá nhân</Link></li>
+            </ul>
+          </div>
+
+          {/* Phong Thủy */}
+          <div>
+            <h4 className="font-semibold text-lg mb-4 text-golden">🧭 Phong Thủy</h4>
+            <ul className="space-y-2">
+              <li><Link href="/feng-shui/colors" className="text-gray-300 hover:text-golden transition-colors">Màu sắc hợp mệnh</Link></li>
+              <li><Link href="/feng-shui/directions" className="text-gray-300 hover:text-golden transition-colors">Hướng hợp tuổi</Link></li>
+              <li><Link href="/feng-shui/dates" className="text-gray-300 hover:text-golden transition-colors">Chọn ngày tốt</Link></li>
+              <li><Link href="/feng-shui/home" className="text-gray-300 hover:text-golden transition-colors">Phong thủy nhà ở</Link></li>
+            </ul>
+          </div>
+
+          {/* Giải Mã & Bói */}
+          <div>
+            <h4 className="font-semibold text-lg mb-4 text-golden">💡 Giải Mã & Bói</h4>
+            <ul className="space-y-2">
+              <li><Link href="/dream" className="text-gray-300 hover:text-golden transition-colors">Giải mã giấc mơ</Link></li>
+              <li><Link href="/numbers/meaning" className="text-gray-300 hover:text-golden transition-colors">Ý nghĩa con số</Link></li>
+              <li><Link href="/tarot" className="text-gray-300 hover:text-golden transition-colors">Bói bài Tarot</Link></li>
+              <li><Link href="/games" className="text-gray-300 hover:text-golden transition-colors">Minigame bói</Link></li>
+            </ul>
+          </div>
+
+          {/* Tiện Ích */}
+          <div>
+            <h4 className="font-semibold text-lg mb-4 text-golden">💡 Tiện Ích</h4>
+            <ul className="space-y-2">
+              <li><Link href="/calendar/convert" className="text-gray-300 hover:text-golden transition-colors">Chuyển đổi lịch</Link></li>
+              <li><Link href="/calendar/almanac" className="text-gray-300 hover:text-golden transition-colors">Lịch vạn sự</Link></li>
+              <li><Link href="/marriage-age" className="text-gray-300 hover:text-golden transition-colors">Tuổi kết hôn</Link></li>
+              <li><Link href="/tam-tai" className="text-gray-300 hover:text-golden transition-colors">Tam tai - Hạn năm</Link></li>
+            </ul>
+          </div>
+
+          {/* Blog & Liên Hệ */}
+          <div>
+            <h4 className="font-semibold text-lg mb-4 text-golden">💡 Khác</h4>
+            <ul className="space-y-2">
+              <li><Link href="/blog" className="text-gray-300 hover:text-golden transition-colors">Blog</Link></li>
+              <li><Link href="/about" className="text-gray-300 hover:text-golden transition-colors">Về chúng tôi</Link></li>
+              <li><Link href="/privacy" className="text-gray-300 hover:text-golden transition-colors">Chính sách bảo mật</Link></li>
+              <li><Link href="/terms" className="text-gray-300 hover:text-golden transition-colors">Điều khoản sử dụng</Link></li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center">
-          <p className="text-gray-400">
-            © 2024 Tâm Linh - Thần Số Học. Tất cả quyền được bảo lưu.
-          </p>
+        <div className="border-t border-gray-700 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-sm">
+              © 2024 Giải Mã Tâm Linh. Tất cả quyền được bảo lưu.
+            </p>
+            <div className="flex items-center gap-4 text-sm">
+              <Link href="/privacy" className="text-gray-400 hover:text-golden transition-colors">
+                Chính Sách Bảo Mật
+              </Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/terms" className="text-gray-400 hover:text-golden transition-colors">
+                Điều Khoản Sử Dụng
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

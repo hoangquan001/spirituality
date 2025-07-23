@@ -96,11 +96,11 @@ src/
   - Loading.tsx - Various loading components (overlay, spinner, dots)
 
 ### 4. Spiritual Features (Mới)
-- **Birthday Match** (`/birthday-match`): So sánh ngày sinh, hợp tuổi vợ chồng
+- **Birthday Match** (`/birthday-match`): Bói tình yêu, hợp tuổi vợ chồng
   - Library: birthdayMatch.ts - Tính toán compatibility
 - **Lunar Convert** (`/lunar-convert`): Chuyển đổi dương ⇄ âm lịch
   - Library: lunarCalendar.ts - Conversion algorithms
-- **Events** (`/events`): Các ngày lễ tâm linh
+- **Events** (`/events`): Các Ngày Lễ  Việt Nam
   - Library: spiritualEvents.ts - Event data and management
 
 ### 5. Original Features

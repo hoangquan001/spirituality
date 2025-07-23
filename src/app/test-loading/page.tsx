@@ -23,7 +23,7 @@ export default function LoadingTestPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <div className="min-h-screen">
       <LoadingOverlay show={showOverlay} message="Đang xử lý dữ liệu..." />
       
       <div className="container mx-auto px-4 py-20">

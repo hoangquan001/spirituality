@@ -25,7 +25,7 @@ export default function EventsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <div className="relative py-20 bg-gradient-to-r from-black/50 to-gray-900/50">
         <div className="container mx-auto px-4 text-center">
@@ -33,15 +33,10 @@ export default function EventsPage() {
             Ngày Lễ <span className="bg-gradient-to-r from-golden to-yellow-300 bg-clip-text text-transparent">Tâm Linh</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Khám phá các ngày lễ tâm linh quan trọng trong năm và ý nghĩa của chúng
+            Khám phá các Ngày Lễ  Việt Nam quan trọng trong năm và ý nghĩa của chúng
           </p>
         </div>
         
-        {/* Decorative elements */}
-        <div className="absolute top-10 left-10 text-4xl text-golden animate-pulse">🙏</div>
-        <div className="absolute bottom-10 right-10 text-3xl text-gray-400 animate-bounce">🕯️</div>
-        <div className="absolute top-1/2 right-1/4 text-2xl text-yellow-400 animate-ping">⭐</div>
-        <div className="absolute bottom-1/4 left-1/4 text-3xl text-blue-400 animate-pulse">🌸</div>
       </div>
 
       <div className="container mx-auto px-4 py-12">
@@ -223,7 +218,7 @@ export default function EventsPage() {
               </h3>
               <p className="text-gray-300">
                 {viewMode === 'month' 
-                  ? `Không có ngày lễ tâm linh nào trong ${monthNames[selectedMonth - 1]} ${selectedYear}`
+                  ? `Không có Ngày Lễ  Việt Nam nào trong ${monthNames[selectedMonth - 1]} ${selectedYear}`
                   : viewMode === 'upcoming'
                   ? 'Không có sự kiện nào sắp diễn ra trong thời gian tới'
                   : 'Danh sách sự kiện đang được cập nhật'

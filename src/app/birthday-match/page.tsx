@@ -34,7 +34,7 @@ export default function BirthdayMatchPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <div className="relative py-20 bg-gradient-to-r from-black/50 to-gray-900/50">
         <div className="container mx-auto px-4 text-center">
@@ -46,10 +46,6 @@ export default function BirthdayMatchPage() {
           </p>
         </div>
         
-        {/* Decorative hearts */}
-        <div className="absolute top-10 left-10 text-4xl text-pink-400 animate-pulse">💕</div>
-        <div className="absolute bottom-10 right-10 text-3xl text-red-400 animate-bounce">❤️</div>
-        <div className="absolute top-1/2 left-1/4 text-2xl text-gray-400 animate-ping">💖</div>
       </div>
 
       <div className="container mx-auto px-4 py-12">

@@ -2,6 +2,10 @@
 
 import { useState } from 'react';
 import { dreamDictionary as dreamData, searchDreams, getDreamsByCategory, getAllCategories, getRandomDream, type DreamSymbol } from '../../lib/dreamDictionary';
+import DreamStructuredData from '../../components/DreamStructuredData';
+import RelatedServices from '../../components/RelatedServices';
+import { DreamIcon, CheckIcon, StarIcon } from '../../components/icons';
+import Link from 'next/link';
 
 export default function DreamPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -21,20 +25,34 @@ export default function DreamPage() {
   const categories = getAllCategories();
 
   return (
-    <div className="min-h-screen py-12 px-4">
-      <div className="container mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
-              Giải Mã Giấc Mơ
-            </span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Khám phá ý nghĩa sâu xa của những giấc mơ. Tìm hiểu thông điệp từ tiềm thức 
-            và những dự báo cho tương lai.
-          </p>
-        </div>
+    <>
+      <DreamStructuredData />
+      <div className="min-h-screen py-12 px-4">
+        <div className="container mx-auto max-w-6xl">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
+                Giải Mã Giấc Mơ
+              </span>
+              <br />
+              <span className="text-white text-3xl md:text-4xl">Từ Điển Giấc Mơ Đầy Đủ</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
+              <strong className="text-golden">Tìm hiểu những điều thú vị từ giấc mơ</strong> của bạn.
+              Khám phá ý nghĩa và những thông điệp ẩn giấu trong từng giấc mơ.
+            </p>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+              Cùng khám phá <span className="text-golden font-semibold">hàng ngàn ý nghĩa</span> thú vị từ những giấc mơ đa dạng
+            </p>
+
+            {/* Breadcrumb */}
+            <div className="flex items-center justify-center gap-2 text-sm text-gray-400 mb-8">
+              <Link href="/" className="hover:text-golden transition-colors">Trang Chủ</Link>
+              <span>›</span>
+              <span className="text-golden">Giải Mã Giấc Mơ</span>
+            </div>
+          </div>
 
         {/* Search Section */}
         <div className="mb-12">
@@ -42,7 +60,7 @@ export default function DreamPage() {
             <div className="cosmic-card rounded-2xl p-8 mb-8">
               <div className="text-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-indigo-600 to-gray-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">🌙</span>
+                  <span className="text-3xl"><DreamIcon className="text-white" size={32} /></span>
                 </div>
                 <h2 className="text-2xl font-bold text-white mb-2">Tìm Kiếm Ý Nghĩa Giấc Mơ</h2>
                 <p className="text-gray-300">Nhập từ khóa để tìm kiếm ý nghĩa giấc mơ của bạn</p>
@@ -142,7 +160,7 @@ export default function DreamPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {selectedDream.recommendations.map((advice, index) => (
                         <div key={index} className="flex items-start bg-green-900/20 rounded-lg p-3">
-                          <span className="text-green-400 mr-2 mt-1">✓</span>
+                          <span className="text-green-400 mr-2 mt-1"><CheckIcon size={16} /></span>
                           <span className="text-gray-300 text-sm">{advice}</span>
                         </div>
                       ))}
@@ -172,7 +190,9 @@ export default function DreamPage() {
 
                 <div className="pt-6 border-t border-gray-400/20">
                   <div className="bg-blue-900/20 rounded-lg p-4">
-                    <h4 className="font-semibold text-blue-300 mb-2">🌙 Lưu Ý Quan Trọng</h4>
+                    <h4 className="font-semibold text-blue-300 mb-2 flex items-center gap-2">
+                      <DreamIcon className="text-blue-300" size={16} /> Lưu Ý Quan Trọng
+                    </h4>
                     <p className="text-blue-200 text-sm">
                       Ý nghĩa giấc mơ có thể thay đổi tùy thuộc vào hoàn cảnh cá nhân, cảm xúc khi mơ và 
                       bối cảnh xung quanh ký hiệu trong giấc mơ. Hãy kết hợp với trực giác của bản thân 
@@ -259,7 +279,6 @@ export default function DreamPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <span className="text-golden text-xl">📝</span>
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Ghi Chép Ngay</h3>
                   <p className="text-gray-300">Hãy ghi lại giấc mơ ngay khi thức dậy khi trí nhớ còn tươi.</p>
@@ -267,7 +286,6 @@ export default function DreamPage() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <span className="text-golden text-xl">🧘</span>
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Thiền Trước Khi Ngủ</h3>
                   <p className="text-gray-300">Thực hành thiền định để có giấc ngủ sâu và giấc mơ rõ ràng hơn.</p>
@@ -275,7 +293,6 @@ export default function DreamPage() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <span className="text-golden text-xl">🌙</span>
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Ngủ Đúng Giờ</h3>
                   <p className="text-gray-300">Giữ một lịch trình ngủ đều đặn để tăng khả năng nhớ giấc mơ.</p>
@@ -285,7 +302,6 @@ export default function DreamPage() {
 
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <span className="text-golden text-xl">💭</span>
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Phân Tích Cảm Xúc</h3>
                   <p className="text-gray-300">Chú ý đến cảm xúc trong mơ, không chỉ riêng các ký hiệu.</p>
@@ -293,7 +309,6 @@ export default function DreamPage() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <span className="text-golden text-xl">🔍</span>
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Tìm Mối Liên Hệ</h3>
                   <p className="text-gray-300">Liên kết giấc mơ với những sự kiện gần đây trong cuộc sống.</p>
@@ -301,7 +316,6 @@ export default function DreamPage() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <span className="text-golden text-xl">⏰</span>
                 <div>
                   <h3 className="text-lg font-semibold text-white mb-2">Thời Điểm Quan Trọng</h3>
                   <p className="text-gray-300">Giấc mơ vào sáng sớm thường rõ ràng và có ý nghĩa hơn.</p>
@@ -310,8 +324,79 @@ export default function DreamPage() {
             </div>
           </div>
         </div>
+
+        {/* FAQ Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-white mb-4">
+                <span className="bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent">
+                  Câu Hỏi Thường Gặp
+                </span>
+              </h2>
+              <p className="text-gray-300 text-lg">
+                Giải đáp những thắc mắc phổ biến về giải mã giấc mơ
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {/* FAQ Item 1 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Giấc mơ có ý nghĩa gì?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Giấc mơ là cách tiềm thức giao tiếp với ý thức, phản ánh những suy nghĩ, cảm xúc và mong muốn sâu kín.
+                  Mỗi biểu tượng trong giấc mơ đều mang ý nghĩa riêng, có thể là lời khuyên, cảnh báo hoặc dự báo về tương lai.
+                  Việc giải mã giấc mơ giúp bạn hiểu rõ hơn về bản thân và những gì đang diễn ra trong cuộc sống.
+                </p>
+              </div>
+
+              {/* FAQ Item 2 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Tại sao chúng ta lại mơ?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Giấc mơ xảy ra trong giai đoạn REM của giấc ngủ, khi não bộ xử lý thông tin và cảm xúc từ ngày hôm đó.
+                  Theo tâm linh học, giấc mơ là cầu nối giữa thế giới vật chất và tinh thần, giúp linh hồn nhận được thông điệp từ vũ trụ.
+                  Giấc mơ cũng có thể là cách tiềm thức giải quyết vấn đề và chuẩn bị cho những thử thách sắp tới.
+                </p>
+              </div>
+
+              {/* FAQ Item 3 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Làm thế nào để nhớ giấc mơ?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Để nhớ giấc mơ tốt hơn, bạn nên: đặt sổ ghi chú bên cạnh giường, ghi lại ngay khi thức dậy,
+                  tránh sử dụng điện thoại ngay sau khi thức dậy, duy trì giấc ngủ đều đặn, và tập trung suy nghĩ về giấc mơ trước khi ngủ.
+                  Việc ghi chép thường xuyên sẽ giúp bạn nhớ giấc mơ rõ ràng hơn.
+                </p>
+              </div>
+
+              {/* FAQ Item 4 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Giấc mơ có thể dự báo tương lai không?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Theo quan niệm tâm linh, một số giấc mơ có thể mang tính dự báo, đặc biệt là những giấc mơ rõ ràng và ấn tượng mạnh.
+                  Tuy nhiên, hầu hết giấc mơ phản ánh tâm trạng hiện tại và những lo lắng trong tiềm thức.
+                  Quan trọng là hiểu được thông điệp mà giấc mơ muốn truyền tải để đưa ra quyết định đúng đắn trong cuộc sống.
+                </p>
+              </div>
+
+              {/* FAQ Item 5 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Website này có tính phí không?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Không, tất cả nội dung về giải mã giấc mơ đều hoàn toàn miễn phí. Bạn có thể thoải mái tìm kiếm ý nghĩa của bất kỳ giấc mơ nào,
+                  đọc những thông tin thú vị và tham khảo lời khuyên mà không tốn phí. Chúng mình chia sẻ từ điển giấc mơ này với mong muốn giúp mọi người hiểu thêm về giấc mơ của mình.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <RelatedServices currentPage="/dream" />
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

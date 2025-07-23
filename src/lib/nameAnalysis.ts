@@ -187,10 +187,10 @@ function getNumberMeaning(num: number): {
       relationshipAdvice: ['Cần đối tác hiểu sứ mệnh lớn', 'Tìm người hỗ trợ và chia sẻ', 'Cân bằng mục tiêu và tình cảm']
     },
     33: {
-      strengths: ['Thầy tâm linh', 'Chữa lành', 'Nâng cao ý thức', 'Hy sinh', 'Phục vụ'],
+      strengths: ['Thầy tâm linh', 'Chữa lành', 'Nâng cao ý thức', 'Hy sinh', 'Giúp đỡ'],
       challenges: ['Gánh nặng lớn', 'Hy sinh quá nhiều', 'Áp lực tâm linh'],
       careers: ['Chữa lành', 'Tâm linh', 'Giáo dục', 'Từ thiện'],
-      talents: ['Chữa lành', 'Tâm linh', 'Giảng dạy', 'Phục vụ'],
+      talents: ['Chữa lành', 'Tâm linh', 'Giảng dạy', 'Giúp đỡ'],
       personalAdvice: ['Học cách bảo vệ bản thân', 'Cân bằng cho và nhận', 'Chăm sóc sức khỏe'],
       relationshipAdvice: ['Cần đối tác hiểu sứ mệnh', 'Tìm người hỗ trợ tâm linh', 'Chia sẻ gánh nặng']
     }

@@ -303,7 +303,7 @@ export default function FengShuiPage() {
         {!result ? (
           <div className="max-w-4xl mx-auto">
             {/* Input Form */}
-            <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-gray-400/20 mb-8">
+            <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 rounded-3xl p-8 border border-gray-400/20 mb-8">
               <div className="text-center mb-8">
                 <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-3xl">🏠</span>

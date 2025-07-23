@@ -42,7 +42,7 @@ export default function BlogAdminPage() {
 
   if (isCreating) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="min-h-screen">
         <div className="container mx-auto px-4 py-8">
           {/* Header */}
           <div className="max-w-4xl mx-auto mb-8">
@@ -211,7 +211,7 @@ export default function BlogAdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <div className="relative py-20 bg-gradient-to-r from-black/50 to-gray-900/50">
         <div className="container mx-auto px-4 text-center">

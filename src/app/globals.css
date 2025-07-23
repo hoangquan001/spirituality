@@ -1,13 +1,13 @@
 @import "tailwindcss";
-
-:root {
+@theme {
   --background: #050211;
   --foreground: #ffffff;
-  --golden: #FFD700;
+  --color-golden: #FFD700;
   --mystic-purple: #2A0845;
   --deep-purple: #1A0B2E;
   --cosmic-blue: #0D0617;
 }
+
 
 @media (prefers-color-scheme: dark) {
   :root {

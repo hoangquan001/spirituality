@@ -2,6 +2,10 @@
 
 import { useState } from 'react';
 import { calculateNameNumerology, getNameMeaning, getNameAdvice, type NameAnalysis } from '../../lib/nameAnalysis';
+import NameAnalysisStructuredData from '../../components/NameAnalysisStructuredData';
+import RelatedServices from '../../components/RelatedServices';
+import { NameAnalysisIcon, CheckIcon, StarIcon } from '../../components/icons';
+import Link from 'next/link';
 
 export default function NameAnalysisPage() {
   const [name, setName] = useState('');
@@ -27,30 +31,45 @@ export default function NameAnalysisPage() {
   };
 
   return (
-    <div className="min-h-screen py-12 px-4">
-      <div className="container mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
-              Bói Tên Theo Số
-            </span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Phân tích tên của bạn theo thần số học. Khám phá ý nghĩa, tính cách và vận mệnh ẩn giấu trong tên.
-          </p>
-        </div>
+    <>
+      <NameAnalysisStructuredData />
+      <div className="min-h-screen py-12 px-4">
+        <div className="container mx-auto max-w-6xl">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
+                Bói Tên Theo Thần Số Học
+              </span>
+              <br />
+              <span className="text-white text-3xl md:text-4xl">Phân Tích Tên Tuổi Miễn Phí</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
+              <strong className="text-golden">Khám phá ý nghĩa và tác động của tên</strong> qua thần số học.
+              Phân tích tính cách, vận mệnh và nhận lời khuyên cải thiện cuộc sống.
+            </p>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+              Hơn <span className="text-golden font-semibold">30,000+ người</span> đã phân tích tên tuổi và nhận được lời khuyên hữu ích
+            </p>
+
+            {/* Breadcrumb */}
+            <div className="flex items-center justify-center gap-2 text-sm text-gray-400 mb-8">
+              <Link href="/" className="hover:text-golden transition-colors">Trang Chủ</Link>
+              <span>›</span>
+              <span className="text-golden">Bói Tên</span>
+            </div>
+          </div>
 
         {!result ? (
           <div className="max-w-4xl mx-auto">
             {/* Input Form */}
-            <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-gray-400/20 mb-8">
+            <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 rounded-3xl p-8 border border-gray-400/20 mb-8">
               <div className="text-center mb-8">
                 <div className="w-20 h-20 bg-gradient-to-br from-golden to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-3xl">📝</span>
                 </div>
                 <h2 className="text-3xl font-bold text-white mb-4">Nhập Tên Của Bạn</h2>
-                <p className="text-gray-300">Tên đầy đủ sẽ cho kết quả chính xác nhất</p>
+                <p className="text-gray-300">Nhập tên đầy đủ để khám phá những điều thú vị</p>
               </div>
 
               <div className="max-w-md mx-auto space-y-6">
@@ -83,31 +102,61 @@ export default function NameAnalysisPage() {
             </div>
 
             {/* Information Cards */}
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-gradient-to-br from-gray-900/30 to-blue-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-400/20">
                 <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                  <span className="text-golden">🔤</span>
-                  Thần Số Học Tên
+                  <span className="text-golden"><NameAnalysisIcon size={24} /></span>
+                  Phân Tích Tên Tuổi
                 </h3>
                 <div className="space-y-3 text-gray-300 text-sm">
-                  <p>• <strong className="text-white">Số biểu đạt:</strong> Cách bạn thể hiện bản thân</p>
-                  <p>• <strong className="text-white">Số linh hồn:</strong> Khao khát sâu thẳm trong tâm hồn</p>
-                  <p>• <strong className="text-white">Số nhân cách:</strong> Ấn tượng đầu tiên về bạn</p>
-                  <p>• <strong className="text-white">Số vận may:</strong> Con số mang lại may mắn</p>
+                  <p>• <strong className="text-white">Số biểu đạt:</strong> Cách bạn thể hiện bản thân ra bên ngoài</p>
+                  <p>• <strong className="text-white">Số linh hồn:</strong> Khao khát và động lực sâu thẳm trong tâm hồn</p>
+                  <p>• <strong className="text-white">Số nhân cách:</strong> Ấn tượng đầu tiên mà người khác có về bạn</p>
+                  <p>• <strong className="text-white">Số vận may:</strong> Con số mang lại may mắn và thành công</p>
                 </div>
               </div>
 
               <div className="bg-gradient-to-br from-gray-900/30 to-blue-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-400/20">
                 <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                  <span className="text-golden">✨</span>
-                  Bạn Sẽ Biết Được
+                  <span className="text-golden"><StarIcon size={24} /></span>
+                  Lợi Ích Khi Phân Tích
                 </h3>
                 <div className="space-y-3 text-gray-300 text-sm">
-                  <p>• Tính cách và đặc điểm nổi bật</p>
-                  <p>• Điểm mạnh và điểm cần cải thiện</p>
-                  <p>• Hướng phát triển sự nghiệp phù hợp</p>
-                  <p>• Lời khuyên cho các mối quan hệ</p>
-                  <p>• Số may mắn và màu sắc phù hợp</p>
+                  <p>• <strong className="text-white">Hiểu rõ bản thân:</strong> Tính cách và đặc điểm nổi bật</p>
+                  <p>• <strong className="text-white">Phát triển cá nhân:</strong> Điểm mạnh và điểm cần cải thiện</p>
+                  <p>• <strong className="text-white">Định hướng nghề nghiệp:</strong> Hướng phát triển sự nghiệp phù hợp</p>
+                  <p>• <strong className="text-white">Cải thiện quan hệ:</strong> Lời khuyên cho các mối quan hệ</p>
+                  <p>• <strong className="text-white">Tăng vận may:</strong> Số may mắn và màu sắc phù hợp</p>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-gray-900/30 to-blue-900/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-400/20">
+                <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                  <span className="text-golden"><StarIcon size={24} filled /></span>
+                  Tại Sao Chọn Chúng Tôi?
+                </h3>
+                <div className="space-y-3 text-gray-300 text-sm">
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1"><CheckIcon size={16} /></span>
+                    <span><strong className="text-white">Miễn phí 100%:</strong> Tất cả nội dung đều được chia sẻ miễn phí</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1"><CheckIcon size={16} /></span>
+                    <span><strong className="text-white">Thú vị và hay ho:</strong> Nội dung được trình bày sinh động, dễ hiểu</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1"><CheckIcon size={16} /></span>
+                    <span><strong className="text-white">Bảo mật tuyệt đối:</strong> Thông tin được bảo vệ an toàn</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-green-400 mt-1"><CheckIcon size={16} /></span>
+                    <span><strong className="text-white">Kết quả chi tiết:</strong> Phân tích sâu sắc và lời khuyên cụ thể</span>
+                  </div>
+                </div>
+                <div className="mt-4 p-3 bg-golden/10 rounded-lg border border-golden/20">
+                  <p className="text-golden text-xs font-medium text-center">
+                    ⭐ Hơn 30,000+ người đã tin tưởng sử dụng
+                  </p>
                 </div>
               </div>
             </div>
@@ -151,7 +200,7 @@ export default function NameAnalysisPage() {
 
             {/* Detailed Analysis */}
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-gray-400/20">
+              <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 rounded-3xl p-8 border border-gray-400/20">
                 <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                   <span className="text-golden">🎭</span>
                   Tính Cách & Đặc Điểm
@@ -162,7 +211,7 @@ export default function NameAnalysisPage() {
                     <ul className="text-gray-200 text-sm space-y-1">
                       {result.strengths.map((strength, index) => (
                         <li key={index} className="flex items-start gap-2">
-                          <span className="text-green-400 mt-1">✓</span>
+                          <span className="text-green-400 mt-1"><CheckIcon size={16} /></span>
                           {strength}
                         </li>
                       ))}
@@ -183,7 +232,7 @@ export default function NameAnalysisPage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-gray-400/20">
+              <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 rounded-3xl p-8 border border-gray-400/20">
                 <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                   <span className="text-golden">💼</span>
                   Sự Nghiệp & Tài Năng
@@ -298,8 +347,70 @@ export default function NameAnalysisPage() {
             </div>
           </div>
         )}
+
+        {/* FAQ Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-white mb-4">
+                <span className="bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent">
+                  Câu Hỏi Thường Gặp
+                </span>
+              </h2>
+              <p className="text-gray-300 text-lg">
+                Giải đáp những thắc mắc phổ biến về phân tích tên tuổi theo thần số học
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {/* FAQ Item 1 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Phân tích tên có đáng tin không?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Phân tích tên theo thần số học là một cách thú vị để tìm hiểu về bản thân. Mỗi chữ cái trong tên đều có giá trị số riêng,
+                  và khi kết hợp lại sẽ tạo ra những thông tin hay ho về tính cách. Đây là một môn học cổ xưa được nhiều người quan tâm
+                  và nhiều bạn chia sẻ rằng thông tin này khá phù hợp với tính cách thực tế.
+                </p>
+              </div>
+
+              {/* FAQ Item 2 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Tên có thực sự ảnh hưởng đến vận mệnh không?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Theo thần số học, tên có tác động đến tính cách và cách người khác nhìn nhận bạn. Tên tạo ra rung động năng lượng nhất định,
+                  ảnh hưởng đến sự tự tin, cách giao tiếp và cơ hội trong cuộc sống. Tuy nhiên, tên chỉ là một yếu tố trong tổng thể,
+                  không quyết định hoàn toàn vận mệnh.
+                </p>
+              </div>
+
+              {/* FAQ Item 3 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Tôi có nên đổi tên theo thần số học không?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Việc đổi tên nên được cân nhắc kỹ lưỡng. Nếu phân tích cho thấy tên hiện tại có những hạn chế, bạn có thể:
+                  thêm tên lót phù hợp, sử dụng biệt danh tích cực, hoặc đổi tên hoàn toàn nếu thực sự cần thiết.
+                  Quan trọng là tên mới phải phù hợp với số mệnh và mang lại năng lượng tích cực.
+                </p>
+              </div>
+
+              {/* FAQ Item 4 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Phân tích tên có tính phí không?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Không, tất cả nội dung phân tích tên đều hoàn toàn miễn phí. Bạn có thể thoải mái khám phá ý nghĩa của bất kỳ tên nào,
+                  đọc những thông tin thú vị về tính cách và tham khảo lời khuyên mà không tốn phí. Chúng mình chia sẻ những kiến thức này
+                  với mong muốn giúp mọi người hiểu thêm về bản thân.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <RelatedServices currentPage="/name-analysis" />
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 

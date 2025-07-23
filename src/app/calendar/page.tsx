@@ -338,7 +338,7 @@ export default function CalendarPage() {
 
         {/* Information Cards */}
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-gray-400/20">
+          <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 rounded-3xl p-8 border border-gray-400/20">
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
               <span className="text-golden">📚</span>
               Ý Nghĩa Can Chi
@@ -350,7 +350,7 @@ export default function CalendarPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-8 border border-gray-400/20">
+          <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 rounded-3xl p-8 border border-gray-400/20">
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
               <span className="text-golden">🌙</span>
               Âm Lịch Việt Nam

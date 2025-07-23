@@ -3,6 +3,10 @@
 import { useState } from 'react';
 import NumerologyForm from '../../components/NumerologyForm';
 import ResultCard from '../../components/ResultCard';
+import NumerologyStructuredData from '../../components/NumerologyStructuredData';
+import RelatedServices from '../../components/RelatedServices';
+import { NumerologyIcon, CheckIcon, StarIcon } from '../../components/icons';
+import Link from 'next/link';
 
 interface FormData {
   fullName: string;
@@ -81,10 +85,10 @@ export default function NumerologyPage() {
         6: "Bạn là người quan tâm đến gia đình, có trách nhiệm và yêu thương. Số 6 đại diện cho tình yêu thương, chăm sóc và sự hòa hợp trong gia đình.",
         7: "Bạn là người tâm linh, thích nghiên cứu và tìm hiểu sâu. Số 7 đại diện cho trí tuệ, sự hoàn hảo và khả năng phân tích sâu sắc.",
         8: "Bạn là người có tham vọng, thực tế và thành công trong kinh doanh. Số 8 đại diện cho quyền lực, thành công vật chất và khả năng quản lý.",
-        9: "Bạn là người nhân đạo, rộng lượng và có tầm nhìn toàn cầu. Số 9 đại diện cho sự hoàn thiện, lòng từ bi và phục vụ nhân loại.",
+        9: "Bạn là người nhân đạo, rộng lượng và có tầm nhìn toàn cầu. Số 9 đại diện cho sự hoàn thiện, lòng từ bi và giúp đỡ nhân loại.",
         11: "Bạn là người có trực giác mạnh, tâm linh cao và khả năng truyền cảm hứng. Số 11 là số chủ đạo đại diện cho sự giác ngộ và năng lực siêu nhiên.",
         22: "Bạn là người có khả năng biến ước mơ thành hiện thực một cách vĩ đại. Số 22 là số chủ đạo đại diện cho kiến trúc sư của ước mơ.",
-        33: "Bạn là người thầy tâm linh, có khả năng chữa lành và nâng cao ý thức con người. Số 33 là số chủ đạo cao nhất đại diện cho sự hy sinh và phục vụ."
+        33: "Bạn là người thầy tâm linh, có khả năng chữa lành và nâng cao ý thức con người. Số 33 là số chủ đạo cao nhất đại diện cho sự hy sinh và giúp đỡ."
       };
       return meanings[num] || "Một con số đặc biệt với ý nghĩa sâu sắc.";
     };
@@ -117,66 +121,161 @@ export default function NumerologyPage() {
   };
 
   return (
-    <div className="min-h-screen py-12 px-4">
-      <div className="container mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
-              Thần Số Học
-            </span>
-          </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Khám phá bí mật cuộc sống thông qua sức mạnh của các con số. 
-            Tìm hiểu về đường đời, số mệnh và những điều kỳ diệu ẩn giấu trong ngày sinh của bạn.
-          </p>
-        </div>
+    <>
+      <NumerologyStructuredData />
+      <div className="min-h-screen py-12 px-4">
+        <div className="container mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-golden via-yellow-300 to-golden bg-clip-text text-transparent">
+                Thần Số Học Pythagoras
+              </span>
+              <br />
+              <span className="text-white text-3xl md:text-4xl">Chính Xác & Miễn Phí</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4 leading-relaxed">
+              <strong className="text-golden">Tìm hiểu những điều thú vị về bản thân</strong> qua ngày sinh của bạn.
+              Khám phá tính cách, điểm mạnh và những đặc điểm nổi bật.
+            </p>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+              Cùng khám phá những điều <span className="text-golden font-semibold">thú vị về bản thân</span> qua những con số trong ngày sinh
+            </p>
+
+            {/* Breadcrumb */}
+            <div className="flex items-center justify-center gap-2 text-sm text-gray-400 mb-8">
+              <Link href="/" className="hover:text-golden transition-colors">Trang Chủ</Link>
+              <span>›</span>
+              <span className="text-golden">Thần Số Học</span>
+            </div>
+          </div>
 
         {!result ? (
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Form */}
-              <div>
-                <NumerologyForm onSubmit={handleFormSubmit} />
-              </div>
+         
+              <NumerologyForm onSubmit={handleFormSubmit} />
+         
 
               {/* Info */}
               <div className="space-y-6">
                 <div className="cosmic-card rounded-2xl p-6">
                   <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span className="mr-3">🔮</span>
-                    Thần Số Học Là Gì?
+                    <span className="mr-3"><NumerologyIcon className="text-golden" size={24} /></span>
+                    Thần Số Học Pythagoras Là Gì?
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    Thần số học là một hệ thống cổ xưa sử dụng các con số để hiểu về tính cách, 
-                    tiềm năng và vận mệnh của con người. Mỗi số từ 1 đến 9 đều mang một ý nghĩa 
-                    và năng lượng riêng biệt.
+                  <p className="text-gray-300 leading-relaxed mb-4">
+                    Thần số học là cách người xưa dùng để tìm hiểu về tính cách qua ngày sinh.
+                    Mỗi con số đều mang một ý nghĩa riêng, giúp bạn hiểu rõ hơn về bản thân mình.
                   </p>
+
                 </div>
 
                 <div className="cosmic-card rounded-2xl p-6">
                   <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
                     <span className="mr-3">📊</span>
-                    Bạn Sẽ Nhận Được Gì?
+                    Bạn Sẽ Khám Phá Được Gì?
                   </h3>
-                  <ul className="text-gray-300 space-y-2">
-                    <li className="flex items-center"><span className="mr-2">✦</span> Số đường đời (Life Path Number)</li>
-                    <li className="flex items-center"><span className="mr-2">✦</span> Số định mệnh (Destiny Number)</li>
-                    <li className="flex items-center"><span className="mr-2">✦</span> Số linh hồn (Soul Number)</li>
-                    <li className="flex items-center"><span className="mr-2">✦</span> Số nhân cách (Personality Number)</li>
+                  <ul className="text-gray-300 space-y-3">
+                    <li className="flex items-start">
+                      <span className="mr-3 text-golden mt-1">🛤️</span>
+                      <div>
+                        <strong className="text-white">Số Đường Đời (Life Path Number):</strong> Khám phá mục tiêu cuộc sống và con đường phát triển
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-3 text-golden mt-1">🎯</span>
+                      <div>
+                        <strong className="text-white">Số Định Mệnh:</strong> Hiểu rõ sứ mệnh và những gì bạn cần hoàn thành trong đời
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-3 text-golden mt-1">💫</span>
+                      <div>
+                        <strong className="text-white">Số Linh Hồn:</strong> Khám phá khao khát sâu kín và động lực nội tâm
+                      </div>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-3 text-golden mt-1">🎭</span>
+                      <div>
+                        <strong className="text-white">Số Nhân Cách:</strong> Cách người khác nhìn nhận bạn từ ấn tượng đầu tiên
+                      </div>
+                    </li>
                   </ul>
                 </div>
 
                 <div className="cosmic-card rounded-2xl p-6">
                   <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
-                    <span className="mr-3">💫</span>
-                    Tại Sao Nên Tin Tưởng?
+                    <span className="mr-3"><StarIcon className="text-golden" size={24} /></span>
+                    Tại Sao Chọn Chúng Tôi?
                   </h3>
-                  <p className="text-gray-300 leading-relaxed">
-                    Thần số học đã được sử dụng hàng nghìn năm bởi các nền văn minh cổ đại như 
-                    Babylon, Hy Lạp và Ai Cập. Đây không chỉ là mê tín mà là một công cụ 
-                    tự hiểu biết có cơ sở khoa học.
-                  </p>
+                  <div className="space-y-3 text-gray-300">
+                    <div className="flex items-start gap-3">
+                      <span className="text-green-400 mt-1"><CheckIcon size={16} /></span>
+                      <div>
+                        <strong className="text-white">Thú vị và dễ hiểu:</strong> Nội dung được trình bày một cách sinh động, dễ tiếp cận
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-green-400 mt-1"><CheckIcon size={16} /></span>
+                      <div>
+                        <strong className="text-white">Hoàn toàn miễn phí:</strong> Tất cả nội dung đều được chia sẻ miễn phí
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-green-400 mt-1"><CheckIcon size={16} /></span>
+                      <div>
+                        <strong className="text-white">Bảo mật tuyệt đối:</strong> Thông tin cá nhân được bảo vệ an toàn
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-green-400 mt-1"><CheckIcon size={16} /></span>
+                      <div>
+                        <strong className="text-white">Kết quả chi tiết:</strong> Phân tích sâu sắc và lời khuyên cụ thể
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Social Proof */}
+                <div className="cosmic-card rounded-2xl p-6">
+                  <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
+                    <span className="mr-3">💬</span>
+                    Người Dùng Nói Gì?
+                  </h3>
+                  <div className="space-y-4">
+                    <div className="bg-gray-800/50 rounded-lg p-4">
+                      <div className="flex items-center mb-2">
+                        <div className="flex text-golden">
+                          <StarIcon size={16} filled />
+                          <StarIcon size={16} filled />
+                          <StarIcon size={16} filled />
+                          <StarIcon size={16} filled />
+                          <StarIcon size={16} filled />
+                        </div>
+                        <span className="ml-2 text-sm text-gray-400">Minh Anh, 28 tuổi</span>
+                      </div>
+                      <p className="text-gray-300 text-sm italic">
+                        "Kết quả thần số học rất chính xác, giúp tôi hiểu rõ tính cách và định hướng nghề nghiệp. Đặc biệt là phần phân tích số mệnh 7!"
+                      </p>
+                    </div>
+                    <div className="bg-gray-800/50 rounded-lg p-4">
+                      <div className="flex items-center mb-2">
+                        <div className="flex text-golden">
+                          <StarIcon size={16} filled />
+                          <StarIcon size={16} filled />
+                          <StarIcon size={16} filled />
+                          <StarIcon size={16} filled />
+                          <StarIcon size={16} filled />
+                        </div>
+                        <span className="ml-2 text-sm text-gray-400">Đức Thành, 35 tuổi</span>
+                      </div>
+                      <p className="text-gray-300 text-sm italic">
+                        "Website tính toán chính xác, giao diện đẹp và dễ sử dụng. Đã giới thiệu cho nhiều bạn bè!"
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -247,8 +346,79 @@ export default function NumerologyPage() {
             )}
           </div>
         )}
+
+        {/* FAQ Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-white mb-4">
+                <span className="bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent">
+                  Câu Hỏi Thường Gặp
+                </span>
+              </h2>
+              <p className="text-gray-300 text-lg">
+                Giải đáp những thắc mắc phổ biến về thần số học Pythagoras
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              {/* FAQ Item 1 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Thần số học Pythagoras là gì?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Thần số học Pythagoras là hệ thống phân tích dựa trên các con số được phát triển bởi nhà toán học Pythagoras từ thế kỷ 6 TCN.
+                  Hệ thống này sử dụng ngày sinh và tên tuổi để tính toán các con số quan trọng như số mệnh, số định mệnh, số linh hồn và số nhân cách,
+                  từ đó phân tích tính cách, tài năng và vận mệnh của một người.
+                </p>
+              </div>
+
+              {/* FAQ Item 2 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Làm thế nào để tính số mệnh (Life Path Number)?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Để tính số mệnh, bạn cộng tất cả các chữ số trong ngày sinh đầy đủ (ngày/tháng/năm) cho đến khi được một chữ số từ 1-9 hoặc số chủ đạo 11, 22, 33.
+                  Ví dụ: sinh ngày 15/08/1990 = 1+5+0+8+1+9+9+0 = 33 → 3+3 = 6. Số mệnh 6 thể hiện người có trách nhiệm, yêu thương gia đình và có khả năng chăm sóc người khác.
+                </p>
+              </div>
+
+              {/* FAQ Item 3 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Thần số học có đáng tin không?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Thần số học là một môn học cổ xưa được nhiều người quan tâm và tìm hiểu.
+                  Đây là cách thú vị để khám phá bản thân thông qua những con số trong ngày sinh.
+                  Nhiều bạn đã chia sẻ rằng thông tin này khá phù hợp với tính cách thực tế của mình.
+                </p>
+              </div>
+
+              {/* FAQ Item 4 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Tôi có thể thay đổi vận mệnh theo thần số học không?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Thần số học không quyết định hoàn toàn vận mệnh mà chỉ chỉ ra xu hướng và tiềm năng. Bạn có thể cải thiện cuộc sống bằng cách:
+                  hiểu rõ điểm mạnh để phát huy, nhận biết thách thức để khắc phục, chọn nghề nghiệp phù hợp với số mệnh,
+                  và đưa ra quyết định đúng đắn dựa trên hiểu biết về bản thân.
+                </p>
+              </div>
+
+              {/* FAQ Item 5 */}
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
+                <h3 className="text-xl font-bold text-golden mb-3">Website này có tính phí không?</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Không, tất cả nội dung trên website đều hoàn toàn miễn phí. Bạn có thể thoải mái khám phá thần số học,
+                  tìm hiểu về tính cách và những điều thú vị về bản thân mà không tốn bất kỳ chi phí nào.
+                  Chúng mình chia sẻ những kiến thức này với mong muốn giúp mọi người hiểu rõ hơn về bản thân.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <RelatedServices currentPage="/numerology" />
       </div>
-    </div>
+      </div>
+    </>
   );
 }
 
