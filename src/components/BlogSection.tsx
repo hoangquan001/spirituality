@@ -30,7 +30,7 @@ export default function BlogSection() {
         </div>
 
         {/* Blog Posts Grid */}
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {latestPosts.map((post) => (
               <BlogCard key={post.id} post={post} />
@@ -104,7 +104,7 @@ function CategoryCard({ name, icon, href, count }: {
 }) {
   return (
     <Link href={href}>
-      <div className="group bg-white/10 backdrop-blur-md rounded-xl p-4 border border-gray-400/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 text-center">
+      <div className="group cosmic-card rounded-xl p-4 border border-gray-400/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 text-center">
         <div className="text-3xl mb-2 group-hover:scale-110 transition-transform duration-300">
           {icon}
         </div>

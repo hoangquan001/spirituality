@@ -1,7 +1,7 @@
 export default function AboutPage() {
   return (
     <div className="min-h-screen py-10 px-4">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-5xl font-bold mb-6">
@@ -15,7 +15,7 @@ export default function AboutPage() {
         </div>
 
         {/* Hero Section */}
-        <div className="cosmic-card rounded-2xl p-8 mb-12 text-center">
+        <div className="cosmic-card hoverable rounded-2xl p-8 mb-12 text-center">
           <div className="w-24 h-24 bg-gradient-to-br from-golden to-yellow-300 rounded-full flex items-center justify-center mx-auto mb-6">
             <span className="text-4xl text-gray-900">✦</span>
           </div>
@@ -35,7 +35,7 @@ export default function AboutPage() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="cosmic-card rounded-xl p-6 text-center">
+            <div className="cosmic-card hoverable rounded-xl p-6 text-center">
               <div className="text-4xl mb-4">🔮</div>
               <h3 className="text-xl font-bold text-white mb-3">Khám Phá Bản Thân</h3>
               <p className="text-gray-300">
@@ -44,7 +44,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="cosmic-card rounded-xl p-6 text-center">
+            <div className="cosmic-card hoverable rounded-xl p-6 text-center">
               <div className="text-4xl mb-4">🌟</div>
               <h3 className="text-xl font-bold text-white mb-3">Dẫn Dắt Hướng Đi</h3>
               <p className="text-gray-300">
@@ -53,7 +53,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="cosmic-card rounded-xl p-6 text-center">
+            <div className="cosmic-card hoverable rounded-xl p-6 text-center">
               <div className="text-4xl mb-4">💫</div>
               <h3 className="text-xl font-bold text-white mb-3">Nâng Cao Ý Thức</h3>
               <p className="text-gray-300">
@@ -65,7 +65,7 @@ export default function AboutPage() {
         </div>
 
         {/* Story */}
-        <div className="cosmic-card rounded-2xl p-8 mb-12">
+        <div className="cosmic-card hoverable rounded-2xl p-8 mb-12">
           <h2 className="text-3xl font-bold text-white mb-6">Câu Chuyện Của Chúng Tôi</h2>
           <div className="space-y-4 text-gray-300 leading-relaxed">
             <p>
@@ -93,7 +93,7 @@ export default function AboutPage() {
           </h2>
 
           <div className="space-y-6">
-            <div className="cosmic-card rounded-xl p-6">
+            <div className="cosmic-card hoverable rounded-xl p-6">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-golden to-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-xl text-gray-900">🎯</span>
@@ -108,7 +108,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="cosmic-card rounded-xl p-6">
+            <div className="cosmic-card hoverable rounded-xl p-6">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-golden to-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-xl text-gray-900">🔒</span>
@@ -123,7 +123,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="cosmic-card rounded-xl p-6">
+            <div className="cosmic-card hoverable rounded-xl p-6">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-golden to-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-xl text-gray-900">❤️</span>
@@ -138,7 +138,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="cosmic-card rounded-xl p-6">
+            <div className="cosmic-card hoverable rounded-xl p-6">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-golden to-yellow-400 rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-xl text-gray-900">🌍</span>
@@ -156,7 +156,7 @@ export default function AboutPage() {
         </div>
 
         {/* Team */}
-        <div className="cosmic-card rounded-2xl p-8 mb-12">
+        <div className="cosmic-card hoverable rounded-2xl p-8 mb-12">
           <h2 className="text-3xl font-bold text-white mb-6 text-center">Đội Ngũ Tác Giả</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="text-center">
@@ -184,7 +184,7 @@ export default function AboutPage() {
         </div>
 
         {/* Contact */}
-        <div className="cosmic-card rounded-2xl p-8 text-center">
+        <div className="cosmic-card hoverable rounded-2xl p-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Liên Hệ Với Chúng Tôi</h2>
           <p className="text-gray-300 mb-6">
             Bạn có câu hỏi hoặc cần tư vấn thêm? Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn.

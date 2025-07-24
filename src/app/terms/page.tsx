@@ -7,7 +7,7 @@ export default function TermsPage() {
     <>
       <LegalStructuredData pageType="terms" />
       <div className="min-h-screen py-10 px-4">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">

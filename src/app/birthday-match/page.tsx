@@ -1,6 +1,7 @@
 'use client';
 
 import { calculateCompatibility } from '@/lib/birthdayMatch';
+import FAQSection from '@/components/FAQSection';
 import { useState } from 'react';
 
 export default function BirthdayMatchPage() {
@@ -49,9 +50,9 @@ export default function BirthdayMatchPage() {
       </div>
 
       <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Input Form */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-gray-400/20 mb-8">
+          <div className="cosmic-card rounded-2xl p-8 border border-gray-400/20 mb-8">
             <h2 className="text-2xl font-bold text-white mb-8 text-center">
               Thông tin hai người
             </h2>
@@ -167,7 +168,7 @@ export default function BirthdayMatchPage() {
 
           {/* Results */}
           {result && (
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-gray-400/20">
+            <div className="cosmic-card rounded-2xl p-8 border border-gray-400/20">
               <h2 className="text-3xl font-bold text-white mb-8 text-center">
                 Kết quả phân tích
               </h2>
@@ -209,6 +210,29 @@ export default function BirthdayMatchPage() {
             </div>
           )}
         </div>
+
+        {/* FAQ Section */}
+        <FAQSection
+          description="Giải đáp những thắc mắc phổ biến về ghép đôi ngày sinh và tình duyên"
+          faqs={[
+            {
+              question: "Ghép đôi ngày sinh có chính xác không?",
+              answer: "Ghép đôi ngày sinh dựa trên thần số học và các nguyên lý tâm linh cổ xưa. Đây là cách thú vị để tìm hiểu về mức độ tương thích giữa hai người. Tuy nhiên, tình yêu thực sự phụ thuộc vào nhiều yếu tố khác như tính cách, giá trị sống và sự nỗ lực của cả hai người."
+            },
+            {
+              question: "Tại sao ngày sinh ảnh hưởng đến tình duyên?",
+              answer: "Theo thần số học, ngày sinh tạo ra những rung động năng lượng riêng biệt, ảnh hưởng đến tính cách, cách suy nghĩ và hành xử. Khi hai người có năng lượng hài hòa, họ dễ hiểu nhau và xây dựng mối quan hệ bền vững hơn."
+            },
+            {
+              question: "Nếu kết quả ghép đôi không tốt thì sao?",
+              answer: "Kết quả ghép đôi chỉ mang tính tham khảo, không quyết định hoàn toàn mối quan hệ. Nếu kết quả không tốt, bạn có thể tham khảo lời khuyên để cải thiện sự hiểu biết và giao tiếp với đối phương. Tình yêu thật sự có thể vượt qua mọi khác biệt."
+            },
+            {
+              question: "Có nên chọn người yêu dựa vào ngày sinh?",
+              answer: "Không nên chỉ dựa vào ngày sinh để chọn người yêu. Ghép đôi ngày sinh chỉ là một công cụ tham khảo để hiểu thêm về tính cách và mức độ tương thích. Quan trọng nhất vẫn là tình cảm chân thành, sự tôn trọng và những giá trị chung trong cuộc sống."
+            }
+          ]}
+        />
       </div>
     </div>
   );

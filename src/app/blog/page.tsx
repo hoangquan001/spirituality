@@ -2,6 +2,7 @@
 
 import BlogCard from '@/components/BlogCard';
 import { blogPosts } from '@/lib/blogData';
+import FAQSection from '@/components/FAQSection';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 
@@ -55,8 +56,8 @@ export default function BlogPage() {
 
       <div className="container mx-auto px-4 py-12">
         {/* Search và Filter */}
-        <div className="max-w-4xl mx-auto mb-12">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-gray-700/20">
+        <div className="max-w-6xl mx-auto mb-12">
+          <div className="cosmic-card rounded-2xl p-6 border border-gray-700/20">
             <div className="flex flex-col md:flex-row gap-4">
               {/* Search */}
               <div className="flex-1">
@@ -88,7 +89,7 @@ export default function BlogPage() {
         </div>
 
         {/* Blog Posts Grid */}
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {filteredPosts.length === 0 ? (
             <div className="text-center py-10">
               <div className="text-6xl mb-4">🔍</div>
@@ -104,8 +105,31 @@ export default function BlogPage() {
           )}
         </div>
 
+        {/* FAQ Section */}
+        <FAQSection
+          description="Giải đáp những thắc mắc phổ biến về blog tâm linh và nội dung"
+          faqs={[
+            {
+              question: "Blog này có những nội dung gì?",
+              answer: "Blog Tâm Linh chia sẻ kiến thức sâu sắc về thần số học, phong thủy, cung hoàng đạo, giải mã giấc mơ và các chủ đề tâm linh khác. Chúng tôi cung cấp những bài viết chất lượng cao, dễ hiểu và có thể áp dụng vào cuộc sống hàng ngày."
+            },
+            {
+              question: "Tần suất cập nhật bài viết như thế nào?",
+              answer: "Chúng tôi cập nhật blog thường xuyên với những bài viết mới mỗi tuần. Nội dung được nghiên cứu kỹ lưỡng và viết bởi những người có kinh nghiệm trong lĩnh vực tâm linh và huyền học."
+            },
+            {
+              question: "Tôi có thể đóng góp bài viết không?",
+              answer: "Có, chúng tôi luôn chào đón những bài viết chất lượng từ cộng đồng. Bạn có thể chia sẻ kiến thức, kinh nghiệm cá nhân hoặc nghiên cứu về các chủ đề tâm linh. Vui lòng liên hệ với chúng tôi để biết thêm chi tiết."
+            },
+            {
+              question: "Làm sao để không bỏ lỡ bài viết mới?",
+              answer: "Bạn có thể bookmark trang blog này và thường xuyên ghé thăm. Chúng tôi cũng sẽ cập nhật thông tin về bài viết mới trên các kênh truyền thông xã hội và newsletter nếu có."
+            }
+          ]}
+        />
+
         {/* CTA Section */}
-        <div className="max-w-4xl mx-auto mt-20 text-center">
+        <div className="max-w-6xl mx-auto mt-20 text-center">
           <div className="bg-gradient-to-r from-golden/20 to-yellow-300/20 rounded-2xl p-8 border border-golden/30">
             <h2 className="text-3xl font-bold text-white mb-4">
               Muốn đóng góp bài viết?

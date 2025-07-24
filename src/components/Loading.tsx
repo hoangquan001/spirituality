@@ -78,7 +78,7 @@ export function LoadingOverlay({ message = 'Đang tải...', show }: { message?:
 
   return (
     <div className="fixed inset-0 bg-gray-900/80 backdrop-blur-sm z-[70] flex items-center justify-center">
-      <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-gray-400/20 text-center max-w-sm mx-4">
+      <div className="cosmic-card rounded-2xl p-8 border border-gray-400/20 text-center max-w-sm mx-4">
         <div className="relative mb-6">
           <div className="w-16 h-16 border-2 border-golden/30 rounded-full animate-spin mx-auto">
             <div className="w-full h-full border-2 border-transparent border-t-golden rounded-full animate-ping"></div>

@@ -4,6 +4,7 @@ import ContentHeader from '@/components/ContentHeader';
 import { useState } from 'react';
 import NameAnalysisStructuredData from '../../components/NameAnalysisStructuredData';
 import RelatedServices from '../../components/RelatedServices';
+import FAQSection from '@/components/FAQSection';
 import { CheckIcon, NameAnalysisIcon, StarIcon } from '../../components/icons';
 import {
   calculateNameNumerology,
@@ -49,7 +50,7 @@ export default function NameAnalysisPage() {
       />
       <div className='container mx-auto max-w-6xl'>
         {!result ? (
-          <div className='max-w-4xl mx-auto'>
+          <div className='max-w-6xl mx-auto'>
             {/* Input Form */}
             <div className='bg-gradient-to-br from-gray-900/20 to-blue-900/20 rounded-3xl p-8 border border-gray-400/20 mb-8'>
               <div className='text-center mb-8'>
@@ -472,80 +473,27 @@ export default function NameAnalysisPage() {
         )}
 
         {/* FAQ Section */}
-        <section className='py-10 px-4'>
-          <div className='max-w-4xl mx-auto'>
-            <div className='text-center mb-12'>
-              <h2 className='text-4xl font-bold text-white mb-4'>
-                <span className='bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent'>
-                  Câu Hỏi Thường Gặp
-                </span>
-              </h2>
-              <p className='text-gray-300 text-lg'>
-                Giải đáp những thắc mắc phổ biến về phân tích tên tuổi theo thần
-                số học
-              </p>
-            </div>
-
-            <div className='space-y-6'>
-              {/* FAQ Item 1 */}
-              <div className='bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20'>
-                <h3 className='text-xl font-bold text-golden mb-3'>
-                  Phân tích tên có đáng tin không?
-                </h3>
-                <p className='text-gray-300 leading-relaxed'>
-                  Phân tích tên theo thần số học là một cách thú vị để tìm hiểu
-                  về bản thân. Mỗi chữ cái trong tên đều có giá trị số riêng, và
-                  khi kết hợp lại sẽ tạo ra những thông tin hay ho về tính cách.
-                  Đây là một môn học cổ xưa được nhiều người quan tâm và nhiều
-                  bạn chia sẻ rằng thông tin này khá phù hợp với tính cách thực
-                  tế.
-                </p>
-              </div>
-
-              {/* FAQ Item 2 */}
-              <div className='bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20'>
-                <h3 className='text-xl font-bold text-golden mb-3'>
-                  Tên có thực sự ảnh hưởng đến vận mệnh không?
-                </h3>
-                <p className='text-gray-300 leading-relaxed'>
-                  Theo thần số học, tên có tác động đến tính cách và cách người
-                  khác nhìn nhận bạn. Tên tạo ra rung động năng lượng nhất định,
-                  ảnh hưởng đến sự tự tin, cách giao tiếp và cơ hội trong cuộc
-                  sống. Tuy nhiên, tên chỉ là một yếu tố trong tổng thể, không
-                  quyết định hoàn toàn vận mệnh.
-                </p>
-              </div>
-
-              {/* FAQ Item 3 */}
-              <div className='bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20'>
-                <h3 className='text-xl font-bold text-golden mb-3'>
-                  Tôi có nên đổi tên theo thần số học không?
-                </h3>
-                <p className='text-gray-300 leading-relaxed'>
-                  Việc đổi tên nên được cân nhắc kỹ lưỡng. Nếu phân tích cho
-                  thấy tên hiện tại có những hạn chế, bạn có thể: thêm tên lót
-                  phù hợp, sử dụng biệt danh tích cực, hoặc đổi tên hoàn toàn
-                  nếu thực sự cần thiết. Quan trọng là tên mới phải phù hợp với
-                  số mệnh và mang lại năng lượng tích cực.
-                </p>
-              </div>
-
-              {/* FAQ Item 4 */}
-              <div className='bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20'>
-                <h3 className='text-xl font-bold text-golden mb-3'>
-                  Phân tích tên có tính phí không?
-                </h3>
-                <p className='text-gray-300 leading-relaxed'>
-                  Không, tất cả nội dung phân tích tên đều hoàn toàn miễn phí.
-                  Bạn có thể thoải mái khám phá ý nghĩa của bất kỳ tên nào, đọc
-                  những thông tin thú vị về tính cách và tham khảo lời khuyên mà
-                  không tốn phí. Chúng mình chia sẻ những kiến thức này với mong
-                  muốn giúp mọi người hiểu thêm về bản thân.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FAQSection
+          description="Giải đáp những thắc mắc phổ biến về phân tích tên tuổi theo thần số học"
+          faqs={[
+            {
+              question: "Phân tích tên có đáng tin không?",
+              answer: "Phân tích tên theo thần số học là một cách thú vị để tìm hiểu về bản thân. Mỗi chữ cái trong tên đều có giá trị số riêng, và khi kết hợp lại sẽ tạo ra những thông tin hay ho về tính cách. Đây là một môn học cổ xưa được nhiều người quan tâm và nhiều bạn chia sẻ rằng thông tin này khá phù hợp với tính cách thực tế."
+            },
+            {
+              question: "Tên có thực sự ảnh hưởng đến vận mệnh không?",
+              answer: "Theo thần số học, tên có tác động đến tính cách và cách người khác nhìn nhận bạn. Tên tạo ra rung động năng lượng nhất định, ảnh hưởng đến sự tự tin, cách giao tiếp và cơ hội trong cuộc sống. Tuy nhiên, tên chỉ là một yếu tố trong tổng thể, không quyết định hoàn toàn vận mệnh."
+            },
+            {
+              question: "Tôi có nên đổi tên theo thần số học không?",
+              answer: "Việc đổi tên nên được cân nhắc kỹ lưỡng. Nếu phân tích cho thấy tên hiện tại có những hạn chế, bạn có thể: thêm tên lót phù hợp, sử dụng biệt danh tích cực, hoặc đổi tên hoàn toàn nếu thực sự cần thiết. Quan trọng là tên mới phải phù hợp với số mệnh và mang lại năng lượng tích cực."
+            },
+            {
+              question: "Phân tích tên có tính phí không?",
+              answer: "Không, tất cả nội dung phân tích tên đều hoàn toàn miễn phí. Bạn có thể thoải mái khám phá ý nghĩa của bất kỳ tên nào, đọc những thông tin thú vị về tính cách và tham khảo lời khuyên mà không tốn phí. Chúng mình chia sẻ những kiến thức này với mong muốn giúp mọi người hiểu thêm về bản thân."
+            }
+          ]}
+        />
 
         {/* Related Services */}
         <RelatedServices currentPage='/name-analysis' />

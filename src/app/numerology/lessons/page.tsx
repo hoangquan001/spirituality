@@ -1,6 +1,7 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
+import RelatedServices from '@/components/RelatedServices';
 import { birthDateToLifePath } from '@/lib/numerology';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -356,60 +357,60 @@ export default function NumerologyLessonsPage() {
   };
 
   return (
-    <div className='min-h-screen '>
+    <div className="min-h-screen ">
       <ContentHeader
-        title='Bài Học Nghiệp Số'
+        title="Bài Học Nghiệp Số"
         breadcrumb={[
-          { label: 'Trang Chủ', href: '/' },
-          { label: 'Thần Số Học', href: '/numerology' },
-          { label: 'Bài Học Nghiệp Số', href: '/numerology/lessons' },
+          { label: "Trang Chủ", href: "/" },
+          { label: "Thần Số Học", href: "/numerology" },
+          { label: "Bài Học Nghiệp Số", href: "/numerology/lessons" },
         ]}
-        description='Khám phá bài học tâm linh và thử thách cuộc đời qua ngày sinh và số mệnh của bạn'
+        description="Khám phá bài học tâm linh và thử thách cuộc đời qua ngày sinh và số mệnh của bạn"
       />
 
       {/* Main Content */}
-      <div className='max-w-6xl mx-auto px-4 py-12'>
+      <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Input Form */}
-        <div className='bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 mb-8'>
-          <h2 className='text-2xl font-bold text-white mb-6 text-center'>
+        <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">
             Nhập Thông Tin Của Bạn
           </h2>
 
-          <div className='max-w-md mx-auto space-y-4'>
+          <div className="max-w-md mx-auto space-y-4">
             <div>
-              <label className='block text-gray-300 mb-2'>Tên của bạn</label>
+              <label className="block text-gray-300 mb-2">Tên của bạn</label>
               <input
-                type='text'
+                type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className='w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-golden focus:outline-none'
-                placeholder='Nhập tên của bạn...'
+                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-golden focus:outline-none"
+                placeholder="Nhập tên của bạn..."
               />
             </div>
             <div>
-              <label className='block text-gray-300 mb-2'>Ngày sinh</label>
+              <label className="block text-gray-300 mb-2">Ngày sinh</label>
               <input
-                type='date'
+                type="date"
                 value={birthDate}
                 onChange={(e) => setBirthDate(e.target.value)}
-                className='w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white focus:border-golden focus:outline-none'
+                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white focus:border-golden focus:outline-none"
               />
             </div>
           </div>
 
-          <div className='text-center mt-8'>
+          <div className="text-center mt-8">
             <button
               onClick={calculateLessons}
               disabled={isCalculating}
-              className='bg-gradient-to-r from-golden to-yellow-500 text-black px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-golden/50 disabled:opacity-50 disabled:cursor-not-allowed'
+              className="bg-gradient-to-r from-golden to-yellow-500 text-black px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-golden/50 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isCalculating ? (
-                <span className='flex items-center gap-2'>
-                  <div className='w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin'></div>
+                <span className="flex items-center gap-2">
+                  <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
                   Đang phân tích...
                 </span>
               ) : (
-                <span className='flex items-center gap-2'>
+                <span className="flex items-center gap-2">
                   📚 Khám Phá Bài Học Nghiệp Số
                 </span>
               )}
@@ -419,42 +420,42 @@ export default function NumerologyLessonsPage() {
 
         {/* Results */}
         {lessons && (
-          <div className='space-y-8'>
+          <div className="space-y-8">
             {/* Overview */}
-            <div className='bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20'>
-              <div className='text-center mb-6'>
-                <h2 className='text-3xl font-bold text-white mb-4'>
+            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <div className="text-center mb-6">
+                <h2 className="text-3xl font-bold text-white mb-4">
                   {lessons.lifeTheme}
                 </h2>
-                <div className='text-golden font-semibold mb-4'>
+                <div className="text-golden font-semibold mb-4">
                   Số đường đời: {lessons.lifePath}
                 </div>
-                <p className='text-gray-300 leading-relaxed max-w-3xl mx-auto'>
-                  <strong className='text-golden'>Mục đích tâm hồn:</strong>{' '}
+                <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                  <strong className="text-golden">Mục đích tâm hồn:</strong>{" "}
                   {lessons.soulPurpose}
                 </p>
               </div>
             </div>
 
             {/* Tabs */}
-            <div className='flex justify-center mb-8'>
-              <div className='bg-gray-800/50 rounded-full p-1'>
+            <div className="flex justify-center mb-8">
+              <div className="bg-gray-800/50 rounded-full p-1">
                 <button
-                  onClick={() => setActiveTab('karmic')}
+                  onClick={() => setActiveTab("karmic")}
                   className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                    activeTab === 'karmic'
-                      ? 'bg-golden text-black'
-                      : 'text-gray-300 hover:text-white'
+                    activeTab === "karmic"
+                      ? "bg-golden text-black"
+                      : "text-gray-300 hover:text-white"
                   }`}
                 >
                   📚 Bài Học Nghiệp Số
                 </button>
                 <button
-                  onClick={() => setActiveTab('challenges')}
+                  onClick={() => setActiveTab("challenges")}
                   className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                    activeTab === 'challenges'
-                      ? 'bg-golden text-black'
-                      : 'text-gray-300 hover:text-white'
+                    activeTab === "challenges"
+                      ? "bg-golden text-black"
+                      : "text-gray-300 hover:text-white"
                   }`}
                 >
                   ⚡ Thử Thách Cuộc Đời
@@ -463,58 +464,58 @@ export default function NumerologyLessonsPage() {
             </div>
 
             {/* Karmic Lessons Tab */}
-            {activeTab === 'karmic' && (
-              <div className='grid md:grid-cols-2 gap-6'>
+            {activeTab === "karmic" && (
+              <div className="grid md:grid-cols-2 gap-6">
                 {lessons.karmicLessons.map((lesson, index) => (
                   <div
                     key={index}
-                    className='bg-gradient-to-br from-purple-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-purple-700/20'
+                    className="bg-gradient-to-br from-purple-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-purple-700/20"
                   >
-                    <div className='text-center mb-6'>
-                      <div className='w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto'>
-                        <span className='text-white font-bold'>
+                    <div className="text-center mb-6">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-2xl mb-4 mx-auto">
+                        <span className="text-white font-bold">
                           {lesson.number}
                         </span>
                       </div>
-                      <h3 className='text-xl font-bold text-white mb-2'>
+                      <h3 className="text-xl font-bold text-white mb-2">
                         {lesson.title}
                       </h3>
-                      <p className='text-gray-300 text-sm'>
+                      <p className="text-gray-300 text-sm">
                         {lesson.description}
                       </p>
                     </div>
 
-                    <div className='space-y-4'>
+                    <div className="space-y-4">
                       <div>
-                        <h4 className='text-green-400 font-semibold mb-2 flex items-center gap-2'>
+                        <h4 className="text-green-400 font-semibold mb-2 flex items-center gap-2">
                           <span>🌱</span> Bài Học
                         </h4>
-                        <p className='text-gray-300 text-sm'>{lesson.lesson}</p>
+                        <p className="text-gray-300 text-sm">{lesson.lesson}</p>
                       </div>
 
                       <div>
-                        <h4 className='text-orange-400 font-semibold mb-2 flex items-center gap-2'>
+                        <h4 className="text-orange-400 font-semibold mb-2 flex items-center gap-2">
                           <span>⚡</span> Thách Thức
                         </h4>
-                        <p className='text-gray-300 text-sm'>
+                        <p className="text-gray-300 text-sm">
                           {lesson.challenge}
                         </p>
                       </div>
 
                       <div>
-                        <h4 className='text-blue-400 font-semibold mb-2 flex items-center gap-2'>
+                        <h4 className="text-blue-400 font-semibold mb-2 flex items-center gap-2">
                           <span>💡</span> Giải Pháp
                         </h4>
-                        <p className='text-gray-300 text-sm'>
+                        <p className="text-gray-300 text-sm">
                           {lesson.solution}
                         </p>
                       </div>
 
-                      <div className='bg-golden/10 rounded-lg p-4 border border-golden/20'>
-                        <h4 className='text-golden font-semibold mb-2 flex items-center gap-2'>
+                      <div className="bg-golden/10 rounded-lg p-4 border border-golden/20">
+                        <h4 className="text-golden font-semibold mb-2 flex items-center gap-2">
                           <span>✨</span> Khẳng Định
                         </h4>
-                        <p className='text-golden text-sm italic'>
+                        <p className="text-golden text-sm italic">
                           "{lesson.affirmation}"
                         </p>
                       </div>
@@ -525,54 +526,54 @@ export default function NumerologyLessonsPage() {
             )}
 
             {/* Life Challenges Tab */}
-            {activeTab === 'challenges' && (
-              <div className='space-y-6'>
+            {activeTab === "challenges" && (
+              <div className="space-y-6">
                 {lessons.lifeChallenges.map((challenge, index) => (
                   <div
                     key={index}
-                    className='bg-gradient-to-br from-orange-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-orange-700/20'
+                    className="bg-gradient-to-br from-orange-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-orange-700/20"
                   >
-                    <div className='flex items-start gap-6'>
-                      <div className='text-center'>
-                        <div className='w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-2xl mb-2'>
-                          <span className='text-white font-bold'>
+                    <div className="flex items-start gap-6">
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-2xl mb-2">
+                          <span className="text-white font-bold">
                             {challenge.challenge}
                           </span>
                         </div>
-                        <div className='text-orange-400 font-semibold text-sm'>
+                        <div className="text-orange-400 font-semibold text-sm">
                           {challenge.age}
                         </div>
                       </div>
 
-                      <div className='flex-1'>
-                        <h3 className='text-xl font-bold text-white mb-2'>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-white mb-2">
                           {challenge.period}
                         </h3>
-                        <h4 className='text-orange-400 font-semibold mb-3'>
+                        <h4 className="text-orange-400 font-semibold mb-3">
                           {challenge.title}
                         </h4>
 
-                        <div className='space-y-3'>
+                        <div className="space-y-3">
                           <div>
-                            <p className='text-gray-300 text-sm mb-2'>
+                            <p className="text-gray-300 text-sm mb-2">
                               {challenge.description}
                             </p>
                           </div>
 
                           <div>
-                            <h5 className='text-green-400 font-semibold mb-1 flex items-center gap-2'>
+                            <h5 className="text-green-400 font-semibold mb-1 flex items-center gap-2">
                               <span>🎯</span> Bài Học
                             </h5>
-                            <p className='text-gray-300 text-sm'>
+                            <p className="text-gray-300 text-sm">
                               {challenge.lesson}
                             </p>
                           </div>
 
                           <div>
-                            <h5 className='text-blue-400 font-semibold mb-1 flex items-center gap-2'>
+                            <h5 className="text-blue-400 font-semibold mb-1 flex items-center gap-2">
                               <span>💡</span> Lời Khuyên
                             </h5>
-                            <p className='text-gray-300 text-sm'>
+                            <p className="text-gray-300 text-sm">
                               {challenge.advice}
                             </p>
                           </div>
@@ -587,29 +588,7 @@ export default function NumerologyLessonsPage() {
         )}
 
         {/* Related Links */}
-        <div className='mt-12 text-center'>
-          <h3 className='text-xl font-bold text-white mb-6'>Khám Phá Thêm</h3>
-          <div className='flex flex-wrap justify-center gap-4'>
-            <Link
-              href='/numerology'
-              className='bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300'
-            >
-              🔢 Số Chủ Đạo
-            </Link>
-            <Link
-              href='/numerology/forecast'
-              className='bg-gradient-to-r from-green-600 to-teal-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300'
-            >
-              🔮 Dự Đoán 12 Tháng
-            </Link>
-            <Link
-              href='/numerology/career'
-              className='bg-gradient-to-r from-orange-600 to-amber-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300'
-            >
-              💼 Gợi Ý Nghề Nghiệp
-            </Link>
-          </div>
-        </div>
+        <RelatedServices currentPage="/cards" />
       </div>
     </div>
   );

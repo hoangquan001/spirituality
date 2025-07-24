@@ -1,6 +1,7 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
+import RelatedServices from '@/components/RelatedServices';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -307,45 +308,45 @@ export default function NumbersMeaningPage() {
   };
 
   return (
-    <div className='min-h-screen '>
+    <div className="min-h-screen ">
       {/* Header */}
       <ContentHeader
-        title='Ý Nghĩa Các Con Số'
-        description='Tìm hiểu ý nghĩa tâm linh, phong thủy và năng lượng của từng con số trong cuộc sống'
+        title="Ý Nghĩa Các Con Số"
+        description="Tìm hiểu ý nghĩa tâm linh, phong thủy và năng lượng của từng con số trong cuộc sống"
         breadcrumb={[
-          { label: 'Trang chủ', href: '/' },
-          { label: 'Số Học', href: '/numbers' },
-          { label: 'Ý Nghĩa Các Con Số', href: '/numbers/meaning' },
+          { label: "Trang chủ", href: "/" },
+          { label: "Số Học", href: "/numbers" },
+          { label: "Ý Nghĩa Các Con Số", href: "/numbers/meaning" },
         ]}
       />
 
       {/* Main Content */}
-      <div className='max-w-7xl mx-auto px-4 py-6'>
+      <div className="max-w-6xl mx-auto px-4 py-6">
         {/* Number Selection */}
-        <div className='bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 mb-8'>
-          <h2 className='text-2xl font-bold text-white mb-8 text-center'>
+        <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
+          <h2 className="text-2xl font-bold text-white mb-8 text-center">
             Chọn Con Số Bạn Muốn Tìm Hiểu
           </h2>
 
-          <div className='grid grid-cols-5 md:grid-cols-10 gap-4 max-w-4xl mx-auto'>
+          <div className="grid grid-cols-5 md:grid-cols-10 gap-4 max-w-6xl mx-auto">
             {numberMeanings.map((number) => (
               <button
                 key={number.number}
                 onClick={() => setSelectedNumber(number.number)}
                 className={`aspect-square rounded-2xl border-2 transition-all duration-300 hover:scale-105 ${
                   selectedNumber === number.number
-                    ? 'border-golden bg-golden/10 shadow-lg shadow-golden/20'
-                    : 'border-gray-700 bg-gray-800/50 hover:border-gray-600'
+                    ? "border-golden bg-golden/10 shadow-lg shadow-golden/20"
+                    : "border-gray-700 bg-gray-800/50 hover:border-gray-600"
                 }`}
               >
-                <div className='flex flex-col items-center justify-center h-full p-2'>
+                <div className="flex flex-col items-center justify-center h-full p-2">
                   <div
                     className={`text-3xl mb-1 bg-gradient-to-r ${number.gradient} bg-clip-text text-transparent font-bold`}
                   >
                     {number.number}
                   </div>
-                  <div className='text-xs text-gray-400 text-center leading-tight'>
-                    {number.name.split(' - ')[1] || number.name}
+                  <div className="text-xs text-gray-400 text-center leading-tight">
+                    {number.name.split(" - ")[1] || number.name}
                   </div>
                 </div>
               </button>
@@ -354,54 +355,54 @@ export default function NumbersMeaningPage() {
         </div>
 
         {/* Number Details */}
-        <div className='space-y-8'>
+        <div className="space-y-8">
           {/* Header Info */}
-          <div className='bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20'>
-            <div className='text-center mb-8'>
+          <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+            <div className="text-center mb-8">
               <div
                 className={`text-8xl mb-4 bg-gradient-to-r ${currentNumber.gradient} bg-clip-text text-transparent font-bold`}
               >
                 {currentNumber.number}
               </div>
-              <h2 className='text-3xl font-bold text-white mb-2'>
+              <h2 className="text-3xl font-bold text-white mb-2">
                 {currentNumber.name}
               </h2>
-              <div className='flex items-center justify-center gap-6 text-gray-300 mb-4'>
-                <div className='flex items-center gap-2'>
-                  <span className='text-golden'>🌟</span>
+              <div className="flex items-center justify-center gap-6 text-gray-300 mb-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-golden">🌟</span>
                   <span>Nguyên tố: {currentNumber.element}</span>
                 </div>
-                <div className='flex items-center gap-2'>
-                  <span className='text-golden'>🎨</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-golden">🎨</span>
                   <span>Màu sắc: {currentNumber.color}</span>
                 </div>
-                <div className='flex items-center gap-2'>
-                  <span className='text-golden'>⚡</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-golden">⚡</span>
                   <span>Năng lượng: {currentNumber.energy}</span>
                 </div>
               </div>
-              <p className='text-gray-300 leading-relaxed max-w-3xl mx-auto'>
+              <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
                 {currentNumber.personality}
               </p>
             </div>
           </div>
 
           {/* Tabs */}
-          <div className='flex justify-center mb-8'>
-            <div className='bg-gray-800/50 rounded-full p-1'>
+          <div className="flex justify-center mb-8">
+            <div className="bg-gray-800/50 rounded-full p-1">
               {[
-                { id: 'overview', label: '📊 Tổng Quan', icon: '📊' },
-                { id: 'personality', label: '👤 Tính Cách', icon: '👤' },
-                { id: 'fengshui', label: '🧭 Phong Thủy', icon: '🧭' },
-                { id: 'spiritual', label: '✨ Tâm Linh', icon: '✨' },
+                { id: "overview", label: "📊 Tổng Quan", icon: "📊" },
+                { id: "personality", label: "👤 Tính Cách", icon: "👤" },
+                { id: "fengshui", label: "🧭 Phong Thủy", icon: "🧭" },
+                { id: "spiritual", label: "✨ Tâm Linh", icon: "✨" },
               ].map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
                   className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                     activeTab === tab.id
-                      ? 'bg-golden text-black'
-                      : 'text-gray-300 hover:text-white'
+                      ? "bg-golden text-black"
+                      : "text-gray-300 hover:text-white"
                   }`}
                 >
                   {tab.label}
@@ -411,20 +412,20 @@ export default function NumbersMeaningPage() {
           </div>
 
           {/* Tab Content */}
-          {activeTab === 'overview' && (
-            <div className='grid md:grid-cols-2 gap-6'>
+          {activeTab === "overview" && (
+            <div className="grid md:grid-cols-2 gap-6">
               {/* Strengths */}
-              <div className='bg-gradient-to-br from-green-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-green-700/20'>
-                <h3 className='text-xl font-bold text-green-400 mb-4 flex items-center gap-2'>
+              <div className="bg-gradient-to-br from-green-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-green-700/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 flex items-center gap-2">
                   <span>✨</span> Điểm Mạnh
                 </h3>
-                <ul className='space-y-2'>
+                <ul className="space-y-2">
                   {currentNumber.strengths.map((strength, index) => (
                     <li
                       key={index}
-                      className='text-gray-300 flex items-start gap-2'
+                      className="text-gray-300 flex items-start gap-2"
                     >
-                      <span className='text-green-400 mt-1'>•</span>
+                      <span className="text-green-400 mt-1">•</span>
                       {strength}
                     </li>
                   ))}
@@ -432,17 +433,17 @@ export default function NumbersMeaningPage() {
               </div>
 
               {/* Challenges */}
-              <div className='bg-gradient-to-br from-orange-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-orange-700/20'>
-                <h3 className='text-xl font-bold text-orange-400 mb-4 flex items-center gap-2'>
+              <div className="bg-gradient-to-br from-orange-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-orange-700/20">
+                <h3 className="text-xl font-bold text-orange-400 mb-4 flex items-center gap-2">
                   <span>⚡</span> Thách Thức
                 </h3>
-                <ul className='space-y-2'>
+                <ul className="space-y-2">
                   {currentNumber.challenges.map((challenge, index) => (
                     <li
                       key={index}
-                      className='text-gray-300 flex items-start gap-2'
+                      className="text-gray-300 flex items-start gap-2"
                     >
-                      <span className='text-orange-400 mt-1'>•</span>
+                      <span className="text-orange-400 mt-1">•</span>
                       {challenge}
                     </li>
                   ))}
@@ -450,15 +451,15 @@ export default function NumbersMeaningPage() {
               </div>
 
               {/* Career */}
-              <div className='bg-gradient-to-br from-blue-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-blue-700/20'>
-                <h3 className='text-xl font-bold text-blue-400 mb-4 flex items-center gap-2'>
+              <div className="bg-gradient-to-br from-blue-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-blue-700/20">
+                <h3 className="text-xl font-bold text-blue-400 mb-4 flex items-center gap-2">
                   <span>💼</span> Nghề Nghiệp Phù Hợp
                 </h3>
-                <div className='flex flex-wrap gap-2'>
+                <div className="flex flex-wrap gap-2">
                   {currentNumber.career.map((job, index) => (
                     <span
                       key={index}
-                      className='bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm'
+                      className="bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-sm"
                     >
                       {job}
                     </span>
@@ -467,15 +468,15 @@ export default function NumbersMeaningPage() {
               </div>
 
               {/* Lucky Days */}
-              <div className='bg-gradient-to-br from-purple-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-purple-700/20'>
-                <h3 className='text-xl font-bold text-purple-400 mb-4 flex items-center gap-2'>
+              <div className="bg-gradient-to-br from-purple-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-purple-700/20">
+                <h3 className="text-xl font-bold text-purple-400 mb-4 flex items-center gap-2">
                   <span>🗓️</span> Ngày May Mắn
                 </h3>
-                <div className='flex flex-wrap gap-2'>
+                <div className="flex flex-wrap gap-2">
                   {currentNumber.luckyDays.map((day, index) => (
                     <span
                       key={index}
-                      className='bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm'
+                      className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-sm"
                     >
                       {day}
                     </span>
@@ -485,51 +486,51 @@ export default function NumbersMeaningPage() {
             </div>
           )}
 
-          {activeTab === 'personality' && (
-            <div className='grid md:grid-cols-2 gap-6'>
+          {activeTab === "personality" && (
+            <div className="grid md:grid-cols-2 gap-6">
               {/* Love */}
-              <div className='bg-gradient-to-br from-pink-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-pink-700/20'>
-                <h3 className='text-xl font-bold text-pink-400 mb-4 flex items-center gap-2'>
+              <div className="bg-gradient-to-br from-pink-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-pink-700/20">
+                <h3 className="text-xl font-bold text-pink-400 mb-4 flex items-center gap-2">
                   <span>💕</span> Tình Yêu
                 </h3>
-                <p className='text-gray-300 leading-relaxed'>
+                <p className="text-gray-300 leading-relaxed">
                   {currentNumber.love}
                 </p>
               </div>
 
               {/* Health */}
-              <div className='bg-gradient-to-br from-green-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-green-700/20'>
-                <h3 className='text-xl font-bold text-green-400 mb-4 flex items-center gap-2'>
+              <div className="bg-gradient-to-br from-green-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-green-700/20">
+                <h3 className="text-xl font-bold text-green-400 mb-4 flex items-center gap-2">
                   <span>🏥</span> Sức Khỏe
                 </h3>
-                <p className='text-gray-300 leading-relaxed'>
+                <p className="text-gray-300 leading-relaxed">
                   {currentNumber.health}
                 </p>
               </div>
 
               {/* Compatible Numbers */}
-              <div className='md:col-span-2 bg-gradient-to-br from-golden/10 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-golden/20'>
-                <h3 className='text-xl font-bold text-golden mb-4 flex items-center gap-2'>
+              <div className="md:col-span-2 bg-gradient-to-br from-golden/10 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-golden/20">
+                <h3 className="text-xl font-bold text-golden mb-4 flex items-center gap-2">
                   <span>🤝</span> Số Tương Thích
                 </h3>
-                <div className='flex flex-wrap gap-3 justify-center'>
+                <div className="flex flex-wrap gap-3 justify-center">
                   {renderCompatibleNumbers()}
                 </div>
-                <p className='text-gray-400 text-sm text-center mt-4'>
+                <p className="text-gray-400 text-sm text-center mt-4">
                   Nhấp vào số để xem chi tiết
                 </p>
               </div>
             </div>
           )}
 
-          {activeTab === 'fengshui' && (
-            <div className='bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20'>
-              <h3 className='text-2xl font-bold text-white mb-6 text-center flex items-center justify-center gap-2'>
+          {activeTab === "fengshui" && (
+            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center flex items-center justify-center gap-2">
                 <span>🧭</span> Ý Nghĩa Phong Thủy
               </h3>
-              <div className='max-w-4xl mx-auto'>
-                <div className='bg-green-500/10 rounded-lg p-6 border border-green-500/20'>
-                  <p className='text-gray-300 leading-relaxed text-lg text-center'>
+              <div className="max-w-6xl mx-auto">
+                <div className="bg-green-500/10 rounded-lg p-6 border border-green-500/20">
+                  <p className="text-gray-300 leading-relaxed text-lg text-center">
                     {currentNumber.fengshui}
                   </p>
                 </div>
@@ -537,17 +538,17 @@ export default function NumbersMeaningPage() {
             </div>
           )}
 
-          {activeTab === 'spiritual' && (
-            <div className='bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20'>
-              <h3 className='text-2xl font-bold text-white mb-6 text-center flex items-center justify-center gap-2'>
+          {activeTab === "spiritual" && (
+            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center flex items-center justify-center gap-2">
                 <span>✨</span> Ý Nghĩa Tâm Linh
               </h3>
-              <div className='max-w-4xl mx-auto'>
-                <div className='bg-purple-500/10 rounded-lg p-6 border border-purple-500/20'>
-                  <div className='text-center mb-4'>
-                    <div className='text-6xl mb-4'>{currentNumber.symbol}</div>
+              <div className="max-w-6xl mx-auto">
+                <div className="bg-purple-500/10 rounded-lg p-6 border border-purple-500/20">
+                  <div className="text-center mb-4">
+                    <div className="text-6xl mb-4">{currentNumber.symbol}</div>
                   </div>
-                  <p className='text-gray-300 leading-relaxed text-lg text-center'>
+                  <p className="text-gray-300 leading-relaxed text-lg text-center">
                     {currentNumber.spiritual}
                   </p>
                 </div>
@@ -557,35 +558,7 @@ export default function NumbersMeaningPage() {
         </div>
 
         {/* Related Links */}
-        <div className='mt-16 text-center'>
-          <h3 className='text-2xl font-bold text-white mb-8'>Khám Phá Thêm</h3>
-          <div className='flex flex-wrap justify-center gap-4'>
-            <Link
-              href='/numerology'
-              className='bg-gradient-to-r from-golden to-yellow-500 text-black px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300'
-            >
-              🔢 Thần Số Học
-            </Link>
-            <Link
-              href='/tarot'
-              className='bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300'
-            >
-              🔮 Bói Bài Tarot
-            </Link>
-            <Link
-              href='/cards'
-              className='bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300'
-            >
-              🃏 Bói Bài Tây
-            </Link>
-            <Link
-              href='/games'
-              className='bg-gradient-to-r from-pink-600 to-rose-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300'
-            >
-              🎮 Minigame Bói
-            </Link>
-          </div>
-        </div>
+        <RelatedServices currentPage="/cards" />
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ export interface BlogPost {
   author: string;
   publishedAt: string;
   updatedAt?: string;
-  category: 'numerology' | 'zodiac' | 'feng-shui' | 'dreams' | 'spirituality' | 'tips';
+  category: 'numerology' | 'zodiac' | 'feng-shui' | 'dreams' | 'spirituality' | 'tips' | 'fengshui';
   tags?: string[];
   featuredImage?: string;
   isPublished: boolean;

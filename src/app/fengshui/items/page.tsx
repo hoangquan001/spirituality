@@ -1,6 +1,7 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
+import RelatedServices from '@/components/RelatedServices';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -363,25 +364,29 @@ export default function FengshuiItemsPage() {
   return (
     <div className="min-h-screen ">
       {/* Header */}
-      <ContentHeader title='Vật Phẩm Phong Thủy' description='Khám phá các vật phẩm phong thủy mang lại may mắn, tài lộc và bình an cho gia đình'
-      breadcrumb={[
-        { label: 'Trang chủ', href: '/' },
-        { label: 'Phong Thủy', href: '/feng-shui' },
-        { label: 'Vật Phẩm Phong Thủy', href: '/feng-shui/items' }
-      ]}
+      <ContentHeader
+        title="Vật Phẩm Phong Thủy"
+        description="Khám phá các vật phẩm phong thủy mang lại may mắn, tài lộc và bình an cho gia đình"
+        breadcrumb={[
+          { label: "Trang chủ", href: "/" },
+          { label: "Phong Thủy", href: "/feng-shui" },
+          { label: "Vật Phẩm Phong Thủy", href: "/feng-shui/items" },
+        ]}
       />
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Input Form */}
-        <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 mb-8">
+        <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">
             Nhập Năm Sinh Để Nhận Gợi Ý
           </h2>
-          
+
           <div className="max-w-md mx-auto">
             <div className="mb-6">
-              <label className="block text-gray-300 mb-2">Năm sinh (dương lịch)</label>
+              <label className="block text-gray-300 mb-2">
+                Năm sinh (dương lịch)
+              </label>
               <input
                 type="number"
                 value={birthYear}
@@ -421,7 +426,7 @@ export default function FengshuiItemsPage() {
         {recommendations && (
           <div className="space-y-8">
             {/* Element Overview */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
               <div className="text-center">
                 <h2 className="text-3xl font-bold text-white mb-4">
                   Mệnh {recommendations.element}
@@ -430,7 +435,9 @@ export default function FengshuiItemsPage() {
                   Năm sinh: {recommendations.birthYear}
                 </div>
                 <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                  Dựa trên mệnh {recommendations.element}, chúng tôi gợi ý những vật phẩm phong thủy phù hợp nhất để tăng cường vận may và tài lộc.
+                  Dựa trên mệnh {recommendations.element}, chúng tôi gợi ý những
+                  vật phẩm phong thủy phù hợp nhất để tăng cường vận may và tài
+                  lộc.
                 </p>
               </div>
             </div>
@@ -438,14 +445,21 @@ export default function FengshuiItemsPage() {
             {/* Category Tabs */}
             <div className="flex justify-center mb-8">
               <div className="bg-gray-800/50 rounded-full p-1">
-                {(['essential', 'beneficial', 'decorative', 'protective'] as const).map((category) => (
+                {(
+                  [
+                    "essential",
+                    "beneficial",
+                    "decorative",
+                    "protective",
+                  ] as const
+                ).map((category) => (
                   <button
                     key={category}
                     onClick={() => setActiveTab(category)}
                     className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                       activeTab === category
-                        ? 'bg-golden text-black'
-                        : 'text-gray-300 hover:text-white'
+                        ? "bg-golden text-black"
+                        : "text-gray-300 hover:text-white"
                     }`}
                   >
                     {getCategoryIcon(category)} {getCategoryName(category)}
@@ -460,18 +474,26 @@ export default function FengshuiItemsPage() {
                 <div
                   key={index}
                   onClick={() => setSelectedItem(item)}
-                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-700/20 cursor-pointer hover:border-golden/50 hover:scale-105 transition-all duration-300"
+                  className="cosmic-card rounded-3xl p-6 border border-gray-700/20 cursor-pointer hover:border-golden/50 hover:scale-105 transition-all duration-300"
                 >
                   <div className="text-center mb-4">
                     <div className="text-4xl mb-3">{item.symbol}</div>
-                    <h3 className="text-xl font-bold text-white mb-2">{item.name}</h3>
-                    <div className="text-golden font-semibold mb-2">{item.category}</div>
-                    <div className="text-gray-400 text-sm mb-3">{item.price}</div>
+                    <h3 className="text-xl font-bold text-white mb-2">
+                      {item.name}
+                    </h3>
+                    <div className="text-golden font-semibold mb-2">
+                      {item.category}
+                    </div>
+                    <div className="text-gray-400 text-sm mb-3">
+                      {item.price}
+                    </div>
                   </div>
 
                   <div className="space-y-3">
                     <div>
-                      <div className="text-purple-400 font-semibold mb-1">Lợi ích:</div>
+                      <div className="text-purple-400 font-semibold mb-1">
+                        Lợi ích:
+                      </div>
                       <ul className="text-gray-300 text-sm space-y-1">
                         {item.benefits.slice(0, 2).map((benefit, i) => (
                           <li key={i} className="flex items-start gap-1">
@@ -483,13 +505,20 @@ export default function FengshuiItemsPage() {
                     </div>
 
                     <div>
-                      <div className="text-blue-400 font-semibold mb-1">Vị trí:</div>
-                      <div className="text-gray-300 text-sm line-clamp-2">{item.placement}</div>
+                      <div className="text-blue-400 font-semibold mb-1">
+                        Vị trí:
+                      </div>
+                      <div className="text-gray-300 text-sm line-clamp-2">
+                        {item.placement}
+                      </div>
                     </div>
 
                     <div className="flex flex-wrap gap-1">
                       {item.colors.slice(0, 3).map((color, i) => (
-                        <span key={i} className="bg-golden/20 text-golden px-2 py-1 rounded text-xs">
+                        <span
+                          key={i}
+                          className="bg-golden/20 text-golden px-2 py-1 rounded text-xs"
+                        >
                           {color}
                         </span>
                       ))}
@@ -501,17 +530,22 @@ export default function FengshuiItemsPage() {
 
             {/* Placement Guide */}
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-700/20">
+              <div className="cosmic-card rounded-3xl p-6 border border-gray-700/20">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                   <span>🏠</span> Bố Trí Trong Nhà
                 </h3>
                 <div className="space-y-4">
                   {recommendations.placement.home.map((area, index) => (
                     <div key={index} className="bg-gray-700/30 rounded-lg p-4">
-                      <h4 className="font-semibold text-golden mb-2">{area.area}</h4>
+                      <h4 className="font-semibold text-golden mb-2">
+                        {area.area}
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {area.items.map((item, i) => (
-                          <span key={i} className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded text-sm">
+                          <span
+                            key={i}
+                            className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded text-sm"
+                          >
                             {item}
                           </span>
                         ))}
@@ -521,17 +555,22 @@ export default function FengshuiItemsPage() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-700/20">
+              <div className="cosmic-card rounded-3xl p-6 border border-gray-700/20">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                   <span>💼</span> Bố Trí Văn Phòng
                 </h3>
                 <div className="space-y-4">
                   {recommendations.placement.office.map((area, index) => (
                     <div key={index} className="bg-gray-700/30 rounded-lg p-4">
-                      <h4 className="font-semibold text-golden mb-2">{area.area}</h4>
+                      <h4 className="font-semibold text-golden mb-2">
+                        {area.area}
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {area.items.map((item, i) => (
-                          <span key={i} className="bg-green-500/20 text-green-300 px-2 py-1 rounded text-sm">
+                          <span
+                            key={i}
+                            className="bg-green-500/20 text-green-300 px-2 py-1 rounded text-sm"
+                          >
                             {item}
                           </span>
                         ))}
@@ -546,22 +585,39 @@ export default function FengshuiItemsPage() {
 
         {/* Item Detail Modal */}
         {selectedItem && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50" onClick={() => setSelectedItem(null)}>
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
+            onClick={() => setSelectedItem(null)}
+          >
+            <div
+              className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
               <div className="text-center mb-6">
                 <div className="text-6xl mb-4">{selectedItem.symbol}</div>
-                <h2 className="text-3xl font-bold text-white mb-2">{selectedItem.name}</h2>
-                <div className="text-golden font-semibold mb-4">{selectedItem.category} • {selectedItem.element}</div>
-                <div className="text-gray-300 leading-relaxed">{selectedItem.description}</div>
+                <h2 className="text-3xl font-bold text-white mb-2">
+                  {selectedItem.name}
+                </h2>
+                <div className="text-golden font-semibold mb-4">
+                  {selectedItem.category} • {selectedItem.element}
+                </div>
+                <div className="text-gray-300 leading-relaxed">
+                  {selectedItem.description}
+                </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-lg font-bold text-purple-400 mb-2">Lợi ích</h3>
+                    <h3 className="text-lg font-bold text-purple-400 mb-2">
+                      Lợi ích
+                    </h3>
                     <ul className="space-y-1">
                       {selectedItem.benefits.map((benefit, i) => (
-                        <li key={i} className="text-gray-300 text-sm flex items-start gap-2">
+                        <li
+                          key={i}
+                          className="text-gray-300 text-sm flex items-start gap-2"
+                        >
                           <span className="text-golden mt-1">•</span>
                           {benefit}
                         </li>
@@ -570,22 +626,35 @@ export default function FengshuiItemsPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-blue-400 mb-2">Vị trí đặt</h3>
-                    <p className="text-gray-300 text-sm">{selectedItem.placement}</p>
+                    <h3 className="text-lg font-bold text-blue-400 mb-2">
+                      Vị trí đặt
+                    </h3>
+                    <p className="text-gray-300 text-sm">
+                      {selectedItem.placement}
+                    </p>
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-green-400 mb-2">Giá tham khảo</h3>
-                    <p className="text-gray-300 text-sm">{selectedItem.price}</p>
+                    <h3 className="text-lg font-bold text-green-400 mb-2">
+                      Giá tham khảo
+                    </h3>
+                    <p className="text-gray-300 text-sm">
+                      {selectedItem.price}
+                    </p>
                   </div>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-lg font-bold text-yellow-400 mb-2">Màu sắc</h3>
+                    <h3 className="text-lg font-bold text-yellow-400 mb-2">
+                      Màu sắc
+                    </h3>
                     <div className="flex flex-wrap gap-2">
                       {selectedItem.colors.map((color, i) => (
-                        <span key={i} className="bg-golden/20 text-golden px-3 py-1 rounded-full text-sm">
+                        <span
+                          key={i}
+                          className="bg-golden/20 text-golden px-3 py-1 rounded-full text-sm"
+                        >
                           {color}
                         </span>
                       ))}
@@ -593,10 +662,15 @@ export default function FengshuiItemsPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-pink-400 mb-2">Chất liệu</h3>
+                    <h3 className="text-lg font-bold text-pink-400 mb-2">
+                      Chất liệu
+                    </h3>
                     <div className="flex flex-wrap gap-2">
                       {selectedItem.materials.map((material, i) => (
-                        <span key={i} className="bg-pink-500/20 text-pink-300 px-3 py-1 rounded-full text-sm">
+                        <span
+                          key={i}
+                          className="bg-pink-500/20 text-pink-300 px-3 py-1 rounded-full text-sm"
+                        >
                           {material}
                         </span>
                       ))}
@@ -604,12 +678,16 @@ export default function FengshuiItemsPage() {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-cyan-400 mb-2">Kích thước</h3>
+                    <h3 className="text-lg font-bold text-cyan-400 mb-2">
+                      Kích thước
+                    </h3>
                     <p className="text-gray-300 text-sm">{selectedItem.size}</p>
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-bold text-orange-400 mb-2">Cách chăm sóc</h3>
+                    <h3 className="text-lg font-bold text-orange-400 mb-2">
+                      Cách chăm sóc
+                    </h3>
                     <p className="text-gray-300 text-sm">{selectedItem.care}</p>
                   </div>
                 </div>
@@ -628,35 +706,7 @@ export default function FengshuiItemsPage() {
         )}
 
         {/* Related Links */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-white mb-8">Khám Phá Thêm Phong Thủy</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/fengshui/colors"
-              className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🎨 Màu Sắc Hợp Mệnh
-            </Link>
-            <Link
-              href="/fengshui/directions"
-              className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🧭 Hướng Hợp Tuổi
-            </Link>
-            <Link
-              href="/fengshui/dates"
-              className="bg-gradient-to-r from-pink-600 to-rose-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              📅 Chọn Ngày Tốt
-            </Link>
-            <Link
-              href="/fengshui/home"
-              className="bg-gradient-to-r from-orange-600 to-amber-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🏠 Phong Thủy Nhà Ở
-            </Link>
-          </div>
-        </div>
+        <RelatedServices currentPage="/cards" />
       </div>
     </div>
   );

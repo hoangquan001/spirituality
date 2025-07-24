@@ -1,6 +1,7 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
+import RelatedServices from '@/components/RelatedServices';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -275,24 +276,29 @@ export default function ZodiacCalendarPage() {
 
   return (
     <div className="min-h-screen">
-
-      <ContentHeader title='Lịch Tử Vi Cá Nhân' description='Dự đoán chi tiết cho từng ngày trong tháng theo cung hoàng đạo của bạn.' breadcrumb={[
-        { label: 'Trang Chủ', href: '/' },
-        { label: 'Cung Hoàng Đạo', href: '/zodiac' },
-        { label: 'Lịch Tử Vi', href: '/zodiac/calendar' },
-      ]}   />
+      <ContentHeader
+        title="Lịch Tử Vi Cá Nhân"
+        description="Dự đoán chi tiết cho từng ngày trong tháng theo cung hoàng đạo của bạn."
+        breadcrumb={[
+          { label: "Trang Chủ", href: "/" },
+          { label: "Cung Hoàng Đạo", href: "/zodiac" },
+          { label: "Lịch Tử Vi", href: "/zodiac/calendar" },
+        ]}
+      />
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 py-6">
+      <div className="max-w-6xl mx-auto px-4 py-6">
         {/* Input Form */}
-        <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 mb-8">
+        <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">
             Tạo Lịch Tử Vi Cá Nhân
           </h2>
-          
+
           <div className="max-w-md mx-auto">
             <div className="mb-6">
-              <label className="block text-gray-300 mb-2">Ngày sinh của bạn</label>
+              <label className="block text-gray-300 mb-2">
+                Ngày sinh của bạn
+              </label>
               <input
                 type="date"
                 value={birthDate}
@@ -326,37 +332,47 @@ export default function ZodiacCalendarPage() {
         {calendar && (
           <div className="space-y-8">
             {/* Sign Info & Monthly Theme */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
               <div className="text-center mb-8">
-                <div className={`text-6xl mb-4 bg-gradient-to-r ${calendar.sign.color} bg-clip-text text-transparent`}>
+                <div
+                  className={`text-6xl mb-4 bg-gradient-to-r ${calendar.sign.color} bg-clip-text text-transparent`}
+                >
                   {calendar.sign.symbol}
                 </div>
-                <h2 className="text-3xl font-bold text-white mb-2">{calendar.sign.name}</h2>
-                <div className="text-gray-400 mb-6">{calendar.sign.dates} • Nguyên tố: {calendar.sign.element}</div>
-                
+                <h2 className="text-3xl font-bold text-white mb-2">
+                  {calendar.sign.name}
+                </h2>
+                <div className="text-gray-400 mb-6">
+                  {calendar.sign.dates} • Nguyên tố: {calendar.sign.element}
+                </div>
+
                 <div className="bg-blue-500/10 rounded-lg p-6 border border-blue-500/20">
-                  <h3 className="text-xl font-bold text-blue-400 mb-3">{calendar.monthlyTheme}</h3>
-                  <p className="text-gray-300 leading-relaxed">{calendar.monthlyAdvice}</p>
+                  <h3 className="text-xl font-bold text-blue-400 mb-3">
+                    {calendar.monthlyTheme}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {calendar.monthlyAdvice}
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Calendar Navigation */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
               <div className="flex items-center justify-between mb-6">
                 <button
-                  onClick={() => navigateMonth('prev')}
+                  onClick={() => navigateMonth("prev")}
                   className="bg-gray-700/50 hover:bg-gray-600/50 text-white px-4 py-2 rounded-lg transition-colors"
                 >
                   ← Tháng trước
                 </button>
-                
+
                 <h3 className="text-2xl font-bold text-white">
                   {monthNames[currentMonth]} {currentYear}
                 </h3>
-                
+
                 <button
-                  onClick={() => navigateMonth('next')}
+                  onClick={() => navigateMonth("next")}
                   className="bg-gray-700/50 hover:bg-gray-600/50 text-white px-4 py-2 rounded-lg transition-colors"
                 >
                   Tháng sau →
@@ -366,7 +382,10 @@ export default function ZodiacCalendarPage() {
               {/* Calendar Header */}
               <div className="grid grid-cols-7 gap-1 mb-2">
                 {dayNames.map((day) => (
-                  <div key={day} className="text-center text-gray-400 font-semibold py-2">
+                  <div
+                    key={day}
+                    className="text-center text-gray-400 font-semibold py-2"
+                  >
                     {day}
                   </div>
                 ))}
@@ -384,11 +403,12 @@ export default function ZodiacCalendarPage() {
 
             {/* Selected Date Details */}
             {selectedDate && getSelectedPrediction() && (
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
+              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
                 <h3 className="text-2xl font-bold text-white mb-6 text-center">
-                  Chi Tiết Ngày {new Date(selectedDate).getDate()} {monthNames[currentMonth]}
+                  Chi Tiết Ngày {new Date(selectedDate).getDate()}{" "}
+                  {monthNames[currentMonth]}
                 </h3>
-                
+
                 {(() => {
                   const prediction = getSelectedPrediction()!;
                   return (
@@ -398,32 +418,40 @@ export default function ZodiacCalendarPage() {
                           <h4 className="text-purple-400 font-semibold mb-2 flex items-center gap-2">
                             <span>⚡</span> Năng Lượng
                           </h4>
-                          <p className="text-white text-lg">{prediction.energy}</p>
+                          <p className="text-white text-lg">
+                            {prediction.energy}
+                          </p>
                         </div>
-                        
+
                         <div className="bg-pink-500/10 rounded-lg p-4 border border-pink-500/20">
                           <h4 className="text-pink-400 font-semibold mb-2 flex items-center gap-2">
                             <span>😊</span> Tâm Trạng
                           </h4>
-                          <p className="text-white text-lg">{prediction.mood}</p>
+                          <p className="text-white text-lg">
+                            {prediction.mood}
+                          </p>
                         </div>
-                        
+
                         <div className="bg-yellow-500/10 rounded-lg p-4 border border-yellow-500/20">
                           <h4 className="text-yellow-400 font-semibold mb-2 flex items-center gap-2">
                             <span>🕐</span> Giờ May Mắn
                           </h4>
-                          <p className="text-white text-lg">{prediction.luckyHour}</p>
+                          <p className="text-white text-lg">
+                            {prediction.luckyHour}
+                          </p>
                         </div>
                       </div>
-                      
+
                       <div className="space-y-6">
                         <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/20">
                           <h4 className="text-green-400 font-semibold mb-2 flex items-center gap-2">
                             <span>🎨</span> Màu May Mắn
                           </h4>
-                          <p className="text-white text-lg">{prediction.color}</p>
+                          <p className="text-white text-lg">
+                            {prediction.color}
+                          </p>
                         </div>
-                        
+
                         <div className="bg-blue-500/10 rounded-lg p-4 border border-blue-500/20">
                           <h4 className="text-blue-400 font-semibold mb-2 flex items-center gap-2">
                             <span>⭐</span> Đánh Giá Ngày
@@ -432,12 +460,14 @@ export default function ZodiacCalendarPage() {
                             {renderStars(prediction.rating)}
                           </div>
                         </div>
-                        
+
                         <div className="bg-golden/10 rounded-lg p-4 border border-golden/20">
                           <h4 className="text-golden font-semibold mb-2 flex items-center gap-2">
                             <span>💡</span> Lời Khuyên
                           </h4>
-                          <p className="text-gray-300 leading-relaxed">{prediction.advice}</p>
+                          <p className="text-gray-300 leading-relaxed">
+                            {prediction.advice}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -449,35 +479,7 @@ export default function ZodiacCalendarPage() {
         )}
 
         {/* Related Links */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-white mb-8">Khám Phá Thêm</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/zodiac/today"
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              ⭐ Tử Vi Hôm Nay
-            </Link>
-            <Link
-              href="/zodiac/compatibility"
-              className="bg-gradient-to-r from-pink-600 to-rose-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              💕 Ghép Đôi Cung Hoàng Đạo
-            </Link>
-            <Link
-              href="/zodiac"
-              className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              ♈ Tử Vi 12 Cung
-            </Link>
-            <Link
-              href="/numerology"
-              className="bg-gradient-to-r from-golden to-yellow-500 text-black px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🔢 Thần Số Học
-            </Link>
-          </div>
-        </div>
+        <RelatedServices currentPage="/zodiac/calendar" />
       </div>
     </div>
   );

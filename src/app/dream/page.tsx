@@ -4,6 +4,7 @@ import ContentHeader from '@/components/ContentHeader';
 import { useState } from 'react';
 import DreamStructuredData from '../../components/DreamStructuredData';
 import RelatedServices from '../../components/RelatedServices';
+import FAQSection from '@/components/FAQSection';
 import { CheckIcon, DreamIcon } from '../../components/icons';
 import { getAllCategories, getDreamsByCategory, getRandomDream, searchDreams, type DreamSymbol } from '../../lib/dreamDictionary';
 
@@ -41,7 +42,7 @@ export default function DreamPage() {
         {/* Search Section */}
         <div className="mb-12">
           <div className="max-w-2xl mx-auto">
-            <div className="cosmic-card rounded-2xl p-8 mb-8">
+            <div className="cosmic-card hoverable rounded-2xl p-8 mb-8">
               <div className="text-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-indigo-600 to-gray-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl"><DreamIcon className="text-white" size={32} /></span>
@@ -71,7 +72,7 @@ export default function DreamPage() {
                   <div
                     key={index}
                     onClick={() => setSelectedDream(dream)}
-                    className="cosmic-card rounded-xl p-6 cursor-pointer hover:bg-white/20 transition-all duration-300"
+                    className="cosmic-card hoverable rounded-xl p-6 cursor-pointer hover:bg-white/20 transition-all duration-300"
                   >
                     <div className="flex items-center justify-between">
                       <div>
@@ -90,7 +91,7 @@ export default function DreamPage() {
         {/* Dream Detail Modal */}
         {selectedDream && (
           <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-            <div className="bg-gradient-to-br from-gray-900/95 to-gray-900/95 rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-golden/20">
+            <div className="bg-gradient-to-br from-gray-900/95 to-gray-900/95 rounded-2xl p-8 max-w-6xl w-full max-h-[90vh] overflow-y-auto border border-golden/20">
               <div className="flex justify-between items-start mb-6">
                 <div>
                   <h2 className="text-3xl font-bold text-white capitalize mb-2">{selectedDream.symbol}</h2>
@@ -226,7 +227,7 @@ export default function DreamPage() {
               };
 
               return (
-                <div key={index} className="cosmic-card rounded-xl p-6">
+                <div key={index} className="cosmic-card hoverable rounded-xl p-6">
                   <div className="text-center">
                     <div className="text-4xl mb-4">{icons[category as keyof typeof icons] || '🔮'}</div>
                     <h3 className="text-xl font-bold text-white mb-3">{category}</h3>
@@ -253,7 +254,7 @@ export default function DreamPage() {
         </div>
 
         {/* Tips Section */}
-        <div className="cosmic-card rounded-2xl p-8">
+        <div className="cosmic-card hoverable rounded-2xl p-8">
           <h2 className="text-3xl font-bold text-center mb-8">
             <span className="bg-gradient-to-r from-golden to-yellow-300 bg-clip-text text-transparent">
               Mẹo Ghi Nhớ Giấc Mơ
@@ -310,71 +311,31 @@ export default function DreamPage() {
         </div>
 
         {/* FAQ Section */}
-        <section className="py-10 px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                <span className="bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent">
-                  Câu Hỏi Thường Gặp
-                </span>
-              </h2>
-              <p className="text-gray-300 text-lg">
-                Giải đáp những thắc mắc phổ biến về giải mã giấc mơ
-              </p>
-            </div>
-
-            <div className="space-y-6">
-              {/* FAQ Item 1 */}
-              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-                <h3 className="text-xl font-bold text-golden mb-3">Giấc mơ có ý nghĩa gì?</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Giấc mơ là cách tiềm thức giao tiếp với ý thức, phản ánh những suy nghĩ, cảm xúc và mong muốn sâu kín.
-                  Mỗi biểu tượng trong giấc mơ đều mang ý nghĩa riêng, có thể là lời khuyên, cảnh báo hoặc dự báo về tương lai.
-                  Việc giải mã giấc mơ giúp bạn hiểu rõ hơn về bản thân và những gì đang diễn ra trong cuộc sống.
-                </p>
-              </div>
-
-              {/* FAQ Item 2 */}
-              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-                <h3 className="text-xl font-bold text-golden mb-3">Tại sao chúng ta lại mơ?</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Giấc mơ xảy ra trong giai đoạn REM của giấc ngủ, khi não bộ xử lý thông tin và cảm xúc từ ngày hôm đó.
-                  Theo tâm linh học, giấc mơ là cầu nối giữa thế giới vật chất và tinh thần, giúp linh hồn nhận được thông điệp từ vũ trụ.
-                  Giấc mơ cũng có thể là cách tiềm thức giải quyết vấn đề và chuẩn bị cho những thử thách sắp tới.
-                </p>
-              </div>
-
-              {/* FAQ Item 3 */}
-              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-                <h3 className="text-xl font-bold text-golden mb-3">Làm thế nào để nhớ giấc mơ?</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Để nhớ giấc mơ tốt hơn, bạn nên: đặt sổ ghi chú bên cạnh giường, ghi lại ngay khi thức dậy,
-                  tránh sử dụng điện thoại ngay sau khi thức dậy, duy trì giấc ngủ đều đặn, và tập trung suy nghĩ về giấc mơ trước khi ngủ.
-                  Việc ghi chép thường xuyên sẽ giúp bạn nhớ giấc mơ rõ ràng hơn.
-                </p>
-              </div>
-
-              {/* FAQ Item 4 */}
-              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-                <h3 className="text-xl font-bold text-golden mb-3">Giấc mơ có thể dự báo tương lai không?</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Theo quan niệm tâm linh, một số giấc mơ có thể mang tính dự báo, đặc biệt là những giấc mơ rõ ràng và ấn tượng mạnh.
-                  Tuy nhiên, hầu hết giấc mơ phản ánh tâm trạng hiện tại và những lo lắng trong tiềm thức.
-                  Quan trọng là hiểu được thông điệp mà giấc mơ muốn truyền tải để đưa ra quyết định đúng đắn trong cuộc sống.
-                </p>
-              </div>
-
-              {/* FAQ Item 5 */}
-              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-                <h3 className="text-xl font-bold text-golden mb-3">Website này có tính phí không?</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Không, tất cả nội dung về giải mã giấc mơ đều hoàn toàn miễn phí. Bạn có thể thoải mái tìm kiếm ý nghĩa của bất kỳ giấc mơ nào,
-                  đọc những thông tin thú vị và tham khảo lời khuyên mà không tốn phí. Chúng mình chia sẻ từ điển giấc mơ này với mong muốn giúp mọi người hiểu thêm về giấc mơ của mình.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FAQSection
+          description="Giải đáp những thắc mắc phổ biến về giải mã giấc mơ"
+          faqs={[
+            {
+              question: "Giấc mơ có ý nghĩa gì?",
+              answer: "Giấc mơ là cách tiềm thức giao tiếp với ý thức, phản ánh những suy nghĩ, cảm xúc và mong muốn sâu kín. Mỗi biểu tượng trong giấc mơ đều mang ý nghĩa riêng, có thể là lời khuyên, cảnh báo hoặc dự báo về tương lai. Việc giải mã giấc mơ giúp bạn hiểu rõ hơn về bản thân và những gì đang diễn ra trong cuộc sống."
+            },
+            {
+              question: "Tại sao chúng ta lại mơ?",
+              answer: "Giấc mơ xảy ra trong giai đoạn REM của giấc ngủ, khi não bộ xử lý thông tin và cảm xúc từ ngày hôm đó. Theo tâm linh học, giấc mơ là cầu nối giữa thế giới vật chất và tinh thần, giúp linh hồn nhận được thông điệp từ vũ trụ. Giấc mơ cũng có thể là cách tiềm thức giải quyết vấn đề và chuẩn bị cho những thử thách sắp tới."
+            },
+            {
+              question: "Làm thế nào để nhớ giấc mơ?",
+              answer: "Để nhớ giấc mơ tốt hơn, bạn nên: đặt sổ ghi chú bên cạnh giường, ghi lại ngay khi thức dậy, tránh sử dụng điện thoại ngay sau khi thức dậy, duy trì giấc ngủ đều đặn, và tập trung suy nghĩ về giấc mơ trước khi ngủ. Việc ghi chép thường xuyên sẽ giúp bạn nhớ giấc mơ rõ ràng hơn."
+            },
+            {
+              question: "Giấc mơ có thể dự báo tương lai không?",
+              answer: "Theo quan niệm tâm linh, một số giấc mơ có thể mang tính dự báo, đặc biệt là những giấc mơ rõ ràng và ấn tượng mạnh. Tuy nhiên, hầu hết giấc mơ phản ánh tâm trạng hiện tại và những lo lắng trong tiềm thức. Quan trọng là hiểu được thông điệp mà giấc mơ muốn truyền tải để đưa ra quyết định đúng đắn trong cuộc sống."
+            },
+            {
+              question: "Website này có tính phí không?",
+              answer: "Không, tất cả nội dung về giải mã giấc mơ đều hoàn toàn miễn phí. Bạn có thể thoải mái tìm kiếm ý nghĩa của bất kỳ giấc mơ nào, đọc những thông tin thú vị và tham khảo lời khuyên mà không tốn phí. Chúng mình chia sẻ từ điển giấc mơ này với mong muốn giúp mọi người hiểu thêm về giấc mơ của mình."
+            }
+          ]}
+        />
 
         {/* Related Services */}
         <RelatedServices currentPage="/dream" />

@@ -1,6 +1,7 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
+import FAQSection from '@/components/FAQSection';
 import { useState } from 'react';
 
 interface FengShuiAnalysis {
@@ -300,7 +301,7 @@ export default function FengShuiPage() {
         <div className="container mx-auto max-w-6xl">
 
         {!result ? (
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             {/* Input Form */}
             <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 rounded-3xl p-8 border border-gray-400/20 mb-8">
               <div className="text-center mb-8">
@@ -573,6 +574,29 @@ export default function FengShuiPage() {
             </div>
           </div>
         )}
+
+        {/* FAQ Section */}
+        <FAQSection
+          description="Giải đáp những thắc mắc phổ biến về phong thủy và ứng dụng trong cuộc sống"
+          faqs={[
+            {
+              question: "Phong thủy có thực sự hiệu quả không?",
+              answer: "Phong thủy là nghệ thuật sắp xếp không gian sống hài hòa với thiên nhiên, được áp dụng hàng nghìn năm. Nhiều người cảm thấy cuộc sống cân bằng và thuận lợi hơn khi áp dụng phong thủy đúng cách. Tuy nhiên, phong thủy chỉ là yếu tố hỗ trợ, thành công vẫn phụ thuộc vào nỗ lực cá nhân."
+            },
+            {
+              question: "Làm thế nào để biết mệnh của mình?",
+              answer: "Mệnh được xác định dựa trên năm sinh theo âm lịch và ngũ hành (Kim, Mộc, Thủy, Hỏa, Thổ). Bạn có thể tra cứu mệnh qua năm sinh hoặc sử dụng công cụ tính toán trên website. Mỗi mệnh có những màu sắc, hướng và vật phẩm phong thủy phù hợp riêng."
+            },
+            {
+              question: "Có nên thay đổi toàn bộ nhà theo phong thủy?",
+              answer: "Không cần thay đổi toàn bộ, bạn có thể bắt đầu với những điều chỉnh nhỏ như màu sắc, vị trí đồ vật, hoặc thêm cây xanh. Quan trọng là tạo không gian sống thoải mái và hài hòa. Thay đổi từ từ sẽ giúp bạn cảm nhận được hiệu quả và điều chỉnh phù hợp."
+            },
+            {
+              question: "Phong thủy có xung đột với tôn giáo không?",
+              answer: "Phong thủy là nghệ thuật sắp xếp không gian, không phải tôn giáo hay tín ngưỡng. Bạn có thể áp dụng phong thủy để tạo môi trường sống tích cực mà không ảnh hưởng đến niềm tin cá nhân. Nhiều người từ các tôn giáo khác nhau đều áp dụng phong thủy như một cách cải thiện chất lượng cuộc sống."
+            }
+          ]}
+        />
       </div>
       </div>
     </>

@@ -47,7 +47,7 @@ export default function ZodiacDetailPage({ params }: Props) {
           {/* Left Column - Personality */}
           <div className="lg:col-span-2 space-y-8">
             {/* Personality Section */}
-            <div className="cosmic-card rounded-2xl p-8">
+            <div className="cosmic-card hoverable rounded-2xl p-8">
               <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
                 <span className="mr-3">🎭</span>
                 Tính Cách
@@ -93,7 +93,7 @@ export default function ZodiacDetailPage({ params }: Props) {
             </div>
 
             {/* Love Section */}
-            <div className="cosmic-card rounded-2xl p-8">
+            <div className="cosmic-card hoverable rounded-2xl p-8">
               <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
                 <span className="mr-3">💕</span>
                 Tình Yêu & Hôn Nhân
@@ -129,7 +129,7 @@ export default function ZodiacDetailPage({ params }: Props) {
             </div>
 
             {/* Career Section */}
-            <div className="cosmic-card rounded-2xl p-8">
+            <div className="cosmic-card hoverable rounded-2xl p-8">
               <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
                 <span className="mr-3">💼</span>
                 Sự Nghiệp & Tài Chính
@@ -170,7 +170,7 @@ export default function ZodiacDetailPage({ params }: Props) {
           {/* Right Column - Sidebar */}
           <div className="space-y-8">
             {/* Lucky Numbers & Colors */}
-            <div className="cosmic-card rounded-2xl p-6">
+            <div className="cosmic-card hoverable rounded-2xl p-6">
               <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
                 <span className="mr-2">🍀</span>
                 May Mắn
@@ -223,7 +223,7 @@ export default function ZodiacDetailPage({ params }: Props) {
             </div>
 
             {/* Health Section */}
-            <div className="cosmic-card rounded-2xl p-6">
+            <div className="cosmic-card hoverable rounded-2xl p-6">
               <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
                 <span className="mr-2">🏥</span>
                 Sức Khỏe
@@ -263,7 +263,7 @@ export default function ZodiacDetailPage({ params }: Props) {
         </div>
 
         {/* 2024 Forecast */}
-        <div className="cosmic-card rounded-2xl p-8">
+        <div className="cosmic-card hoverable rounded-2xl p-8">
           <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
             <span className="mr-3">🔮</span>
             Dự Báo Năm 2024

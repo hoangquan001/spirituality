@@ -1,6 +1,7 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
+import RelatedServices from '@/components/RelatedServices';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -261,23 +262,23 @@ export default function ZodiacCompatibilityPage() {
       {/* Header */}
 
       <ContentHeader
-        title='Ghép Đôi Cung Hoàng Đạo'
-        description='Khám phá độ hợp tình yêu giữa các cung hoàng đạo'
+        title="Ghép Đôi Cung Hoàng Đạo"
+        description="Khám phá độ hợp tình yêu giữa các cung hoàng đạo"
         breadcrumb={[
-          { label: 'Trang Chủ', href: '/' },
-          { label: 'Cung Hoàng Đạo', href: '/zodiac' },
-          { label: 'Ghép Đôi', href: '/zodiac/compatibility' },
+          { label: "Trang Chủ", href: "/" },
+          { label: "Cung Hoàng Đạo", href: "/zodiac" },
+          { label: "Ghép Đôi", href: "/zodiac/compatibility" },
         ]}
       />
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Selection Form */}
-        <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 mb-8">
+        <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
           <h2 className="text-2xl font-bold text-white mb-8 text-center">
             Chọn Cung Hoàng Đạo
           </h2>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {/* Person 1 */}
             <div>
@@ -291,14 +292,18 @@ export default function ZodiacCompatibilityPage() {
                     onClick={() => setPerson1Sign(sign.id)}
                     className={`p-3 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
                       person1Sign === sign.id
-                        ? 'border-pink-400 bg-pink-400/10 shadow-lg'
-                        : 'border-gray-700 bg-gray-800/50 hover:border-gray-600'
+                        ? "border-pink-400 bg-pink-400/10 shadow-lg"
+                        : "border-gray-700 bg-gray-800/50 hover:border-gray-600"
                     }`}
                   >
-                    <div className={`text-2xl mb-1 bg-gradient-to-r ${sign.color} bg-clip-text text-transparent`}>
+                    <div
+                      className={`text-2xl mb-1 bg-gradient-to-r ${sign.color} bg-clip-text text-transparent`}
+                    >
                       {sign.symbol}
                     </div>
-                    <div className="text-white text-xs font-medium">{sign.name}</div>
+                    <div className="text-white text-xs font-medium">
+                      {sign.name}
+                    </div>
                   </button>
                 ))}
               </div>
@@ -316,14 +321,18 @@ export default function ZodiacCompatibilityPage() {
                     onClick={() => setPerson2Sign(sign.id)}
                     className={`p-3 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
                       person2Sign === sign.id
-                        ? 'border-blue-400 bg-blue-400/10 shadow-lg'
-                        : 'border-gray-700 bg-gray-800/50 hover:border-gray-600'
+                        ? "border-blue-400 bg-blue-400/10 shadow-lg"
+                        : "border-gray-700 bg-gray-800/50 hover:border-gray-600"
                     }`}
                   >
-                    <div className={`text-2xl mb-1 bg-gradient-to-r ${sign.color} bg-clip-text text-transparent`}>
+                    <div
+                      className={`text-2xl mb-1 bg-gradient-to-r ${sign.color} bg-clip-text text-transparent`}
+                    >
                       {sign.symbol}
                     </div>
-                    <div className="text-white text-xs font-medium">{sign.name}</div>
+                    <div className="text-white text-xs font-medium">
+                      {sign.name}
+                    </div>
                   </button>
                 ))}
               </div>
@@ -342,9 +351,7 @@ export default function ZodiacCompatibilityPage() {
                   Đang phân tích...
                 </span>
               ) : (
-                <span className="flex items-center gap-2">
-                  💕 Xem Độ Hợp
-                </span>
+                <span className="flex items-center gap-2">💕 Xem Độ Hợp</span>
               )}
             </button>
           </div>
@@ -354,51 +361,71 @@ export default function ZodiacCompatibilityPage() {
         {result && (
           <div className="space-y-8">
             {/* Compatibility Score */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
               <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold text-white mb-6">
                   Kết Quả Ghép Đôi
                 </h2>
-                
+
                 <div className="flex items-center justify-center gap-8 mb-6">
                   <div className="text-center">
-                    <div className={`text-5xl mb-2 bg-gradient-to-r ${result.sign1.color} bg-clip-text text-transparent`}>
+                    <div
+                      className={`text-5xl mb-2 bg-gradient-to-r ${result.sign1.color} bg-clip-text text-transparent`}
+                    >
                       {result.sign1.symbol}
                     </div>
-                    <div className="text-white font-semibold">{result.sign1.name}</div>
-                    <div className="text-gray-400 text-sm">{result.sign1.element}</div>
+                    <div className="text-white font-semibold">
+                      {result.sign1.name}
+                    </div>
+                    <div className="text-gray-400 text-sm">
+                      {result.sign1.element}
+                    </div>
                   </div>
-                  
+
                   <div className="text-center">
                     <div className="text-4xl mb-2">💕</div>
                     <div className="relative w-24 h-24 mx-auto mb-2">
                       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 p-1">
                         <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
                           <div className="text-center">
-                            <div className="text-2xl font-bold text-golden">{result.compatibility.score}%</div>
-                            <div className="text-xs text-gray-300">{result.compatibility.level}</div>
+                            <div className="text-2xl font-bold text-golden">
+                              {result.compatibility.score}%
+                            </div>
+                            <div className="text-xs text-gray-300">
+                              {result.compatibility.level}
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="text-center">
-                    <div className={`text-5xl mb-2 bg-gradient-to-r ${result.sign2.color} bg-clip-text text-transparent`}>
+                    <div
+                      className={`text-5xl mb-2 bg-gradient-to-r ${result.sign2.color} bg-clip-text text-transparent`}
+                    >
                       {result.sign2.symbol}
                     </div>
-                    <div className="text-white font-semibold">{result.sign2.name}</div>
-                    <div className="text-gray-400 text-sm">{result.sign2.element}</div>
+                    <div className="text-white font-semibold">
+                      {result.sign2.name}
+                    </div>
+                    <div className="text-gray-400 text-sm">
+                      {result.sign2.element}
+                    </div>
                   </div>
                 </div>
-                
+
                 <p className="text-gray-300 leading-relaxed mb-6">
                   {result.compatibility.description}
                 </p>
-                
+
                 <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20">
-                  <div className="text-purple-400 font-semibold mb-2">Nguyên Tố:</div>
-                  <div className="text-gray-300">{result.compatibility.elementMatch}</div>
+                  <div className="text-purple-400 font-semibold mb-2">
+                    Nguyên Tố:
+                  </div>
+                  <div className="text-gray-300">
+                    {result.compatibility.elementMatch}
+                  </div>
                 </div>
               </div>
             </div>
@@ -463,7 +490,10 @@ export default function ZodiacCompatibilityPage() {
                 </h3>
                 <ul className="space-y-2">
                   {result.compatibility.strengths.map((strength, index) => (
-                    <li key={index} className="text-gray-300 flex items-start gap-2">
+                    <li
+                      key={index}
+                      className="text-gray-300 flex items-start gap-2"
+                    >
                       <span className="text-green-400 mt-1">•</span>
                       {strength}
                     </li>
@@ -478,7 +508,10 @@ export default function ZodiacCompatibilityPage() {
                 </h3>
                 <ul className="space-y-2">
                   {result.compatibility.challenges.map((challenge, index) => (
-                    <li key={index} className="text-gray-300 flex items-start gap-2">
+                    <li
+                      key={index}
+                      className="text-gray-300 flex items-start gap-2"
+                    >
                       <span className="text-orange-400 mt-1">•</span>
                       {challenge}
                     </li>
@@ -500,35 +533,7 @@ export default function ZodiacCompatibilityPage() {
         )}
 
         {/* Related Links */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-white mb-8">Khám Phá Thêm</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/zodiac/today"
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              ⭐ Tử Vi Hôm Nay
-            </Link>
-            <Link
-              href="/zodiac"
-              className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              ♈ Tử Vi 12 Cung
-            </Link>
-            <Link
-              href="/zodiac/calendar"
-              className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              📅 Lịch Tử Vi Cá Nhân
-            </Link>
-            <Link
-              href="/numerology/compatibility"
-              className="bg-gradient-to-r from-golden to-yellow-500 text-black px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🔢 Ghép Đôi Ngày Sinh
-            </Link>
-          </div>
-        </div>
+        <RelatedServices currentPage="/cards" />
       </div>
     </div>
   );

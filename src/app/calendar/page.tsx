@@ -1,6 +1,7 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
+import FAQSection from '@/components/FAQSection';
 import { useState } from 'react';
 
 interface CalendarDay {
@@ -166,7 +167,7 @@ export default function CalendarPage() {
         ]}
       />
       <div className="min-h-screen py-10 px-4">
-        <div className="container mx-auto max-w-7xl">
+        <div className="container mx-auto max-w-6xl">
 
         {/* Calendar Controls */}
         <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 backdrop-blur-sm rounded-3xl p-6 border border-gray-400/20 mb-8">
@@ -361,6 +362,29 @@ export default function CalendarPage() {
             </div>
           </div>
         </div>
+
+        {/* FAQ Section */}
+        <FAQSection
+          description="Giải đáp những thắc mắc phổ biến về lịch âm dương và chuyển đổi lịch"
+          faqs={[
+            {
+              question: "Lịch âm và lịch dương khác nhau như thế nào?",
+              answer: "Lịch dương (Gregorian) dựa trên chu kỳ Trái Đất quay quanh Mặt Trời (365 ngày), được sử dụng phổ biến trên thế giới. Lịch âm dựa trên chu kỳ Mặt Trăng (354 ngày), được sử dụng để tính các ngày lễ truyền thống và phong thủy ở Việt Nam và các nước Á Đông."
+            },
+            {
+              question: "Tại sao cần chuyển đổi lịch âm dương?",
+              answer: "Chuyển đổi lịch âm dương giúp bạn tra cứu ngày tốt xấu, chọn ngày cưới hỏi, khai trương, và các sự kiện quan trọng theo phong thủy. Ngoài ra, còn giúp xác định các ngày lễ truyền thống như Tết, Trung Thu, Vu Lan theo âm lịch."
+            },
+            {
+              question: "Làm sao biết ngày nào là ngày tốt?",
+              answer: "Ngày tốt được xác định dựa trên can chi, sao tốt xấu, và hướng phù hợp với tuổi của bạn. Mỗi ngày có những giờ hoàng đạo và hướng tốt khác nhau. Bạn có thể tham khảo lịch vạn niên hoặc sử dụng công cụ tra cứu để chọn ngày phù hợp."
+            },
+            {
+              question: "Can chi có ý nghĩa gì?",
+              answer: "Can chi là hệ thống đếm thời gian truyền thống gồm 10 can (Giáp, Ất, Bính...) và 12 chi (Tý, Sửu, Dần...), tạo thành chu kỳ 60 năm. Can chi được dùng để xác định tuổi, ngày tháng và có ảnh hưởng đến phong thủy, tử vi của mỗi người."
+            }
+          ]}
+        />
       </div>
       </div>
     </>

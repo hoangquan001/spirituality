@@ -45,7 +45,7 @@ export default function BlogAdminPage() {
       <div className="min-h-screen">
         <div className="container mx-auto px-4 py-8">
           {/* Header */}
-          <div className="max-w-4xl mx-auto mb-8">
+          <div className="max-w-6xl mx-auto mb-8">
             <div className="flex items-center justify-between">
               <h1 className="text-3xl font-bold text-white">Tạo bài viết mới</h1>
               <button
@@ -58,8 +58,8 @@ export default function BlogAdminPage() {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-gray-700/20 space-y-6">
+          <form onSubmit={handleSubmit} className="max-w-6xl mx-auto">
+            <div className="cosmic-card rounded-2xl p-8 border border-gray-700/20 space-y-6">
               
               {/* Title */}
               <div>
@@ -264,8 +264,8 @@ export default function BlogAdminPage() {
         </div>
 
         {/* Quick Actions */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-gray-700/20">
+        <div className="max-w-6xl mx-auto">
+          <div className="cosmic-card rounded-2xl p-8 border border-gray-700/20">
             <h2 className="text-2xl font-bold text-white mb-6">Thao tác nhanh</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

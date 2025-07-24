@@ -1,6 +1,7 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
+import RelatedServices from '@/components/RelatedServices';
 import { birthDateToLifePath } from '@/lib/numerology';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -161,25 +162,24 @@ export default function NumerologyCompatibilityPage() {
 
   return (
     <div className="min-h-screen ">
-
       <ContentHeader
-        title='Hợp Tuổi Tình Yêu Theo Thần Số Học'
-        description='Khám phá độ hợp tình yêu giữa các cung hoàng đạo'
+        title="Hợp Tuổi Tình Yêu Theo Thần Số Học"
+        description="Khám phá độ hợp tình yêu giữa các cung hoàng đạo"
         breadcrumb={[
-          { label: 'Trang Chủ', href: '/' },
-          { label: 'Cung Hoàng Đạo', href: '/zodiac' },
-          { label: 'Ghép Đôi', href: '/zodiac/compatibility' },
+          { label: "Trang Chủ", href: "/" },
+          { label: "Cung Hoàng Đạo", href: "/zodiac" },
+          { label: "Ghép Đôi", href: "/zodiac/compatibility" },
         ]}
       />
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Input Form */}
-        <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 mb-8">
+        <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">
             Nhập Thông Tin Hai Người
           </h2>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {/* Person 1 */}
             <div className="space-y-4">
@@ -191,7 +191,9 @@ export default function NumerologyCompatibilityPage() {
                 <input
                   type="text"
                   value={person1.name}
-                  onChange={(e) => setPerson1({...person1, name: e.target.value})}
+                  onChange={(e) =>
+                    setPerson1({ ...person1, name: e.target.value })
+                  }
                   className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-golden focus:outline-none"
                   placeholder="Nhập tên..."
                 />
@@ -201,7 +203,9 @@ export default function NumerologyCompatibilityPage() {
                 <input
                   type="date"
                   value={person1.birthDate}
-                  onChange={(e) => setPerson1({...person1, birthDate: e.target.value})}
+                  onChange={(e) =>
+                    setPerson1({ ...person1, birthDate: e.target.value })
+                  }
                   className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white focus:border-golden focus:outline-none"
                 />
               </div>
@@ -217,7 +221,9 @@ export default function NumerologyCompatibilityPage() {
                 <input
                   type="text"
                   value={person2.name}
-                  onChange={(e) => setPerson2({...person2, name: e.target.value})}
+                  onChange={(e) =>
+                    setPerson2({ ...person2, name: e.target.value })
+                  }
                   className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-golden focus:outline-none"
                   placeholder="Nhập tên..."
                 />
@@ -227,7 +233,9 @@ export default function NumerologyCompatibilityPage() {
                 <input
                   type="date"
                   value={person2.birthDate}
-                  onChange={(e) => setPerson2({...person2, birthDate: e.target.value})}
+                  onChange={(e) =>
+                    setPerson2({ ...person2, birthDate: e.target.value })
+                  }
                   className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white focus:border-golden focus:outline-none"
                 />
               </div>
@@ -246,9 +254,7 @@ export default function NumerologyCompatibilityPage() {
                   Đang phân tích...
                 </span>
               ) : (
-                <span className="flex items-center gap-2">
-                  💕 Xem Độ Hợp
-                </span>
+                <span className="flex items-center gap-2">💕 Xem Độ Hợp</span>
               )}
             </button>
           </div>
@@ -258,34 +264,46 @@ export default function NumerologyCompatibilityPage() {
         {result && (
           <div className="space-y-6">
             {/* Compatibility Score */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold text-white mb-4">
                   Kết Quả Ghép Đôi
                 </h2>
                 <div className="flex items-center justify-center gap-4 mb-4">
                   <div className="text-center">
-                    <div className="text-golden font-semibold">{result.person1.name}</div>
-                    <div className="text-gray-400 text-sm">Số đường đời: {result.person1.lifePath}</div>
+                    <div className="text-golden font-semibold">
+                      {result.person1.name}
+                    </div>
+                    <div className="text-gray-400 text-sm">
+                      Số đường đời: {result.person1.lifePath}
+                    </div>
                   </div>
                   <div className="text-3xl">💕</div>
                   <div className="text-center">
-                    <div className="text-golden font-semibold">{result.person2.name}</div>
-                    <div className="text-gray-400 text-sm">Số đường đời: {result.person2.lifePath}</div>
+                    <div className="text-golden font-semibold">
+                      {result.person2.name}
+                    </div>
+                    <div className="text-gray-400 text-sm">
+                      Số đường đời: {result.person2.lifePath}
+                    </div>
                   </div>
                 </div>
-                
+
                 <div className="relative w-32 h-32 mx-auto mb-4">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-golden to-yellow-500 p-1">
                     <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
                       <div className="text-center">
-                        <div className="text-3xl font-bold text-golden">{result.compatibility.score}%</div>
-                        <div className="text-sm text-gray-300">{result.compatibility.level}</div>
+                        <div className="text-3xl font-bold text-golden">
+                          {result.compatibility.score}%
+                        </div>
+                        <div className="text-sm text-gray-300">
+                          {result.compatibility.level}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                
+
                 <p className="text-gray-300 leading-relaxed">
                   {result.compatibility.description}
                 </p>
@@ -301,7 +319,10 @@ export default function NumerologyCompatibilityPage() {
                 </h3>
                 <ul className="space-y-2">
                   {result.compatibility.strengths.map((strength, index) => (
-                    <li key={index} className="text-gray-300 flex items-start gap-2">
+                    <li
+                      key={index}
+                      className="text-gray-300 flex items-start gap-2"
+                    >
                       <span className="text-green-400 mt-1">•</span>
                       {strength}
                     </li>
@@ -316,7 +337,10 @@ export default function NumerologyCompatibilityPage() {
                 </h3>
                 <ul className="space-y-2">
                   {result.compatibility.challenges.map((challenge, index) => (
-                    <li key={index} className="text-gray-300 flex items-start gap-2">
+                    <li
+                      key={index}
+                      className="text-gray-300 flex items-start gap-2"
+                    >
                       <span className="text-orange-400 mt-1">•</span>
                       {challenge}
                     </li>
@@ -338,29 +362,7 @@ export default function NumerologyCompatibilityPage() {
         )}
 
         {/* Related Links */}
-        <div className="mt-12 text-center">
-          <h3 className="text-xl font-bold text-white mb-6">Khám Phá Thêm</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/numerology"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🔢 Số Chủ Đạo
-            </Link>
-            <Link
-              href="/numerology/forecast"
-              className="bg-gradient-to-r from-green-600 to-teal-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🔮 Dự Đoán 12 Tháng
-            </Link>
-            <Link
-              href="/zodiac/compatibility"
-              className="bg-gradient-to-r from-pink-600 to-rose-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              ♈ Ghép Đôi Cung Hoàng Đạo
-            </Link>
-          </div>
-        </div>
+        <RelatedServices currentPage="/cards" />
       </div>
     </div>
   );

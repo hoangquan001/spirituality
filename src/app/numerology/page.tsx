@@ -6,6 +6,8 @@ import NumerologyForm from '../../components/NumerologyForm';
 import NumerologyStructuredData from '../../components/NumerologyStructuredData';
 import RelatedServices from '../../components/RelatedServices';
 import ResultCard from '../../components/ResultCard';
+import FAQSection from '@/components/FAQSection';
+import RelatedArticles from '@/components/RelatedArticles';
 import { CheckIcon, NumerologyIcon, StarIcon } from '../../components/icons';
 
 interface FormData {
@@ -132,8 +134,6 @@ export default function NumerologyPage() {
         ]}
       />
       <div className="min-h-screen py-10 px-4">
-        <div className="container mx-auto">
-
         {!result ? (
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -144,7 +144,7 @@ export default function NumerologyPage() {
 
               {/* Info */}
               <div className="space-y-6">
-                <div className="cosmic-card rounded-2xl p-6">
+                <div className="cosmic-card hoverable rounded-2xl p-6">
                   <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
                     <span className="mr-3"><NumerologyIcon className="text-golden" size={24} /></span>
                     Thần Số Học Pythagoras Là Gì?
@@ -156,7 +156,7 @@ export default function NumerologyPage() {
 
                 </div>
 
-                <div className="cosmic-card rounded-2xl p-6">
+                <div className="cosmic-card hoverable rounded-2xl p-6">
                   <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
                     <span className="mr-3">📊</span>
                     Bạn Sẽ Khám Phá Được Gì?
@@ -189,7 +189,7 @@ export default function NumerologyPage() {
                   </ul>
                 </div>
 
-                <div className="cosmic-card rounded-2xl p-6">
+                <div className="cosmic-card hoverable rounded-2xl p-6">
                   <h3 className="text-2xl font-bold text-white mb-4 flex items-center">
                     <span className="mr-3"><StarIcon className="text-golden" size={24} /></span>
                     Tại Sao Chọn Chúng Tôi?
@@ -293,75 +293,37 @@ export default function NumerologyPage() {
         )}
 
         {/* FAQ Section */}
-        <section className="py-10 px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                <span className="bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent">
-                  Câu Hỏi Thường Gặp
-                </span>
-              </h2>
-              <p className="text-gray-300 text-lg">
-                Giải đáp những thắc mắc phổ biến về thần số học Pythagoras
-              </p>
-            </div>
+        <FAQSection
+          description="Giải đáp những thắc mắc phổ biến về thần số học Pythagoras"
+          faqs={[
+            {
+              question: "Thần số học Pythagoras là gì?",
+              answer: "Thần số học Pythagoras là hệ thống phân tích dựa trên các con số được phát triển bởi nhà toán học Pythagoras từ thế kỷ 6 TCN. Hệ thống này sử dụng ngày sinh và tên tuổi để tính toán các con số quan trọng như số mệnh, số định mệnh, số linh hồn và số nhân cách, từ đó phân tích tính cách, tài năng và vận mệnh của một người."
+            },
+            {
+              question: "Làm thế nào để tính số mệnh (Life Path Number)?",
+              answer: "Để tính số mệnh, bạn cộng tất cả các chữ số trong ngày sinh đầy đủ (ngày/tháng/năm) cho đến khi được một chữ số từ 1-9 hoặc số chủ đạo 11, 22, 33. Ví dụ: sinh ngày 15/08/1990 = 1+5+0+8+1+9+9+0 = 33 → 3+3 = 6. Số mệnh 6 thể hiện người có trách nhiệm, yêu thương gia đình và có khả năng chăm sóc người khác."
+            },
+            {
+              question: "Thần số học có đáng tin không?",
+              answer: "Thần số học là một môn học cổ xưa được nhiều người quan tâm và tìm hiểu. Đây là cách thú vị để khám phá bản thân thông qua những con số trong ngày sinh. Nhiều bạn đã chia sẻ rằng thông tin này khá phù hợp với tính cách thực tế của mình."
+            },
+            {
+              question: "Tôi có thể thay đổi vận mệnh theo thần số học không?",
+              answer: "Thần số học không quyết định hoàn toàn vận mệnh mà chỉ chỉ ra xu hướng và tiềm năng. Bạn có thể cải thiện cuộc sống bằng cách: hiểu rõ điểm mạnh để phát huy, nhận biết thách thức để khắc phục, chọn nghề nghiệp phù hợp với số mệnh, và đưa ra quyết định đúng đắn dựa trên hiểu biết về bản thân."
+            },
+            {
+              question: "Website này có tính phí không?",
+              answer: "Không, tất cả nội dung trên website đều hoàn toàn miễn phí. Bạn có thể thoải mái khám phá thần số học, tìm hiểu về tính cách và những điều thú vị về bản thân mà không tốn bất kỳ chi phí nào. Chúng mình chia sẻ những kiến thức này với mong muốn giúp mọi người hiểu rõ hơn về bản thân."
+            }
+          ]}
+        />
 
-            <div className="space-y-6">
-              {/* FAQ Item 1 */}
-              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-                <h3 className="text-xl font-bold text-golden mb-3">Thần số học Pythagoras là gì?</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Thần số học Pythagoras là hệ thống phân tích dựa trên các con số được phát triển bởi nhà toán học Pythagoras từ thế kỷ 6 TCN.
-                  Hệ thống này sử dụng ngày sinh và tên tuổi để tính toán các con số quan trọng như số mệnh, số định mệnh, số linh hồn và số nhân cách,
-                  từ đó phân tích tính cách, tài năng và vận mệnh của một người.
-                </p>
-              </div>
-
-              {/* FAQ Item 2 */}
-              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-                <h3 className="text-xl font-bold text-golden mb-3">Làm thế nào để tính số mệnh (Life Path Number)?</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Để tính số mệnh, bạn cộng tất cả các chữ số trong ngày sinh đầy đủ (ngày/tháng/năm) cho đến khi được một chữ số từ 1-9 hoặc số chủ đạo 11, 22, 33.
-                  Ví dụ: sinh ngày 15/08/1990 = 1+5+0+8+1+9+9+0 = 33 → 3+3 = 6. Số mệnh 6 thể hiện người có trách nhiệm, yêu thương gia đình và có khả năng chăm sóc người khác.
-                </p>
-              </div>
-
-              {/* FAQ Item 3 */}
-              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-                <h3 className="text-xl font-bold text-golden mb-3">Thần số học có đáng tin không?</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Thần số học là một môn học cổ xưa được nhiều người quan tâm và tìm hiểu.
-                  Đây là cách thú vị để khám phá bản thân thông qua những con số trong ngày sinh.
-                  Nhiều bạn đã chia sẻ rằng thông tin này khá phù hợp với tính cách thực tế của mình.
-                </p>
-              </div>
-
-              {/* FAQ Item 4 */}
-              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-                <h3 className="text-xl font-bold text-golden mb-3">Tôi có thể thay đổi vận mệnh theo thần số học không?</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Thần số học không quyết định hoàn toàn vận mệnh mà chỉ chỉ ra xu hướng và tiềm năng. Bạn có thể cải thiện cuộc sống bằng cách:
-                  hiểu rõ điểm mạnh để phát huy, nhận biết thách thức để khắc phục, chọn nghề nghiệp phù hợp với số mệnh,
-                  và đưa ra quyết định đúng đắn dựa trên hiểu biết về bản thân.
-                </p>
-              </div>
-
-              {/* FAQ Item 5 */}
-              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-                <h3 className="text-xl font-bold text-golden mb-3">Website này có tính phí không?</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  Không, tất cả nội dung trên website đều hoàn toàn miễn phí. Bạn có thể thoải mái khám phá thần số học,
-                  tìm hiểu về tính cách và những điều thú vị về bản thân mà không tốn bất kỳ chi phí nào.
-                  Chúng mình chia sẻ những kiến thức này với mong muốn giúp mọi người hiểu rõ hơn về bản thân.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Related Articles */}
+        <RelatedArticles currentPage="/numerology" category="numerology" />
 
         {/* Related Services */}
         <RelatedServices currentPage="/numerology" />
-      </div>
       </div>
     </>
   );

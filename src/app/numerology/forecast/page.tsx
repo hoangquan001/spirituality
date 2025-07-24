@@ -1,6 +1,7 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
+import RelatedServices from '@/components/RelatedServices';
 import { birthDateToLifePath } from '@/lib/numerology';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -243,61 +244,61 @@ export default function NumerologyForecastPage() {
   };
 
   return (
-    <div className='min-h-screen '>
+    <div className="min-h-screen ">
       {/* Header */}
       <ContentHeader
-        title='Dự Đoán 12 Tháng'
-        description='Khám phá vận mệnh từng tháng trong năm {new Date().getFullYear()}'
+        title="Dự Đoán 12 Tháng"
+        description="Khám phá vận mệnh từng tháng trong năm {new Date().getFullYear()}"
         breadcrumb={[
-          { label: 'Trang Chủ', href: '/' },
-          { label: 'Thần Số Học', href: '/numerology' },
-          { label: 'Dự Đoán 12 Tháng', href: '/numerology/forecast' },
+          { label: "Trang Chủ", href: "/" },
+          { label: "Thần Số Học", href: "/numerology" },
+          { label: "Dự Đoán 12 Tháng", href: "/numerology/forecast" },
         ]}
       />
 
       {/* Main Content */}
-      <div className='max-w-6xl mx-auto px-4 py-12'>
+      <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Input Form */}
-        <div className='bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 mb-8'>
-          <h2 className='text-2xl font-bold text-white mb-6 text-center'>
+        <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">
             Nhập Thông Tin Của Bạn
           </h2>
 
-          <div className='max-w-md mx-auto space-y-4'>
+          <div className="max-w-md mx-auto space-y-4">
             <div>
-              <label className='block text-gray-300 mb-2'>Tên của bạn</label>
+              <label className="block text-gray-300 mb-2">Tên của bạn</label>
               <input
-                type='text'
+                type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className='w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-golden focus:outline-none'
-                placeholder='Nhập tên của bạn...'
+                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-golden focus:outline-none"
+                placeholder="Nhập tên của bạn..."
               />
             </div>
             <div>
-              <label className='block text-gray-300 mb-2'>Ngày sinh</label>
+              <label className="block text-gray-300 mb-2">Ngày sinh</label>
               <input
-                type='date'
+                type="date"
                 value={birthDate}
                 onChange={(e) => setBirthDate(e.target.value)}
-                className='w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white focus:border-golden focus:outline-none'
+                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white focus:border-golden focus:outline-none"
               />
             </div>
           </div>
 
-          <div className='text-center mt-8'>
+          <div className="text-center mt-8">
             <button
               onClick={calculateForecast}
               disabled={isCalculating}
-              className='bg-gradient-to-r from-golden to-yellow-500 text-black px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-golden/50 disabled:opacity-50 disabled:cursor-not-allowed'
+              className="bg-gradient-to-r from-golden to-yellow-500 text-black px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-golden/50 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isCalculating ? (
-                <span className='flex items-center gap-2'>
-                  <div className='w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin'></div>
+                <span className="flex items-center gap-2">
+                  <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
                   Đang dự đoán...
                 </span>
               ) : (
-                <span className='flex items-center gap-2'>
+                <span className="flex items-center gap-2">
                   🔮 Xem Dự Đoán 12 Tháng
                 </span>
               )}
@@ -307,81 +308,81 @@ export default function NumerologyForecastPage() {
 
         {/* Results */}
         {forecast && (
-          <div className='space-y-8'>
+          <div className="space-y-8">
             {/* Year Overview */}
-            <div className='bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20'>
-              <div className='text-center mb-6'>
-                <h2 className='text-3xl font-bold text-white mb-4'>
+            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <div className="text-center mb-6">
+                <h2 className="text-3xl font-bold text-white mb-4">
                   {forecast.theme} - {forecast.year}
                 </h2>
-                <div className='flex items-center justify-center gap-4 mb-4'>
-                  <div className='text-center'>
-                    <div className='text-golden font-semibold'>
+                <div className="flex items-center justify-center gap-4 mb-4">
+                  <div className="text-center">
+                    <div className="text-golden font-semibold">
                       Số đường đời
                     </div>
-                    <div className='text-2xl font-bold text-white'>
+                    <div className="text-2xl font-bold text-white">
                       {forecast.lifePath}
                     </div>
                   </div>
-                  <div className='text-3xl'>✨</div>
-                  <div className='text-center'>
-                    <div className='text-golden font-semibold'>
+                  <div className="text-3xl">✨</div>
+                  <div className="text-center">
+                    <div className="text-golden font-semibold">
                       Số năm cá nhân
                     </div>
-                    <div className='text-2xl font-bold text-white'>
+                    <div className="text-2xl font-bold text-white">
                       {forecast.yearNumber}
                     </div>
                   </div>
                 </div>
-                <p className='text-gray-300 leading-relaxed max-w-3xl mx-auto'>
+                <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
                   {forecast.overview}
                 </p>
               </div>
             </div>
 
             {/* Monthly Forecast Grid */}
-            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {forecast.months.map((month) => (
                 <div
                   key={month.month}
-                  className='bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 cursor-pointer'
+                  className="cosmic-card rounded-3xl p-6 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 cursor-pointer"
                   onClick={() =>
                     setSelectedMonth(
                       selectedMonth === month.month ? null : month.month
                     )
                   }
                 >
-                  <div className='text-center mb-4'>
+                  <div className="text-center mb-4">
                     <div
                       className={`w-16 h-16 bg-gradient-to-r ${month.color} rounded-full flex items-center justify-center text-2xl mb-3 mx-auto`}
                     >
-                      <span className='text-white font-bold'>
+                      <span className="text-white font-bold">
                         {month.personalNumber}
                       </span>
                     </div>
-                    <h3 className='text-xl font-bold text-white mb-2'>
+                    <h3 className="text-xl font-bold text-white mb-2">
                       {month.monthName}
                     </h3>
-                    <div className='text-golden font-semibold'>
+                    <div className="text-golden font-semibold">
                       {month.energy}
                     </div>
-                    <div className='text-gray-400 text-sm'>{month.focus}</div>
+                    <div className="text-gray-400 text-sm">{month.focus}</div>
                   </div>
 
                   {selectedMonth === month.month && (
-                    <div className='space-y-4 mt-6 pt-6 border-t border-gray-700/50'>
+                    <div className="space-y-4 mt-6 pt-6 border-t border-gray-700/50">
                       {/* Opportunities */}
                       <div>
-                        <h4 className='text-green-400 font-semibold mb-2 flex items-center gap-2'>
+                        <h4 className="text-green-400 font-semibold mb-2 flex items-center gap-2">
                           <span>🌟</span> Cơ Hội
                         </h4>
-                        <ul className='space-y-1'>
+                        <ul className="space-y-1">
                           {month.opportunities.map((opp, index) => (
                             <li
                               key={index}
-                              className='text-gray-300 text-sm flex items-start gap-2'
+                              className="text-gray-300 text-sm flex items-start gap-2"
                             >
-                              <span className='text-green-400 mt-1'>•</span>
+                              <span className="text-green-400 mt-1">•</span>
                               {opp}
                             </li>
                           ))}
@@ -390,16 +391,16 @@ export default function NumerologyForecastPage() {
 
                       {/* Challenges */}
                       <div>
-                        <h4 className='text-orange-400 font-semibold mb-2 flex items-center gap-2'>
+                        <h4 className="text-orange-400 font-semibold mb-2 flex items-center gap-2">
                           <span>⚡</span> Thách Thức
                         </h4>
-                        <ul className='space-y-1'>
+                        <ul className="space-y-1">
                           {month.challenges.map((challenge, index) => (
                             <li
                               key={index}
-                              className='text-gray-300 text-sm flex items-start gap-2'
+                              className="text-gray-300 text-sm flex items-start gap-2"
                             >
-                              <span className='text-orange-400 mt-1'>•</span>
+                              <span className="text-orange-400 mt-1">•</span>
                               {challenge}
                             </li>
                           ))}
@@ -408,14 +409,14 @@ export default function NumerologyForecastPage() {
 
                       {/* Lucky Days */}
                       <div>
-                        <h4 className='text-blue-400 font-semibold mb-2 flex items-center gap-2'>
+                        <h4 className="text-blue-400 font-semibold mb-2 flex items-center gap-2">
                           <span>🍀</span> Ngày May Mắn
                         </h4>
-                        <div className='flex gap-2'>
+                        <div className="flex gap-2">
                           {month.luckyDays.map((day) => (
                             <span
                               key={day}
-                              className='bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm'
+                              className="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-sm"
                             >
                               {day}
                             </span>
@@ -425,10 +426,10 @@ export default function NumerologyForecastPage() {
 
                       {/* Advice */}
                       <div>
-                        <h4 className='text-purple-400 font-semibold mb-2 flex items-center gap-2'>
+                        <h4 className="text-purple-400 font-semibold mb-2 flex items-center gap-2">
                           <span>💡</span> Lời Khuyên
                         </h4>
-                        <p className='text-gray-300 text-sm leading-relaxed'>
+                        <p className="text-gray-300 text-sm leading-relaxed">
                           {month.advice}
                         </p>
                       </div>
@@ -439,36 +440,14 @@ export default function NumerologyForecastPage() {
             </div>
 
             {/* Instructions */}
-            <div className='text-center text-gray-400'>
+            <div className="text-center text-gray-400">
               <p>💡 Nhấp vào từng tháng để xem chi tiết dự đoán</p>
             </div>
           </div>
         )}
 
         {/* Related Links */}
-        <div className='mt-12 text-center'>
-          <h3 className='text-xl font-bold text-white mb-6'>Khám Phá Thêm</h3>
-          <div className='flex flex-wrap justify-center gap-4'>
-            <Link
-              href='/numerology'
-              className='bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300'
-            >
-              🔢 Số Chủ Đạo
-            </Link>
-            <Link
-              href='/numerology/compatibility'
-              className='bg-gradient-to-r from-pink-600 to-rose-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300'
-            >
-              💕 Ghép Đôi Ngày Sinh
-            </Link>
-            <Link
-              href='/numerology/lessons'
-              className='bg-gradient-to-r from-orange-600 to-amber-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300'
-            >
-              📚 Bài Học Nghiệp Số
-            </Link>
-          </div>
-        </div>
+        <RelatedServices currentPage="/cards" />
       </div>
     </div>
   );

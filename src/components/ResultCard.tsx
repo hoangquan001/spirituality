@@ -14,7 +14,7 @@ export default function ResultCard({
   color = "from-gray-600 to-indigo-600"
 }: ResultCardProps) {
   return (
-    <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-gray-400/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
+    <div className="cosmic-card rounded-2xl p-6 shadow-xl border border-gray-400/20 hover:bg-white/15 transition-all duration-300 transform hover:scale-105">
       <div className="flex items-center mb-4">
         <div className={`w-12 h-12 bg-gradient-to-br ${color} rounded-full flex items-center justify-center shadow-lg mr-4`}>
           <span className="text-white font-bold text-xl">{icon}</span>

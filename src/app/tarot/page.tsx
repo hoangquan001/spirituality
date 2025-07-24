@@ -1,6 +1,7 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
+import RelatedServices from '@/components/RelatedServices';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -311,216 +312,212 @@ export default function TarotPage() {
         title="Bói Bài Tarot"
         description="Khám phá tương lai qua những lá bài Tarot huyền bí. Đặt câu hỏi và để các lá bài Tarot hướng dẫn bạn tìm ra câu trả lời."
         breadcrumb={[
-          { label: 'Trang Chủ', href: '/' },
-          { label: 'Bói Bài Tarot', href: '/tarot' },
+          { label: "Trang Chủ", href: "/" },
+          { label: "Bói Bài Tarot", href: "/tarot" },
         ]}
       />
       <div className="min-h-screen">
         {/* Main Content */}
         <div className="max-w-6xl mx-auto px-4 py-12">
-        {!reading ? (
-          <div className="space-y-8">
-            {/* Question Input */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
-              <h2 className="text-2xl font-bold text-white mb-6 text-center">
-                Đặt Câu Hỏi Của Bạn
-              </h2>
-              
-              <div className="max-w-2xl mx-auto">
-                <textarea
-                  value={question}
-                  onChange={(e) => setQuestion(e.target.value)}
-                  placeholder="Nhập câu hỏi bạn muốn hỏi các lá bài Tarot..."
-                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-golden focus:outline-none resize-none h-24"
-                />
-                <p className="text-gray-400 text-sm mt-2 text-center">
-                  💡 Hãy đặt câu hỏi rõ ràng và tập trung vào điều bạn thực sự muốn biết
-                </p>
+          {!reading ? (
+            <div className="space-y-8">
+              {/* Question Input */}
+              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+                <h2 className="text-2xl font-bold text-white mb-6 text-center">
+                  Đặt Câu Hỏi Của Bạn
+                </h2>
+
+                <div className="max-w-2xl mx-auto">
+                  <textarea
+                    value={question}
+                    onChange={(e) => setQuestion(e.target.value)}
+                    placeholder="Nhập câu hỏi bạn muốn hỏi các lá bài Tarot..."
+                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-golden focus:outline-none resize-none h-24"
+                  />
+                  <p className="text-gray-400 text-sm mt-2 text-center">
+                    💡 Hãy đặt câu hỏi rõ ràng và tập trung vào điều bạn thực sự
+                    muốn biết
+                  </p>
+                </div>
+              </div>
+
+              {/* Spread Selection */}
+              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+                <h2 className="text-2xl font-bold text-white mb-6 text-center">
+                  Chọn Cách Bói
+                </h2>
+
+                <div className="grid md:grid-cols-3 gap-6">
+                  {tarotSpreads.map((spread) => (
+                    <button
+                      key={spread.id}
+                      onClick={() => setSelectedSpread(spread.id)}
+                      className={`p-6 rounded-2xl border-2 transition-all duration-300 hover:scale-105 ${
+                        selectedSpread === spread.id
+                          ? "border-golden bg-golden/10 shadow-lg shadow-golden/20"
+                          : "border-gray-700 bg-gray-800/50 hover:border-gray-600"
+                      }`}
+                    >
+                      <div className="text-center">
+                        <div className="text-3xl mb-3">
+                          {spread.id === "single" && "🃏"}
+                          {spread.id === "three-card" && "🔮"}
+                          {spread.id === "love" && "💕"}
+                        </div>
+                        <h3 className="text-xl font-bold text-white mb-2">
+                          {spread.name}
+                        </h3>
+                        <p className="text-gray-300 text-sm">
+                          {spread.description}
+                        </p>
+                        <div className="mt-3 text-golden font-semibold">
+                          {spread.cardCount} lá bài
+                        </div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Draw Button */}
+              <div className="text-center">
+                <button
+                  onClick={drawCards}
+                  disabled={isDrawing}
+                  className="bg-gradient-to-r from-golden to-yellow-500 text-black px-12 py-4 rounded-full font-bold text-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-golden/50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isDrawing ? (
+                    <span className="flex items-center gap-3">
+                      <div className="w-6 h-6 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
+                      Đang rút bài...
+                    </span>
+                  ) : (
+                    <span className="flex items-center gap-3">
+                      🔮 Rút Bài Tarot
+                    </span>
+                  )}
+                </button>
               </div>
             </div>
+          ) : (
+            <div className="space-y-8">
+              {/* Reading Header */}
+              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+                <div className="text-center">
+                  <h2 className="text-3xl font-bold text-white mb-4">
+                    Kết Quả Bói Bài - {reading.spread}
+                  </h2>
+                  <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20 mb-6">
+                    <p className="text-gray-300 italic">"{question}"</p>
+                  </div>
+                  <p className="text-gray-300 leading-relaxed">
+                    {reading.interpretation}
+                  </p>
+                </div>
+              </div>
 
-            {/* Spread Selection */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
-              <h2 className="text-2xl font-bold text-white mb-6 text-center">
-                Chọn Cách Bói
-              </h2>
-              
-              <div className="grid md:grid-cols-3 gap-6">
-                {tarotSpreads.map((spread) => (
-                  <button
-                    key={spread.id}
-                    onClick={() => setSelectedSpread(spread.id)}
-                    className={`p-6 rounded-2xl border-2 transition-all duration-300 hover:scale-105 ${
-                      selectedSpread === spread.id
-                        ? 'border-golden bg-golden/10 shadow-lg shadow-golden/20'
-                        : 'border-gray-700 bg-gray-800/50 hover:border-gray-600'
-                    }`}
+              {/* Cards Display */}
+              <div className="grid md:grid-cols-3 gap-6 justify-center">
+                {reading.cards.map((card, index) => (
+                  <div
+                    key={index}
+                    className="cosmic-card rounded-3xl p-6 border border-gray-700/20"
                   >
-                    <div className="text-center">
-                      <div className="text-3xl mb-3">
-                        {spread.id === 'single' && '🃏'}
-                        {spread.id === 'three-card' && '🔮'}
-                        {spread.id === 'love' && '💕'}
+                    <div className="text-center mb-6">
+                      <div
+                        className={`text-6xl mb-4 ${
+                          card.isReversed ? "transform rotate-180" : ""
+                        }`}
+                      >
+                        {card.symbol}
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-2">{spread.name}</h3>
-                      <p className="text-gray-300 text-sm">{spread.description}</p>
-                      <div className="mt-3 text-golden font-semibold">
-                        {spread.cardCount} lá bài
+                      <h3 className="text-xl font-bold text-white mb-2">
+                        {card.name} {card.isReversed && "(Ngược)"}
+                      </h3>
+                      <div className="text-gray-400 text-sm mb-4">
+                        {card.suit} • {card.element}
+                      </div>
+
+                      {/* Position Label */}
+                      {reading.spread === "Ba Lá Bài" && (
+                        <div className="text-golden font-semibold mb-4">
+                          {index === 0 && "Quá Khứ"}
+                          {index === 1 && "Hiện Tại"}
+                          {index === 2 && "Tương Lai"}
+                        </div>
+                      )}
+                      {reading.spread === "Tình Yêu" && (
+                        <div className="text-golden font-semibold mb-4">
+                          {index === 0 && "Bạn"}
+                          {index === 1 && "Người Ấy"}
+                          {index === 2 && "Mối Quan Hệ"}
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="text-purple-400 font-semibold mb-2">
+                          Ý Nghĩa:
+                        </h4>
+                        <p className="text-gray-300 text-sm">
+                          {card.isReversed
+                            ? card.reversed.meaning
+                            : card.upright.meaning}
+                        </p>
+                      </div>
+
+                      <div>
+                        <h4 className="text-pink-400 font-semibold mb-2">
+                          Tình Yêu:
+                        </h4>
+                        <p className="text-gray-300 text-sm">
+                          {card.isReversed
+                            ? card.reversed.love
+                            : card.upright.love}
+                        </p>
+                      </div>
+
+                      <div>
+                        <h4 className="text-blue-400 font-semibold mb-2">
+                          Sự Nghiệp:
+                        </h4>
+                        <p className="text-gray-300 text-sm">
+                          {card.isReversed
+                            ? card.reversed.career
+                            : card.upright.career}
+                        </p>
                       </div>
                     </div>
-                  </button>
+                  </div>
                 ))}
               </div>
-            </div>
 
-            {/* Draw Button */}
-            <div className="text-center">
-              <button
-                onClick={drawCards}
-                disabled={isDrawing}
-                className="bg-gradient-to-r from-golden to-yellow-500 text-black px-12 py-4 rounded-full font-bold text-xl hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-golden/50 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isDrawing ? (
-                  <span className="flex items-center gap-3">
-                    <div className="w-6 h-6 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
-                    Đang rút bài...
-                  </span>
-                ) : (
-                  <span className="flex items-center gap-3">
-                    🔮 Rút Bài Tarot
-                  </span>
-                )}
-              </button>
-            </div>
-          </div>
-        ) : (
-          <div className="space-y-8">
-            {/* Reading Header */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
-              <div className="text-center">
-                <h2 className="text-3xl font-bold text-white mb-4">
-                  Kết Quả Bói Bài - {reading.spread}
-                </h2>
-                <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/20 mb-6">
-                  <p className="text-gray-300 italic">"{question}"</p>
-                </div>
-                <p className="text-gray-300 leading-relaxed">
-                  {reading.interpretation}
+              {/* Advice */}
+              <div className="bg-gradient-to-br from-golden/10 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-golden/20">
+                <h3 className="text-2xl font-bold text-golden mb-4 text-center flex items-center justify-center gap-2">
+                  <span>💡</span> Lời Khuyên Từ Tarot
+                </h3>
+                <p className="text-gray-300 leading-relaxed text-center text-lg">
+                  {reading.advice}
                 </p>
               </div>
+
+              {/* Reset Button */}
+              <div className="text-center">
+                <button
+                  onClick={resetReading}
+                  className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
+                >
+                  🔄 Bói Lại
+                </button>
+              </div>
             </div>
+          )}
 
-            {/* Cards Display */}
-            <div className="grid md:grid-cols-3 gap-6 justify-center">
-              {reading.cards.map((card, index) => (
-                <div key={index} className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-700/20">
-                  <div className="text-center mb-6">
-                    <div className={`text-6xl mb-4 ${card.isReversed ? 'transform rotate-180' : ''}`}>
-                      {card.symbol}
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      {card.name} {card.isReversed && '(Ngược)'}
-                    </h3>
-                    <div className="text-gray-400 text-sm mb-4">
-                      {card.suit} • {card.element}
-                    </div>
-                    
-                    {/* Position Label */}
-                    {reading.spread === 'Ba Lá Bài' && (
-                      <div className="text-golden font-semibold mb-4">
-                        {index === 0 && 'Quá Khứ'}
-                        {index === 1 && 'Hiện Tại'}
-                        {index === 2 && 'Tương Lai'}
-                      </div>
-                    )}
-                    {reading.spread === 'Tình Yêu' && (
-                      <div className="text-golden font-semibold mb-4">
-                        {index === 0 && 'Bạn'}
-                        {index === 1 && 'Người Ấy'}
-                        {index === 2 && 'Mối Quan Hệ'}
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="text-purple-400 font-semibold mb-2">Ý Nghĩa:</h4>
-                      <p className="text-gray-300 text-sm">
-                        {card.isReversed ? card.reversed.meaning : card.upright.meaning}
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-pink-400 font-semibold mb-2">Tình Yêu:</h4>
-                      <p className="text-gray-300 text-sm">
-                        {card.isReversed ? card.reversed.love : card.upright.love}
-                      </p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="text-blue-400 font-semibold mb-2">Sự Nghiệp:</h4>
-                      <p className="text-gray-300 text-sm">
-                        {card.isReversed ? card.reversed.career : card.upright.career}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Advice */}
-            <div className="bg-gradient-to-br from-golden/10 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-golden/20">
-              <h3 className="text-2xl font-bold text-golden mb-4 text-center flex items-center justify-center gap-2">
-                <span>💡</span> Lời Khuyên Từ Tarot
-              </h3>
-              <p className="text-gray-300 leading-relaxed text-center text-lg">
-                {reading.advice}
-              </p>
-            </div>
-
-            {/* Reset Button */}
-            <div className="text-center">
-              <button
-                onClick={resetReading}
-                className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-              >
-                🔄 Bói Lại
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Related Links */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-white mb-8">Khám Phá Thêm</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/numbers/meaning"
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🔢 Ý Nghĩa Con Số
-            </Link>
-            <Link
-              href="/cards"
-              className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🃏 Bói Bài Tây
-            </Link>
-            <Link
-              href="/games"
-              className="bg-gradient-to-r from-pink-600 to-rose-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🎮 Minigame Bói
-            </Link>
-            <Link
-              href="/numerology"
-              className="bg-gradient-to-r from-golden to-yellow-500 text-black px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🔢 Thần Số Học
-            </Link>
-          </div>
+          {/* Related Links */}
+          <RelatedServices currentPage="/cards" />
         </div>
-      </div>
       </div>
     </>
   );

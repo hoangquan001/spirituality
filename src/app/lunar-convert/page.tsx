@@ -65,9 +65,9 @@ export default function LunarConvertPage() {
       </div>
 
       <div className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {/* Conversion Type Selector */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-gray-400/20 mb-8">
+          <div className="cosmic-card rounded-2xl p-8 border border-gray-400/20 mb-8">
             <h2 className="text-2xl font-bold text-white mb-6 text-center">
               Chọn kiểu chuyển đổi
             </h2>
@@ -102,7 +102,7 @@ export default function LunarConvertPage() {
           </div>
 
           {/* Input Form */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-gray-400/20 mb-8">
+          <div className="cosmic-card rounded-2xl p-8 border border-gray-400/20 mb-8">
             {convertType === 'solar-to-lunar' ? (
               <div>
                 <h3 className="text-xl font-bold text-white mb-6 text-center">
@@ -199,7 +199,7 @@ export default function LunarConvertPage() {
 
           {/* Result */}
           {result && (
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-gray-400/20">
+            <div className="cosmic-card rounded-2xl p-8 border border-gray-400/20">
               <h2 className="text-3xl font-bold text-white mb-8 text-center">
                 Kết quả chuyển đổi
               </h2>

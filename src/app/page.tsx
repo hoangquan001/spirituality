@@ -1,5 +1,6 @@
 import BlogSection from '@/components/BlogSection';
 import StructuredData from '@/components/StructuredData';
+import FAQSection from '@/components/FAQSection';
 
 import Link from 'next/link';
 
@@ -23,7 +24,7 @@ export default function Home() {
         </div> */}
 
         {/* Hero Content */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
           <div className="mb-8 mt-8">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="bg-gradient-to-r from-golden via-yellow-400 to-golden bg-clip-text text-transparent">
@@ -32,13 +33,38 @@ export default function Home() {
               <br />
               <span className="text-white">Khám Phá Vận Mệnh</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-4 leading-relaxed">
+            {/* <p className="text-xl md:text-2xl text-gray-300 mb-4 leading-relaxed">
               <strong className="text-golden">Hành trình khám phá bản thân qua những bí ẩn huyền học!</strong>
-              <br />Thần số học • Tử vi • Phong thủy • Giải mã giấc mơ
+              <br />Thần số học Pythagoras • Tử vi 12 cung hoàng đạo • Phong thủy nhà ở • Giải mã giấc mơ
+            </p> */}
+            <p className="text-lg text-gray-400 mb-6 leading-relaxed">
+              Nơi hội tụ tinh hoa tri thức cổ xưa và hiện đại, giúp bạn <span className="text-golden font-semibold">hiểu rõ vận mệnh</span> và định hướng cuộc sống.
+              Với hơn <span className="text-golden font-semibold">50,000 người dùng</span> tin tưởng, chúng tôi cung cấp các công cụ tâm linh chính xác và miễn phí 100%.
             </p>
-            <p className="text-lg text-gray-400 mb-8 leading-relaxed">
-              Nơi hội tụ tinh hoa tri thức cổ xưa và hiện đại, giúp bạn <span className="text-golden font-semibold">hiểu rõ vận mệnh</span> và định hướng cuộc sống
-            </p>
+
+            {/* Key Features */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              <div className="bg-gray-900/30 rounded-lg p-3 text-center">
+                <div className="text-2xl mb-1">🔢</div>
+                <div className="text-golden font-semibold text-sm">Thần Số Học</div>
+                <div className="text-gray-400 text-xs">Pythagoras</div>
+              </div>
+              <div className="bg-gray-900/30 rounded-lg p-3 text-center">
+                <div className="text-2xl mb-1">♈</div>
+                <div className="text-golden font-semibold text-sm">12 Cung</div>
+                <div className="text-gray-400 text-xs">Hoàng Đạo</div>
+              </div>
+              <div className="bg-gray-900/30 rounded-lg p-3 text-center">
+                <div className="text-2xl mb-1">🧭</div>
+                <div className="text-golden font-semibold text-sm">Phong Thủy</div>
+                <div className="text-gray-400 text-xs">Nhà Ở</div>
+              </div>
+              <div className="bg-gray-900/30 rounded-lg p-3 text-center">
+                <div className="text-2xl mb-1">💭</div>
+                <div className="text-golden font-semibold text-sm">Giấc Mơ</div>
+                <div className="text-gray-400 text-xs">Từ Điển</div>
+              </div>
+            </div>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
@@ -66,7 +92,7 @@ export default function Home() {
           {/* Feature Preview Cards - 6 Danh Mục Chính */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             <Link href="/numerology" className="group">
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
+              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 bg-gradient-to-r from-golden to-yellow-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
                     <span className="text-black">🔢</span>
@@ -94,7 +120,7 @@ export default function Home() {
             </Link>
 
             <Link href="/zodiac" className="group">
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
+              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
                     <span className="text-white">♈</span>
@@ -122,7 +148,7 @@ export default function Home() {
             </Link>
 
             <Link href="/fengshui" className="group">
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
+              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
                     <span className="text-white">🧭</span>
@@ -150,7 +176,7 @@ export default function Home() {
             </Link>
 
             <Link href="/dream" className="group">
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
+              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
                     <span className="text-white">�</span>
@@ -178,7 +204,7 @@ export default function Home() {
             </Link>
 
             <Link href="/calendar" className="group">
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
+              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
                     <span className="text-white">�</span>
@@ -206,7 +232,7 @@ export default function Home() {
             </Link>
 
             <Link href="/blog" className="group">
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
+              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
                 <div className="text-center mb-6">
                   <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
                     <span className="text-white">📚</span>
@@ -237,7 +263,7 @@ export default function Home() {
       </section>
 
       {/* Mystical Knowledge Section */}
-      <section className="py-10 px-4">
+      {/* <section className="py-10 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">
@@ -353,7 +379,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Services Overview */}
       <section className="py-10 px-4">
@@ -527,7 +553,7 @@ export default function Home() {
             </h3>
             <div className="grid md:grid-cols-3 gap-6">
               <Link href="/calendar" className="group">
-                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 text-center">
+                <div className="cosmic-card rounded-2xl p-6 border border-gray-700/20 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 text-center">
                   <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">🌙</div>
                   <h4 className="text-lg font-bold text-white mb-2">Chuyển Đổi Lịch</h4>
                   <p className="text-gray-400 text-sm">Dương ⇄ Âm lịch</p>
@@ -535,7 +561,7 @@ export default function Home() {
               </Link>
 
               <Link href="/marriage-age" className="group">
-                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 text-center">
+                <div className="cosmic-card rounded-2xl p-6 border border-gray-700/20 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 text-center">
                   <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">�</div>
                   <h4 className="text-lg font-bold text-white mb-2">Tuổi Kết Hôn</h4>
                   <p className="text-gray-400 text-sm">Độ tuổi hợp nhau</p>
@@ -543,7 +569,7 @@ export default function Home() {
               </Link>
 
               <Link href="/tam-tai" className="group">
-                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 text-center">
+                <div className="cosmic-card rounded-2xl p-6 border border-gray-700/20 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 text-center">
                   <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">⚠️</div>
                   <h4 className="text-lg font-bold text-white mb-2">Tam Tai - Hạn Năm</h4>
                   <p className="text-gray-400 text-sm">Tính năm xui, hạn tuổi</p>
@@ -557,6 +583,136 @@ export default function Home() {
       {/* Testimonials Section */}
       {/* <TestimonialsSection /> */}
 
+      {/* Knowledge Hub Section */}
+      <section className="py-10 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              <span className="bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent">
+                Kiến Thức Cơ Bản
+              </span>
+            </h2>
+            <p className="text-gray-300 text-lg">
+              Khám phá kho tàng tri thức huyền học từ cơ bản đến nâng cao
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Numerology Guide */}
+            <Link href="/huong-dan-than-so-hoc" className="group">
+              <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-r from-golden to-yellow-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
+                    📚
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3">Hướng Dẫn Thần Số Học</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                    Học thần số học từ A-Z, từ cơ bản đến nâng cao. Cách tính số mệnh, phân tích tính cách và vận mệnh.
+                  </p>
+                </div>
+                <div className="space-y-2 text-sm text-gray-400">
+                  <div className="flex items-center gap-2">
+                    <span className="text-golden">•</span> Lý thuyết cơ bản
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-golden">•</span> Cách tính toán
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-golden">•</span> Ý nghĩa các số
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-golden">•</span> Ứng dụng thực tế
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* Feng Shui Tips */}
+            <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 h-full">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto">
+                  🏠
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3">Phong Thủy Nhà Ở</h3>
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  10 nguyên tắc vàng trong phong thủy nhà ở để thu hút tài lộc và mang lại bình an cho gia đình.
+                </p>
+              </div>
+              <div className="space-y-2 text-sm text-gray-400">
+                <div className="flex items-center gap-2">
+                  <span className="text-golden">•</span> Bố trí cửa chính
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-golden">•</span> Phòng khách hợp phong thủy
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-golden">•</span> Màu sắc theo mệnh
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-golden">•</span> Cây xanh trong nhà
+                </div>
+              </div>
+            </div>
+
+            {/* Zodiac Knowledge */}
+            <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 h-full">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto">
+                  ⭐
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3">Bí Mật 12 Cung</h3>
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  Khám phá đặc điểm, tính cách và vận mệnh của 12 cung hoàng đạo. Tử vi hàng ngày và lời khuyên cuộc sống.
+                </p>
+              </div>
+              <div className="space-y-2 text-sm text-gray-400">
+                <div className="flex items-center gap-2">
+                  <span className="text-golden">•</span> Tính cách từng cung
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-golden">•</span> Tử vi hôm nay
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-golden">•</span> Tương thích tình yêu
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-golden">•</span> Nghề nghiệp phù hợp
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Tips */}
+          <div className="bg-gradient-to-br from-golden/10 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-golden/20">
+            <h3 className="text-2xl font-bold text-golden mb-6 text-center">
+              💡 Mẹo Tâm Linh Hàng Ngày
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-3xl mb-3">🌅</div>
+                <h4 className="font-semibold text-white mb-2">Buổi Sáng</h4>
+                <p className="text-gray-300 text-sm">Thiền định 5 phút để bắt đầu ngày mới tích cực</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-3">🔢</div>
+                <h4 className="font-semibold text-white mb-2">Số May Mắn</h4>
+                <p className="text-gray-300 text-sm">Sử dụng số mệnh khi chọn số điện thoại, địa chỉ</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-3">🌿</div>
+                <h4 className="font-semibold text-white mb-2">Cây Xanh</h4>
+                <p className="text-gray-300 text-sm">Đặt cây kim tiền ở góc tài lộc để thu hút tiền bạc</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mb-3">🌙</div>
+                <h4 className="font-semibold text-white mb-2">Buổi Tối</h4>
+                <p className="text-gray-300 text-sm">Ghi lại giấc mơ để hiểu thông điệp từ tiềm thức</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Blog Section */}
       <BlogSection />
 
@@ -565,7 +721,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent">
                 Nội Dung Chất Lượng
               </span>
             </h2>
@@ -700,88 +856,39 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-10 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-4">
-              <span className="bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent">
-                Câu Hỏi Thường Gặp
-              </span>
-            </h2>
-            <p className="text-gray-300 text-lg">
-              Giải đáp những thắc mắc phổ biến về thần số học và các Giải Mã Tâm Linh
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {/* FAQ Item 1 */}
-            <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-              <h3 className="text-xl font-bold text-golden mb-3">Website có những gì?</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Giải Mã Tâm Linh cung cấp 6 lĩnh vực huyền học chính: Thần số học (phân tích ngày sinh, ghép đôi),
-                Tử vi 12 cung (tử vi hôm nay, ghép đôi cung), Phong thủy (màu sắc, hướng nhà, chọn ngày),
-                Giải mã & Bói (giấc mơ, Tarot, minigame), Tiện ích (chuyển lịch, tuổi cưới) và Blog kiến thức.
-              </p>
-            </div>
-
-            {/* FAQ Item 2 */}
-            <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-              <h3 className="text-xl font-bold text-golden mb-3">Phong thủy có tác dụng gì?</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Phong thủy là nghệ thuật sắp xếp không gian sống hài hòa với thiên nhiên để thu hút năng lượng tích cực.
-                Website cung cấp thông tin về màu sắc hợp mệnh, hướng nhà phù hợp với tuổi, cách chọn ngày tốt cho các sự kiện quan trọng,
-                và hướng dẫn bố trí nội thất theo nguyên lý phong thủy để mang lại may mắn và thịnh vượng.
-              </p>
-            </div>
-
-            {/* FAQ Item 3 */}
-            <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-              <h3 className="text-xl font-bold text-golden mb-3">Cung hoàng đạo và thần số học khác nhau như thế nào?</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Cung hoàng đạo dựa trên vị trí của mặt trời tại thời điểm sinh, chia thành 12 cung theo tháng sinh.
-                Thần số học dựa trên ngày sinh cụ thể và tên tuổi, tập trung vào các con số và rung động năng lượng.
-                Cả hai đều có giá trị riêng: cung hoàng đạo giúp hiểu tính cách tổng quát, thần số học chia sẻ thông tin chi tiết về đường đời và những đặc điểm cá nhân.
-              </p>
-            </div>
-
-            {/* FAQ Item 4 */}
-            <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-              <h3 className="text-xl font-bold text-golden mb-3">Tôi có thể thay đổi vận mệnh được không?</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Thần số học không quyết định hoàn toàn vận mệnh mà chỉ chỉ ra xu hướng, tiềm năng và thách thức trong cuộc sống.
-                Bạn hoàn toàn có thể thay đổi cuộc sống thông qua: thay đổi tên (ảnh hưởng đến số biểu đạt),
-                chọn số điện thoại phù hợp, bố trí nhà cửa theo phong thủy, và quan trọng nhất là nỗ lực cá nhân.
-                Thần số học chỉ là công cụ hỗ trợ để bạn hiểu rõ bản thân và đưa ra quyết định đúng đắn.
-              </p>
-            </div>
-
-            {/* FAQ Item 5 */}
-            <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-              <h3 className="text-xl font-bold text-golden mb-3">Công cụ có tính phí không?</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Tất cả các cụ cơ bản tại Tâm Linh đều hoàn toàn miễn phí, bao gồm: tính thần số học,
-                xem cung hoàng đạo, giải mã giấc mơ, phân tích tên tuổi, bói tình yêu, và các công cụ phong thủy.
-                Chúng mình cam kết chia sẻ kiến thức tâm linh chất lượng cao mà không thu phí,
-                giúp mọi người đều có cơ hội khám phá và hiểu rõ bản thân.
-              </p>
-            </div>
-
-            {/* FAQ Item 6 */}
-            <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
-              <h3 className="text-xl font-bold text-golden mb-3">Thông tin cá nhân của tôi có được bảo mật không?</h3>
-              <p className="text-gray-300 leading-relaxed">
-                Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn một cách tuyệt đối. Tất cả dữ liệu được mã hóa,
-                không lưu trữ trên server và không chia sẻ với bất kỳ bên thứ ba nào.
-                Quá trình tính toán diễn ra hoàn toàn trên trình duyệt của bạn, đảm bảo tính riêng tư và bảo mật cao nhất.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FAQSection
+        description="Giải đáp những thắc mắc phổ biến về thần số học và các Giải Mã Tâm Linh"
+        faqs={[
+          {
+            question: "Website có những gì?",
+            answer: "Giải Mã Tâm Linh cung cấp 6 lĩnh vực huyền học chính: Thần số học (phân tích ngày sinh, ghép đôi), Tử vi 12 cung (tử vi hôm nay, ghép đôi cung), Phong thủy (màu sắc, hướng nhà, chọn ngày), Giải mã & Bói (giấc mơ, Tarot, minigame), Tiện ích (chuyển lịch, tuổi cưới) và Blog kiến thức."
+          },
+          {
+            question: "Phong thủy có tác dụng gì?",
+            answer: "Phong thủy là nghệ thuật sắp xếp không gian sống hài hòa với thiên nhiên để thu hút năng lượng tích cực. Website cung cấp thông tin về màu sắc hợp mệnh, hướng nhà phù hợp với tuổi, cách chọn ngày tốt cho các sự kiện quan trọng, và hướng dẫn bố trí nội thất theo nguyên lý phong thủy để mang lại may mắn và thịnh vượng."
+          },
+          {
+            question: "Cung hoàng đạo và thần số học khác nhau như thế nào?",
+            answer: "Cung hoàng đạo dựa trên vị trí của mặt trời tại thời điểm sinh, chia thành 12 cung theo tháng sinh. Thần số học dựa trên ngày sinh cụ thể và tên tuổi, tập trung vào các con số và rung động năng lượng. Cả hai đều có giá trị riêng: cung hoàng đạo giúp hiểu tính cách tổng quát, thần số học chia sẻ thông tin chi tiết về đường đời và những đặc điểm cá nhân."
+          },
+          {
+            question: "Tôi có thể thay đổi vận mệnh được không?",
+            answer: "Thần số học không quyết định hoàn toàn vận mệnh mà chỉ chỉ ra xu hướng, tiềm năng và thách thức trong cuộc sống. Bạn hoàn toàn có thể thay đổi cuộc sống thông qua: thay đổi tên (ảnh hưởng đến số biểu đạt), chọn số điện thoại phù hợp, bố trí nhà cửa theo phong thủy, và quan trọng nhất là nỗ lực cá nhân. Thần số học chỉ là công cụ hỗ trợ để bạn hiểu rõ bản thân và đưa ra quyết định đúng đắn."
+          },
+          {
+            question: "Công cụ có tính phí không?",
+            answer: "Tất cả các cụ cơ bản tại Tâm Linh đều hoàn toàn miễn phí, bao gồm: tính thần số học, xem cung hoàng đạo, giải mã giấc mơ, phân tích tên tuổi, bói tình yêu, và các công cụ phong thủy. Chúng mình cam kết chia sẻ kiến thức tâm linh chất lượng cao mà không thu phí, giúp mọi người đều có cơ hội khám phá và hiểu rõ bản thân."
+          },
+          {
+            question: "Thông tin cá nhân của tôi có được bảo mật không?",
+            answer: "Chúng tôi cam kết bảo vệ thông tin cá nhân của bạn một cách tuyệt đối. Tất cả dữ liệu được mã hóa, không lưu trữ trên server và không chia sẻ với bất kỳ bên thứ ba nào. Quá trình tính toán diễn ra hoàn toàn trên trình duyệt của bạn, đảm bảo tính riêng tư và bảo mật cao nhất."
+          }
+        ]}
+      />
 
       {/* Call to Action */}
       <section className="py-10 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           <div className="bg-gradient-to-br from-gray-900/40 to-purple-900/40 backdrop-blur-sm rounded-3xl p-12 border border-golden/20">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Khám Phá <span className="bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent">Vận Mệnh Của Bạn</span>

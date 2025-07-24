@@ -2,6 +2,7 @@ import ContentHeader from '@/components/ContentHeader';
 import Link from 'next/link';
 import RelatedServices from '../../components/RelatedServices';
 import ZodiacStructuredData from '../../components/ZodiacStructuredData';
+import FAQSection from '@/components/FAQSection';
 import { ZodiacIcon } from '../../components/icons';
 
 interface ZodiacSign {
@@ -168,7 +169,7 @@ export default function ZodiacPage() {
     <>
       <ZodiacStructuredData />
       <div className='min-h-screen px-4'>
-        <div className='container mx-auto max-w-7xl'>
+        <div className='container mx-auto max-w-6xl'>
           {/* Header */}
 
           <ContentHeader
@@ -371,96 +372,31 @@ export default function ZodiacPage() {
           </div>
 
           {/* FAQ Section */}
-          <section className='py-10 px-4'>
-            <div className='max-w-4xl mx-auto'>
-              <div className='text-center mb-12'>
-                <h2 className='text-4xl font-bold text-white mb-4'>
-                  <span className='bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent'>
-                    Câu Hỏi Thường Gặp
-                  </span>
-                </h2>
-                <p className='text-gray-300 text-lg'>
-                  Giải đáp những thắc mắc phổ biến về cung hoàng đạo và tử vi
-                </p>
-              </div>
-
-              <div className='space-y-6'>
-                {/* FAQ Item 1 */}
-                <div className='bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20'>
-                  <h3 className='text-xl font-bold text-golden mb-3'>
-                    Cung hoàng đạo có đáng tin không?
-                  </h3>
-                  <p className='text-gray-300 leading-relaxed'>
-                    Cung hoàng đạo là một môn học cổ xưa dựa trên vị trí mặt
-                    trời khi bạn sinh ra. Đây là cách thú vị để tìm hiểu về tính
-                    cách và đặc điểm của bản thân. Nhiều người thấy những mô tả
-                    về cung hoàng đạo khá phù hợp với tính cách thực tế của
-                    mình, tạo cảm giác thú vị khi khám phá.
-                  </p>
-                </div>
-
-                {/* FAQ Item 2 */}
-                <div className='bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20'>
-                  <h3 className='text-xl font-bold text-golden mb-3'>
-                    Làm thế nào để biết cung hoàng đạo của mình?
-                  </h3>
-                  <p className='text-gray-300 leading-relaxed'>
-                    Cung hoàng đạo được xác định dựa trên ngày và tháng sinh. Có
-                    12 cung hoàng đạo tương ứng với 12 khoảng thời gian trong
-                    năm: Bạch Dương (21/3-19/4), Kim Ngưu (20/4-20/5), Song Tử
-                    (21/5-20/6), Cự Giải (21/6-22/7), Sư Tử (23/7-22/8), Xử Nữ
-                    (23/8-22/9), Thiên Bình (23/9-22/10), Bọ Cạp (23/10-21/11),
-                    Nhân Mã (22/11-21/12), Ma Kết (22/12-19/1), Bảo Bình
-                    (20/1-18/2), Song Ngư (19/2-20/3).
-                  </p>
-                </div>
-
-                {/* FAQ Item 3 */}
-                <div className='bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20'>
-                  <h3 className='text-xl font-bold text-golden mb-3'>
-                    Cung hoàng đạo có thể dự đoán tương lai không?
-                  </h3>
-                  <p className='text-gray-300 leading-relaxed'>
-                    Cung hoàng đạo không dự đoán tương lai một cách tuyệt đối mà
-                    chỉ ra xu hướng và khả năng dựa trên tính cách và đặc điểm
-                    của từng cung. Nó giúp bạn hiểu rõ điểm mạnh, điểm yếu và
-                    cách tiếp cận cuộc sống, từ đó đưa ra quyết định phù hợp.
-                    Tương lai vẫn phụ thuộc vào nỗ lực và lựa chọn của bản thân.
-                  </p>
-                </div>
-
-                {/* FAQ Item 4 */}
-                <div className='bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20'>
-                  <h3 className='text-xl font-bold text-golden mb-3'>
-                    Tại sao các cung hoàng đạo khác nhau có tính cách khác nhau?
-                  </h3>
-                  <p className='text-gray-300 leading-relaxed'>
-                    Theo chiêm tinh học, mỗi cung hoàng đạo chịu ảnh hưởng của
-                    các yếu tố khác nhau như nguyên tố (Hỏa, Thổ, Khí, Thủy),
-                    hành tinh cai quản và vị trí trong chu kỳ năm. Những yếu tố
-                    này tạo nên những đặc điểm tính cách riêng biệt. Ví dụ, các
-                    cung Hỏa (Bạch Dương, Sư Tử, Nhân Mã) thường năng động và
-                    nhiệt huyết, trong khi các cung Thủy (Cự Giải, Bọ Cạp, Song
-                    Ngư) có xu hướng cảm xúc và trực giác.
-                  </p>
-                </div>
-
-                {/* FAQ Item 5 */}
-                <div className='bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20'>
-                  <h3 className='text-xl font-bold text-golden mb-3'>
-                    Website này có tính phí không?
-                  </h3>
-                  <p className='text-gray-300 leading-relaxed'>
-                    Không, tất cả nội dung về cung hoàng đạo đều hoàn toàn miễn
-                    phí. Bạn có thể thoải mái đọc thông tin về 12 cung hoàng
-                    đạo, tìm hiểu về tính cách và những đặc điểm thú vị mà không
-                    tốn phí. Chúng mình chia sẻ những kiến thức này với mong
-                    muốn giúp mọi người hiểu thêm về bản thân.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
+          <FAQSection
+            description="Giải đáp những thắc mắc phổ biến về cung hoàng đạo và tử vi"
+            faqs={[
+              {
+                question: "Cung hoàng đạo có đáng tin không?",
+                answer: "Cung hoàng đạo là một môn học cổ xưa dựa trên vị trí mặt trời khi bạn sinh ra. Đây là cách thú vị để tìm hiểu về tính cách và đặc điểm của bản thân. Nhiều người thấy những mô tả về cung hoàng đạo khá phù hợp với tính cách thực tế của mình, tạo cảm giác thú vị khi khám phá."
+              },
+              {
+                question: "Làm thế nào để biết cung hoàng đạo của mình?",
+                answer: "Cung hoàng đạo được xác định dựa trên ngày và tháng sinh. Có 12 cung hoàng đạo tương ứng với 12 khoảng thời gian trong năm: Bạch Dương (21/3-19/4), Kim Ngưu (20/4-20/5), Song Tử (21/5-20/6), Cự Giải (21/6-22/7), Sư Tử (23/7-22/8), Xử Nữ (23/8-22/9), Thiên Bình (23/9-22/10), Bọ Cạp (23/10-21/11), Nhân Mã (22/11-21/12), Ma Kết (22/12-19/1), Bảo Bình (20/1-18/2), Song Ngư (19/2-20/3)."
+              },
+              {
+                question: "Cung hoàng đạo có thể dự đoán tương lai không?",
+                answer: "Cung hoàng đạo không dự đoán tương lai một cách tuyệt đối mà chỉ ra xu hướng và khả năng dựa trên tính cách và đặc điểm của từng cung. Nó giúp bạn hiểu rõ điểm mạnh, điểm yếu và cách tiếp cận cuộc sống, từ đó đưa ra quyết định phù hợp. Tương lai vẫn phụ thuộc vào nỗ lực và lựa chọn của bản thân."
+              },
+              {
+                question: "Tại sao các cung hoàng đạo khác nhau có tính cách khác nhau?",
+                answer: "Theo chiêm tinh học, mỗi cung hoàng đạo chịu ảnh hưởng của các yếu tố khác nhau như nguyên tố (Hỏa, Thổ, Khí, Thủy), hành tinh cai quản và vị trí trong chu kỳ năm. Những yếu tố này tạo nên những đặc điểm tính cách riêng biệt. Ví dụ, các cung Hỏa (Bạch Dương, Sư Tử, Nhân Mã) thường năng động và nhiệt huyết, trong khi các cung Thủy (Cự Giải, Bọ Cạp, Song Ngư) có xu hướng cảm xúc và trực giác."
+              },
+              {
+                question: "Website này có tính phí không?",
+                answer: "Không, tất cả nội dung về cung hoàng đạo đều hoàn toàn miễn phí. Bạn có thể thoải mái đọc thông tin về 12 cung hoàng đạo, tìm hiểu về tính cách và những đặc điểm thú vị mà không tốn phí. Chúng mình chia sẻ những kiến thức này với mong muốn giúp mọi người hiểu thêm về bản thân."
+              }
+            ]}
+          />
 
           {/* Related Services */}
           <RelatedServices currentPage='/zodiac' />

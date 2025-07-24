@@ -1,3 +1,5 @@
+'use client';
+import React from "react";
 interface FAQItem {
   question: string;
   answer: string;
@@ -6,46 +8,66 @@ interface FAQItem {
 interface FAQSectionProps {
   title?: string;
   subtitle?: string;
+  description?: string;
   faqs: FAQItem[];
 }
 
-export default function FAQSection({ 
-  title = "Câu Hỏi Thường Gặp", 
-  subtitle = "Giải đáp những thắc mắc phổ biến", 
-  faqs 
+export default function FAQSection({
+  title = "Câu Hỏi Thường Gặp",
+  subtitle = "Giải đáp những thắc mắc phổ biến",
+  description,
+  faqs,
 }: FAQSectionProps) {
   return (
     <section className="py-10 px-4">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-white mb-4">
             <span className="bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent">
               {title}
             </span>
           </h2>
-          <p className="text-gray-300 text-lg">
-            {subtitle}
-          </p>
+          <p className="text-gray-300 text-lg">{description || subtitle}</p>
         </div>
 
         <div className="space-y-6">
-          {faqs.map((faq, index) => (
-            <div 
-              key={index}
-              className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20"
-            >
-              <h3 className="text-xl font-bold text-golden mb-3">
-                {faq.question}
-              </h3>
-              <p className="text-gray-300 leading-relaxed">
-                {faq.answer}
-              </p>
-            </div>
-          ))}
+          {faqs.map((faq, index) => {
+            const [open, setOpen] = React.useState(false);
+            return (
+              <div
+                key={index}
+                className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20"
+              >
+                <button
+                  type="button"
+                  className="w-full text-left flex justify-between items-center focus:outline-none cursor-pointer"
+                  aria-expanded={open}
+                  aria-controls={`faq-answer-${index}`}
+                  onClick={() => setOpen((prev) => !prev)}
+                >
+                  <h3 className="text-lg font-bold text-white mb-0">
+                    {faq.question}
+                  </h3>
+                  <span className="ml-2 text-white">{open ? "−" : "+"}</span>
+                </button>
+                <div
+                  id={`faq-answer-${index}`}
+                  style={{
+                    display: open ? "block" : "none",
+                  }}
+                  aria-hidden={!open}
+                >
+                  <p className="text-gray-300 leading-relaxed mt-3">
+                    {faq.answer}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* Additional CTA */}
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/20">
             <h3 className="text-lg font-bold text-white mb-3">
               <span className="bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent">
@@ -66,7 +88,7 @@ export default function FAQSection({
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

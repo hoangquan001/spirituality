@@ -1,6 +1,7 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
+import RelatedServices from '@/components/RelatedServices';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -289,7 +290,7 @@ export default function FengshuiDirectionsPage() {
       {/* Main Content */}
       <div className='max-w-6xl mx-auto px-4 py-12'>
         {/* Input Form */}
-        <div className='bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 mb-8'>
+        <div className='cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8'>
           <h2 className='text-2xl font-bold text-white mb-6 text-center'>
             Nhập Thông Tin Của Bạn
           </h2>
@@ -361,7 +362,7 @@ export default function FengshuiDirectionsPage() {
         {analysis && (
           <div className='space-y-8'>
             {/* Kua Number Overview */}
-            <div className='bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20'>
+            <div className='cosmic-card rounded-3xl p-8 border border-gray-700/20'>
               <div className='text-center mb-8'>
                 <h2 className='text-3xl font-bold text-white mb-4'>
                   Số Kua: {analysis.kuaNumber}
@@ -531,7 +532,7 @@ export default function FengshuiDirectionsPage() {
                   ([category, directions]) => (
                     <div
                       key={category}
-                      className='bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-700/20'
+                      className='cosmic-card rounded-3xl p-6 border border-gray-700/20'
                     >
                       <h3 className='text-xl font-bold text-white mb-4 flex items-center gap-2'>
                         <span>
@@ -584,7 +585,7 @@ export default function FengshuiDirectionsPage() {
             )}
 
             {activeTab === 'compass' && (
-              <div className='bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20'>
+              <div className='cosmic-card rounded-3xl p-8 border border-gray-700/20'>
                 <h3 className='text-2xl font-bold text-white mb-8 text-center'>
                   La Bàn Phong Thủy Cá Nhân
                 </h3>
@@ -665,38 +666,9 @@ export default function FengshuiDirectionsPage() {
           </div>
         )}
 
-        {/* Related Links */}
-        <div className='mt-16 text-center'>
-          <h3 className='text-2xl font-bold text-white mb-8'>
-            Khám Phá Thêm Phong Thủy
-          </h3>
-          <div className='flex flex-wrap justify-center gap-4'>
-            <Link
-              href='/fengshui/colors'
-              className='bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300'
-            >
-              🎨 Màu Sắc Hợp Mệnh
-            </Link>
-            <Link
-              href='/fengshui/items'
-              className='bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300'
-            >
-              🏺 Vật Phẩm Phong Thủy
-            </Link>
-            <Link
-              href='/fengshui/dates'
-              className='bg-gradient-to-r from-pink-600 to-rose-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300'
-            >
-              📅 Chọn Ngày Tốt
-            </Link>
-            <Link
-              href='/fengshui/home'
-              className='bg-gradient-to-r from-orange-600 to-amber-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300'
-            >
-              🏠 Phong Thủy Nhà Ở
-            </Link>
-          </div>
-        </div>
+        {/* Related Links */} 
+        <RelatedServices currentPage="/cards" />
+        
       </div>
     </div>
   );

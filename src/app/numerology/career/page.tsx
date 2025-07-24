@@ -1,6 +1,7 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
+import RelatedServices from '@/components/RelatedServices';
 import { birthDateToLifePath } from '@/lib/numerology';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -442,7 +443,7 @@ export default function NumerologyCareerPage() {
         {career && (
           <div className="space-y-8">
             {/* Overview */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
               <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold text-white mb-4">
                   Phân Tích Nghề Nghiệp - Số Đường Đời {career.lifePath}
@@ -482,7 +483,7 @@ export default function NumerologyCareerPage() {
             </div>
 
             {/* Career Suggestions */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
               <h3 className="text-2xl font-bold text-white mb-6 text-center">
                 Gợi Ý Nghề Nghiệp
               </h3>
@@ -580,29 +581,7 @@ export default function NumerologyCareerPage() {
         )}
 
         {/* Related Links */}
-        <div className="mt-12 text-center">
-          <h3 className="text-xl font-bold text-white mb-6">Khám Phá Thêm</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/numerology"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🔢 Tra Cứu Thần Số Học
-            </Link>
-            <Link
-              href="/numerology/lessons"
-              className="bg-gradient-to-r from-orange-600 to-amber-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              📚 Bài Học Nghiệp Số
-            </Link>
-            <Link
-              href="/numerology/compatibility"
-              className="bg-gradient-to-r from-pink-600 to-rose-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              💕 Ghép Đôi Ngày Sinh
-            </Link>
-          </div>
-        </div>
+        <RelatedServices currentPage="/numerology" />
       </div>
     </div>
   );

@@ -38,7 +38,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       <article className="container mx-auto px-4 pb-12">
         {/* Header */}
-        <header className="max-w-4xl mx-auto mb-12">
+        <header className="max-w-6xl mx-auto mb-12">
           <div className="text-center mb-8">
             {/* Category */}
             <div className="mb-4">
@@ -98,8 +98,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </header>
 
         {/* Content */}
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 md:p-12 border border-gray-700/20 mb-12">
+        <div className="max-w-6xl mx-auto">
+          <div className="cosmic-card rounded-2xl p-8 md:p-12 border border-gray-700/20 mb-12">
             <div className="prose prose-lg prose-invert max-w-none">
               {/* Hiển thị nội dung markdown - trong thực tế bạn có thể dùng thư viện như react-markdown */}
               <div className="text-white leading-relaxed whitespace-pre-wrap">
@@ -170,7 +170,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 function RelatedPostCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/blog/${post.slug}`}>
-      <article className="group bg-white/10 backdrop-blur-md rounded-xl overflow-hidden border border-purple-300/20 hover:border-golden/50 transition-all duration-300 hover:scale-105">
+      <article className="group cosmic-card rounded-xl overflow-hidden border border-purple-300/20 hover:border-golden/50 transition-all duration-300 hover:scale-105">
         {/* Image */}
         <div className="relative h-32 bg-gradient-to-br from-purple-600 to-indigo-600">
           {post.featuredImage ? (

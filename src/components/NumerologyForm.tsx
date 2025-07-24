@@ -34,7 +34,7 @@ export default function NumerologyForm({ onSubmit }: NumerologyFormProps) {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-400/20 h-fit">
+    <div className="max-w-md mx-auto cosmic-card rounded-2xl p-8 shadow-2xl border border-gray-400/20 h-fit">
       <div className="text-center mb-6">
         <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
             <img src="/thansohoc.png" className='rounded-full' alt="" />

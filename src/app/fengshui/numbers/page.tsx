@@ -1,6 +1,7 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
+import RelatedServices from '@/components/RelatedServices';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -187,291 +188,355 @@ export default function FengshuiNumbersPage() {
         title="Sim Số Phong Thủy"
         description="Phân tích sim số và biển số xe theo phong thủy. Khám phá ý nghĩa và năng lượng của các con số trong cuộc sống bạn."
         breadcrumb={[
-          { label: 'Trang Chủ', href: '/' },
-          { label: 'Phong Thủy', href: '/feng-shui' },
-          { label: 'Sim Số', href: '/fengshui/numbers' },
+          { label: "Trang Chủ", href: "/" },
+          { label: "Phong Thủy", href: "/feng-shui" },
+          { label: "Sim Số", href: "/fengshui/numbers" },
         ]}
       />
       <div className="min-h-screen">
         {/* Main Content */}
         <div className="max-w-6xl mx-auto px-4 py-12">
-        {/* Input Form */}
-        <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20 mb-8">
-          <h2 className="text-2xl font-bold text-white mb-6 text-center">
-            Nhập Số Điện Thoại Hoặc Biển Số
-          </h2>
-          
-          <div className="max-w-md mx-auto">
-            <div className="mb-6">
-              <label className="block text-gray-300 mb-2">Số cần phân tích</label>
-              <input
-                type="text"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                placeholder="Ví dụ: 0987654321 hoặc 30A-12345"
-                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-golden focus:outline-none"
-              />
-              <p className="text-gray-400 text-sm mt-2">
-                💡 Có thể nhập số điện thoại, biển số xe, hoặc bất kỳ dãy số nào
-              </p>
-            </div>
+          {/* Input Form */}
+          <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
+            <h2 className="text-2xl font-bold text-white mb-6 text-center">
+              Nhập Số Điện Thoại Hoặc Biển Số
+            </h2>
 
-            <div className="text-center">
-              <button
-                onClick={analyzeNumber}
-                disabled={isAnalyzing}
-                className="bg-gradient-to-r from-golden to-yellow-500 text-black px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-golden/50 disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isAnalyzing ? (
-                  <span className="flex items-center gap-2">
-                    <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
-                    Đang phân tích...
-                  </span>
-                ) : (
-                  <span className="flex items-center gap-2">
-                    📱 Phân Tích Phong Thủy
-                  </span>
-                )}
-              </button>
+            <div className="max-w-md mx-auto">
+              <div className="mb-6">
+                <label className="block text-gray-300 mb-2">
+                  Số cần phân tích
+                </label>
+                <input
+                  type="text"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                  placeholder="Ví dụ: 0987654321 hoặc 30A-12345"
+                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:border-golden focus:outline-none"
+                />
+                <p className="text-gray-400 text-sm mt-2">
+                  💡 Có thể nhập số điện thoại, biển số xe, hoặc bất kỳ dãy số
+                  nào
+                </p>
+              </div>
+
+              <div className="text-center">
+                <button
+                  onClick={analyzeNumber}
+                  disabled={isAnalyzing}
+                  className="bg-gradient-to-r from-golden to-yellow-500 text-black px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-golden/50 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isAnalyzing ? (
+                    <span className="flex items-center gap-2">
+                      <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
+                      Đang phân tích...
+                    </span>
+                  ) : (
+                    <span className="flex items-center gap-2">
+                      📱 Phân Tích Phong Thủy
+                    </span>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Results */}
-        {analysis && (
-          <div className="space-y-8">
-            {/* Overview */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
-              <div className="text-center">
-                <h2 className="text-3xl font-bold text-white mb-4">
-                  Kết Quả Phân Tích: {analysis.phoneNumber}
-                </h2>
-                <div className="flex items-center justify-center gap-4 mb-6">
-                  <div className={`px-6 py-3 rounded-full border ${getRatingColor(analysis.overallRating)}`}>
-                    <span className="text-2xl mr-2">{getRatingIcon(analysis.overallRating)}</span>
-                    <span className="font-bold">{analysis.totalScore}/100</span>
-                    <span className="ml-2">({getRatingText(analysis.overallRating)})</span>
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/20">
-                    <h3 className="text-green-400 font-semibold mb-2">Số may mắn</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {analysis.luckyNumbers.map((num, i) => (
-                        <span key={i} className="bg-green-500/20 text-green-300 px-3 py-1 rounded-full font-bold">
-                          {num}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="bg-red-500/10 rounded-lg p-4 border border-red-500/20">
-                    <h3 className="text-red-400 font-semibold mb-2">Số cần chú ý</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {analysis.unluckyNumbers.length > 0 ? analysis.unluckyNumbers.map((num, i) => (
-                        <span key={i} className="bg-red-500/20 text-red-300 px-3 py-1 rounded-full font-bold">
-                          {num}
-                        </span>
-                      )) : (
-                        <span className="text-gray-400">Không có số xấu</span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Tabs */}
-            <div className="flex justify-center mb-8">
-              <div className="bg-gray-800/50 rounded-full p-1">
-                {[
-                  { id: 'overview', label: '📊 Tổng Quan' },
-                  { id: 'breakdown', label: '🔢 Chi Tiết' },
-                  { id: 'recommendations', label: '💡 Tư Vấn' },
-                  { id: 'improvements', label: '⚡ Cải Thiện' }
-                ].map((tab) => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id as any)}
-                    className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                      activeTab === tab.id
-                        ? 'bg-golden text-black'
-                        : 'text-gray-300 hover:text-white'
-                    }`}
-                  >
-                    {tab.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Tab Content */}
-            {activeTab === 'overview' && (
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-gradient-to-br from-blue-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-blue-700/20">
-                  <h3 className="text-xl font-bold text-blue-400 mb-4">Phân Tích Tổng Thể</h3>
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Điểm tổng:</span>
-                      <span className="text-white font-bold">{analysis.totalScore}/100</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Xếp hạng:</span>
-                      <span className={`font-bold ${getRatingColor(analysis.overallRating).split(' ')[0]}`}>
-                        {getRatingText(analysis.overallRating)}
+          {/* Results */}
+          {analysis && (
+            <div className="space-y-8">
+              {/* Overview */}
+              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+                <div className="text-center">
+                  <h2 className="text-3xl font-bold text-white mb-4">
+                    Kết Quả Phân Tích: {analysis.phoneNumber}
+                  </h2>
+                  <div className="flex items-center justify-center gap-4 mb-6">
+                    <div
+                      className={`px-6 py-3 rounded-full border ${getRatingColor(
+                        analysis.overallRating
+                      )}`}
+                    >
+                      <span className="text-2xl mr-2">
+                        {getRatingIcon(analysis.overallRating)}
+                      </span>
+                      <span className="font-bold">
+                        {analysis.totalScore}/100
+                      </span>
+                      <span className="ml-2">
+                        ({getRatingText(analysis.overallRating)})
                       </span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Số chữ số:</span>
-                      <span className="text-white font-bold">{analysis.numberBreakdown.length}</span>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/20">
+                      <h3 className="text-green-400 font-semibold mb-2">
+                        Số may mắn
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {analysis.luckyNumbers.map((num, i) => (
+                          <span
+                            key={i}
+                            className="bg-green-500/20 text-green-300 px-3 py-1 rounded-full font-bold"
+                          >
+                            {num}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Số may mắn:</span>
-                      <span className="text-green-400 font-bold">{analysis.luckyNumbers.length}</span>
+
+                    <div className="bg-red-500/10 rounded-lg p-4 border border-red-500/20">
+                      <h3 className="text-red-400 font-semibold mb-2">
+                        Số cần chú ý
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {analysis.unluckyNumbers.length > 0 ? (
+                          analysis.unluckyNumbers.map((num, i) => (
+                            <span
+                              key={i}
+                              className="bg-red-500/20 text-red-300 px-3 py-1 rounded-full font-bold"
+                            >
+                              {num}
+                            </span>
+                          ))
+                        ) : (
+                          <span className="text-gray-400">Không có số xấu</span>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div className="bg-gradient-to-br from-purple-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-purple-700/20">
-                  <h3 className="text-xl font-bold text-purple-400 mb-4">Năng Lượng Số</h3>
-                  <div className="space-y-3">
-                    {analysis.numberBreakdown.slice(0, 5).map((num, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-gray-700/30 rounded-lg">
-                        <div className="flex items-center gap-3">
-                          <span className="text-2xl font-bold text-golden">{num.number}</span>
-                          <div>
-                            <div className="text-white font-semibold">{num.meanings[0]}</div>
-                            <div className="text-gray-400 text-sm">{num.energy}</div>
+              {/* Tabs */}
+              <div className="flex justify-center mb-8">
+                <div className="bg-gray-800/50 rounded-full p-1">
+                  {[
+                    { id: "overview", label: "📊 Tổng Quan" },
+                    { id: "breakdown", label: "🔢 Chi Tiết" },
+                    { id: "recommendations", label: "💡 Tư Vấn" },
+                    { id: "improvements", label: "⚡ Cải Thiện" },
+                  ].map((tab) => (
+                    <button
+                      key={tab.id}
+                      onClick={() => setActiveTab(tab.id as any)}
+                      className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                        activeTab === tab.id
+                          ? "bg-golden text-black"
+                          : "text-gray-300 hover:text-white"
+                      }`}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Tab Content */}
+              {activeTab === "overview" && (
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-gradient-to-br from-blue-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-blue-700/20">
+                    <h3 className="text-xl font-bold text-blue-400 mb-4">
+                      Phân Tích Tổng Thể
+                    </h3>
+                    <div className="space-y-4">
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300">Điểm tổng:</span>
+                        <span className="text-white font-bold">
+                          {analysis.totalScore}/100
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300">Xếp hạng:</span>
+                        <span
+                          className={`font-bold ${
+                            getRatingColor(analysis.overallRating).split(" ")[0]
+                          }`}
+                        >
+                          {getRatingText(analysis.overallRating)}
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300">Số chữ số:</span>
+                        <span className="text-white font-bold">
+                          {analysis.numberBreakdown.length}
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-300">Số may mắn:</span>
+                        <span className="text-green-400 font-bold">
+                          {analysis.luckyNumbers.length}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-br from-purple-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-purple-700/20">
+                    <h3 className="text-xl font-bold text-purple-400 mb-4">
+                      Năng Lượng Số
+                    </h3>
+                    <div className="space-y-3">
+                      {analysis.numberBreakdown
+                        .slice(0, 5)
+                        .map((num, index) => (
+                          <div
+                            key={index}
+                            className="flex items-center justify-between p-3 bg-gray-700/30 rounded-lg"
+                          >
+                            <div className="flex items-center gap-3">
+                              <span className="text-2xl font-bold text-golden">
+                                {num.number}
+                              </span>
+                              <div>
+                                <div className="text-white font-semibold">
+                                  {num.meanings[0]}
+                                </div>
+                                <div className="text-gray-400 text-sm">
+                                  {num.energy}
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              className={`px-3 py-1 rounded-full text-sm font-semibold ${getRatingColor(
+                                num.rating
+                              )}`}
+                            >
+                              {num.score}
+                            </div>
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === "breakdown" && (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {analysis.numberBreakdown.map((num, index) => (
+                    <div
+                      key={index}
+                      className={`rounded-3xl p-6 border ${getRatingColor(
+                        num.rating
+                      )}`}
+                    >
+                      <div className="text-center mb-4">
+                        <div className="text-4xl font-bold text-golden mb-2">
+                          {num.number}
+                        </div>
+                        <div className="text-lg font-semibold text-white mb-1">
+                          {num.meanings[0]}
+                        </div>
+                        <div className="text-sm text-gray-400">
+                          {num.energy}
+                        </div>
+                      </div>
+
+                      <div className="space-y-3">
+                        <div>
+                          <div className="font-semibold text-white mb-1">
+                            Điểm số:
+                          </div>
+                          <div className="text-2xl font-bold text-golden">
+                            {num.score}/100
                           </div>
                         </div>
-                        <div className={`px-3 py-1 rounded-full text-sm font-semibold ${getRatingColor(num.rating)}`}>
-                          {num.score}
+
+                        <div>
+                          <div className="font-semibold text-white mb-1">
+                            Ý nghĩa:
+                          </div>
+                          <div className="flex flex-wrap gap-1">
+                            {num.meanings.map((meaning, i) => (
+                              <span
+                                key={i}
+                                className="bg-golden/20 text-golden px-2 py-1 rounded text-xs"
+                              >
+                                {meaning}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <div className="font-semibold text-white mb-1">
+                            Phù hợp:
+                          </div>
+                          <div className="text-gray-300 text-sm">
+                            {num.suitableFor.join(", ")}
+                          </div>
+                        </div>
+
+                        <div className="bg-gray-700/30 rounded-lg p-3">
+                          <div className="text-golden font-semibold mb-1">
+                            Lời khuyên:
+                          </div>
+                          <div className="text-gray-300 text-sm">
+                            {num.advice}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {activeTab === "recommendations" && (
+                <div className="grid md:grid-cols-2 gap-6">
+                  {Object.entries(analysis.recommendations).map(
+                    ([category, advice]) => (
+                      <div
+                        key={category}
+                        className="cosmic-card rounded-3xl p-6 border border-gray-700/20"
+                      >
+                        <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                          <span>
+                            {category === "career" && "💼"}
+                            {category === "wealth" && "💰"}
+                            {category === "health" && "🏥"}
+                            {category === "relationships" && "👥"}
+                          </span>
+                          {category === "career" && "Sự Nghiệp"}
+                          {category === "wealth" && "Tài Chính"}
+                          {category === "health" && "Sức Khỏe"}
+                          {category === "relationships" && "Mối Quan Hệ"}
+                        </h3>
+                        <p className="text-gray-300 leading-relaxed">
+                          {advice}
+                        </p>
+                      </div>
+                    )
+                  )}
+                </div>
+              )}
+
+              {activeTab === "improvements" && (
+                <div className="bg-gradient-to-br from-golden/10 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-golden/20">
+                  <h3 className="text-2xl font-bold text-golden mb-6 text-center">
+                    Gợi Ý Cải Thiện
+                  </h3>
+                  <div className="space-y-4">
+                    {analysis.improvements.map((improvement, index) => (
+                      <div
+                        key={index}
+                        className="bg-gray-700/30 rounded-lg p-4"
+                      >
+                        <div className="flex items-start gap-3">
+                          <span className="text-golden text-xl mt-1">💡</span>
+                          <p className="text-gray-300 leading-relaxed">
+                            {improvement}
+                          </p>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
+          )}
 
-            {activeTab === 'breakdown' && (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {analysis.numberBreakdown.map((num, index) => (
-                  <div key={index} className={`rounded-3xl p-6 border ${getRatingColor(num.rating)}`}>
-                    <div className="text-center mb-4">
-                      <div className="text-4xl font-bold text-golden mb-2">{num.number}</div>
-                      <div className="text-lg font-semibold text-white mb-1">{num.meanings[0]}</div>
-                      <div className="text-sm text-gray-400">{num.energy}</div>
-                    </div>
-
-                    <div className="space-y-3">
-                      <div>
-                        <div className="font-semibold text-white mb-1">Điểm số:</div>
-                        <div className="text-2xl font-bold text-golden">{num.score}/100</div>
-                      </div>
-
-                      <div>
-                        <div className="font-semibold text-white mb-1">Ý nghĩa:</div>
-                        <div className="flex flex-wrap gap-1">
-                          {num.meanings.map((meaning, i) => (
-                            <span key={i} className="bg-golden/20 text-golden px-2 py-1 rounded text-xs">
-                              {meaning}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        <div className="font-semibold text-white mb-1">Phù hợp:</div>
-                        <div className="text-gray-300 text-sm">
-                          {num.suitableFor.join(', ')}
-                        </div>
-                      </div>
-
-                      <div className="bg-gray-700/30 rounded-lg p-3">
-                        <div className="text-golden font-semibold mb-1">Lời khuyên:</div>
-                        <div className="text-gray-300 text-sm">{num.advice}</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {activeTab === 'recommendations' && (
-              <div className="grid md:grid-cols-2 gap-6">
-                {Object.entries(analysis.recommendations).map(([category, advice]) => (
-                  <div key={category} className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-gray-700/20">
-                    <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                      <span>
-                        {category === 'career' && '💼'}
-                        {category === 'wealth' && '💰'}
-                        {category === 'health' && '🏥'}
-                        {category === 'relationships' && '👥'}
-                      </span>
-                      {category === 'career' && 'Sự Nghiệp'}
-                      {category === 'wealth' && 'Tài Chính'}
-                      {category === 'health' && 'Sức Khỏe'}
-                      {category === 'relationships' && 'Mối Quan Hệ'}
-                    </h3>
-                    <p className="text-gray-300 leading-relaxed">{advice}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {activeTab === 'improvements' && (
-              <div className="bg-gradient-to-br from-golden/10 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-golden/20">
-                <h3 className="text-2xl font-bold text-golden mb-6 text-center">
-                  Gợi Ý Cải Thiện
-                </h3>
-                <div className="space-y-4">
-                  {analysis.improvements.map((improvement, index) => (
-                    <div key={index} className="bg-gray-700/30 rounded-lg p-4">
-                      <div className="flex items-start gap-3">
-                        <span className="text-golden text-xl mt-1">💡</span>
-                        <p className="text-gray-300 leading-relaxed">{improvement}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Related Links */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-white mb-8">Khám Phá Thêm Phong Thủy</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/fengshui/colors"
-              className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🎨 Màu Sắc Hợp Mệnh
-            </Link>
-            <Link
-              href="/fengshui/directions"
-              className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🧭 Hướng Hợp Tuổi
-            </Link>
-            <Link
-              href="/fengshui/items"
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🏺 Vật Phẩm Phong Thủy
-            </Link>
-            <Link
-              href="/numbers/meaning"
-              className="bg-gradient-to-r from-golden to-yellow-500 text-black px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🔢 Ý Nghĩa Con Số
-            </Link>
-          </div>
+          {/* Related Links */}
+          <RelatedServices currentPage="/cards" />
         </div>
-      </div>
       </div>
     </>
   );

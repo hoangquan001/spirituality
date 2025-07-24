@@ -1,6 +1,7 @@
 'use client';
 
 import { formatEventDate, getEventsByMonth, getSpiritualEvents, getUpcomingEvents } from '@/lib/spiritualEvents';
+import FAQSection from '@/components/FAQSection';
 import { useMemo, useState } from 'react';
 
 export default function EventsPage() {
@@ -42,7 +43,7 @@ export default function EventsPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
           {/* Controls */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-gray-400/20 mb-8">
+          <div className="cosmic-card rounded-2xl p-6 border border-gray-400/20 mb-8">
             <div className="flex flex-wrap items-center justify-between gap-4">
               {/* View Mode */}
               <div className="flex space-x-2">
@@ -110,7 +111,7 @@ export default function EventsPage() {
             {events.map((event, index) => (
               <div 
                 key={index}
-                className="bg-white/10 backdrop-blur-md rounded-2xl border border-gray-400/20 overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
+                className="cosmic-card rounded-2xl border border-gray-400/20 overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
               >
                 {/* Event Header */}
                 <div className={`p-6 ${event.isSpecial ? 'bg-gradient-to-r from-golden/20 to-yellow-300/20' : 'bg-gray-800/30'}`}>
@@ -211,7 +212,7 @@ export default function EventsPage() {
 
           {/* No events message */}
           {events.length === 0 && (
-            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-12 border border-gray-400/20 text-center">
+            <div className="cosmic-card rounded-2xl p-12 border border-gray-400/20 text-center">
               <div className="text-6xl mb-4">📅</div>
               <h3 className="text-2xl font-bold text-white mb-4">
                 Không có sự kiện nào
@@ -228,7 +229,7 @@ export default function EventsPage() {
           )}
 
           {/* Legend */}
-          <div className="mt-8 bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-gray-400/20">
+          <div className="mt-8 cosmic-card rounded-2xl p-6 border border-gray-400/20">
             <h3 className="text-xl font-bold text-white mb-4">📚 Chú giải</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               <div className="space-y-2">
@@ -261,6 +262,29 @@ export default function EventsPage() {
               </div>
             </div>
           </div>
+
+          {/* FAQ Section */}
+          <FAQSection
+            description="Giải đáp những thắc mắc phổ biến về ngày lễ tâm linh và ý nghĩa"
+            faqs={[
+              {
+                question: "Tại sao cần biết về các ngày lễ tâm linh?",
+                answer: "Các ngày lễ tâm linh giúp chúng ta hiểu rõ hơn về văn hóa, truyền thống và giá trị tinh thần của dân tộc. Việc tham gia các ngày lễ này không chỉ thể hiện lòng tôn kính với tổ tiên mà còn mang lại may mắn, bình an và sự cân bằng trong cuộc sống."
+              },
+              {
+                question: "Làm thế nào để chuẩn bị cho ngày lễ tâm linh?",
+                answer: "Chuẩn bị cho ngày lễ tâm linh bao gồm: tìm hiểu ý nghĩa và cách thức tổ chức, chuẩn bị lễ vật phù hợp, trang phục trang trọng, và tâm thái thành kính. Quan trọng nhất là hiểu được ý nghĩa sâu sắc của ngày lễ để tham gia một cách chân thành."
+              },
+              {
+                question: "Có nên tham gia tất cả các ngày lễ không?",
+                answer: "Bạn không cần tham gia tất cả các ngày lễ, hãy chọn những ngày lễ có ý nghĩa với bản thân và gia đình. Quan trọng là sự chân thành và tôn kính, không phải số lượng. Một số ngày lễ quan trọng như Tết Nguyên Đán, Vu Lan, Phật Đản nên được ưu tiên."
+              },
+              {
+                question: "Ngày lễ tâm linh có ảnh hưởng đến vận mệnh không?",
+                answer: "Theo quan niệm tâm linh, việc tham gia các ngày lễ với tâm thái thành kính có thể mang lại năng lượng tích cực, bình an và may mắn. Tuy nhiên, vận mệnh chủ yếu phụ thuộc vào hành động và thái độ sống của bản thân. Ngày lễ chỉ là dịp để tĩnh tâm và hướng thiện."
+              }
+            ]}
+          />
         </div>
       </div>
     </div>

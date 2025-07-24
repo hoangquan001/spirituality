@@ -1,6 +1,7 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
+import RelatedServices from '@/components/RelatedServices';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -236,194 +237,200 @@ export default function GamesPage() {
         title="Minigame Bói"
         description="Khám phá bản thân qua các trò chơi bói vui nhộn. Chọn hình dạng, màu sắc hoặc con số theo trực giác để khám phá tính cách và nhận lời khuyên."
         breadcrumb={[
-          { label: 'Trang Chủ', href: '/' },
-          { label: 'Minigame Bói', href: '/games' },
+          { label: "Trang Chủ", href: "/" },
+          { label: "Minigame Bói", href: "/games" },
         ]}
       />
       <div className="min-h-screen">
         {/* Main Content */}
         <div className="max-w-6xl mx-auto px-4 py-12">
-        {!result ? (
-          <div className="space-y-8">
-            {/* Game Selection */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
-              <h2 className="text-2xl font-bold text-white mb-8 text-center">
-                Chọn Trò Chơi Bói
-              </h2>
-              
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                {miniGames.map((game) => (
-                  <button
-                    key={game.id}
-                    onClick={() => switchGame(game.id)}
-                    className={`p-6 rounded-2xl border-2 transition-all duration-300 hover:scale-105 ${
-                      selectedGame === game.id
-                        ? 'border-golden bg-golden/10 shadow-lg shadow-golden/20'
-                        : 'border-gray-700 bg-gray-800/50 hover:border-gray-600'
-                    }`}
-                  >
-                    <div className="text-center">
-                      <div className="text-4xl mb-3">{game.icon}</div>
-                      <h3 className="text-xl font-bold text-white mb-2">{game.name}</h3>
-                      <p className="text-gray-300 text-sm">{game.description}</p>
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
+          {!result ? (
+            <div className="space-y-8">
+              {/* Game Selection */}
+              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+                <h2 className="text-2xl font-bold text-white mb-8 text-center">
+                  Chọn Trò Chơi Bói
+                </h2>
 
-            {/* Game Options */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
-              <h2 className="text-2xl font-bold text-white mb-8 text-center">
-                {currentGame.name}
-              </h2>
-              <p className="text-gray-300 text-center mb-8">{currentGame.description}</p>
-              
-              {isRevealing ? (
-                <div className="text-center py-10">
-                  <div className="inline-flex items-center gap-3 bg-gray-800/50 px-8 py-4 rounded-full">
-                    <div className="w-6 h-6 border-2 border-golden border-t-transparent rounded-full animate-spin"></div>
-                    <span className="text-white font-medium">Đang tiết lộ kết quả...</span>
-                  </div>
-                </div>
-              ) : (
-                <div className={`grid gap-4 ${
-                  selectedGame === 'color' ? 'grid-cols-4 md:grid-cols-8' : 
-                  selectedGame === 'number' ? 'grid-cols-3 md:grid-cols-9' : 
-                  'grid-cols-2 md:grid-cols-6'
-                }`}>
-                  {currentGame.options.map((option) => (
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  {miniGames.map((game) => (
                     <button
-                      key={option.id}
-                      onClick={() => handleSelection(option.id)}
-                      className={`aspect-square rounded-2xl border-2 border-gray-700 bg-gray-800/50 hover:border-golden hover:bg-golden/10 transition-all duration-300 hover:scale-110 flex flex-col items-center justify-center p-4 ${
-                        option.color || ''
+                      key={game.id}
+                      onClick={() => switchGame(game.id)}
+                      className={`p-6 rounded-2xl border-2 transition-all duration-300 hover:scale-105 ${
+                        selectedGame === game.id
+                          ? "border-golden bg-golden/10 shadow-lg shadow-golden/20"
+                          : "border-gray-700 bg-gray-800/50 hover:border-gray-600"
                       }`}
                     >
-                      <div className="text-3xl mb-2">{option.symbol}</div>
-                      <div className="text-white text-sm font-medium text-center">
-                        {option.label}
+                      <div className="text-center">
+                        <div className="text-4xl mb-3">{game.icon}</div>
+                        <h3 className="text-xl font-bold text-white mb-2">
+                          {game.name}
+                        </h3>
+                        <p className="text-gray-300 text-sm">
+                          {game.description}
+                        </p>
                       </div>
                     </button>
                   ))}
                 </div>
-              )}
-            </div>
-          </div>
-        ) : (
-          <div className="space-y-8">
-            {/* Result Header */}
-            <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-3xl p-8 border border-gray-700/20">
-              <div className="text-center">
-                <h2 className="text-3xl font-bold text-white mb-4">
-                  Kết Quả: {result.selection}
+              </div>
+
+              {/* Game Options */}
+              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+                <h2 className="text-2xl font-bold text-white mb-8 text-center">
+                  {currentGame.name}
                 </h2>
-                <div className="text-6xl mb-6">
-                  {currentGame.options.find(opt => opt.label === result.selection)?.symbol}
+                <p className="text-gray-300 text-center mb-8">
+                  {currentGame.description}
+                </p>
+
+                {isRevealing ? (
+                  <div className="text-center py-10">
+                    <div className="inline-flex items-center gap-3 bg-gray-800/50 px-8 py-4 rounded-full">
+                      <div className="w-6 h-6 border-2 border-golden border-t-transparent rounded-full animate-spin"></div>
+                      <span className="text-white font-medium">
+                        Đang tiết lộ kết quả...
+                      </span>
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    className={`grid gap-4 ${
+                      selectedGame === "color"
+                        ? "grid-cols-4 md:grid-cols-8"
+                        : selectedGame === "number"
+                        ? "grid-cols-3 md:grid-cols-9"
+                        : "grid-cols-2 md:grid-cols-6"
+                    }`}
+                  >
+                    {currentGame.options.map((option) => (
+                      <button
+                        key={option.id}
+                        onClick={() => handleSelection(option.id)}
+                        className={`aspect-square rounded-2xl border-2 border-gray-700 bg-gray-800/50 hover:border-golden hover:bg-golden/10 transition-all duration-300 hover:scale-110 flex flex-col items-center justify-center p-4 ${
+                          option.color || ""
+                        }`}
+                      >
+                        <div className="text-3xl mb-2">{option.symbol}</div>
+                        <div className="text-white text-sm font-medium text-center">
+                          {option.label}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          ) : (
+            <div className="space-y-8">
+              {/* Result Header */}
+              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+                <div className="text-center">
+                  <h2 className="text-3xl font-bold text-white mb-4">
+                    Kết Quả: {result.selection}
+                  </h2>
+                  <div className="text-6xl mb-6">
+                    {
+                      currentGame.options.find(
+                        (opt) => opt.label === result.selection
+                      )?.symbol
+                    }
+                  </div>
+                  <p className="text-gray-300 leading-relaxed text-lg">
+                    {result.meaning}
+                  </p>
                 </div>
-                <p className="text-gray-300 leading-relaxed text-lg">
-                  {result.meaning}
-                </p>
+              </div>
+
+              {/* Detailed Results */}
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Advice */}
+                <div className="bg-gradient-to-br from-golden/10 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-golden/20">
+                  <h3 className="text-xl font-bold text-golden mb-4 flex items-center gap-2">
+                    <span>💡</span> Lời Khuyên
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {result.advice}
+                  </p>
+                </div>
+
+                {/* Lucky Element */}
+                <div className="bg-gradient-to-br from-purple-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-purple-700/20">
+                  <h3 className="text-xl font-bold text-purple-400 mb-4 flex items-center gap-2">
+                    <span>✨</span> Yếu Tố May Mắn
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed">
+                    {result.luckyElement}
+                  </p>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap justify-center gap-4">
+                <button
+                  onClick={resetGame}
+                  className="bg-gradient-to-r from-pink-600 to-rose-600 text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
+                >
+                  🔄 Chơi Lại
+                </button>
+
+                <button
+                  onClick={() =>
+                    switchGame(
+                      selectedGame === "shape"
+                        ? "color"
+                        : selectedGame === "color"
+                        ? "number"
+                        : "shape"
+                    )
+                  }
+                  className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
+                >
+                  🎮 Trò Chơi Khác
+                </button>
               </div>
             </div>
+          )}
 
-            {/* Detailed Results */}
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Advice */}
-              <div className="bg-gradient-to-br from-golden/10 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-golden/20">
-                <h3 className="text-xl font-bold text-golden mb-4 flex items-center gap-2">
-                  <span>💡</span> Lời Khuyên
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  {result.advice}
+          {/* Game Instructions */}
+          <div className="mt-12 bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-sm rounded-3xl p-6 border border-gray-700/10">
+            <h3 className="text-xl font-bold text-white mb-4 text-center">
+              🎯 Cách Chơi
+            </h3>
+            <div className="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="text-3xl mb-2">1️⃣</div>
+                <h4 className="text-golden font-semibold mb-2">
+                  Chọn Trò Chơi
+                </h4>
+                <p className="text-gray-400 text-sm">
+                  Chọn một trong ba trò chơi: Hình dạng, Màu sắc, hoặc Con số
                 </p>
               </div>
-
-              {/* Lucky Element */}
-              <div className="bg-gradient-to-br from-purple-900/20 to-gray-900/50 backdrop-blur-sm rounded-3xl p-6 border border-purple-700/20">
-                <h3 className="text-xl font-bold text-purple-400 mb-4 flex items-center gap-2">
-                  <span>✨</span> Yếu Tố May Mắn
-                </h3>
-                <p className="text-gray-300 leading-relaxed">
-                  {result.luckyElement}
+              <div>
+                <div className="text-3xl mb-2">2️⃣</div>
+                <h4 className="text-golden font-semibold mb-2">
+                  Theo Trực Giác
+                </h4>
+                <p className="text-gray-400 text-sm">
+                  Chọn tùy chọn mà bạn cảm thấy hấp dẫn nhất theo trực giác
                 </p>
               </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-wrap justify-center gap-4">
-              <button
-                onClick={resetGame}
-                className="bg-gradient-to-r from-pink-600 to-rose-600 text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-              >
-                🔄 Chơi Lại
-              </button>
-              
-              <button
-                onClick={() => switchGame(selectedGame === 'shape' ? 'color' : selectedGame === 'color' ? 'number' : 'shape')}
-                className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-              >
-                🎮 Trò Chơi Khác
-              </button>
+              <div>
+                <div className="text-3xl mb-2">3️⃣</div>
+                <h4 className="text-golden font-semibold mb-2">Nhận Kết Quả</h4>
+                <p className="text-gray-400 text-sm">
+                  Khám phá ý nghĩa và nhận lời khuyên dành cho bạn
+                </p>
+              </div>
             </div>
           </div>
-        )}
 
-        {/* Game Instructions */}
-        <div className="mt-12 bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-sm rounded-3xl p-6 border border-gray-700/10">
-          <h3 className="text-xl font-bold text-white mb-4 text-center">
-            🎯 Cách Chơi
-          </h3>
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            <div>
-              <div className="text-3xl mb-2">1️⃣</div>
-              <h4 className="text-golden font-semibold mb-2">Chọn Trò Chơi</h4>
-              <p className="text-gray-400 text-sm">Chọn một trong ba trò chơi: Hình dạng, Màu sắc, hoặc Con số</p>
-            </div>
-            <div>
-              <div className="text-3xl mb-2">2️⃣</div>
-              <h4 className="text-golden font-semibold mb-2">Theo Trực Giác</h4>
-              <p className="text-gray-400 text-sm">Chọn tùy chọn mà bạn cảm thấy hấp dẫn nhất theo trực giác</p>
-            </div>
-            <div>
-              <div className="text-3xl mb-2">3️⃣</div>
-              <h4 className="text-golden font-semibold mb-2">Nhận Kết Quả</h4>
-              <p className="text-gray-400 text-sm">Khám phá ý nghĩa và nhận lời khuyên dành cho bạn</p>
-            </div>
-          </div>
+          {/* Related Links */}
+          <RelatedServices currentPage="/cards" />
         </div>
-
-        {/* Related Links */}
-        <div className="mt-16 text-center">
-          <h3 className="text-2xl font-bold text-white mb-8">Khám Phá Thêm</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/numbers/meaning"
-              className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🔢 Ý Nghĩa Con Số
-            </Link>
-            <Link
-              href="/tarot"
-              className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🔮 Bói Bài Tarot
-            </Link>
-            <Link
-              href="/cards"
-              className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🃏 Bói Bài Tây
-            </Link>
-            <Link
-              href="/numerology"
-              className="bg-gradient-to-r from-golden to-yellow-500 text-black px-6 py-3 rounded-full font-medium hover:scale-105 transition-all duration-300"
-            >
-              🔢 Thần Số Học
-            </Link>
-          </div>
-        </div>
-      </div>
       </div>
     </>
   );

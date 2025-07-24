@@ -11,7 +11,7 @@ export default function BlogCard({ post, variant = 'default' }: BlogCardProps) {
 
   return (
     <Link href={`/blog/${post.slug}`}>
-      <article className={`group bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden border border-gray-400/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl ${isSmall ? 'h-auto' : ''}`}>
+      <article className={`group cosmic-card rounded-2xl overflow-hidden border border-gray-400/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl ${isSmall ? 'h-auto' : ''}`}>
         {/* Featured Image */}
         <div className={`relative ${isSmall ? 'h-32' : 'h-48'} bg-gradient-to-br from-gray-600 to-indigo-600 overflow-hidden`}>
           {post.featuredImage ? (
