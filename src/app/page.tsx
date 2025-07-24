@@ -94,8 +94,8 @@ export default function Home() {
             <Link href="/numerology" className="group">
               <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-golden to-yellow-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
-                    <span className="text-black">🔢</span>
+                  <div className="w-16 h-16 bg-gradient-to-r  rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
+                    <span className="text-black"><img src="/numerology.png" alt="Thần Số Học" /></span>
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">Thần Số Học</h3>
                   <p className="text-gray-300 text-sm leading-relaxed mb-4">
@@ -122,8 +122,8 @@ export default function Home() {
             <Link href="/zodiac" className="group">
               <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
-                    <span className="text-white">♈</span>
+                  <div className="w-16 h-16 bg-gradient-to-r  rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
+                    <span className="text-white"><img src="/zodiac.png" alt="Thần Số Học" /></span>
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">Tử Vi 12 Cung</h3>
                   <p className="text-gray-300 text-sm leading-relaxed mb-4">
@@ -150,8 +150,8 @@ export default function Home() {
             <Link href="/fengshui" className="group">
               <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
-                    <span className="text-white">🧭</span>
+                  <div className="w-16 h-16 bg-gradient-to-r  rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
+                    <span className="text-white"><img src="/fengshui.png" alt="Thần Số Học" /></span>
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">Phong Thủy</h3>
                   <p className="text-gray-300 text-sm leading-relaxed mb-4">
@@ -178,8 +178,8 @@ export default function Home() {
             <Link href="/dream" className="group">
               <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
-                    <span className="text-white">�</span>
+                  <div className="w-16 h-16 bg-gradient-to-r  rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
+                    <span className="text-white"><img src="/dream.png" className='p-2' alt="Giải Mã & Bói" /></span>
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">Giải Mã & Bói</h3>
                   <p className="text-gray-300 text-sm leading-relaxed mb-4">
@@ -206,8 +206,8 @@ export default function Home() {
             <Link href="/calendar" className="group">
               <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
-                    <span className="text-white">�</span>
+                  <div className="w-16 h-16 bg-gradient-to-r  rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
+                    <span className="text-white"><img src="/calendar.png"  className='p-2' alt="Tiện Ích" /></span>
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">Tiện Ích</h3>
                   <p className="text-gray-300 text-sm leading-relaxed mb-4">
@@ -234,8 +234,8 @@ export default function Home() {
             <Link href="/blog" className="group">
               <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
                 <div className="text-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-amber-500 rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
-                    <span className="text-white">📚</span>
+                  <div className="w-16 h-16 bg-gradient-to-r  rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
+                    <span className="text-white"><img src="/eye.png"  className='p-2' alt="Blog Tâm Linh" /></span>
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-3">Blog Tâm Linh</h3>
                   <p className="text-gray-300 text-sm leading-relaxed mb-4">
