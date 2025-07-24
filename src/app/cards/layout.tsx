@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "🃏 Bói bài Tây online với 52 lá bài truyền thống. Xem vận mệnh, tình yêu, sự nghiệp.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
     images: [
       {
         url: "/og-cards.jpg",
@@ -58,11 +58,11 @@ const jsonLd = {
     description: 'Hướng dẫn sử dụng bài Tây để bói toán, khám phá vận mệnh và tìm hiểu tương lai qua các lá bài Cơ, Rô, Tép, Bích',
     author: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     dateModified: new Date().toISOString(),
     datePublished: new Date().toISOString(),

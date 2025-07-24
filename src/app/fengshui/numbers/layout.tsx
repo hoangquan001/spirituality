@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "📱 Phân tích sim số và biển số xe theo phong thủy. Xem ý nghĩa và năng lượng số.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
     images: [
       {
         url: "/og-fengshui-numbers.jpg",
@@ -58,11 +58,11 @@ const jsonLd = {
     description: 'Hướng dẫn phân tích sim số điện thoại và biển số xe theo nguyên tắc phong thủy và số học',
     author: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     dateModified: new Date().toISOString(),
     datePublished: new Date().toISOString(),

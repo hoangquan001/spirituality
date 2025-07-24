@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "🔮 Dự đoán vận mệnh 12 tháng tới qua thần số học. Khám phá cơ hội và thách thức.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
   },
   twitter: {
     card: "summary_large_image",

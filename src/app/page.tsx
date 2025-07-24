@@ -28,7 +28,7 @@ export default function Home() {
           <div className="mb-8 mt-8">
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="bg-gradient-to-r from-golden via-yellow-400 to-golden bg-clip-text text-transparent">
-                Giải Mã Tâm Linh
+                Thần Số Học
               </span>
               <br />
               <span className="text-white">Khám Phá Vận Mệnh</span>
@@ -330,7 +330,7 @@ export default function Home() {
             <div className="p-6 bg-gradient-to-r from-golden/10 to-purple/10 rounded-2xl border border-golden/20">
               <h4 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
                 <span className="text-golden">🌟</span>
-                Tại sao chọn Giải Mã Tâm Linh?
+                Tại sao chọn Thần Số Học?
               </h4>
               <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-300">
                 <div className="flex items-start gap-3">
@@ -387,7 +387,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
               <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Giải Mã Tâm Linh
+                Thần Số Học
               </span>
             </h2>
             <p className="text-gray-300 text-lg">
@@ -857,11 +857,11 @@ export default function Home() {
 
       {/* FAQ Section */}
       <FAQSection
-        description="Giải đáp những thắc mắc phổ biến về thần số học và các Giải Mã Tâm Linh"
+        description="Giải đáp những thắc mắc phổ biến về thần số học và các Thần Số Học"
         faqs={[
           {
             question: "Website có những gì?",
-            answer: "Giải Mã Tâm Linh cung cấp 6 lĩnh vực huyền học chính: Thần số học (phân tích ngày sinh, ghép đôi), Tử vi 12 cung (tử vi hôm nay, ghép đôi cung), Phong thủy (màu sắc, hướng nhà, chọn ngày), Giải mã & Bói (giấc mơ, Tarot, minigame), Tiện ích (chuyển lịch, tuổi cưới) và Blog kiến thức."
+            answer: "Thần Số Học cung cấp 6 lĩnh vực huyền học chính: Thần số học (phân tích ngày sinh, ghép đôi), Tử vi 12 cung (tử vi hôm nay, ghép đôi cung), Phong thủy (màu sắc, hướng nhà, chọn ngày), Giải mã & Bói (giấc mơ, Tarot, minigame), Tiện ích (chuyển lịch, tuổi cưới) và Blog kiến thức."
           },
           {
             question: "Phong thủy có tác dụng gì?",

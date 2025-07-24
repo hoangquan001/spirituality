@@ -112,7 +112,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2024 Giải Mã Tâm Linh. Tất cả quyền được bảo lưu.
+              © 2024 Thần Số Học. Tất cả quyền được bảo lưu.
             </p>
             <div className="flex items-center gap-4 text-sm">
               <Link href="/privacy" className="text-gray-400 hover:text-golden transition-colors">

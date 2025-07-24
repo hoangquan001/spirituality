@@ -9,12 +9,12 @@ export default function LegalStructuredData({ pageType }: LegalStructuredDataPro
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Chính Sách Bảo Mật",
-    "description": "Chính sách bảo mật của Giải Mã Tâm Linh về việc thu thập, sử dụng và bảo vệ thông tin cá nhân người dùng.",
+    "description": "Chính sách bảo mật của Thần Số Học về việc thu thập, sử dụng và bảo vệ thông tin cá nhân người dùng.",
     "url": `${baseUrl}/privacy`,
     "inLanguage": "vi-VN",
     "isPartOf": {
       "@type": "WebSite",
-      "name": "Giải Mã Tâm Linh",
+      "name": "Thần Số Học",
       "url": baseUrl
     },
     "about": {
@@ -24,15 +24,15 @@ export default function LegalStructuredData({ pageType }: LegalStructuredDataPro
     },
     "mainEntity": {
       "@type": "Article",
-      "headline": "Chính Sách Bảo Mật - Giải Mã Tâm Linh",
+      "headline": "Chính Sách Bảo Mật - Thần Số Học",
       "description": "Cam kết bảo vệ thông tin cá nhân và quyền riêng tư của người dùng khi sử dụng dịch vụ tâm linh miễn phí.",
       "author": {
         "@type": "Organization",
-        "name": "Giải Mã Tâm Linh"
+        "name": "Thần Số Học"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "Giải Mã Tâm Linh",
+        "name": "Thần Số Học",
         "logo": {
           "@type": "ImageObject",
           "url": `${baseUrl}/logo.png`
@@ -47,12 +47,12 @@ export default function LegalStructuredData({ pageType }: LegalStructuredDataPro
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Điều Khoản Sử Dụng",
-    "description": "Điều khoản và quy định sử dụng dịch vụ Giải Mã Tâm Linh, quyền và trách nhiệm của người dùng.",
+    "description": "Điều khoản và quy định sử dụng dịch vụ Thần Số Học, quyền và trách nhiệm của người dùng.",
     "url": `${baseUrl}/terms`,
     "inLanguage": "vi-VN",
     "isPartOf": {
       "@type": "WebSite",
-      "name": "Giải Mã Tâm Linh",
+      "name": "Thần Số Học",
       "url": baseUrl
     },
     "about": {
@@ -62,15 +62,15 @@ export default function LegalStructuredData({ pageType }: LegalStructuredDataPro
     },
     "mainEntity": {
       "@type": "Article",
-      "headline": "Điều Khoản Sử Dụng - Giải Mã Tâm Linh",
+      "headline": "Điều Khoản Sử Dụng - Thần Số Học",
       "description": "Quy định về việc sử dụng website và dịch vụ tâm linh, quyền và trách nhiệm của người dùng.",
       "author": {
         "@type": "Organization",
-        "name": "Giải Mã Tâm Linh"
+        "name": "Thần Số Học"
       },
       "publisher": {
         "@type": "Organization",
-        "name": "Giải Mã Tâm Linh",
+        "name": "Thần Số Học",
         "logo": {
           "@type": "ImageObject",
           "url": `${baseUrl}/logo.png`
@@ -103,7 +103,7 @@ export default function LegalStructuredData({ pageType }: LegalStructuredDataPro
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Giải Mã Tâm Linh",
+    "name": "Thần Số Học",
     "url": baseUrl,
     "logo": `${baseUrl}/logo.png`,
     "contactPoint": {

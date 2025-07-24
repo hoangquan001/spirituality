@@ -5,7 +5,7 @@ export default function StructuredData() {
     "name": "Tâm Linh - Thần Số Học",
     "url": "https://tamlinh.com",
     "logo": "https://tamlinh.com/logo.png",
-    "description": "Khám phá số mệnh và tương lai qua thần số học Pythagoras chính xác. Giải mã tâm linh miễn phí: cung hoàng đạo, giải mã giấc mơ, bói tình yêu, phong thủy.",
+    "description": "Khám phá số mệnh và tương lai qua thần số học Pythagoras chính xác. Thần Số Học miễn phí: cung hoàng đạo, giải mã giấc mơ, bói tình yêu, phong thủy.",
     "foundingDate": "2024",
     "contactPoint": {
       "@type": "ContactPoint",
@@ -45,7 +45,7 @@ export default function StructuredData() {
     "areaServed": "Vietnam",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Giải Mã Tâm Linh",
+      "name": "Thần Số Học",
       "itemListElement": [
         {
           "@type": "Offer",

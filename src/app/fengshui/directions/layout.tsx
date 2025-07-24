@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "🧭 Xác định hướng tốt xấu theo tuổi và mệnh phong thủy dựa trên số Kua.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
     images: [
       {
         url: "/og-fengshui-directions.jpg",
@@ -58,11 +58,11 @@ const jsonLd = {
     description: 'Hướng dẫn xác định hướng phong thủy phù hợp dựa trên số Kua cá nhân, bao gồm hướng cho giường ngủ, bàn làm việc và cửa chính',
     author: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     dateModified: new Date().toISOString(),
     datePublished: new Date().toISOString(),

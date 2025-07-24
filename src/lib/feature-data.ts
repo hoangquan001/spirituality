@@ -310,7 +310,7 @@ export const featureData = [
     {
         id: 30,
         title: "Về chúng tôi",
-        description: "Thông tin về website Giải Mã Tâm Linh",
+        description: "Thông tin về website Thần Số Học",
         icon: "ℹ️",
         href: "/about",
         group: 7,

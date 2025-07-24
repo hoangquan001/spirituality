@@ -16,7 +16,7 @@ export default function PrivacyPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-            Cam kết bảo vệ thông tin cá nhân và quyền riêng tư của bạn khi sử dụng website Giải Mã Tâm Linh
+            Cam kết bảo vệ thông tin cá nhân và quyền riêng tư của bạn khi sử dụng website Thần Số Học
           </p>
           
           {/* Breadcrumb */}
@@ -44,7 +44,7 @@ export default function PrivacyPage() {
                 Giới Thiệu
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Tại <strong className="text-white">Giải Mã Tâm Linh</strong>, chúng tôi cam kết bảo vệ quyền riêng tư và thông tin cá nhân của bạn. 
+                Tại <strong className="text-white">Thần Số Học</strong>, chúng tôi cam kết bảo vệ quyền riêng tư và thông tin cá nhân của bạn. 
                 Chính sách bảo mật này giải thích cách chúng tôi thu thập, sử dụng, lưu trữ và bảo vệ thông tin của bạn khi sử dụng website của chúng tôi.
               </p>
               <p className="text-gray-300 leading-relaxed">

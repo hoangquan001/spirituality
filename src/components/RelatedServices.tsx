@@ -47,7 +47,7 @@ export default function RelatedServices({ currentPage }: RelatedServicesProps) {
               </span>
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Chúng mình cam kết chia sẻ tất cả nội dung Giải Mã Tâm Linh chất
+              Chúng mình cam kết chia sẻ tất cả nội dung Thần Số Học chất
               lượng cao hoàn toàn miễn phí. Hãy khám phá và tìm hiểu về bản thân
               ngay hôm nay!
             </p>

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "🔢 Khám phá ý nghĩa sâu sắc của các con số từ 0-9 trong tâm linh và phong thủy.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
     images: [
       {
         url: "/og-numbers-meaning.jpg",
@@ -58,11 +58,11 @@ const jsonLd = {
     description: 'Hướng dẫn chi tiết về ý nghĩa tâm linh, phong thủy và năng lượng của từng con số từ 0 đến 9',
     author: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     dateModified: new Date().toISOString(),
     datePublished: new Date().toISOString(),

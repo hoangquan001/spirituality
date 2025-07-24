@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "📅 Lịch tử vi cá nhân - Dự đoán chi tiết từng ngày theo cung hoàng đạo.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
     images: [
       {
         url: "/og-zodiac-calendar.jpg",
@@ -58,11 +58,11 @@ const jsonLd = {
     description: 'Công cụ tạo lịch tử vi cá nhân giúp dự đoán vận mệnh, năng lượng, tâm trạng và lời khuyên cho từng ngày trong tháng',
     author: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     dateModified: new Date().toISOString(),
     datePublished: new Date().toISOString(),

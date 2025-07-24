@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "🎨 Tìm màu sắc phong thủy phù hợp theo mệnh ngũ hành và năm sinh.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
     images: [
       {
         url: "/og-fengshui-colors.jpg",
@@ -58,11 +58,11 @@ const jsonLd = {
     description: 'Hướng dẫn chọn màu sắc phong thủy phù hợp theo mệnh ngũ hành Kim, Mộc, Thủy, Hỏa, Thổ',
     author: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     dateModified: new Date().toISOString(),
     datePublished: new Date().toISOString(),

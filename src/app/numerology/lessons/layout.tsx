@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "📚 Khám phá bài học nghiệp số và thử thách cuộc đời qua thần số học.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
   },
   twitter: {
     card: "summary_large_image",

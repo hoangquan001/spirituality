@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "⭐ Xem tử vi hôm nay cho 12 cung hoàng đạo. Dự đoán về tình yêu, sự nghiệp, sức khỏe.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
     images: [
       {
         url: "/og-zodiac-today.jpg",
@@ -58,11 +58,11 @@ const jsonLd = {
     description: 'Dự đoán tử vi hàng ngày cho 12 cung hoàng đạo: Bạch Dương, Kim Ngưu, Song Tử, Cự Giải, Sư Tử, Xử Nữ, Thiên Bình, Bọ Cạp, Nhân Mã, Ma Kết, Bảo Bình, Song Ngư',
     author: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     dateModified: new Date().toISOString(),
     datePublished: new Date().toISOString(),

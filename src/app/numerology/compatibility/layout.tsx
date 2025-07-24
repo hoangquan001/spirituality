@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "💕 Khám phá độ hợp tình yêu qua thần số học. Phân tích tương thích dựa trên ngày sinh.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
   },
   twitter: {
     card: "summary_large_image",

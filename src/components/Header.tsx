@@ -42,7 +42,7 @@ export default function Header() {
             </div>
             <div>
               <h1 className="font-bold text-xl bg-gradient-to-r from-golden to-yellow-300 bg-clip-text text-transparent">
-                Giải Mã Tâm Linh
+                Thần Số Học
               </h1>
               <p className="text-gray-300 text-xs font-medium">
                 Khám phá bản thân

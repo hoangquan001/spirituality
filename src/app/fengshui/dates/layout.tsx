@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "📅 Chọn ngày tốt cho cưới hỏi, khai trương, khởi công theo phong thủy.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
     images: [
       {
         url: "/og-fengshui-dates.jpg",
@@ -58,11 +58,11 @@ const jsonLd = {
     description: 'Hướng dẫn chọn ngày tốt cho các sự kiện quan trọng như cưới hỏi, khai trương, khởi công theo nguyên tắc phong thủy',
     author: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     dateModified: new Date().toISOString(),
     datePublished: new Date().toISOString(),

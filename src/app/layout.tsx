@@ -24,13 +24,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Giải Mã Tâm Linh | Thần Số Học Pythagoras - Tử Vi - Phong Thủy Miễn Phí",
+  title: "Thần Số Học | Thần Số Học Pythagoras - Tử Vi - Phong Thủy Miễn Phí",
   description: "🔮 Website tâm linh hàng đầu Việt Nam với 50,000+ người dùng. Thần số học Pythagoras chính xác, tử vi 12 cung hoàng đạo, phong thủy nhà ở, giải mã giấc mơ. Miễn phí 100% - Hướng dẫn chi tiết từ A-Z.",
   keywords: "thần số học, numerology pythagoras, cung hoàng đạo, tử vi hôm nay, phong thủy nhà ở, giải mã giấc mơ, số mệnh, bói tên, ghép đôi ngày sinh, lịch âm dương, hướng dẫn thần số học, tâm linh việt nam",
   authors: [{ name: "Tâm Linh Team" }],
   robots: "index, follow",
   openGraph: {
-    title: "Giải Mã Tâm Linh | Thần Số Học Pythagoras - Tử Vi - Phong Thủy",
+    title: "Thần Số Học | Thần Số Học Pythagoras - Tử Vi - Phong Thủy",
     description: "🔮 Website tâm linh #1 Việt Nam. Thần số học Pythagoras chính xác, tử vi 12 cung, phong thủy nhà ở, giải mã giấc mơ. 50,000+ người tin tưởng. Miễn phí 100%.",
     type: "website",
     locale: "vi_VN",

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "🏺 Gợi ý vật phẩm phong thủy phù hợp theo tuổi và mệnh ngũ hành.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
     images: [
       {
         url: "/og-fengshui-items.jpg",
@@ -58,11 +58,11 @@ const jsonLd = {
     description: 'Hướng dẫn chọn và bố trí vật phẩm phong thủy phù hợp theo mệnh Kim, Mộc, Thủy, Hỏa, Thổ',
     author: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     dateModified: new Date().toISOString(),
     datePublished: new Date().toISOString(),

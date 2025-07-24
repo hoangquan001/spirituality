@@ -16,7 +16,7 @@ export default function TermsPage() {
             </span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-            Quy định và điều khoản khi sử dụng website Giải Mã Tâm Linh
+            Quy định và điều khoản khi sử dụng website Thần Số Học
           </p>
           
           {/* Breadcrumb */}
@@ -44,7 +44,7 @@ export default function TermsPage() {
                 Giới Thiệu
               </h2>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Chào mừng bạn đến với <strong className="text-white">Giải Mã Tâm Linh</strong>! Những điều khoản sử dụng này 
+                Chào mừng bạn đến với <strong className="text-white">Thần Số Học</strong>! Những điều khoản sử dụng này 
                 ("Điều Khoản") quy định việc sử dụng website của chúng tôi tại địa chỉ tamlinh.com.
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
@@ -69,7 +69,7 @@ export default function TermsPage() {
               </h2>
               
               <p className="text-gray-300 leading-relaxed mb-6">
-                Giải Mã Tâm Linh chia sẻ các nội dung tâm linh miễn phí bao gồm:
+                Thần Số Học chia sẻ các nội dung tâm linh miễn phí bao gồm:
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">
@@ -170,7 +170,7 @@ export default function TermsPage() {
                   <h3 className="text-lg font-semibold text-white mb-3">Nội Dung Của Chúng Tôi</h3>
                   <p className="text-gray-300 leading-relaxed mb-4">
                     Tất cả nội dung trên website bao gồm văn bản, hình ảnh, logo, thiết kế, thuật toán tính toán,
-                    và phần mềm đều thuộc quyền sở hữu của Giải Mã Tâm Linh hoặc được cấp phép sử dụng hợp pháp.
+                    và phần mềm đều thuộc quyền sở hữu của Thần Số Học hoặc được cấp phép sử dụng hợp pháp.
                   </p>
                   <ul className="text-gray-300 space-y-2">
                     <li>• Bạn có thể xem và sử dụng nội dung cho mục đích cá nhân</li>

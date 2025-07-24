@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "🏠 Tư vấn phong thủy nhà ở và nội thất toàn diện theo nguyên tắc phong thủy.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
     images: [
       {
         url: "/og-fengshui-home.jpg",
@@ -58,11 +58,11 @@ const jsonLd = {
     description: 'Hướng dẫn bố trí phong thủy cho từng phòng trong nhà, từ phòng khách, phòng ngủ đến phòng bếp và phòng tắm',
     author: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     dateModified: new Date().toISOString(),
     datePublished: new Date().toISOString(),

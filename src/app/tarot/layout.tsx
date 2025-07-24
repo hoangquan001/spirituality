@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "🔮 Bói bài Tarot online miễn phí. Rút bài để khám phá tương lai, tình yêu, sự nghiệp.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
     images: [
       {
         url: "/og-tarot.jpg",
@@ -58,11 +58,11 @@ const jsonLd = {
     description: 'Hướng dẫn sử dụng bài Tarot để bói toán, khám phá tương lai và tìm hiểu về bản thân qua các lá bài Major Arcana',
     author: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     dateModified: new Date().toISOString(),
     datePublished: new Date().toISOString(),

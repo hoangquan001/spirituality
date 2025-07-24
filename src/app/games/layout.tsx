@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "🎮 Minigame bói vui nhộn. Khám phá tính cách qua hình dạng, màu sắc, con số.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
     images: [
       {
         url: "/og-games.jpg",
@@ -58,11 +58,11 @@ const jsonLd = {
     description: 'Các trò chơi bói tương tác giúp khám phá tính cách, nhận lời khuyên và hiểu rõ bản thân qua trực giác',
     author: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     dateModified: new Date().toISOString(),
     datePublished: new Date().toISOString(),

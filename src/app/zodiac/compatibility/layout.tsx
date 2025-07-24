@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "💕 Ghép đôi cung hoàng đạo - Xem độ hợp tình yêu giữa 12 cung hoàng đạo.",
     type: "website",
     locale: "vi_VN",
-    siteName: "Giải Mã Tâm Linh",
+    siteName: "Thần Số Học",
     images: [
       {
         url: "/og-zodiac-compatibility.jpg",
@@ -58,11 +58,11 @@ const jsonLd = {
     description: 'Công cụ ghép đôi cung hoàng đạo giúp phân tích mức độ tương thích trong tình yêu, tình bạn và công việc giữa 12 cung hoàng đạo',
     author: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Giải Mã Tâm Linh'
+      name: 'Thần Số Học'
     },
     dateModified: new Date().toISOString(),
     datePublished: new Date().toISOString(),
