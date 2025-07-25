@@ -197,14 +197,14 @@ export default function NumerologyGuidePage() {
             </span>
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Link href="/numerology" className="group">
+            <Link href="/than-so-hoc" className="group">
               <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105">
                 <div className="text-3xl mb-4">🔢</div>
                 <h3 className="text-xl font-bold text-white mb-3 group-hover:text-golden transition-colors">Tính Số Mệnh</h3>
                 <p className="text-gray-300 text-sm">Khám phá số mệnh và tính cách của bạn</p>
               </div>
             </Link>
-            <Link href="/name-analysis" className="group">
+            <Link href="/than-so-hoc/phan-tich-ten" className="group">
               <div className="bg-gradient-to-br from-gray-900/30 to-gray-800/30 backdrop-blur-sm rounded-xl p-6 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105">
                 <div className="text-3xl mb-4">✍️</div>
                 <h3 className="text-xl font-bold text-white mb-3 group-hover:text-golden transition-colors">Phân Tích Tên</h3>

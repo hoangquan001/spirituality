@@ -516,7 +516,7 @@ export default function TarotPage() {
           )}
 
           {/* Related Links */}
-          <RelatedServices currentPage="/cards" />
+          <RelatedServices currentPage="/boi-bai-tay" />
         </div>
       </div>
     </>

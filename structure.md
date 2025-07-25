@@ -41,9 +41,9 @@ src/
 			page.tsx
 		lunar-convert/
 			page.tsx
-		name-analysis/
+		than-so-hoc/phan-tich-ten/
 			page.tsx
-		numerology/
+		than-so-hoc/
 			page.tsx
 		zodiac/
 			page.tsx
@@ -104,10 +104,10 @@ src/
   - Library: spiritualEvents.ts - Event data and management
 
 ### 5. Original Features
-- **Zodiac** (`/zodiac`): Cung hoàng đạo và tính cách
-- **Numerology** (`/numerology`): Thần số học và phân tích số
+- **Zodiac** (`/cung-hoang-dao`): Cung hoàng đạo và tính cách
+- **Numerology** (`/than-so-hoc`): Thần số học và phân tích số
 - **Dream** (`/dream`): Giải mã giấc mơ
-- **Name Analysis** (`/name-analysis`): Phân tích tên theo phong thủy
+- **Name Analysis** (`/than-so-hoc/phan-tich-ten`): Phân tích tên theo phong thủy
 - **Feng Shui** (`/feng-shui`): Tư vấn phong thủy
 - **Calendar** (`/calendar`): Lịch tâm linh và ngày tốt xấu
 - **About** (`/about`): Giới thiệu về website

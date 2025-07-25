@@ -102,11 +102,9 @@ body {
 
 .cosmic-card {
   background: linear-gradient(to bottom right, rgba(31, 41, 55, 0.5), rgba(17, 24, 39, 0.5));
-  backdrop-filter: blur(8px);
   border-radius: 1rem;
   box-shadow: 0 10px 25px rgba(0,0,0,0.25), 0 2px 8px rgba(31, 41, 55, 0.15);
   border: 1px solid rgba(156, 163, 175, 0.2);
-  height: fit-content;
   transition: all 0.3s ease;
 }
 
@@ -217,6 +215,7 @@ body {
 .prose p {
   margin-bottom: 1rem;
   line-height: 1.8;
+  color: var(--color-gray-300);
 }
 
 .prose strong {

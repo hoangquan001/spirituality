@@ -11,7 +11,7 @@ export default function ZodiacStructuredData() {
     },
     "serviceType": "Astrology",
     "areaServed": "Vietnam",
-    "url": "https://tamlinh.com/zodiac",
+    "url": "https://tamlinh.com/cung-hoang-dao",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -56,14 +56,6 @@ export default function ZodiacStructuredData() {
           "@type": "Answer",
           "text": "Theo chiêm tinh học, mỗi cung hoàng đạo chịu ảnh hưởng của các yếu tố khác nhau như nguyên tố (Hỏa, Thổ, Khí, Thủy), hành tinh cai quản và vị trí trong chu kỳ năm. Những yếu tố này tạo nên những đặc điểm tính cách riêng biệt. Ví dụ, các cung Hỏa (Bạch Dương, Sư Tử, Nhân Mã) thường năng động và nhiệt huyết, trong khi các cung Thủy (Cự Giải, Bọ Cạp, Song Ngư) có xu hướng cảm xúc và trực giác."
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Website cung hoàng đạo có tính phí không?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Không, tất cả nội dung cung hoàng đạo tại Tâm Linh đều hoàn toàn miễn phí. Bạn có thể xem thông tin chi tiết về 12 cung hoàng đạo, phân tích tính cách, tìm hiểu về tình yêu và sự nghiệp mà không mất phí. Chúng mình cam kết chia sẻ thông tin hữu ích để giúp bạn hiểu rõ hơn về bản thân."
-        }
       }
     ]
   };
@@ -82,7 +74,7 @@ export default function ZodiacStructuredData() {
         "@type": "ListItem",
         "position": 2,
         "name": "Cung Hoàng Đạo",
-        "item": "https://tamlinh.com/zodiac"
+        "item": "https://tamlinh.com/cung-hoang-dao"
       }
     ]
   };

@@ -1,7 +1,6 @@
 import { MetadataRoute } from 'next'
-import { blogPosts } from '@/lib/blogData'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://tamlinh.com'
   
   // Static pages
@@ -13,13 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/numerology`,
+      url: `${baseUrl}/than-so-hoc`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/zodiac`,
+      url: `${baseUrl}/cung-hoang-dao`,
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 0.9,
@@ -37,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/name-analysis`,
+      url: `${baseUrl}/than-so-hoc/phan-tich-ten`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
@@ -74,81 +73,81 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     // Numerology sub-pages
     {
-      url: `${baseUrl}/numerology/career`,
+      url: `${baseUrl}/than-so-hoc/goi-y-nghe-nghiep`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/numerology/compatibility`,
+      url: `${baseUrl}/than-so-hoc/ghep-doi`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/numerology/forecast`,
+      url: `${baseUrl}/than-so-hoc/du-doan-12-thang`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/numerology/lessons`,
+      url: `${baseUrl}/than-so-hoc/bai-hoc-nghiep-so`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
     // Feng Shui sub-pages
     {
-      url: `${baseUrl}/fengshui/directions`,
+      url: `${baseUrl}/phong-thuy/directions`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/fengshui/colors`,
+      url: `${baseUrl}/phong-thuy/colors`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/fengshui/numbers`,
+      url: `${baseUrl}/phong-thuy/numbers`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/fengshui/dates`,
+      url: `${baseUrl}/phong-thuy/dates`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/fengshui/home`,
+      url: `${baseUrl}/phong-thuy/home`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/fengshui/items`,
+      url: `${baseUrl}/phong-thuy/items`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
     // Zodiac sub-pages
     {
-      url: `${baseUrl}/zodiac/today`,
+      url: `${baseUrl}/cung-hoang-dao/today`,
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/zodiac/compatibility`,
+      url: `${baseUrl}/cung-hoang-dao/compatibility`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/zodiac/calendar`,
+      url: `${baseUrl}/cung-hoang-dao/calendar`,
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 0.7,
@@ -175,14 +174,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   // Blog posts
-  const blogPages = blogPosts
-    .filter(post => post.isPublished)
-    .map(post => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.publishedAt),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    }))
+  // const blogPages = (await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ''}/api/blog?published=true`)).json()
+  //   .map(post => ({
+  //     url: `${baseUrl}/blog/${post.slug}`,
+  //     lastModified: new Date(post.publishedAt),
+  //     changeFrequency: 'monthly' as const,
+  //     priority: 0.6,
+  //   }))
 
   // Zodiac signs
   const zodiacSigns = [
@@ -191,11 +189,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
   
   const zodiacPages = zodiacSigns.map(sign => ({
-    url: `${baseUrl}/zodiac/${sign}`,
+    url: `${baseUrl}/cung-hoang-dao/${sign}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.6,
   }))
 
-  return [...staticPages, ...blogPages, ...zodiacPages]
+  return [...staticPages, ...zodiacPages]
 }

@@ -11,7 +11,7 @@ export default function NameAnalysisStructuredData() {
     },
     "serviceType": "Name Analysis",
     "areaServed": "Vietnam",
-    "url": "https://tamlinh.com/name-analysis",
+    "url": "https://tamlinh.com/than-so-hoc/phan-tich-ten",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -74,7 +74,7 @@ export default function NameAnalysisStructuredData() {
         "@type": "ListItem",
         "position": 2,
         "name": "Bói Tên",
-        "item": "https://tamlinh.com/name-analysis"
+        "item": "https://tamlinh.com/than-so-hoc/phan-tich-ten"
       }
     ]
   };

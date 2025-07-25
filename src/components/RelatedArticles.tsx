@@ -37,7 +37,7 @@ const allArticles: RelatedArticle[] = [
   },
   {
     title: "Cách Tính Số Mệnh Chính Xác",
-    href: "/numerology",
+    href: "/than-so-hoc",
     description: "Công cụ tính số mệnh theo phương pháp Pythagoras, phân tích tính cách và vận mệnh",
     category: "numerology",
     readTime: 5
@@ -51,14 +51,14 @@ const allArticles: RelatedArticle[] = [
   },
   {
     title: "Phong Thủy Hướng Nhà",
-    href: "/fengshui/directions",
+    href: "/phong-thuy/directions",
     description: "Tìm hướng nhà phù hợp với tuổi để thu hút may mắn và thịnh vượng",
     category: "fengshui",
     readTime: 6
   },
   {
     title: "Bói Tên Theo Thần Số Học",
-    href: "/name-analysis",
+    href: "/than-so-hoc/phan-tich-ten",
     description: "Phân tích ý nghĩa tên tuổi, tác động đến tính cách và vận mệnh",
     category: "numerology",
     readTime: 4

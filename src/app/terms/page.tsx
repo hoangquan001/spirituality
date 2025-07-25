@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import LegalStructuredData from '../../components/LegalStructuredData';
-import { CalendarIcon, ContactIcon, LegalIcon, NumerologyIcon, SecurityIcon } from '../../components/icons';
+import LegalStructuredData from '@/components/LegalStructuredData';
+import { CalendarIcon, ContactIcon, LegalIcon, NumerologyIcon, SecurityIcon } from '@/components/icons';
 
 export default function TermsPage() {
   return (

@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import LegalStructuredData from '../../components/LegalStructuredData';
-import { ContactIcon, EmailIcon, LegalIcon, SecurityIcon } from '../../components/icons';
+import LegalStructuredData from '@/components/LegalStructuredData';
+import { ContactIcon, EmailIcon, LegalIcon, SecurityIcon } from '@/components/icons';
 
 export default function PrivacyPage() {
   return (

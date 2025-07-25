@@ -1,27 +1,24 @@
-'use client';
 
-import { blogPosts } from '@/lib/blogData';
+`params.slug`;
+import { notFound } from 'next/navigation';
 import { BlogPost } from '@/types/blog';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
 
 interface BlogPostPageProps {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = blogPosts.find(p => p.slug === params.slug);
-
-  if (!post) {
-    notFound();
-  }
-
-  // Lấy bài viết liên quan (cùng category)
-  const relatedPosts = blogPosts
-    .filter(p => p.category === post.category && p.id !== post.id)
-    .slice(0, 3);
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  // Fetch data from the API route (server-side)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ''}/api/blog/slug/${params.slug}`, {
+    cache: 'no-store',
+  });
+  if (res.status === 404) notFound();
+  if (!res.ok) throw new Error('Failed to fetch post');
+  const data = await res.json();
+  const post: BlogPost = data.post;
+  const relatedPosts: BlogPost[] = data.relatedPosts;
 
   return (
     <div className="min-h-screen">
@@ -60,7 +57,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
               <div className="flex items-center space-x-2">
                 <span>📅</span>
-                <span>{new Date(post.publishedAt).toLocaleDateString('vi-VN')}</span>
+                <span>{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('vi-VN') : new Date(post.createdAt).toLocaleDateString('vi-VN')}</span>
               </div>
               {post.readTime && (
                 <div className="flex items-center space-x-2">
@@ -102,9 +99,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="cosmic-card rounded-2xl p-8 md:p-12 border border-gray-700/20 mb-12">
             <div className="prose prose-lg prose-invert max-w-none">
               {/* Hiển thị nội dung markdown - trong thực tế bạn có thể dùng thư viện như react-markdown */}
-              <div className="text-white leading-relaxed whitespace-pre-wrap">
-                {post.content}
-              </div>
+              <ReactMarkdown>{post.content}</ReactMarkdown>
+        
             </div>
           </div>
 
@@ -197,7 +193,7 @@ function RelatedPostCard({ post }: { post: BlogPost }) {
             {post.excerpt}
           </p>
           <div className="text-xs text-purple-300">
-            {new Date(post.publishedAt).toLocaleDateString('vi-VN')}
+            {new Date(post.publishedAt!).toLocaleDateString('vi-VN')}
           </div>
         </div>
       </article>

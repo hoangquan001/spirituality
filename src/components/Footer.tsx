@@ -46,10 +46,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-4 text-golden">Thần Số Học</h4>
             <ul className="space-y-2">
-              <li><Link href="/numerology" className="text-gray-300 hover:text-golden transition-colors">Tra cứu thần số học</Link></li>
-              <li><Link href="/numerology/compatibility" className="text-gray-300 hover:text-golden transition-colors">Ghép đôi ngày sinh</Link></li>
-              <li><Link href="/name-analysis" className="text-gray-300 hover:text-golden transition-colors">Phân tích tên</Link></li>
-              <li><Link href="/numerology/forecast" className="text-gray-300 hover:text-golden transition-colors">Dự đoán 12 tháng</Link></li>
+              <li><Link href="/than-so-hoc" className="text-gray-300 hover:text-golden transition-colors">Tra cứu thần số học</Link></li>
+              <li><Link href="/than-so-hoc/ghep-doi" className="text-gray-300 hover:text-golden transition-colors">Ghép đôi ngày sinh</Link></li>
+              <li><Link href="/than-so-hoc/phan-tich-ten" className="text-gray-300 hover:text-golden transition-colors">Phân tích tên</Link></li>
+              <li><Link href="/than-so-hoc/du-doan-12-thang" className="text-gray-300 hover:text-golden transition-colors">Dự đoán 12 tháng</Link></li>
             </ul>
           </div>
 
@@ -57,10 +57,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-4 text-golden">Cung Hoàng Đạo</h4>
             <ul className="space-y-2">
-              <li><Link href="/zodiac/today" className="text-gray-300 hover:text-golden transition-colors">Tử vi hôm nay</Link></li>
-              <li><Link href="/zodiac" className="text-gray-300 hover:text-golden transition-colors">Tử vi 12 cung</Link></li>
-              <li><Link href="/zodiac/compatibility" className="text-gray-300 hover:text-golden transition-colors">Ghép đôi cung hoàng đạo</Link></li>
-              <li><Link href="/zodiac/calendar" className="text-gray-300 hover:text-golden transition-colors">Lịch tử vi cá nhân</Link></li>
+              <li><Link href="/cung-hoang-dao/today" className="text-gray-300 hover:text-golden transition-colors">Tử vi hôm nay</Link></li>
+              <li><Link href="/cung-hoang-dao" className="text-gray-300 hover:text-golden transition-colors">Tử vi 12 cung</Link></li>
+              <li><Link href="/cung-hoang-dao/compatibility" className="text-gray-300 hover:text-golden transition-colors">Ghép đôi cung hoàng đạo</Link></li>
+              <li><Link href="/cung-hoang-dao/calendar" className="text-gray-300 hover:text-golden transition-colors">Lịch tử vi cá nhân</Link></li>
             </ul>
           </div>
 
@@ -90,8 +90,8 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-4 text-golden">Tiện Ích</h4>
             <ul className="space-y-2">
-              <li><Link href="/calendar/convert" className="text-gray-300 hover:text-golden transition-colors">Chuyển đổi lịch</Link></li>
-              <li><Link href="/calendar/almanac" className="text-gray-300 hover:text-golden transition-colors">Lịch vạn sự</Link></li>
+              <li><Link href="/chuyen-doi-lich" className="text-gray-300 hover:text-golden transition-colors">Chuyển đổi lịch</Link></li>
+              <li><Link href="/lich-van-nien/almanac" className="text-gray-300 hover:text-golden transition-colors">Lịch vạn sự</Link></li>
               <li><Link href="/marriage-age" className="text-gray-300 hover:text-golden transition-colors">Tuổi kết hôn</Link></li>
               <li><Link href="/tam-tai" className="text-gray-300 hover:text-golden transition-colors">Tam tai - Hạn năm</Link></li>
             </ul>

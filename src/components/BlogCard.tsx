@@ -53,7 +53,7 @@ export default function BlogCard({ post, variant = 'default' }: BlogCardProps) {
             </div>
             <div className="flex items-center space-x-2">
               <span>📅</span>
-              <span>{new Date(post.publishedAt).toLocaleDateString('vi-VN')}</span>
+              <span>{post.publishedAt ? new Date(post.publishedAt).toLocaleDateString('vi-VN') : new Date(post.createdAt).toLocaleDateString('vi-VN')}</span>
             </div>
           </div>
 

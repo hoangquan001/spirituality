@@ -56,14 +56,6 @@ export default function DreamStructuredData() {
           "@type": "Answer",
           "text": "Theo quan niệm tâm linh, một số giấc mơ có thể mang tính dự báo, đặc biệt là những giấc mơ rõ ràng và ấn tượng mạnh. Tuy nhiên, hầu hết giấc mơ phản ánh tâm trạng hiện tại và những lo lắng trong tiềm thức. Quan trọng là hiểu được thông điệp mà giấc mơ muốn truyền tải để đưa ra quyết định đúng đắn trong cuộc sống."
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Website giải mã giấc mơ có tính phí không?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Không, tất cả nội dung giải mã giấc mơ tại Tâm Linh đều hoàn toàn miễn phí. Bạn có thể tìm kiếm ý nghĩa của bất kỳ biểu tượng nào trong giấc mơ, nhận phân tích chi tiết và lời khuyên mà không mất phí. Chúng mình cam kết chia sẻ từ điển giấc mơ đầy đủ cho mọi người."
-        }
       }
     ]
   };
