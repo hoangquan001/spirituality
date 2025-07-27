@@ -10,7 +10,7 @@ interface Props {
 
 export default function ZodiacDetailPage({ params }: Props) {
   const zodiac = getZodiacBySlug(params.sign);
-
+ 
   if (!zodiac) {
     notFound();
   }
@@ -26,7 +26,7 @@ export default function ZodiacDetailPage({ params }: Props) {
           </Link>
           
           <div className={`w-24 h-24 bg-gradient-to-br ${zodiac.color} rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl`}>
-            <span className="text-4xl text-white">{zodiac.icon}</span>
+            <span className="text-4xl text-white"><img src={zodiac.icon} alt={zodiac.name} /></span>
           </div>
           
           <h1 className="text-3xl md:text-5xl font-bold mb-4">
