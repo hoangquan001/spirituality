@@ -27,8 +27,8 @@ const zodiacSigns: ZodiacSign[] = [
     symbol: "Cừu",
     description:
       "Năng động, quyết đoán và đầy nhiệt huyết. Người Bạch Dương luôn sẵn sàng đối mặt với thử thách.",
-    icon: "♈",
-    color: "from-red-600 to-orange-600",
+    icon: "/aries.png",
+    color: "from-gray-700 to-gray-800",
   },
   {
     name: "Kim Ngưu",
@@ -39,8 +39,8 @@ const zodiacSigns: ZodiacSign[] = [
     symbol: "Bò",
     description:
       "Ổn định, đáng tin cậy và yêu thích sự thoải mái. Người Kim Ngưu trân trọng vật chất và cảm xúc.",
-    icon: "♉",
-    color: "from-green-600 to-emerald-600",
+    icon: "/taurus.png",
+    color: "from-gray-700 to-gray-800",
   },
   {
     name: "Song Tử",
@@ -51,8 +51,8 @@ const zodiacSigns: ZodiacSign[] = [
     symbol: "Đôi",
     description:
       "Thông minh, linh hoạt và giao tiếp giỏi. Người Song Tử có khả năng thích nghi nhanh với mọi hoàn cảnh.",
-    icon: "♊",
-    color: "from-yellow-600 to-amber-600",
+    icon: "/gemini.png",
+    color: "from-gray-700 to-gray-800",
   },
   {
     name: "Cự Giải",
@@ -63,8 +63,8 @@ const zodiacSigns: ZodiacSign[] = [
     symbol: "Cua",
     description:
       "Nhạy cảm, quan tâm gia đình và trực giác mạnh. Người Cử Giải có trái tim ấm áp và tình yêu sâu sắc.",
-    icon: "♋",
-    color: "from-blue-600 to-cyan-600",
+    icon: "/cancer.png",
+    color: "from-gray-700 to-gray-800",
   },
   {
     name: "Sư Tử",
@@ -75,8 +75,8 @@ const zodiacSigns: ZodiacSign[] = [
     symbol: "Sư tử",
     description:
       "Tự tin, hào phóng và có khả năng lãnh đạo. Người Sư Tử luôn tỏa sáng và truyền cảm hứng cho người khác.",
-    icon: "♌",
-    color: "from-orange-600 to-yellow-600",
+    icon: "/leo.png",
+    color: "from-gray-700 to-gray-800",
   },
   {
     name: "Xử Nữ",
@@ -87,8 +87,8 @@ const zodiacSigns: ZodiacSign[] = [
     symbol: "Trinh nữ",
     description:
       "Cẩn thận, tỉ mỉ và có khả năng phân tích tốt. Người Xử Nữ luôn hướng đến sự hoàn hảo trong mọi việc.",
-    icon: "♍",
-    color: "from-gray-600 to-gray-700",
+    icon: "/virgo.png",
+    color: "from-gray-700 to-gray-800",
   },
   {
     name: "Thiên Bình",
@@ -99,8 +99,8 @@ const zodiacSigns: ZodiacSign[] = [
     symbol: "Cán cân",
     description:
       "Hòa hợp, công bằng và yêu thích cái đẹp. Người Thiên Bình luôn tìm kiếm sự cân bằng trong cuộc sống.",
-    icon: "♎",
-    color: "from-pink-600 to-rose-600",
+    icon: "/libra.png",
+    color: "from-gray-700 to-gray-800",
   },
   {
     name: "Hổ Cáp",
@@ -111,8 +111,8 @@ const zodiacSigns: ZodiacSign[] = [
     symbol: "Bọ cạp",
     description:
       "Mạnh mẽ, bí ẩn và có ý chí kiên định. Người Hổ Cáp có khả năng chuyển hóa và tái sinh mạnh mẽ.",
-    icon: "♏",
-    color: "from-red-800 to-red-600",
+    icon: "/scorpio.png",
+    color: "from-gray-700 to-gray-800",
   },
   {
     name: "Nhân Mã",
@@ -123,7 +123,7 @@ const zodiacSigns: ZodiacSign[] = [
     symbol: "Cung thủ",
     description:
       "Phiêu lưu, lạc quan và yêu thích tự do. Người Nhân Mã luôn tìm kiếm những trải nghiệm mới mẻ.",
-    icon: "♐",
+    icon: "/sagittarius.png",
     color: "from-gray-700 to-gray-800",
   },
   {
@@ -135,8 +135,8 @@ const zodiacSigns: ZodiacSign[] = [
     symbol: "Dê núi",
     description:
       "Kiên trì, có trách nhiệm và tham vọng. Người Ma Kết luôn nỗ lực để đạt được mục tiêu cao.",
-    icon: "♑",
-    color: "from-gray-600 to-slate-600",
+    icon: "/capricorn.png",
+    color: "from-gray-700 to-gray-800",
   },
   {
     name: "Bảo Bình",
@@ -147,8 +147,8 @@ const zodiacSigns: ZodiacSign[] = [
     symbol: "Người mang nước",
     description:
       "Độc lập, sáng tạo và có tầm nhìn xa. Người Bảo Bình luôn đi trước thời đại và yêu thích sự mới mẻ.",
-    icon: "♒",
-    color: "from-cyan-600 to-blue-600",
+    icon: "/aquarius.png",
+    color: "from-gray-700 to-gray-800",
   },
   {
     name: "Song Ngư",
@@ -159,8 +159,8 @@ const zodiacSigns: ZodiacSign[] = [
     symbol: "Cá",
     description:
       "Nhạy cảm, trực giác và giàu tình cảm. Người Song Ngư có khả năng thấu hiểu sâu sắc cảm xúc của người khác.",
-    icon: "♓",
-    color: "from-teal-600 to-green-600",
+    icon: "/pisces.png",
+    color: "from-gray-700 to-gray-800",
   },
 ];
 
@@ -247,16 +247,19 @@ export default function ZodiacPage() {
                   <div className="text-center">
                     {/* Icon */}
                     <div
-                      className={`w-16 h-16 bg-gradient-to-br ${sign.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
+                      className={`w-16 h-16 bg-gradient-to-br ${sign.color} border-3 border-yellow-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
                     >
-                      <span className="text-2xl text-white">{sign.icon}</span>
+                      <span className="text-2xl text-white p-1"><img src={sign.icon} alt=""  className="p-1" /></span>
                     </div>
 
                     {/* Name & Dates */}
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      {sign.name}
+                    <h3 className="text-xl font-thin text-white mb-2">
+                      <p className="text-golden"> {sign.name}</p>
+                      <div>
+                        <img src="/break-line.png" className="w-1/3 mx-auto" alt="" />
+                      </div>
                     </h3>
-                    <p className="text-golden font-medium mb-4">{sign.dates}</p>
+                    <p className="font-medium mb-4">{sign.dates}</p>
 
                     {/* Details */}
                     <div className="space-y-2 mb-4">
@@ -295,8 +298,8 @@ export default function ZodiacPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="cosmic-card rounded-xl p-6 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🔥</span>
+                <div className="w-16 h-16 bg-gradient-to-br from-orange-300 to-orange-600 shadow-2xl shadow-amber-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl"><img src="/fire.png" alt="" /></span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Hỏa</h3>
                 <p className="text-gray-300 mb-3">Năng động, đam mê, dẫn dắt</p>
@@ -306,8 +309,8 @@ export default function ZodiacPage() {
               </div>
 
               <div className="cosmic-card rounded-xl p-6 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🌍</span>
+                <div className="w-16 h-16 bg-gradient-to-br from-lime-200 to-lime-600 shadow-2xl shadow-lime-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl"><img src="/rock.png" alt="" /></span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Thổ</h3>
                 <p className="text-gray-300 mb-3">
@@ -319,8 +322,8 @@ export default function ZodiacPage() {
               </div>
 
               <div className="cosmic-card rounded-xl p-6 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-cyan-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">💨</span>
+                <div className="w-16 h-16 bg-gradient-to-br from-cyan-200 to-cyan-600 shadow-2xl shadow-cyan-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl"><img src="/wind.png" alt="" /></span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Khí</h3>
                 <p className="text-gray-300 mb-3">
@@ -332,8 +335,8 @@ export default function ZodiacPage() {
               </div>
 
               <div className="cosmic-card rounded-xl p-6 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">💧</span>
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-200 to-teal-600 shadow-2xl shadow-blue-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl"><img src="/water.png" alt="" /></span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">Thủy</h3>
                 <p className="text-gray-300 mb-3">
