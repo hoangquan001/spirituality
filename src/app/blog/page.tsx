@@ -1,30 +1,32 @@
-'use client';
 
 import BlogCard from '@/components/BlogCard';
-import { blogPosts } from '@/lib/blogData';
 import FAQSection from '@/components/FAQSection';
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { BlogPost } from '@/types/blog';
 
-export default function BlogPage() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
+interface BlogPageProps {
+  searchParams?: { search?: string; category?: string };
+}
 
-  // Lọc bài viết theo tìm kiếm và danh mục
-  const filteredPosts = useMemo(() => {
-    return blogPosts.filter(post => {
-      const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
-      return matchesSearch && matchesCategory;
-    });
-  }, [searchTerm, selectedCategory]);
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const searchTerm = searchParams?.search || '';
+  const selectedCategory = searchParams?.category || 'all';
+  // Fetch all published posts from the API (SSR)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || ''}/api/blog?published=true`, { cache: 'no-store' });
+  if (!res.ok) throw new Error('Failed to fetch posts');
+  const data = await res.json();
+  const posts: BlogPost[] = data.posts;
 
-  // Lấy danh sách categories duy nhất
-  const categories = useMemo(() => {
-    const uniqueCategories = Array.from(new Set(blogPosts.map(post => post.category)));
-    return ['all', ...uniqueCategories];
-  }, []);
+  // Filter posts by search and category
+  const filteredPosts = posts.filter(post => {
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (post.excerpt && post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()));
+    const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
+  // Unique categories
+  const categories = ['all', ...Array.from(new Set(posts.map(post => post.category)))];
 
   const categoryNames: Record<string, string> = {
     'all': 'Tất cả',
@@ -48,7 +50,6 @@ export default function BlogPage() {
             Khám phá những bí mật của vũ trụ, thần số học và tâm linh qua những bài viết sâu sắc
           </p>
         </div>
-        
         {/* Decorative elements */}
         <div className="absolute top-10 left-10 w-20 h-20 border border-golden/30 rounded-full animate-pulse"></div>
         <div className="absolute bottom-10 right-10 w-16 h-16 border border-yellow-300/30 rounded-full animate-pulse delay-1000"></div>
@@ -57,24 +58,23 @@ export default function BlogPage() {
       <div className="container mx-auto px-4 py-12">
         {/* Search và Filter */}
         <div className="max-w-6xl mx-auto mb-12">
-          <div className="cosmic-card rounded-2xl p-6 border border-gray-700/20">
+          <form className="cosmic-card rounded-2xl p-6 border border-gray-700/20" method="get">
             <div className="flex flex-col md:flex-row gap-4">
               {/* Search */}
               <div className="flex-1">
                 <input
                   type="text"
+                  name="search"
                   placeholder="Tìm kiếm bài viết..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
+                  defaultValue={searchTerm}
                   className="w-full px-4 py-3 bg-white/10 border border-gray-700/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                 />
               </div>
-              
               {/* Category Filter */}
               <div className="md:w-48">
                 <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  name="category"
+                  defaultValue={selectedCategory}
                   className="w-full px-4 py-3 bg-white/10 border border-gray-700/30 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-golden focus:border-transparent"
                 >
                   {categories.map(category => (
@@ -84,8 +84,9 @@ export default function BlogPage() {
                   ))}
                 </select>
               </div>
+              <button type="submit" className="hidden">Tìm kiếm</button>
             </div>
-          </div>
+          </form>
         </div>
 
         {/* Blog Posts Grid */}

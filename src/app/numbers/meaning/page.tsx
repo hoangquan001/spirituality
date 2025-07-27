@@ -558,7 +558,7 @@ export default function NumbersMeaningPage() {
         </div>
 
         {/* Related Links */}
-        <RelatedServices currentPage="/cards" />
+        <RelatedServices currentPage="/boi-bai-tay" />
       </div>
     </div>
   );

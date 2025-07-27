@@ -63,7 +63,7 @@ export default function LoadingTestPage() {
             </Link>
 
             <Link
-              href="/numerology"
+              href="/than-so-hoc"
               className="group cosmic-card rounded-xl p-6 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105"
             >
               <h3 className="text-white font-bold mb-2 group-hover:text-golden transition-colors">

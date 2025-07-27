@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 interface NumerologyFormProps {
   onSubmit: (data: FormData) => void;
@@ -15,10 +15,10 @@ interface FormData {
 
 export default function NumerologyForm({ onSubmit }: NumerologyFormProps) {
   const [formData, setFormData] = useState<FormData>({
-    fullName: '',
-    birthDate: '',
-    birthTime: '',
-    birthPlace: ''
+    fullName: "",
+    birthDate: "",
+    birthTime: "",
+    birthPlace: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -29,24 +29,29 @@ export default function NumerologyForm({ onSubmit }: NumerologyFormProps) {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   return (
-    <div className="max-w-md mx-auto cosmic-card rounded-2xl p-8 shadow-2xl border border-gray-400/20 h-fit">
+    <div className=" mx-auto cosmic-card rounded-2xl p-8 shadow-2xl border border-gray-400/20 h-fit mb-6">
       <div className="text-center mb-6">
         <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-            <img src="/thansohoc.png" className='rounded-full' alt="" />
+          <img src="/thansohoc.png" className="rounded-full" alt="" />
         </div>
         <h2 className="text-2xl font-bold text-white mb-2">Tính Thần Số Học</h2>
-        <p className="text-gray-300">Nhập thông tin để khám phá số mệnh của bạn</p>
+        <p className="text-gray-300">
+          Nhập thông tin để khám phá số mệnh của bạn
+        </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="gap-8 grid grid-cols-2 ">
         {/* Full Name */}
         <div>
-          <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-2">
+          <label
+            htmlFor="fullName"
+            className="block text-sm font-medium text-gray-300 mb-2"
+          >
             Họ và Tên *
           </label>
           <input
@@ -63,7 +68,10 @@ export default function NumerologyForm({ onSubmit }: NumerologyFormProps) {
 
         {/* Birth Date */}
         <div>
-          <label htmlFor="birthDate" className="block text-sm font-medium text-gray-300 mb-2">
+          <label
+            htmlFor="birthDate"
+            className="block text-sm font-medium text-gray-300 mb-2"
+          >
             Ngày Sinh *
           </label>
           <input
@@ -79,7 +87,10 @@ export default function NumerologyForm({ onSubmit }: NumerologyFormProps) {
 
         {/* Birth Time */}
         <div>
-          <label htmlFor="birthTime" className="block text-sm font-medium text-gray-300 mb-2">
+          <label
+            htmlFor="birthTime"
+            className="block text-sm font-medium text-gray-300 mb-2"
+          >
             Giờ Sinh (tùy chọn)
           </label>
           <input
@@ -94,7 +105,10 @@ export default function NumerologyForm({ onSubmit }: NumerologyFormProps) {
 
         {/* Birth Place */}
         <div>
-          <label htmlFor="birthPlace" className="block text-sm font-medium text-gray-300 mb-2">
+          <label
+            htmlFor="birthPlace"
+            className="block text-sm font-medium text-gray-300 mb-2"
+          >
             Nơi Sinh (tùy chọn)
           </label>
           <input
@@ -111,18 +125,13 @@ export default function NumerologyForm({ onSubmit }: NumerologyFormProps) {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full bg-gradient-to-r from-golden to-yellow-400 hover:from-yellow-400 hover:to-golden text-gray-900 font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          className="col-span-2 w-full bg-gradient-to-r from-golden to-yellow-400 hover:from-yellow-400 hover:to-golden text-gray-900 font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
         >
           <span className="flex items-center justify-center space-x-2">
-            <span>Khám Phá Số Mệnh</span>
-            <span>✨</span>
+            Tính Thần Số Học
           </span>
         </button>
       </form>
-
-      <div className="mt-6 text-center text-sm text-gray-400">
-        <p>🔒 Thông tin của bạn được bảo mật tuyệt đối</p>
-      </div>
     </div>
   );
 }

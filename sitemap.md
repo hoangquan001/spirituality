@@ -42,14 +42,14 @@
 
 
 🔢 Thần Số Học (4 tính năng):
-/numerology/compatibility - Ghép đôi ngày sinh
-/numerology/forecast - Dự đoán 12 tháng tới
-/numerology/lessons - Bài học nghiệp số & thử thách
-/numerology/career - Gợi ý nghề nghiệp theo số
+/than-so-hoc/ghep-doi - Ghép đôi ngày sinh
+/than-so-hoc/du-doan-12-thang - Dự đoán 12 tháng tới
+/than-so-hoc/bai-hoc-nghiep-so - Bài học nghiệp số & thử thách
+/than-so-hoc/goi-y-nghe-nghiep - Gợi ý nghề nghiệp theo số
 ♈ Tử Vi (3 tính năng):
-/zodiac/today - Tử vi hôm nay
-/zodiac/compatibility - Ghép đôi cung hoàng đạo
-/zodiac/calendar - Lịch tử vi cá nhân
+/cung-hoang-dao/today - Tử vi hôm nay
+/cung-hoang-dao/compatibility - Ghép đôi cung hoàng đạo
+/cung-hoang-dao/calendar - Lịch tử vi cá nhân
 🧭 Phong Thủy (6 tính năng - hoàn toàn mới):
 /feng-shui/colors - Màu sắc hợp mệnh
 /feng-shui/directions - Hướng hợp tuổi
@@ -60,10 +60,10 @@
 💡 Giải Mã & Bói (3 tính năng):
 /numbers/meaning - Ý nghĩa con số
 /tarot - Bói bài Tarot đơn giản
-/cards - Bói bài Tây vui
+/boi-bai-tay - Bói bài Tây vui
 /games - Minigame bói hình-màu-số
 💡 Tiện Ích (6 tính năng - hoàn toàn mới):
-/calendar/convert - Chuyển đổi âm lịch - dương lịch
+/chuyen-doi-lich - Chuyển đổi âm lịch - dương lịch
 /calendar/almanac - Lịch vạn sự - ngày tốt xấu
 /marriage-age - Xem tuổi kết hôn
 /birth-age - Xem tuổi sinh con

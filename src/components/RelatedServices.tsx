@@ -38,35 +38,6 @@ export default function RelatedServices({ currentPage }: RelatedServicesProps) {
           ))}
         </div>
 
-        {/* Call to Action */}
-        {/* <div className="text-center mt-12">
-          <div className="bg-gradient-to-br from-gray-900/40 to-gray-800/40 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/20">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              <span className="bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent">
-                Tất Cả Nội Dung Đều Miễn Phí 100%
-              </span>
-            </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Chúng mình cam kết chia sẻ tất cả nội dung Thần Số Học chất
-              lượng cao hoàn toàn miễn phí. Hãy khám phá và tìm hiểu về bản thân
-              ngay hôm nay!
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/numerology"
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-golden to-yellow-300 text-gray-900 font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
-              >
-                <span>Tính Số Mệnh</span>
-              </Link>
-              <Link
-                href="/zodiac"
-                className="inline-flex items-center px-6 py-3 border border-white text-white font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
-              >
-                <span>Xem Cung Hoàng Đạo</span>
-              </Link>
-            </div>
-          </div>
-        </div> */}
       </div>
     </section>
   );

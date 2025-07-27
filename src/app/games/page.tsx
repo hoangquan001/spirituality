@@ -429,7 +429,7 @@ export default function GamesPage() {
           </div>
 
           {/* Related Links */}
-          <RelatedServices currentPage="/cards" />
+          <RelatedServices currentPage="/boi-bai-tay" />
         </div>
       </div>
     </>

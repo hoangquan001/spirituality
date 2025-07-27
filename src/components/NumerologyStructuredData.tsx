@@ -11,7 +11,7 @@ export default function NumerologyStructuredData() {
     },
     "serviceType": "Numerology Analysis",
     "areaServed": "Vietnam",
-    "url": "https://tamlinh.com/numerology",
+    "url": "https://tamlinh.com/than-so-hoc",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -120,7 +120,7 @@ export default function NumerologyStructuredData() {
         "@type": "ListItem",
         "position": 2,
         "name": "Thần Số Học",
-        "item": "https://tamlinh.com/numerology"
+        "item": "https://tamlinh.com/than-so-hoc"
       }
     ]
   };
