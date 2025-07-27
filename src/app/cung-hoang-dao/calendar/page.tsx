@@ -2,7 +2,6 @@
 
 import ContentHeader from '@/components/ContentHeader';
 import RelatedServices from '@/components/RelatedServices';
-import Link from 'next/link';
 import { useState } from 'react';
 
 interface ZodiacSign {
@@ -287,9 +286,9 @@ export default function ZodiacCalendarPage() {
       />
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-6">
+      <div className="max-w-6xl mx-auto px-2 sm:px-4 py-6">
         {/* Input Form */}
-        <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
+        <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">
             Tạo Lịch Tử Vi Cá Nhân
           </h2>
@@ -332,7 +331,7 @@ export default function ZodiacCalendarPage() {
         {calendar && (
           <div className="space-y-8">
             {/* Sign Info & Monthly Theme */}
-            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
               <div className="text-center mb-8">
                 <div
                   className={`text-6xl mb-4 bg-gradient-to-r ${calendar.sign.color} bg-clip-text text-transparent`}
@@ -358,7 +357,7 @@ export default function ZodiacCalendarPage() {
             </div>
 
             {/* Calendar Navigation */}
-            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
               <div className="flex items-center justify-between mb-6">
                 <button
                   onClick={() => navigateMonth("prev")}
@@ -403,7 +402,7 @@ export default function ZodiacCalendarPage() {
 
             {/* Selected Date Details */}
             {selectedDate && getSelectedPrediction() && (
-              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
                 <h3 className="text-2xl font-bold text-white mb-6 text-center">
                   Chi Tiết Ngày {new Date(selectedDate).getDate()}{" "}
                   {monthNames[currentMonth]}

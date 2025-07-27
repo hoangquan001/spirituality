@@ -1,11 +1,11 @@
 'use client';
 
 import ContentHeader from '@/components/ContentHeader';
-import { useState } from 'react';
 import DreamStructuredData from '@/components/DreamStructuredData';
-import RelatedServices from '@/components/RelatedServices';
 import FAQSection from '@/components/FAQSection';
 import { CheckIcon, DreamIcon } from '@/components/icons';
+import RelatedServices from '@/components/RelatedServices';
+import { useState } from 'react';
 import { getAllCategories, getDreamsByCategory, getRandomDream, searchDreams, type DreamSymbol } from '../../lib/dreamDictionary';
 
 export default function DreamPage() {
@@ -33,7 +33,7 @@ export default function DreamPage() {
         description="Tìm hiểu những điều thú vị từ giấc mơ của bạn. Khám phá ý nghĩa và những thông điệp ẩn giấu trong từng giấc mơ."
         breadcrumb={[
           { label: 'Trang Chủ', href: '/' },
-          { label: 'Giải Mã Giấc Mơ', href: '/dream' },
+          { label: 'Giải Mã Giấc Mơ', href: '/giai-ma-giac-mo' },
         ]}
       />
       <div className="min-h-screen py-10 px-4">
@@ -334,7 +334,7 @@ export default function DreamPage() {
         />
 
         {/* Related Services */}
-        <RelatedServices currentPage="/dream" />
+        <RelatedServices currentPage="/giai-ma-giac-mo" />
       </div>
       </div>
     </>

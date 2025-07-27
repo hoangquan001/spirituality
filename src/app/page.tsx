@@ -1,9 +1,9 @@
 import BlogSection from "@/components/BlogSection";
-import StructuredData from "@/components/StructuredData";
 import FAQSection from "@/components/FAQSection";
+import StructuredData from "@/components/StructuredData";
 
-import Link from "next/link";
 import { getGroupFeatureData } from "@/lib/feature-data";
+import Link from "next/link";
 
 export default function Home() {
   const groupFeatureData = getGroupFeatureData();
@@ -82,7 +82,7 @@ export default function Home() {
                 className="group bg-gradient-to-r from-golden to-yellow-500 text-black px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-golden/50"
               >
                 <span className="flex items-center gap-2">
-                  🔢 Khám Phá Thần Số
+                  Tính Thần Số Học
                   <span className="group-hover:translate-x-1 transition-transform">
                     →
                   </span>
@@ -94,7 +94,7 @@ export default function Home() {
                 className="group bg-transparent border-2 border-golden text-golden px-8 py-4 rounded-full font-bold text-lg hover:bg-golden hover:text-black transition-all duration-300"
               >
                 <span className="flex items-center gap-2">
-                  🧭 Xem Phong Thủy
+                  Xem Phong Thủy
                   <span className="group-hover:translate-x-1 transition-transform">
                     →
                   </span>
@@ -106,7 +106,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
               {groupFeatureData.map((group) => (
                 <Link href={group.href} className="group" title={group.title}>
-                  <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
+                  <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20 hover:border-golden/50 transition-all duration-300 hover:scale-105 h-full">
                     <div className="text-center mb-6">
                       <div className="w-16 h-16 bg-gradient-to-r  rounded-full flex items-center justify-center text-3xl mb-4 mx-auto group-hover:scale-110 transition-transform">
                         <span className="text-white">
@@ -573,7 +573,6 @@ export default function Home() {
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-golden to-yellow-300 text-gray-900 font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
                 >
                   <span>Bắt Đầu Khám Phá Ngay</span>
-                  <span className="ml-2">🔢</span>
                 </Link>
               </div>
             </div>
@@ -617,39 +616,6 @@ export default function Home() {
           ]}
         />
 
-        {/* Call to Action */}
-        <section className="py-10 px-4">
-          <div className="max-w-6xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-gray-900/40 to-purple-900/40 backdrop-blur-sm rounded-3xl p-12 border border-golden/20">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Khám Phá{" "}
-                <span className="bg-gradient-to-r from-golden to-yellow-400 bg-clip-text text-transparent">
-                  Vận Mệnh Của Bạn
-                </span>
-              </h2>
-              <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                Hành trình tự khám phá bắt đầu từ một bước nhỏ. Hãy để những tri
-                thức huyền học cổ xưa dẫn lối cho cuộc sống của bạn.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/than-so-hoc"
-                  className="flex items-center bg-gradient-to-r from-golden to-yellow-500 text-black px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-golden/50"
-                >
-                  <span className="flex items-center gap-2">
-                    🔢 Thần Số Học
-                  </span>
-                </Link>
-                <Link
-                  href="/feng-shui"
-                  className="bg-transparent border-2 border-golden text-golden px-8 py-4 rounded-full font-bold text-lg hover:bg-golden hover:text-black transition-all duration-300"
-                >
-                  🧭 Phong Thủy
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );

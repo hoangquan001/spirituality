@@ -11,7 +11,7 @@ export default function DreamStructuredData() {
     },
     "serviceType": "Dream Interpretation",
     "areaServed": "Vietnam",
-    "url": "https://tamlinh.com/dream",
+    "url": "https://tamlinh.com/giai-ma-giac-mo",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -74,7 +74,7 @@ export default function DreamStructuredData() {
         "@type": "ListItem",
         "position": 2,
         "name": "Giải Mã Giấc Mơ",
-        "item": "https://tamlinh.com/dream"
+        "item": "https://tamlinh.com/giai-ma-giac-mo"
       }
     ]
   };

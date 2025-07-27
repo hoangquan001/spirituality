@@ -80,7 +80,7 @@ const jsonLd = {
         '@type': 'ListItem',
         position: 2,
         name: 'Giải Mã & Bói',
-        item: 'https://giaima-tamlinh.com/dream'
+        item: 'https://giaima-tamlinh.com/giai-ma-giac-mo'
       },
       {
         '@type': 'ListItem',

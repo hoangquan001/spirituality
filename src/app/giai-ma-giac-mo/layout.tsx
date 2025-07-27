@@ -10,10 +10,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "vi_VN",
     siteName: "Tâm Linh - Thần Số Học",
-    url: "https://tamlinh.com/dream",
+    url: "https://tamlinh.com/giai-ma-giac-mo",
     images: [
       {
-        url: "/dream-og.jpg",
+        url: "/giai-ma-giac-mo-og.jpg",
         width: 1200,
         height: 630,
         alt: "Giải Mã Giấc Mơ - Từ Điển Giấc Mơ Đầy Đủ",
@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Giải Mã Giấc Mơ - Từ Điển Giấc Mơ Đầy Đủ Nhất",
     description: "💭 Khám phá ý nghĩa giấc mơ với từ điển giấc mơ đầy đủ nhất. Thông điệp từ tiềm thức. Miễn phí 100%.",
-    images: ["/dream-og.jpg"],
+    images: ["/giai-ma-giac-mo-og.jpg"],
   },
   alternates: {
-    canonical: "https://tamlinh.com/dream",
+    canonical: "https://tamlinh.com/giai-ma-giac-mo",
   },
 };
 

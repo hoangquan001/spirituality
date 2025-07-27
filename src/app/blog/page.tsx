@@ -1,8 +1,8 @@
 
 import BlogCard from '@/components/BlogCard';
 import FAQSection from '@/components/FAQSection';
-import Link from 'next/link';
 import { BlogPost } from '@/types/blog';
+import Link from 'next/link';
 
 interface BlogPageProps {
   searchParams?: { search?: string; category?: string };
@@ -58,7 +58,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       <div className="container mx-auto px-4 py-12">
         {/* Search và Filter */}
         <div className="max-w-6xl mx-auto mb-12">
-          <form className="cosmic-card rounded-2xl p-6 border border-gray-700/20" method="get">
+          <form className="cosmic-card rounded-2xl p-2 md:p-4 lg:p-6 border border-gray-700/20" method="get">
             <div className="flex flex-col md:flex-row gap-4">
               {/* Search */}
               <div className="flex-1">

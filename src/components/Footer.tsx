@@ -79,7 +79,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-4 text-golden">Giải Mã & Bói</h4>
             <ul className="space-y-2">
-              <li><Link href="/dream" className="text-gray-300 hover:text-golden transition-colors">Giải mã giấc mơ</Link></li>
+              <li><Link href="/giai-ma-giac-mo" className="text-gray-300 hover:text-golden transition-colors">Giải mã giấc mơ</Link></li>
               <li><Link href="/numbers/meaning" className="text-gray-300 hover:text-golden transition-colors">Ý nghĩa con số</Link></li>
               <li><Link href="/tarot" className="text-gray-300 hover:text-golden transition-colors">Bói bài Tarot</Link></li>
               <li><Link href="/games" className="text-gray-300 hover:text-golden transition-colors">Minigame bói</Link></li>
@@ -112,7 +112,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2024 Thần Số Học. Tất cả quyền được bảo lưu.
+              © 2025 Thần Số Học. Tất cả quyền được bảo lưu.
             </p>
             <div className="flex items-center gap-4 text-sm">
               <Link href="/privacy" className="text-gray-400 hover:text-golden transition-colors">

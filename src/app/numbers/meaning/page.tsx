@@ -1,8 +1,8 @@
 'use client';
 
+import { BlockContent } from '@/components/BlockContent';
 import ContentHeader from '@/components/ContentHeader';
 import RelatedServices from '@/components/RelatedServices';
-import Link from 'next/link';
 import { useState } from 'react';
 
 interface NumberMeaning {
@@ -321,14 +321,14 @@ export default function NumbersMeaningPage() {
       />
 
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-6">
+      <div className="max-w-6xl mx-auto px-2 sm:px-4 py-6">
         {/* Number Selection */}
-        <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
+        <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20 mb-8">
           <h2 className="text-2xl font-bold text-white mb-8 text-center">
             Chọn Con Số Bạn Muốn Tìm Hiểu
           </h2>
 
-          <div className="grid grid-cols-5 md:grid-cols-10 gap-4 max-w-6xl mx-auto">
+          <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-10 gap-4 max-w-6xl mx-auto">
             {numberMeanings.map((number) => (
               <button
                 key={number.number}
@@ -355,9 +355,9 @@ export default function NumbersMeaningPage() {
         </div>
 
         {/* Number Details */}
-        <div className="space-y-8">
+        <div className="space-y-8 mb-10">
           {/* Header Info */}
-          <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+          <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
             <div className="text-center mb-8">
               <div
                 className={`text-8xl mb-4 bg-gradient-to-r ${currentNumber.gradient} bg-clip-text text-transparent font-bold`}
@@ -389,7 +389,7 @@ export default function NumbersMeaningPage() {
 
           {/* Tabs */}
           <div className="flex justify-center mb-8">
-            <div className="bg-gray-800/50 rounded-full p-1">
+            <div className="bg-gray-800/50 rounded-md sm:rounded-full p-2 sm:p-1">
               {[
                 { id: "overview", label: "📊 Tổng Quan", icon: "📊" },
                 { id: "personality", label: "👤 Tính Cách", icon: "👤" },
@@ -524,7 +524,7 @@ export default function NumbersMeaningPage() {
           )}
 
           {activeTab === "fengshui" && (
-            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
               <h3 className="text-2xl font-bold text-white mb-6 text-center flex items-center justify-center gap-2">
                 <span>🧭</span> Ý Nghĩa Phong Thủy
               </h3>
@@ -539,7 +539,7 @@ export default function NumbersMeaningPage() {
           )}
 
           {activeTab === "spiritual" && (
-            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
               <h3 className="text-2xl font-bold text-white mb-6 text-center flex items-center justify-center gap-2">
                 <span>✨</span> Ý Nghĩa Tâm Linh
               </h3>
@@ -556,6 +556,7 @@ export default function NumbersMeaningPage() {
             </div>
           )}
         </div>
+        <BlockContent>{content}</BlockContent>
 
         {/* Related Links */}
         <RelatedServices currentPage="/boi-bai-tay" />
@@ -563,3 +564,40 @@ export default function NumbersMeaningPage() {
     </div>
   );
 }
+
+
+const content = `
+## Ý Nghĩa Các Con Số: Khám Phá Năng Lượng Huyền Bí Trong Cuộc Sống Của Bạn
+
+Bạn có bao giờ tự hỏi liệu những **con số** chúng ta gặp hàng ngày có mang một ý nghĩa sâu sắc hơn ngoài giá trị toán học của chúng không? Từ ngày sinh, số điện thoại, biển số xe cho đến những con số xuất hiện ngẫu nhiên, mỗi con số đều được cho là ẩn chứa những **rung động năng lượng**, **thông điệp tâm linh** và **ý nghĩa phong thủy** riêng biệt. Việc khám phá và hiểu rõ ý nghĩa của chúng có thể giúp chúng ta giải mã những khía cạnh thú vị về bản thân, cuộc sống và thậm chí là tương lai.
+
+---
+
+### Năng Lượng Của Từng Con Số
+
+Trong nhiều nền văn hóa và các trường phái tâm linh như **Thần số học (Numerology)** hay **Phong thủy**, mỗi con số từ 0 đến 9 đều mang một **năng lượng nguyên mẫu** và ý nghĩa đặc trưng:
+
+* **Số 0:** Đại diện cho sự khởi đầu, tiềm năng vô hạn, sự trống rỗng và đầy đủ, sự kết nối với vũ trụ. Nó là biểu tượng của sự vô cực và chu kỳ tuần hoàn.
+* **Số 1:** Tượng trưng cho sự độc lập, lãnh đạo, khởi xướng, cá tính mạnh mẽ và sự tiên phong. Đây là con số của sự sáng tạo và hành động.
+* **Số 2:** Biểu tượng của sự cân bằng, hợp tác, hòa hợp, trực giác và sự nhạy cảm. Số 2 đại diện cho các mối quan hệ, đối tác và khả năng ngoại giao.
+* **Số 3:** Thể hiện sự sáng tạo, giao tiếp, niềm vui, sự lạc quan và khả năng thể hiện bản thân. Con số này liên quan đến sự phát triển và mở rộng.
+* **Số 4:** Đại diện cho sự ổn định, kỷ luật, cấu trúc, làm việc chăm chỉ và nền tảng vững chắc. Số 4 mang năng lượng của sự kiên định và đáng tin cậy.
+* **Số 5:** Biểu tượng của sự tự do, phiêu lưu, thay đổi, thích nghi và sự đa năng. Đây là con số của sự khám phá và trải nghiệm.
+* **Số 6:** Tượng trưng cho tình yêu thương, trách nhiệm, gia đình, sự chữa lành và lòng vị tha. Số 6 liên quan đến sự hài hòa và chăm sóc.
+* **Số 7:** Đại diện cho sự tâm linh, trí tuệ, phân tích, nội tâm và tìm kiếm sự thật. Con số này gắn liền với sự bí ẩn và khám phá chiều sâu.
+* **Số 8:** Biểu tượng của quyền lực, thịnh vượng, thành công, sự nghiệp và sự cân bằng giữa vật chất và tinh thần. Số 8 mang năng lượng của sự dồi dào.
+* **Số 9:** Tượng trưng cho lòng trắc ẩn, sự hoàn thiện, sự kết thúc chu kỳ, trí tuệ và sự phục vụ cộng đồng. Con số này liên quan đến sự bao dung và nhân ái.
+
+---
+
+### Ý Nghĩa Trong Đời Sống
+
+Việc hiểu **ý nghĩa các con số** có thể được áp dụng vào nhiều khía cạnh trong cuộc sống:
+
+* **Thần số học:** Giúp bạn khám phá ý nghĩa của ngày sinh, tên gọi để hiểu rõ hơn về tính cách, sứ mệnh và những thách thức trong cuộc đời.
+* **Phong thủy:** Các con số được sử dụng để lựa chọn số nhà, số điện thoại, biển số xe phù hợp, nhằm thu hút năng lượng tốt và tài lộc.
+* **Quyết định cá nhân:** Khi bạn thấy một con số lặp đi lặp lại (ví dụ: 11:11, 222), đó có thể là một **thông điệp từ vũ trụ**, hướng dẫn bạn trong các quyết định quan trọng.
+
+---
+
+Việc tìm hiểu về ý nghĩa các con số không chỉ là một hành trình khám phá thú vị mà còn có thể mang lại những cái nhìn sâu sắc, giúp bạn định hướng và tạo dựng một cuộc sống hài hòa hơn. Bạn có muốn tìm hiểu cụ thể hơn về con số nào không?`

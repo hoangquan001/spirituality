@@ -1,5 +1,6 @@
 'use client';
 
+import { BlockContent } from '@/components/BlockContent';
 import ContentHeader from '@/components/ContentHeader';
 import FAQSection from '@/components/FAQSection';
 import { useState } from 'react';
@@ -337,7 +338,7 @@ export default function CalendarPage() {
         )}
 
         {/* Information Cards */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
           <div className="bg-gradient-to-br from-gray-900/20 to-blue-900/20 rounded-3xl p-8 border border-gray-400/20">
             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
               <span className="text-golden">📚</span>
@@ -362,6 +363,7 @@ export default function CalendarPage() {
             </div>
           </div>
         </div>
+        <BlockContent>{content}</BlockContent>
 
         {/* FAQ Section */}
         <FAQSection
@@ -391,3 +393,62 @@ export default function CalendarPage() {
   );
 }
 
+const content = `
+## Lịch Vạn Niên: Cánh Cửa Giải Mã Thời Gian và Phong Thủy Truyền Thống
+
+**Lịch Vạn Niên** không chỉ là một cuốn lịch thông thường giúp chúng ta theo dõi ngày tháng mà còn là một kho tàng tri thức đồ sộ về **văn hóa, phong thủy, và tâm linh** của người Á Đông. Nó tổng hợp và diễn giải mối tương quan giữa thời gian với các yếu tố ngũ hành, can chi, sao tốt xấu, và nhiều thông tin quan trọng khác, giúp con người lựa chọn được thời điểm thuận lợi cho mọi việc, từ cưới hỏi, động thổ đến khai trương.
+
+---
+
+### Lịch Vạn Niên Là Gì?
+
+**Lịch Vạn Niên** là một loại lịch đặc biệt được biên soạn dựa trên sự kết hợp giữa **lịch âm (âm lịch)** và **lịch dương (dương lịch)**, đồng thời lồng ghép các yếu tố của **thiên văn học cổ đại, triết lý Âm Dương Ngũ Hành và Bát Quái**. Đúng như tên gọi "Vạn Niên" (nghìn năm), cuốn lịch này không chỉ giới hạn trong một năm mà có thể bao quát hàng chục, thậm chí hàng trăm năm, cung cấp thông tin chi tiết cho từng ngày, từng giờ.
+
+Mục đích chính của Lịch Vạn Niên là giúp người dùng:
+
+* **Tra cứu ngày âm - dương:** Dễ dàng chuyển đổi giữa hai hệ thống lịch.
+* **Xác định ngày tốt - xấu:** Dựa trên các yếu tố như giờ hoàng đạo, hắc đạo, trực, sao nhị thập bát tú, xung khắc tuổi...
+* **Xem xét yếu tố phong thủy:** Cung cấp thông tin về ngũ hành nạp âm của ngày, các sao tốt/xấu ảnh hưởng đến công việc cụ thể.
+* **Hỗ trợ các quyết định quan trọng:** Từ việc nhỏ như cắt tóc, xuất hành cho đến các việc lớn như xây nhà, cưới hỏi, khai trương.
+
+---
+
+### Những Yếu Tố Chính Cấu Thành Lịch Vạn Niên
+
+Để có thể cung cấp những thông tin chi tiết và đa dạng, Lịch Vạn Niên tích hợp nhiều hệ thống kiến thức phức tạp:
+
+#### 1. Âm Lịch và Dương Lịch
+* **Dương lịch:** Dựa vào chu kỳ quay của Trái Đất quanh Mặt Trời, xác định các mùa và ngày tháng theo hệ Gregory chúng ta dùng hàng ngày.
+* **Âm lịch:** Dựa vào chu kỳ quay của Mặt Trăng quanh Trái Đất, với mỗi tháng bắt đầu vào ngày không trăng (sóc). Đây là hệ thống lịch gắn liền với các lễ hội, tập quán truyền thống của người Việt. Lịch Vạn Niên giúp quy đổi chính xác giữa hai hệ lịch này.
+
+#### 2. Thiên Can Địa Chi
+* **Thiên Can (10 Can):** Giáp, Ất, Bính, Đinh, Mậu, Kỷ, Canh, Tân, Nhâm, Quý.
+* **Địa Chi (12 Chi/12 Con Giáp):** Tý, Sửu, Dần, Mão, Thìn, Tỵ, Ngọ, Mùi, Thân, Dậu, Tuất, Hợi.
+* Sự kết hợp của Thiên Can và Địa Chi tạo thành một chu kỳ **60 năm (Lục Thập Hoa Giáp)**, được dùng để đặt tên cho năm, tháng, ngày, giờ. Mỗi cặp Can Chi mang một ý nghĩa ngũ hành, tác động đến vận khí của thời điểm đó.
+
+#### 3. Ngũ Hành
+* **Kim, Mộc, Thủy, Hỏa, Thổ:** Là năm yếu tố cơ bản cấu thành vạn vật và chi phối các mối quan hệ trong vũ trụ.
+* Trong Lịch Vạn Niên, mỗi ngày, mỗi giờ đều có một "Ngũ hành Nạp Âm" riêng. Việc chọn ngày hợp với ngũ hành của bản thân hoặc công việc sẽ giúp tăng cường năng lượng tích cực, hóa giải xung khắc.
+
+#### 4. Các Yếu Tố Khác
+* **Giờ Hoàng Đạo - Hắc Đạo:** Giờ Hoàng Đạo là những khoảng thời gian tốt lành, thuận lợi để thực hiện các công việc quan trọng. Ngược lại, giờ Hắc Đạo nên hạn chế làm việc lớn.
+* **Trực (12 Trực):** Dựa trên chu kỳ 12 ngày, mỗi trực mang một ý nghĩa riêng về sự tốt xấu cho các hoạt động.
+* **Nhị Thập Bát Tú (28 Chòm Sao):** Là 28 chòm sao chiếu mệnh, mỗi chòm sao chủ quản một ngày và mang năng lượng khác nhau, ảnh hưởng đến mọi việc.
+* **Tứ Trụ (Giờ, Ngày, Tháng, Năm):** Là nền tảng của Bát Tự Hà Lạc, một phương pháp xem vận mệnh chi tiết dựa trên giờ, ngày, tháng, năm sinh của một người.
+* **Các sao tốt/xấu:** Như Thiên Đức, Nguyệt Đức (sao tốt) hay Sát Chủ, Thụ Tử (sao xấu) ảnh hưởng trực tiếp đến tính chất của ngày.
+* **Xung Khắc Tuổi:** Lịch Vạn Niên cũng chỉ ra các tuổi bị xung khắc với ngày, giúp người dùng tránh phạm phải điều kiêng kỵ.
+
+---
+
+### Lợi Ích Của Việc Tra Cứu Lịch Vạn Niên
+
+Sử dụng Lịch Vạn Niên mang lại nhiều lợi ích thiết thực trong đời sống:
+
+* **Tối ưu hóa thời điểm:** Giúp bạn chọn được "thiên thời" cho các sự kiện quan trọng như cưới hỏi, khai trương, động thổ, ký kết hợp đồng, xuất hành. Điều này được tin là sẽ mang lại may mắn và thành công.
+* **Tránh rủi ro:** Giúp nhận biết và tránh những ngày, giờ không thuận lợi, hạn chế những điều không may có thể xảy ra.
+* **Hiểu biết văn hóa:** Là cầu nối để hiểu sâu hơn về văn hóa, phong tục, tập quán và quan niệm truyền thống của người Việt Nam và các nước Á Đông.
+* **Cân bằng cuộc sống:** Góp phần tạo nên sự an tâm, tin tưởng và một lối sống hài hòa với tự nhiên theo quan niệm "thiên địa nhân hợp nhất".
+
+---
+
+Trong thời đại số, Lịch Vạn Niên không chỉ tồn tại dưới dạng sách mà còn phổ biến rộng rãi qua các ứng dụng di động và website, giúp việc tra cứu trở nên dễ dàng và tiện lợi hơn bao giờ hết. Dù bạn tin vào phong thủy hay chỉ đơn thuần muốn tìm hiểu về văn hóa truyền thống, Lịch Vạn Niên vẫn là một công cụ giá trị để khám phá sự vận hành của thời gian và những ảnh hưởng của nó đến cuộc sống chúng ta. Bạn có muốn tìm hiểu cụ thể về một yếu tố nào đó trong Lịch Vạn Niên không?`

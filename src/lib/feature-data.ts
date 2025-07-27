@@ -1,4 +1,3 @@
-import { features } from "process";
 
 export interface GroupFeature {
     id: number;
@@ -220,7 +219,7 @@ export const featureData: Feature[] = [
         title: "Giải mã giấc mơ",
         description: "Từ điển giấc mơ đầy đủ nhất",
         icon: "💭",
-        href: "/dream",
+        href: "/giai-ma-giac-mo",
         group: 4,
     },
     {

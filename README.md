@@ -7,3 +7,7 @@
   /phong-thuy/
   /chiem-tinh/
   /thuc-tinh-tam-linh/
+
+
+DOMAIN: thansohocgoc.com
+DOMAIN: sothansohoc.com

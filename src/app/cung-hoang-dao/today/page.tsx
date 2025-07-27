@@ -2,7 +2,6 @@
 
 import ContentHeader from '@/components/ContentHeader';
 import RelatedServices from '@/components/RelatedServices';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 interface ZodiacSign {
@@ -271,7 +270,7 @@ export default function ZodiacTodayPage() {
         ]}
       />
       {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-4 py-6">
+      <div className="max-w-6xl mx-auto px-2 sm:px-4 py-6">
         {/* Zodiac Signs Grid */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-8 text-center">
@@ -314,7 +313,7 @@ export default function ZodiacTodayPage() {
         ) : horoscope && selectedZodiac ? (
           <div className="space-y-8">
             {/* Selected Sign Header */}
-            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
               <div className="text-center">
                 <div
                   className={`text-6xl mb-4 bg-gradient-to-r ${selectedZodiac.color} bg-clip-text text-transparent`}

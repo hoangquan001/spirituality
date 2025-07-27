@@ -1,9 +1,9 @@
 'use client';
 
+import { BlockContent } from '@/components/BlockContent';
 import ContentHeader from '@/components/ContentHeader';
 import RelatedServices from '@/components/RelatedServices';
 import { birthDateToLifePath } from '@/lib/numerology';
-import Link from 'next/link';
 import { useState } from 'react';
 
 interface MonthlyForecast {
@@ -259,7 +259,7 @@ export default function NumerologyForecastPage() {
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Input Form */}
-        <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
+        <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">
             Nhập Thông Tin Của Bạn
           </h2>
@@ -310,7 +310,7 @@ export default function NumerologyForecastPage() {
         {forecast && (
           <div className="space-y-8">
             {/* Year Overview */}
-            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
               <div className="text-center mb-6">
                 <h2 className="text-3xl font-bold text-white mb-4">
                   {forecast.theme} - {forecast.year}
@@ -445,10 +445,65 @@ export default function NumerologyForecastPage() {
             </div>
           </div>
         )}
-
+        <BlockContent>{content}</BlockContent>
         {/* Related Links */}
         <RelatedServices currentPage="/boi-bai-tay" />
       </div>
     </div>
   );
 }
+
+
+
+const content = `## Thần Số Học Dự Đoán 12 Tháng: Mở Khóa Chu Kỳ Cuộc Đời Của Bạn
+
+Bạn có bao giờ tự hỏi điều gì đang chờ đợi mình trong những tháng sắp tới? Liệu có một "kim chỉ nam" nào đó giúp bạn chuẩn bị tốt hơn cho những cơ hội và thách thức? **Thần Số Học Dự Đoán 12 Tháng** chính là công cụ mạnh mẽ giúp bạn thấu hiểu năng lượng của từng giai đoạn, từ đó chủ động kiến tạo một năm đầy ý nghĩa. Đây không phải là bói toán định mệnh, mà là một bản đồ năng lượng giúp bạn điều hướng cuộc sống.
+
+---
+
+### Hiểu Về Chu Kỳ Năng Lượng 12 Tháng Trong Thần Số Học
+
+Trong Thần Số Học, cuộc đời mỗi người vận hành theo những **chu kỳ năng lượng** nhất định. Ngoài những con số chủ đạo cố định (tính từ ngày sinh), chúng ta còn trải qua các chu kỳ năm cá nhân, tháng cá nhân. **Dự đoán 12 tháng** dựa trên việc tính toán **số Tháng Cá Nhân** của bạn, vốn thay đổi theo từng tháng.
+
+Mỗi Tháng Cá Nhân (Personal Month) mang một rung động số học riêng, ảnh hưởng đến những sự kiện, cảm xúc và cơ hội mà bạn có thể gặp phải trong tháng đó. Việc nắm bắt được năng lượng của từng tháng giúp bạn:
+
+* **Chủ động đón đầu cơ hội:** Biết khi nào nên hành động mạnh mẽ, khi nào nên dành thời gian suy ngẫm.
+* **Vượt qua thách thức:** Chuẩn bị tinh thần và tìm ra giải pháp tốt nhất cho những khó khăn có thể phát sinh.
+* **Đưa ra quyết định sáng suốt:** Lựa chọn đúng thời điểm để bắt đầu dự án mới, thay đổi công việc, hay giải quyết các mối quan hệ.
+* **Sống hài hòa với dòng chảy năng lượng:** Giảm bớt căng thẳng, lo âu khi hiểu rõ hơn về chu kỳ tự nhiên của cuộc sống.
+
+---
+
+### Cách Thần Số Học "Dự Đoán" 12 Tháng Cho Bạn
+
+Quy trình dự đoán 12 tháng của Thần Số Học thường tập trung vào **Số Năm Cá Nhân** (Personal Year Number) và **Số Tháng Cá Nhân** (Personal Month Number).
+
+1.  **Xác định Số Năm Cá Nhân:** Đây là con số tổng hợp từ ngày sinh, tháng sinh của bạn và năm hiện tại. Số Năm Cá Nhân cho bạn bức tranh tổng thể về năng lượng chủ đạo của cả năm.
+2.  **Tính toán Số Tháng Cá Nhân:** Mỗi tháng trong năm sẽ có một con số riêng, được tính dựa trên Số Năm Cá Nhân và số của tháng đó. Ví dụ, nếu bạn đang ở Năm Cá Nhân số 5, thì tháng 1 sẽ là 5+1=6, tháng 2 là 5+2=7, v.v.
+
+Mỗi con số Tháng Cá Nhân từ 1 đến 9 đều mang ý nghĩa riêng biệt:
+
+* **Tháng 1:** Khởi đầu mới, cơ hội tiên phong, hành động độc lập.
+* **Tháng 2:** Hợp tác, phát triển mối quan hệ, sự nhạy cảm và trực giác.
+* **Tháng 3:** Sáng tạo, giao tiếp, thể hiện bản thân, niềm vui.
+* **Tháng 4:** Xây dựng nền tảng, làm việc chăm chỉ, tổ chức, ổn định.
+* **Tháng 5:** Thay đổi, tự do, phiêu lưu, khám phá những điều mới.
+* **Tháng 6:** Trách nhiệm, gia đình, tình yêu, sự hài hòa và phục vụ.
+* **Tháng 7:** Suy ngẫm, học hỏi, phát triển tâm linh, tìm kiếm chân lý.
+* **Tháng 8:** Tài chính, quyền lực, thành công vật chất, quản lý.
+* **Tháng 9:** Kết thúc chu kỳ, buông bỏ, lòng trắc ẩn, chuẩn bị cho khởi đầu mới.
+
+Hiểu được năng lượng của từng tháng giúp bạn đưa ra những quyết định phù hợp, tận dụng tối đa những gì vũ trụ mang lại và giảm thiểu những rủi ro không đáng có.
+
+---
+
+### Sống Chủ Động Hơn Với Bản Đồ 12 Tháng Của Bạn
+
+Thần Số Học Dự Đoán 12 Tháng không phải là để bạn thụ động chờ đợi vận may hay rủi ro. Ngược lại, nó khuyến khích bạn **sống chủ động, có ý thức**. Khi bạn biết tháng này là tháng của sự thay đổi (Tháng 5), bạn sẽ cởi mở hơn với những cơ hội mới. Khi bạn biết tháng tới là tháng của sự suy ngẫm (Tháng 7), bạn sẽ dành thời gian để nghỉ ngơi và phát triển nội tâm.
+
+Đây là công cụ tuyệt vời để:
+
+* Lên kế hoạch cá nhân và nghề nghiệp hiệu quả.
+* Tối ưu hóa năng lượng của bạn trong từng giai đoạn.
+* Phát triển bản thân một cách có định hướng.
+`

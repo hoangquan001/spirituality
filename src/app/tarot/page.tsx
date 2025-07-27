@@ -1,8 +1,8 @@
 'use client';
 
+import { BlockContent } from '@/components/BlockContent';
 import ContentHeader from '@/components/ContentHeader';
 import RelatedServices from '@/components/RelatedServices';
-import Link from 'next/link';
 import { useState } from 'react';
 
 interface TarotCard {
@@ -322,7 +322,7 @@ export default function TarotPage() {
           {!reading ? (
             <div className="space-y-8">
               {/* Question Input */}
-              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
                 <h2 className="text-2xl font-bold text-white mb-6 text-center">
                   Đặt Câu Hỏi Của Bạn
                 </h2>
@@ -342,7 +342,7 @@ export default function TarotPage() {
               </div>
 
               {/* Spread Selection */}
-              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
                 <h2 className="text-2xl font-bold text-white mb-6 text-center">
                   Chọn Cách Bói
                 </h2>
@@ -380,7 +380,7 @@ export default function TarotPage() {
               </div>
 
               {/* Draw Button */}
-              <div className="text-center">
+              <div className="text-center mb-8">
                 <button
                   onClick={drawCards}
                   disabled={isDrawing}
@@ -402,7 +402,7 @@ export default function TarotPage() {
           ) : (
             <div className="space-y-8">
               {/* Reading Header */}
-              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
                 <div className="text-center">
                   <h2 className="text-3xl font-bold text-white mb-4">
                     Kết Quả Bói Bài - {reading.spread}
@@ -514,6 +514,7 @@ export default function TarotPage() {
               </div>
             </div>
           )}
+          <BlockContent>{content}</BlockContent>
 
           {/* Related Links */}
           <RelatedServices currentPage="/boi-bai-tay" />
@@ -522,3 +523,73 @@ export default function TarotPage() {
     </>
   );
 }
+
+const content = 
+`## Bói Bài Tarot: Cánh Cửa Khám Phá Nội Tâm và Định Hướng Hành Trình Cuộc Sống
+
+Bạn có từng bị hấp dẫn bởi những hình ảnh đầy bí ẩn trên những lá bài Tarot, và tự hỏi liệu chúng có thể tiết lộ điều gì về cuộc đời mình? **Bài Tarot** không chỉ là một bộ bài 78 lá, mà còn là một **công cụ mạnh mẽ** để **phản chiếu nội tâm**, **giải mã những thông điệp tiềm ẩn** từ tiềm thức và vũ trụ, từ đó **định hướng** cho các quyết định và hành trình cuộc sống của bạn.
+
+---
+
+### Lịch Sử và Nguồn Gốc Sâu Xa Của Tarot
+
+Mặc dù ngày nay Tarot thường được liên kết với các yếu tố huyền bí và tâm linh, nguồn gốc ban đầu của nó lại khá thực tế. Tarot xuất hiện lần đầu tiên ở **châu Âu vào cuối thế kỷ 14**, cụ thể là ở Ý, như một trò chơi bài dành cho giới quý tộc. Những bộ bài Tarot sớm nhất, như Visconti-Sforza Tarot, được vẽ tay tỉ mỉ và thể hiện các nhân vật, biểu tượng quen thuộc trong xã hội thời Phục hưng.
+
+Đến thế kỷ 18 và 19, Tarot bắt đầu chuyển mình từ một trò chơi bài thành một công cụ tâm linh, chiêm tinh và huyền học. Các học giả và nhà huyền bí học Pháp, đặc biệt là **Éliphas Lévi**, đã kết nối Tarot với các hệ thống triết học cổ đại như Kabbalah và chiêm tinh học, tạo nên một cấu trúc ý nghĩa phức tạp và sâu sắc hơn cho từng lá bài. Kể từ đó, Tarot dần trở thành một phần không thể thiếu trong thế giới tâm linh phương Tây, và đặc biệt trở nên phổ biến rộng rãi vào thế kỷ 20 với sự ra đời của bộ bài **Rider-Waite-Smith Tarot**, bộ bài chuẩn mực được sử dụng rộng rãi nhất hiện nay.
+
+---
+
+### Cấu Trúc Đầy Tính Biểu Tượng Của Bộ Bài Tarot
+
+Một bộ bài Tarot đầy đủ có **78 lá**, được chia thành hai nhóm chính, mỗi nhóm mang một tầng ý nghĩa riêng biệt:
+
+#### 1. Bộ Ẩn Chính (Major Arcana) - 22 Lá Bài Của Hành Trình Linh Hồn
+
+22 lá bài này đại diện cho những **bài học cuộc đời quan trọng**, các giai đoạn phát triển tâm linh, những thử thách lớn và các sự kiện mang tính bước ngoặt trong cuộc đời mỗi người. Chúng thể hiện những **nguyên mẫu phổ quát** của con người và vũ trụ, từ sự ngây thơ ban đầu (The Fool) đến sự hoàn thành và giác ngộ (The World). Mỗi lá bài trong Major Arcana là một câu chuyện riêng, một giai đoạn trong hành trình của linh hồn, mang đến những cái nhìn sâu sắc về bản chất cuộc sống và sự phát triển cá nhân.
+
+Ví dụ:
+
+* **The Fool (Kẻ Khờ):** Tượng trưng cho sự khởi đầu, tinh thần phiêu lưu, niềm tin mù quáng và sự tự do.
+* **The Magician (Nhà Ảo Thuật):** Đại diện cho ý chí, sức mạnh sáng tạo, khả năng biến ý tưởng thành hiện thực và sự kiểm soát.
+* **The Lovers (Tình Yêu):** Biểu tượng của sự lựa chọn, các mối quan hệ, tình yêu, sự hòa hợp và những quyết định quan trọng về đạo đức.
+* **Death (Cái Chết):** Không ám chỉ cái chết thể xác, mà là sự kết thúc của một chu kỳ, sự chuyển đổi, buông bỏ và tái sinh.
+
+#### 2. Bộ Ẩn Phụ (Minor Arcana) - 56 Lá Bài Của Cuộc Sống Hàng Ngày
+
+56 lá bài này tập trung vào các **khía cạnh cụ thể** và những sự kiện diễn ra trong **cuộc sống hàng ngày**. Chúng được chia thành 4 chất (Suits), mỗi chất tương ứng với một yếu tố tự nhiên và đại diện cho một lĩnh vực trong đời sống:
+
+* **Cups (Cốc/Chén) - Yếu tố Nước:** Đại diện cho **cảm xúc**, trực giác, các mối quan hệ, tình yêu, niềm vui và nỗi buồn.
+* **Pentacles (Tiền/Đồng tiền) - Yếu tố Đất:** Liên quan đến **thế giới vật chất**, tài chính, sự nghiệp, sức khỏe, sự ổn định và an ninh.
+* **Swords (Kiếm) - Yếu tố Khí:** Thể hiện **tư duy**, trí tuệ, giao tiếp, những thách thức, xung đột và sự thật.
+* **Wands (Gậy/Trượng) - Yếu tố Lửa:** Biểu tượng của **đam mê**, sáng tạo, hành động, mục tiêu, nguồn năng lượng và sự phát triển.
+
+Mỗi chất có 14 lá, bao gồm 10 lá số (Ace đến Ten) và 4 lá Hoàng gia (Page, Knight, Queen, King), mỗi lá mang một ý nghĩa riêng biệt khi xuất hiện trong một trải bài.
+
+---
+
+### Bói Bài Tarot Hoạt Động Như Thế Nào? Không Phải Tiên Tri, Mà Là Phản Chiếu
+
+Việc bói bài Tarot không phải là một hành động "tiên tri" theo nghĩa cố định, mà là một quá trình **phân tích tâm lý sâu sắc** và **khai thác trực giác**. Khi bạn đặt ra một câu hỏi hoặc tập trung vào một vấn đề, người giải bài (reader) sẽ thực hiện các bước sau:
+
+1.  **Thiết lập ý định và câu hỏi:** Câu hỏi cần rõ ràng, cụ thể và mang tính mở để khuyến khích sự khám phá (ví dụ: "Làm thế nào tôi có thể cải thiện mối quan hệ này?" thay vì "Anh ấy có yêu tôi không?").
+2.  **Xáo bài và kết nối năng lượng:** Người giải bài sẽ xáo trộn bộ bài trong khi tập trung vào câu hỏi, giúp tạo ra một luồng năng lượng giữa người hỏi và bộ bài.
+3.  **Trải bài (Spread):** Các lá bài được rút ra và sắp xếp theo một bố cục nhất định, được gọi là "trải bài" (spread). Mỗi vị trí trong trải bài có một ý nghĩa riêng (ví dụ: quá khứ, hiện tại, tương lai; thách thức, lời khuyên, kết quả...).
+4.  **Giải mã và diễn giải:** Người giải bài sẽ kết hợp ý nghĩa của từng lá bài, vị trí của chúng trong trải bài, và mối liên hệ giữa các lá bài để tạo nên một câu chuyện tổng thể. Họ cũng lắng nghe trực giác của mình để đưa ra những diễn giải phù hợp nhất với hoàn cảnh của người hỏi.
+
+Điều quan trọng là **không có một "đáp án" cố định** cho mỗi lá bài. Ý nghĩa của chúng có thể thay đổi tùy thuộc vào câu hỏi, các lá bài đi kèm và trực giác của người đọc. Tarot giúp bạn nhìn nhận vấn đề từ nhiều góc độ, khám phá những yếu tố tiềm ẩn mà bạn chưa nhận ra, và từ đó đưa ra những lựa chọn sáng suốt hơn.
+
+---
+
+### Lợi Ích Không Ngờ Của Việc Bói Bài Tarot
+
+Việc tiếp cận Tarot với một tâm thế cởi mở có thể mang lại nhiều lợi ích đáng kể:
+
+* **Tự nhận thức sâu sắc:** Tarot giúp bạn nhìn rõ hơn về bản thân, từ những suy nghĩ, cảm xúc, động cơ tiềm ẩn cho đến điểm mạnh, điểm yếu và tiềm năng chưa được khai thác.
+* **Giải quyết vấn đề và đưa ra quyết định:** Bằng cách cung cấp một cái nhìn khách quan và đa chiều về tình huống, Tarot có thể giúp bạn phân tích vấn đề, nhận diện các yếu tố ảnh hưởng và tìm ra hướng đi hoặc giải pháp phù hợp.
+* **Cân bằng cảm xúc và giảm căng thẳng:** Trong những lúc bối rối hay căng thẳng, việc trải bài Tarot có thể giống như một buổi trò chuyện với người bạn thân, giúp bạn giải tỏa muộn phiền, sắp xếp lại suy nghĩ và lấy lại sự bình tĩnh.
+* **Phát triển trực giác:** Thực hành bói Tarot khuyến khích bạn lắng nghe và tin tưởng vào tiếng nói bên trong mình, từ đó phát triển khả năng trực giác.
+* **Định hướng và chuẩn bị cho tương lai:** Tarot không phải là lời tiên đoán tuyệt đối, mà là một công cụ chỉ ra những xu hướng, cơ hội hoặc thách thức có thể xảy ra. Điều này giúp bạn có sự chuẩn bị tốt hơn, chủ động nắm bắt cơ hội và đối mặt với khó khăn.
+
+---
+
+Dù bạn xem Tarot như một công cụ tâm linh, một hình thức trị liệu tâm lý, hay đơn giản chỉ là một trò chơi mang tính giải trí, thì việc khám phá thế giới của những lá bài này vẫn là một hành trình thú vị. Nó mở ra cánh cửa để bạn hiểu rõ hơn về bản thân, kết nối với trực giác và tự tin hơn trên con đường của mình. Bạn có hứng thú muốn tìm hiểu sâu hơn về một lá bài cụ thể, một trải bài nhất định, hay cách bắt đầu hành trình với Tarot của riêng mình không?`

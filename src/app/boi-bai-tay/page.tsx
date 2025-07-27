@@ -1,9 +1,8 @@
 "use client";
 
+import { BlockContent } from "@/components/BlockContent";
 import ContentHeader from "@/components/ContentHeader";
 import RelatedServices from "@/components/RelatedServices";
-import Link from "next/link";
-import { useRouter } from "next/router";
 import { useState } from "react";
 
 interface PlayingCard {
@@ -605,7 +604,7 @@ export default function CardsPage() {
           {!reading ? (
             <div className="space-y-8">
               {/* Question Input */}
-              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
                 <h2 className="text-2xl font-bold text-white mb-6 text-center">
                   Đặt Câu Hỏi Của Bạn
                 </h2>
@@ -625,7 +624,7 @@ export default function CardsPage() {
               </div>
 
               {/* Method Selection */}
-              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
                 <h2 className="text-2xl font-bold text-white mb-6 text-center">
                   Chọn Cách Bói
                 </h2>
@@ -659,7 +658,7 @@ export default function CardsPage() {
               </div>
 
               {/* Draw Button */}
-              <div className="text-center">
+              <div className="text-center mb-8">
                 <button
                   onClick={drawCards}
                   disabled={isDrawing}
@@ -681,7 +680,7 @@ export default function CardsPage() {
           ) : (
             <div className="space-y-8">
               {/* Reading Header */}
-              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
                 <div className="text-center">
                   <h2 className="text-3xl font-bold text-white mb-4">
                     Kết Quả Bói Bài - {reading.method}
@@ -793,7 +792,7 @@ export default function CardsPage() {
               </div>
             </div>
           )}
-
+          <BlockContent>{content}</BlockContent>
           {/* Related Links */}
           <RelatedServices currentPage="/boi-bai-tay" />
         </div>
@@ -801,3 +800,77 @@ export default function CardsPage() {
     </>
   );
 }
+
+const content = `
+
+## Bói Bài Tây: Giải Mã Những Thông Điệp Ẩn Giấu Trong 52 Lá Bài
+
+**Bói bài Tây** là một trong những hình thức bói toán dân gian phổ biến, sử dụng bộ bài 52 lá quen thuộc để tìm kiếm lời giải đáp cho những thắc mắc trong cuộc sống, từ tình yêu, sự nghiệp đến vận mệnh cá nhân. Dù mang tính chất giải trí và tâm linh nhiều hơn là khoa học, việc giải mã ý nghĩa các lá bài vẫn thu hút sự tò mò của nhiều người bởi tính biểu tượng và khả năng kết nối trực giác mà nó mang lại.
+
+---
+
+### Bộ Bài Tây và Những Ý Nghĩa Biểu Tượng
+
+Bộ bài Tây 52 lá không chỉ đơn thuần là công cụ giải trí mà còn ẩn chứa nhiều tầng ý nghĩa biểu tượng thú vị:
+
+* **52 lá bài** tượng trưng cho **52 tuần** trong một năm.
+* **4 chất (Cơ, Rô, Chuồn, Bích)** đại diện cho **4 mùa** Xuân, Hạ, Thu, Đông, thể hiện sự tuần hoàn của thời gian và các yếu tố trong cuộc sống.
+* **Mỗi chất có 13 lá** (từ Át đến K) có thể tượng trưng cho **13 tháng âm lịch** hoặc các giai đoạn trong một chu kỳ.
+* **Tổng giá trị các lá bài** (khi tính Át là 1, J=11, Q=12, K=13) là 364, cộng thêm lá Joker sẽ là 365, tương ứng với số ngày trong một năm. Nếu tính cả hai lá Joker, tổng là 366, tượng trưng cho năm nhuận.
+
+---
+
+### Ý Nghĩa Của Từng Chất Bài Trong Bói Toán
+
+Mỗi chất bài trong bộ bài Tây mang một năng lượng và ý nghĩa riêng biệt khi được sử dụng để bói:
+
+#### 1. Cơ (Heart - Trái Tim) - Yếu tố Nước
+* **Biểu tượng:** Tình yêu, cảm xúc, các mối quan hệ, gia đình, sự chữa lành và trực giác.
+* **Ý nghĩa khi bói:** Thường mang đến những thông điệp về tình cảm, sự hòa hợp, niềm vui, sự lãng mạn, hoặc đôi khi là nỗi buồn và sự tan vỡ trong các mối quan hệ. Lá bài Cơ thường liên quan đến thế giới nội tâm và cảm xúc.
+
+#### 2. Rô (Diamond - Kim Cương) - Yếu tố Đất
+* **Biểu tượng:** Tiền bạc, tài sản, sự nghiệp, vật chất, sự ổn định, may mắn và thành công.
+* **Ý nghĩa khi bói:** Đại diện cho các vấn đề liên quan đến tài chính, công việc, kinh doanh, sự phát triển vật chất. Lá bài Rô thường chỉ ra cơ hội, thành công, hoặc những thử thách về tiền bạc và sự nghiệp.
+
+#### 3. Chuồn (Club - Gậy/Cỏ Ba Lá) - Yếu tố Lửa
+* **Biểu tượng:** Kiến thức, trí tuệ, sự học hỏi, giao tiếp, sáng tạo, các hoạt động xã hội và may mắn.
+* **Ý nghĩa khi bói:** Liên quan đến sự nghiệp, học vấn, các cuộc gặp gỡ, giao tiếp, những kế hoạch và dự án. Lá bài Chuồn thường mang ý nghĩa về sự phát triển cá nhân, các mối quan hệ xã hội và sự thăng tiến.
+
+#### 4. Bích (Spade - Lưỡi Kiếm) - Yếu tố Khí
+* **Biểu tượng:** Thử thách, khó khăn, xung đột, sự mất mát, sự thay đổi và những vấn đề liên quan đến tinh thần.
+* **Ý nghĩa khi bói:** Thường cảnh báo về những trở ngại, mâu thuẫn, bệnh tật, hoặc sự kết thúc. Tuy nhiên, lá Bích cũng có thể tượng trưng cho sự dũng cảm khi đối mặt với khó khăn và khả năng vượt qua chúng.
+
+---
+
+### Các Lá Bài Cụ Thể và Ý Nghĩa Phổ Biến
+
+Ngoài ý nghĩa chung của từng chất, mỗi lá bài riêng lẻ cũng mang thông điệp cụ thể:
+
+* **Át (A):** Thường là khởi đầu, cơ hội, tiềm năng lớn. Át Cơ là khởi đầu tình yêu, Át Rô là khởi đầu tài lộc.
+* **Các lá từ 2 đến 10:** Thể hiện mức độ và diễn biến của các vấn đề liên quan đến chất bài đó. Ví dụ, số nhỏ thường là những sự kiện nhỏ, số lớn có thể là sự kiện quan trọng hơn.
+* **J (Bồi):** Đại diện cho một người trẻ tuổi, một thông điệp, hoặc một người mang tin tức. Có thể là một người bạn, người yêu, hoặc đồng nghiệp tùy theo chất bài.
+* **Q (Đầm):** Đại diện cho một người phụ nữ, thường là người quan trọng trong cuộc đời người xem (mẹ, vợ, người yêu, bạn bè thân thiết).
+* **K (Già):** Đại diện cho một người đàn ông, thường là người có quyền lực, ảnh hưởng (cha, chồng, sếp, cố vấn).
+
+**(Lưu ý: Ý nghĩa cụ thể của từng lá bài còn phụ thuộc vào cách diễn giải của từng người xem bói và trải bài cụ thể.)**
+
+---
+
+### Cách Thức Bói Bài Tây Phổ Biến
+
+Có nhiều cách bói bài Tây khác nhau, từ đơn giản đến phức tạp, tùy thuộc vào mục đích và sự lựa chọn của người bói:
+
+1.  **Bói 3 Lá (Quá khứ - Hiện tại - Tương lai):** Đây là phương pháp cơ bản nhất. Người xem sẽ tập trung vào câu hỏi và rút 3 lá bài. Lá đầu tiên đại diện cho quá khứ (nguyên nhân, nền tảng), lá thứ hai cho hiện tại (tình hình đang diễn ra), và lá thứ ba cho tương lai (kết quả hoặc xu hướng).
+2.  **Bói Tình Duyên theo tên:** Thường sử dụng một số lượng lá bài nhất định hoặc dàn bài theo số chữ cái trong tên để tìm hiểu về mối quan hệ tình cảm.
+3.  **Bói Vấn Đề Cụ Thể:** Khi có một câu hỏi chi tiết, người xem có thể rút một số lá bài nhất định và kết nối ý nghĩa của chúng để tìm lời khuyên.
+
+**Quan trọng nhất khi bói bài Tây:**
+
+* **Tập trung và giữ tâm trí tĩnh lặng:** Giúp kết nối tốt hơn với năng lượng của bài.
+* **Đặt câu hỏi rõ ràng:** Câu hỏi càng cụ thể, câu trả lời càng dễ được diễn giải.
+* **Diễn giải bằng trực giác:** Việc giải bài Tây không chỉ là học thuộc lòng ý nghĩa mà còn là sự kết nối trực giác với các biểu tượng trên lá bài.
+* **Xem như một công cụ tham khảo:** Bói bài Tây mang tính chất gợi ý, tham khảo để bạn có cái nhìn đa chiều hơn về vấn đề, chứ không phải là lời phán xét tuyệt đối về tương lai.
+
+---
+
+Dù bạn tìm đến bói bài Tây để giải tỏa tò mò, tìm kiếm lời khuyên, hay đơn thuần là một hoạt động giải trí, việc hiểu được ý nghĩa ẩn chứa trong từng lá bài sẽ giúp bạn có những trải nghiệm thú vị và sâu sắc hơn. Bạn có muốn đi sâu vào ý nghĩa của một lá bài cụ thể nào không, hay muốn tìm hiểu một trải bài nào đó?`

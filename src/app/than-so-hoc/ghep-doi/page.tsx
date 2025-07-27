@@ -1,11 +1,10 @@
 "use client";
 
+import { BlockContent } from "@/components/BlockContent";
 import ContentHeader from "@/components/ContentHeader";
 import RelatedServices from "@/components/RelatedServices";
 import { birthDateToLifePath } from "@/lib/numerology";
-import Link from "next/link";
 import { useState } from "react";
-import ReactMarkDown from "react-markdown";
 
 interface CompatibilityResult {
   person1: {
@@ -273,6 +272,7 @@ const compatibilityData: Record<string, any> = {
       "Cả hai đều có tầm nhìn nhân đạo và mong muốn cống hiến cho thế giới.",
   },
 };
+
 const content: string = `### Thần Số Học Trong Tình Yêu Là Gì?
 
 Thần số học không chỉ giúp bạn hiểu về bản thân mà còn là một công cụ hữu ích để khám phá sự hòa hợp trong các mối quan hệ, đặc biệt là tình yêu. Bằng cách phân tích các con số chủ đạo (Life Path Number), con số ngày sinh (Birthday Number), hay thậm chí là con số biểu đạt (Expression Number) của hai người, chúng ta có thể nhận diện những điểm tương đồng, những thách thức tiềm ẩn và cách để cùng nhau phát triển.
@@ -401,7 +401,7 @@ export default function NumerologyCompatibilityPage() {
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Input Form */}
-        <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
+        <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">
             Nhập Thông Tin Hai Người
           </h2>
@@ -490,7 +490,7 @@ export default function NumerologyCompatibilityPage() {
         {result && (
           <div className="space-y-6">
             {/* Compatibility Score */}
-            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold text-white mb-4">
                   Kết Quả Ghép Đôi
@@ -587,12 +587,7 @@ export default function NumerologyCompatibilityPage() {
           </div>
         )}
 
-        <div className="cosmic-card hoverable rounded-2xl p-6">
-          <div className="prose prose-lg prose-invert max-w-none">
-
-          <ReactMarkDown>{content}</ReactMarkDown>
-          </div>
-        </div>
+        <BlockContent>{content}</BlockContent>
         {/* Related Links */}
         <RelatedServices currentPage="/boi-bai-tay" />
       </div>

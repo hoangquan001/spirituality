@@ -2,7 +2,6 @@
 
 import ContentHeader from '@/components/ContentHeader';
 import RelatedServices from '@/components/RelatedServices';
-import Link from 'next/link';
 import { useState } from 'react';
 
 interface RoomAnalysis {
@@ -166,7 +165,7 @@ export default function FengshuiHomePage() {
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Direction Selection */}
-        <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
+        <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">
             Chọn Hướng Nhà Của Bạn
           </h2>
@@ -215,7 +214,7 @@ export default function FengshuiHomePage() {
         {analysis && (
           <div className="space-y-8">
             {/* Overview */}
-            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
               <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold text-white mb-4">
                   Nhà Hướng {analysis.houseDirection}
@@ -252,7 +251,7 @@ export default function FengshuiHomePage() {
             </div>
 
             {/* Room Selection */}
-            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
               <h2 className="text-2xl font-bold text-white mb-6 text-center">
                 Phân Tích Từng Phòng
               </h2>

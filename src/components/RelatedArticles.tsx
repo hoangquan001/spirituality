@@ -44,7 +44,7 @@ const allArticles: RelatedArticle[] = [
   },
   {
     title: "Giải Mã Giấc Mơ Từ A-Z",
-    href: "/dream",
+    href: "/giai-ma-giac-mo",
     description: "Từ điển giấc mơ đầy đủ nhất, khám phá thông điệp từ tiềm thức",
     category: "dream",
     readTime: 7

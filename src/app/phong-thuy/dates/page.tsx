@@ -2,7 +2,6 @@
 
 import ContentHeader from '@/components/ContentHeader';
 import RelatedServices from '@/components/RelatedServices';
-import Link from 'next/link';
 import { useState } from 'react';
 
 interface EventType {
@@ -252,7 +251,7 @@ export default function FengshuiDatesPage() {
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Selection Form */}
-        <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
+        <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20 mb-8">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">
             Chọn Sự Kiện Và Thời Gian
           </h2>
@@ -343,7 +342,7 @@ export default function FengshuiDatesPage() {
         {recommendations && (
           <div className="space-y-8">
             {/* Overview */}
-            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
               <div className="text-center">
                 <h2 className="text-3xl font-bold text-white mb-4">
                   {recommendations.eventType} - Tháng {recommendations.month}/{recommendations.year}
@@ -360,7 +359,7 @@ export default function FengshuiDatesPage() {
 
             {/* Tabs */}
             <div className="flex justify-center mb-8">
-              <div className="bg-gray-800/50 rounded-full p-1">
+              <div className="bg-gray-800/50 rounded-md sm:rounded-full p-2 sm:p-1">
                 {[
                   { id: 'excellent', label: '⭐ Xuất Sắc', count: recommendations.recommendations.excellent.length },
                   { id: 'good', label: '👍 Tốt', count: recommendations.recommendations.good.length },

@@ -2,7 +2,6 @@
 
 import ContentHeader from '@/components/ContentHeader';
 import RelatedServices from '@/components/RelatedServices';
-import Link from 'next/link';
 import { useState } from 'react';
 
 interface GameResult {
@@ -247,7 +246,7 @@ export default function GamesPage() {
           {!result ? (
             <div className="space-y-8">
               {/* Game Selection */}
-              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
                 <h2 className="text-2xl font-bold text-white mb-8 text-center">
                   Chọn Trò Chơi Bói
                 </h2>
@@ -278,7 +277,7 @@ export default function GamesPage() {
               </div>
 
               {/* Game Options */}
-              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
                 <h2 className="text-2xl font-bold text-white mb-8 text-center">
                   {currentGame.name}
                 </h2>
@@ -326,7 +325,7 @@ export default function GamesPage() {
           ) : (
             <div className="space-y-8">
               {/* Result Header */}
-              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
                 <div className="text-center">
                   <h2 className="text-3xl font-bold text-white mb-4">
                     Kết Quả: {result.selection}

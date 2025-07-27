@@ -106,7 +106,7 @@ src/
 ### 5. Original Features
 - **Zodiac** (`/cung-hoang-dao`): Cung hoàng đạo và tính cách
 - **Numerology** (`/than-so-hoc`): Thần số học và phân tích số
-- **Dream** (`/dream`): Giải mã giấc mơ
+- **Dream** (`/giai-ma-giac-mo`): Giải mã giấc mơ
 - **Name Analysis** (`/than-so-hoc/phan-tich-ten`): Phân tích tên theo phong thủy
 - **Feng Shui** (`/feng-shui`): Tư vấn phong thủy
 - **Calendar** (`/calendar`): Lịch tâm linh và ngày tốt xấu

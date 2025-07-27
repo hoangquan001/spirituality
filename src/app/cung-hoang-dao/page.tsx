@@ -1,9 +1,9 @@
+import { BlockContent } from "@/components/BlockContent";
 import ContentHeader from "@/components/ContentHeader";
-import Link from "next/link";
+import FAQSection from "@/components/FAQSection";
 import RelatedServices from "@/components/RelatedServices";
 import ZodiacStructuredData from "@/components/ZodiacStructuredData";
-import FAQSection from "@/components/FAQSection";
-import { ZodiacIcon } from "@/components/icons";
+import Link from "next/link";
 
 interface ZodiacSign {
   name: string;
@@ -243,7 +243,7 @@ export default function ZodiacPage() {
                 href={`/cung-hoang-dao/${sign.slug}`}
                 className="block group"
               >
-                <div className="cosmic-card rounded-2xl p-6 h-full hover:scale-105 transition-all duration-300">
+                <div className="cosmic-card rounded-2xl p-2 md:p-4 lg:p-6 h-full hover:scale-105 transition-all duration-300">
                   <div className="text-center">
                     {/* Icon */}
                     <div
@@ -346,31 +346,7 @@ export default function ZodiacPage() {
             </div>
           </div>
 
-          {/* CTA Section */}
-          <div className="cosmic-card rounded-2xl p-8 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Tìm Hiểu Cung Hoàng Đạo Của Bạn
-            </h2>
-            <p className="text-xl text-gray-300 mb-6">
-              Khám phá chi tiết về tính cách, tình yêu và vận mệnh dựa trên ngày
-              sinh của bạn
-            </p>
-            <div className="space-y-4">
-              <div className="text-gray-300">
-                📅 Chỉ cần biết ngày sinh để khám phá cung hoàng đạo của bạn
-              </div>
-              <div className="text-gray-300">
-                🔮 Nhận được lời khuyên chi tiết về tình yêu, sự nghiệp và sức
-                khỏe
-              </div>
-              <div className="text-gray-300">
-                <span className="flex items-center gap-2">
-                  <ZodiacIcon className="text-golden" size={16} />
-                  Tìm hiểu về mức độ tương hợp với các cung khác
-                </span>
-              </div>
-            </div>
-          </div>
+          <BlockContent>{content}</BlockContent>
 
           {/* FAQ Section */}
           <FAQSection
@@ -385,3 +361,109 @@ export default function ZodiacPage() {
     </>
   );
 }
+
+const content = `## 12 Cung Hoàng Đạo: Khám Phá Bản Thân Qua Thiên Văn Học Huyền Bí
+
+Bạn đã bao giờ tự hỏi liệu ngày sinh của mình có mối liên hệ nào với tính cách và con đường cuộc đời không? Câu trả lời nằm trong **12 Cung Hoàng Đạo** – một hệ thống chiêm tinh cổ xưa đã được khám phá và nghiên cứu suốt hàng ngàn năm. Đây không chỉ là một bảng phân loại ngày sinh đơn thuần, mà còn là chiếc gương phản chiếu những nét tính cách sâu sắc, xu hướng hành vi và tiềm năng định mệnh của mỗi chúng ta.
+
+---
+
+### 12 Cung Hoàng Đạo Là Gì?
+
+**12 Cung Hoàng Đạo (Zodiac Signs)** là một vòng tròn 360 độ trên bầu trời, tượng trưng cho đường đi của Mặt Trời quanh Trái Đất trong một năm. Vòng tròn này được chia thành 12 phần bằng nhau, mỗi phần 30 độ, tương ứng với một khoảng thời gian cụ thể và một chòm sao. **Cung Hoàng Đạo** của bạn được xác định bởi vị trí của Mặt Trời vào ngày bạn chào đời.
+
+Hiểu về cung Hoàng Đạo của mình và của những người xung quanh sẽ giúp bạn:
+
+* **Thấu hiểu bản thân:** Khám phá những điểm mạnh, điểm yếu tiềm ẩn và các đặc trưng tính cách bẩm sinh.
+* **Cải thiện mối quan hệ:** Nắm bắt xu hướng tính cách của bạn bè, gia đình, đối tác để xây dựng kết nối hài hòa hơn.
+* **Định hướng cuộc sống:** Nhận diện những năng lượng chiêm tinh có thể ảnh hưởng đến các quyết định và hành trình của bạn.
+
+---
+
+### Bốn Nguyên Tố Chi Phối 12 Cung Hoàng Đạo
+
+12 Cung Hoàng Đạo được chia thành bốn nhóm nguyên tố chính: Lửa, Đất, Khí, và Nước. Mỗi nhóm mang một "chất liệu" năng lượng riêng, định hình tính cách chung của các cung thuộc nhóm đó.
+
+#### 1. Nhóm Nguyên Tố Lửa (Bạch Dương, Sư Tử, Nhân Mã)
+* **Đặc điểm chung:** Nồng nhiệt, đam mê, năng động, nhiệt huyết, dũng cảm và có khả năng truyền cảm hứng. Họ là những người tiên phong, thích hành động.
+* **Thách thức:** Dễ bốc đồng, thiếu kiên nhẫn, đôi khi độc đoán.
+
+#### 2. Nhóm Nguyên Tố Đất (Kim Ngưu, Xử Nữ, Ma Kết)
+* **Đặc điểm chung:** Thực tế, ổn định, kiên nhẫn, đáng tin cậy và luôn tìm kiếm sự an toàn, bền vững. Họ chú trọng giá trị vật chất và sự cần cù.
+* **Thách thức:** Cứng nhắc, bảo thủ, đôi khi quá tập trung vào vật chất.
+
+#### 3. Nhóm Nguyên Tố Khí (Song Tử, Thiên Bình, Bảo Bình)
+* **Đặc điểm chung:** Thông minh, logic, giỏi giao tiếp, thích giao lưu, cởi mở, yêu tự do và luôn tìm kiếm kiến thức mới. Họ là những người của ý tưởng và kết nối.
+* **Thách thức:** Khó tập trung, đôi khi quá lý trí, thiếu kiên định.
+
+#### 4. Nhóm Nguyên Tố Nước (Cự Giải, Bọ Cạp, Song Ngư)
+* **Đặc điểm chung:** Giàu cảm xúc, trực giác mạnh, sâu sắc, đồng cảm và có khả năng thấu hiểu người khác. Họ sống bằng trái tim và trực giác.
+* **Thách thức:** Dễ bị chi phối bởi cảm xúc, nhạy cảm quá mức, đôi khi sống nội tâm.
+
+---
+
+### Tổng Quan 12 Cung Hoàng Đạo Và Đặc Trưng Nổi Bật
+
+Hãy cùng khám phá những đặc trưng chính của từng cung:
+
+#### 1. Bạch Dương (Aries) - 21/3 - 19/4
+* **Đặc trưng:** Tiên phong, dũng cảm, thẳng thắn, nhiệt tình. Luôn tràn đầy năng lượng và sẵn sàng đối mặt thử thách.
+* **Điểm cần lưu ý:** Dễ bốc đồng, thiếu kiên nhẫn.
+
+#### 2. Kim Ngưu (Taurus) - 20/4 - 20/5
+* **Đặc trưng:** Kiên định, chung thủy, thực tế, yêu thích sự ổn định và cái đẹp.
+* **Điểm cần lưu ý:** Bướng bỉnh, khó thay đổi.
+
+#### 3. Song Tử (Gemini) - 21/5 - 20/6
+* **Đặc trưng:** Thông minh, nhanh nhẹn, hoạt ngôn, tò mò và thích nghi tốt.
+* **Điểm cần lưu ý:** Dễ thay đổi, thiếu kiên định.
+
+#### 4. Cự Giải (Cancer) - 21/6 - 22/7
+* **Đặc trưng:** Nhạy cảm, quan tâm, bảo vệ, trực giác mạnh mẽ, yêu gia đình.
+* **Điểm cần lưu ý:** Dễ bị chi phối bởi cảm xúc, sống nội tâm.
+
+#### 5. Sư Tử (Leo) - 23/7 - 22/8
+* **Đặc trưng:** Tự tin, hào phóng, lôi cuốn, có khả năng lãnh đạo bẩm sinh.
+* **Điểm cần lưu ý:** Kiêu ngạo, thích được chú ý quá mức.
+
+#### 6. Xử Nữ (Virgo) - 23/8 - 22/9
+* **Đặc trưng:** Tỉ mỉ, cẩn thận, thực tế, luôn hướng tới sự hoàn hảo và thích phục vụ.
+* **Điểm cần lưu ý:** Cầu toàn, hay lo lắng, đôi khi chỉ trích.
+
+#### 7. Thiên Bình (Libra) - 23/9 - 22/10
+* **Đặc trưng:** Duyên dáng, hòa đồng, giỏi ngoại giao, luôn tìm kiếm sự cân bằng và công bằng.
+* **Điểm cần lưu ý:** Thiếu quyết đoán, dễ bị ảnh hưởng.
+
+#### 8. Bọ Cạp (Scorpio) - 23/10 - 21/11
+* **Đặc trưng:** Bí ẩn, mạnh mẽ, quyết đoán, đam mê, trực giác tốt.
+* **Điểm cần lưu ý:** Thù dai, thích kiểm soát, đôi khi khắc nghiệt.
+
+#### 9. Nhân Mã (Sagittarius) - 22/11 - 21/12
+* **Đặc trưng:** Yêu tự do, lạc quan, thích phiêu lưu, ham học hỏi và có tầm nhìn rộng.
+* **Điểm cần lưu ý:** Thiếu tế nhị, vô trách nhiệm, bốc đồng.
+
+#### 10. Ma Kết (Capricorn) - 22/12 - 19/1
+* **Đặc trưng:** Tham vọng, kỷ luật, có trách nhiệm, thực tế và kiên trì.
+* **Điểm cần lưu ý:** Quá nghiêm khắc, bi quan, khó thể hiện cảm xúc.
+
+#### 11. Bảo Bình (Aquarius) - 20/1 - 18/2
+* **Đặc trưng:** Độc lập, sáng tạo, nhân đạo, thông minh và luôn đổi mới.
+* **Điểm cần lưu ý:** Lập dị, xa cách, khó gần gũi về cảm xúc.
+
+#### 12. Song Ngư (Pisces) - 19/2 - 20/3
+* **Đặc trưng:** Nhạy cảm, đồng cảm, sáng tạo, trực giác mạnh và giàu lòng trắc ẩn.
+* **Điểm cần lưu ý:** Dễ bị ảnh hưởng, mơ mộng, trốn tránh thực tế.
+
+---
+
+### Làm Thế Nào Để Sử Dụng Kiến Thức Về 12 Cung Hoàng Đạo?
+
+Việc tìm hiểu về 12 Cung Hoàng Đạo không phải là để đóng khung bạn vào một khuôn mẫu cứng nhắc, mà là để:
+
+* **Tự nhận thức:** Hiểu rõ hơn về những đặc điểm bẩm sinh của mình, cả ưu và nhược điểm.
+* **Phát triển bản thân:** Nắm bắt điểm mạnh để phát huy và tìm cách cải thiện những hạn chế.
+* **Cải thiện các mối quan hệ:** Đồng cảm hơn với người khác khi hiểu về xu hướng tính cách của họ.
+* **Đưa ra quyết định:** Tham khảo những gợi ý về sự nghiệp, tình yêu, cuộc sống để đưa ra lựa chọn phù hợp nhất với bản thân.
+
+Hãy nhớ rằng, Cung Mặt Trời chỉ là một phần của bản đồ chiêm tinh cá nhân bạn. Để có cái nhìn toàn diện hơn, bạn có thể tìm hiểu thêm về Cung Mọc (Ascendant Sign), Cung Mặt Trăng (Moon Sign) và vị trí của các hành tinh khác trong biểu đồ sao cá nhân của mình.
+`

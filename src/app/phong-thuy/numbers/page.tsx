@@ -2,7 +2,6 @@
 
 import ContentHeader from '@/components/ContentHeader';
 import RelatedServices from '@/components/RelatedServices';
-import Link from 'next/link';
 import { useState } from 'react';
 
 interface NumberAnalysis {
@@ -197,7 +196,7 @@ export default function FengshuiNumbersPage() {
         {/* Main Content */}
         <div className="max-w-6xl mx-auto px-4 py-12">
           {/* Input Form */}
-          <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20 mb-8">
+          <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20 mb-8">
             <h2 className="text-2xl font-bold text-white mb-6 text-center">
               Nhập Số Điện Thoại Hoặc Biển Số
             </h2>
@@ -245,7 +244,7 @@ export default function FengshuiNumbersPage() {
           {analysis && (
             <div className="space-y-8">
               {/* Overview */}
-              <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+              <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
                 <div className="text-center">
                   <h2 className="text-3xl font-bold text-white mb-4">
                     Kết Quả Phân Tích: {analysis.phoneNumber}
@@ -310,7 +309,7 @@ export default function FengshuiNumbersPage() {
 
               {/* Tabs */}
               <div className="flex justify-center mb-8">
-                <div className="bg-gray-800/50 rounded-full p-1">
+                <div className="bg-gray-800/50 rounded-md sm:rounded-full p-2 sm:p-1">
                   {[
                     { id: "overview", label: "📊 Tổng Quan" },
                     { id: "breakdown", label: "🔢 Chi Tiết" },

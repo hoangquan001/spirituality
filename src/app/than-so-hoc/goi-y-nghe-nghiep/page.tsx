@@ -3,8 +3,9 @@
 import ContentHeader from '@/components/ContentHeader';
 import RelatedServices from '@/components/RelatedServices';
 import { birthDateToLifePath } from '@/lib/numerology';
-import Link from 'next/link';
 import { useState } from 'react';
+
+import ReactMarkDown from 'react-markdown';
 
 interface CareerSuggestion {
   category: string;
@@ -321,6 +322,7 @@ const careerData: Record<number, any> = {
   }
 };
 
+
 export default function NumerologyCareerPage() {
   const [birthDate, setBirthDate] = useState('');
   const [name, setName] = useState('');
@@ -433,9 +435,6 @@ export default function NumerologyCareerPage() {
                 </span>
               )}
             </button>
-            <p className="text-gray-400 text-sm mt-4 max-w-md mx-auto">
-              💡 Hoàn toàn miễn phí - Thông tin được bảo mật tuyệt đối
-            </p>
           </div>
         </div>
 
@@ -443,7 +442,7 @@ export default function NumerologyCareerPage() {
         {career && (
           <div className="space-y-8">
             {/* Overview */}
-            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
               <div className="text-center mb-8">
                 <h2 className="text-3xl font-bold text-white mb-4">
                   Phân Tích Nghề Nghiệp - Số Đường Đời {career.lifePath}
@@ -483,7 +482,7 @@ export default function NumerologyCareerPage() {
             </div>
 
             {/* Career Suggestions */}
-            <div className="cosmic-card rounded-3xl p-8 border border-gray-700/20">
+            <div className="cosmic-card rounded-3xl p-4 sm:p-6 md:p-8 border border-gray-700/20">
               <h3 className="text-2xl font-bold text-white mb-6 text-center">
                 Gợi Ý Nghề Nghiệp
               </h3>
@@ -579,10 +578,69 @@ export default function NumerologyCareerPage() {
             </div>
           </div>
         )}
+        <div className="cosmic-card hoverable rounded-2xl p-6">
+          <div className="prose prose-lg prose-invert max-w-none">
 
+          <ReactMarkDown>{content}</ReactMarkDown>
+          </div>
+        </div>
         {/* Related Links */}
         <RelatedServices currentPage="/than-so-hoc" />
       </div>
     </div>
   );
 }
+
+
+const content = `## Định Hướng Nghề Nghiệp Theo Thần Số Học: Tìm Thấy Công Việc Đích Thực Của Bạn
+
+Bạn đang đứng trước ngưỡng cửa chọn ngành, hay cảm thấy lạc lõng trên con đường sự nghiệp hiện tại? Trong một thế giới đầy lựa chọn, việc tìm thấy công việc thực sự phù hợp với bản thân không hề dễ dàng. May mắn thay, **Thần Số Học** có thể trở thành "kim chỉ nam" đắc lực, giúp bạn khám phá những năng lực bẩm sinh và định hướng nghề nghiệp tiềm năng, dẫn lối đến một sự nghiệp ý nghĩa và thành công.
+
+---
+
+### Thần Số Học: "Bản Đồ" Năng Lực Của Bạn Trong Sự Nghiệp
+
+Thần Số Học không phải là một công cụ "phán xét" hay giới hạn bạn vào một công việc cụ thể. Thay vào đó, nó là một hệ thống giải mã những **rung động năng lượng** từ ngày sinh và tên gọi của bạn, hé lộ những đặc điểm tính cách, kỹ năng và xu hướng tự nhiên phù hợp với các lĩnh vực nghề nghiệp nhất định. Nó giúp bạn:
+
+* **Hiểu rõ điểm mạnh cốt lõi:** Những tài năng nổi trội mà bạn có thể chưa nhận ra hoặc chưa khai thác hết.
+* **Phát hiện đam mê tiềm ẩn:** Khám phá những lĩnh vực mà bạn thực sự có hứng thú và có thể cống hiến lâu dài.
+* **Nhận diện thách thức cần vượt qua:** Những khía cạnh cần cải thiện để phát triển hơn trong công việc.
+* **Tìm kiếm môi trường làm việc lý tưởng:** Nơi bạn có thể phát huy tối đa khả năng và cảm thấy hạnh phúc.
+
+---
+
+### Các Chỉ Số Thần Số Học Quan Trọng Cho Định Hướng Nghề Nghiệp
+
+Để định hướng nghề nghiệp theo Thần Số Học, chúng ta sẽ tập trung vào một số chỉ số chính:
+
+#### 1. Con Số Chủ Đạo (Life Path Number)
+
+Đây là con số quan trọng nhất, được tính từ **ngày tháng năm sinh** của bạn. Con số Chủ Đạo tiết lộ **sứ mệnh cuộc đời**, tính cách cốt lõi và con đường bạn được sinh ra để đi. Trong sự nghiệp, nó chỉ ra những lĩnh vực mà bạn sẽ tìm thấy sự thỏa mãn và ý nghĩa sâu sắc nhất.
+
+* **Ví dụ:** Người có **số Chủ Đạo 1** thường phù hợp với vai trò lãnh đạo, khởi xướng, cần sự độc lập. Người có **số Chủ Đạo 6** có xu hướng phù hợp với ngành dịch vụ, chăm sóc, giáo dục, nơi họ có thể thể hiện sự yêu thương, trách nhiệm.
+
+#### 2. Con Số Vận Mệnh (Destiny Number / Expression Number)
+
+Được tính từ **tên đầy đủ của bạn**, Con số Vận Mệnh tiết lộ **tài năng bẩm sinh, khả năng thể hiện bản thân** và cách bạn thực hiện các mục tiêu trong sự nghiệp. Đây là những kỹ năng mà bạn có thể dễ dàng phát triển và sử dụng để thành công.
+
+* **Ví dụ:** Người có **số Vận Mệnh 3** thường có khả năng giao tiếp, sáng tạo, phù hợp với nghệ thuật, truyền thông. Người có **số Vận Mệnh 8** có thiên hướng về kinh doanh, quản lý, tài chính, có tầm nhìn lớn.
+
+#### 3. Con Số Linh Hồn (Soul Urge / Heart's Desire Number)
+
+Tính từ các **nguyên âm trong tên bạn**, Con số Linh Hồn đại diện cho **khát vọng sâu thẳm nhất** trong công việc. Nó cho biết điều gì sẽ thực sự nuôi dưỡng tâm hồn và mang lại cảm giác viên mãn cho bạn, vượt qua cả yếu tố tài chính hay địa vị.
+
+* **Ví dụ:** Nếu Con số Linh Hồn của bạn là **số 7**, bạn có thể tìm thấy niềm vui trong những công việc đòi hỏi sự nghiên cứu, phân tích sâu sắc, hoặc có yếu tố tâm linh.
+
+---
+
+### Làm Thế Nào Để Áp Dụng Thần Số Học Vào Định Hướng Nghề Nghiệp?
+
+Thần Số Học không đưa ra một danh sách công việc cụ thể, mà gợi ý **nhóm ngành nghề và môi trường làm việc** phù hợp với năng lượng của bạn:
+
+* **Tự phân tích:** Tính toán các chỉ số của bạn và đọc ý nghĩa chi tiết.
+* **Đối chiếu với bản thân:** So sánh những gì Thần Số Học nói với những gì bạn cảm thấy, sở thích và kinh nghiệm của mình.
+* **Khám phá các lĩnh vực mới:** Đừng ngại tìm hiểu những ngành nghề mà bạn chưa từng nghĩ tới nhưng lại có chỉ số phù hợp.
+* **Cải thiện kỹ năng:** Nếu một chỉ số cho thấy bạn mạnh về giao tiếp nhưng bạn cảm thấy mình còn yếu, đây là lúc để trau dồi.
+
+Hãy nhớ rằng, Thần Số Học là một công cụ hỗ trợ. Quyết định cuối cùng luôn nằm trong tay bạn. Nó giúp bạn hiểu rõ hơn về bản thân, từ đó đưa ra lựa chọn sáng suốt và tự tin trên con đường sự nghiệp của mình.
+`

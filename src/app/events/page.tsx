@@ -1,7 +1,7 @@
 'use client';
 
-import { formatEventDate, getEventsByMonth, getSpiritualEvents, getUpcomingEvents } from '@/lib/spiritualEvents';
 import FAQSection from '@/components/FAQSection';
+import { formatEventDate, getEventsByMonth, getSpiritualEvents, getUpcomingEvents } from '@/lib/spiritualEvents';
 import { useMemo, useState } from 'react';
 
 export default function EventsPage() {
@@ -43,7 +43,7 @@ export default function EventsPage() {
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-6xl mx-auto">
           {/* Controls */}
-          <div className="cosmic-card rounded-2xl p-6 border border-gray-400/20 mb-8">
+          <div className="cosmic-card rounded-2xl p-2 md:p-4 lg:p-6 border border-gray-400/20 mb-8">
             <div className="flex flex-wrap items-center justify-between gap-4">
               {/* View Mode */}
               <div className="flex space-x-2">
@@ -229,7 +229,7 @@ export default function EventsPage() {
           )}
 
           {/* Legend */}
-          <div className="mt-8 cosmic-card rounded-2xl p-6 border border-gray-400/20">
+          <div className="mt-8 cosmic-card rounded-2xl p-2 md:p-4 lg:p-6 border border-gray-400/20">
             <h3 className="text-xl font-bold text-white mb-4">📚 Chú giải</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
               <div className="space-y-2">
