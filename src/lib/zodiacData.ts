@@ -61,7 +61,7 @@ export const zodiacData: Record<string, ZodiacDetail> = {
     element: "Hỏa",
     ruling_planet: "Sao Hỏa",
     symbol: "Cừu",
-    icon: "♈",
+    icon: "/aries.png",
     color: "from-red-600 to-orange-600",
 
     personality: {
@@ -144,7 +144,7 @@ export const zodiacData: Record<string, ZodiacDetail> = {
     element: "Thổ",
     ruling_planet: "Sao Kim",
     symbol: "Bò",
-    icon: "♉",
+    icon: "/taurus.png",
     color: "from-green-600 to-emerald-600",
 
     personality: {
@@ -227,7 +227,7 @@ export const zodiacData: Record<string, ZodiacDetail> = {
     element: "Khí",
     ruling_planet: "Sao Thủy",
     symbol: "Đôi",
-    icon: "♊",
+    icon: "/gemini.png",
     color: "from-yellow-600 to-amber-600",
 
     personality: {
@@ -310,7 +310,7 @@ export const zodiacData: Record<string, ZodiacDetail> = {
     element: "Thủy",
     ruling_planet: "Mặt Trăng",
     symbol: "Cua",
-    icon: "♋",
+    icon: "/cancer.png",
     color: "from-blue-600 to-cyan-600",
 
     personality: {
@@ -393,7 +393,7 @@ export const zodiacData: Record<string, ZodiacDetail> = {
     element: "Hỏa",
     ruling_planet: "Mặt Trời",
     symbol: "Sư tử",
-    icon: "♌",
+    icon: "/leo.png",
     color: "from-orange-600 to-yellow-600",
 
     personality: {
@@ -476,7 +476,7 @@ export const zodiacData: Record<string, ZodiacDetail> = {
     element: "Thổ",
     ruling_planet: "Sao Thủy",
     symbol: "Trinh nữ",
-    icon: "♍",
+    icon: "/virgo.png",
     color: "from-indigo-600 to-gray-600",
 
     personality: {
@@ -559,7 +559,7 @@ export const zodiacData: Record<string, ZodiacDetail> = {
     element: "Khí",
     ruling_planet: "Sao Kim",
     symbol: "Cán cân",
-    icon: "♎",
+    icon: "/libra.png",
     color: "from-pink-600 to-rose-600",
 
     personality: {
@@ -642,7 +642,7 @@ export const zodiacData: Record<string, ZodiacDetail> = {
     element: "Thủy",
     ruling_planet: "Sao Diêm Vương",
     symbol: "Bọ Cạp",
-    icon: "♏",
+    icon: "/scorpio.png",
     color: "from-red-800 to-red-600",
 
     personality: {
@@ -725,7 +725,7 @@ export const zodiacData: Record<string, ZodiacDetail> = {
     element: "Hỏa",
     ruling_planet: "Sao Mộc",
     symbol: "Cung thủ",
-    icon: "♐",
+    icon: "/sagittarius.png",
     color: "from-gray-700 to-gray-800",
 
     personality: {
@@ -808,7 +808,7 @@ export const zodiacData: Record<string, ZodiacDetail> = {
     element: "Thổ",
     ruling_planet: "Sao Thổ",
     symbol: "Dê biển",
-    icon: "♑",
+    icon: "/capricorn.png",
     color: "from-gray-600 to-slate-600",
 
     personality: {
@@ -891,7 +891,7 @@ export const zodiacData: Record<string, ZodiacDetail> = {
     element: "Khí",
     ruling_planet: "Sao Thiên Vương",
     symbol: "Người mang nước",
-    icon: "♒",
+    icon: "/aquarius.png",
     color: "from-cyan-600 to-blue-600",
 
     personality: {
@@ -974,7 +974,7 @@ export const zodiacData: Record<string, ZodiacDetail> = {
     element: "Thủy",
     ruling_planet: "Sao Hải Vương",
     symbol: "Cá",
-    icon: "♓",
+    icon: "/pisces.png",
     color: "from-teal-600 to-green-600",
 
     personality: {
